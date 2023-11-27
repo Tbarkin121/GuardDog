@@ -1,2 +1,2 @@
 # GuardDog
-Making a walking dog robot thing.. idk. 
+Makeing a hypoallergenic robot quadruped pet from scratch
