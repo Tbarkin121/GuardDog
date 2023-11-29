@@ -27,7 +27,7 @@ class Pendulum:
         self.num_segments = 1
         self.joint_angles = torch.zeros(self.num_segments, requires_grad=True)
         self.angle_offset = 3.1415/2 # So gravity is down 
-        self.joint_velocity = torch.zeros(self.num_segments, requires_grad=True)
+        self.joint_velocity = torch.ones(self.num_segments, requires_grad=True)
         self.joint_acceleration = torch.zeros(self.num_segments, requires_grad=True)
 
         self.link_lengths =  torch.ones(self.num_segments, requires_grad=False)/self.num_segments        
@@ -116,7 +116,7 @@ class Pendulum:
         # Euler-Lagrange equation
         self.tau = dL_dthetadot_dt - dL_dtheta
         friction_torque = self.joint_velocity * 0.1
-        input_tau = 3
+        input_tau = self.tau + friction_torque
         total_tau = input_tau-self.tau-friction_torque
         self.joint_acceleration = total_tau/self.I
         
