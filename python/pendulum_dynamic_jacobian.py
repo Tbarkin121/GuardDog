@@ -20,13 +20,15 @@ import time
 from torchviz import make_dot
 
 torch.set_default_device('cuda')
+torch.autograd.set_detect_anomaly(True)
 #%%
 class Pendulum:
     def __init__(self):
         print('Init Arm')
         self.num_segments = 1
-        self.joint_angles = torch.zeros(self.num_segments, requires_grad=True)
         self.angle_offset = 3.1415/2 # So gravity is down 
+        
+        self.joint_angles = torch.zeros(self.num_segments, requires_grad=True)
         self.joint_velocity = torch.ones(self.num_segments, requires_grad=True)
         self.joint_acceleration = torch.zeros(self.num_segments, requires_grad=True)
 
@@ -38,7 +40,7 @@ class Pendulum:
         self.x_targ=torch.tensor(-0.33, requires_grad=False)
         self.y_targ=torch.tensor(0.44, requires_grad=False)
         
-        self.I = (1/3)*self.link_mass[0]*self.link_lengths[0]
+        self.I = (1/3)*self.link_mass*self.link_lengths
         
         
         plt.close('all')
@@ -60,14 +62,54 @@ class Pendulum:
             self.xs[s] = self.xs[s-1] + self.link_lengths[s-1]*torch.cos(torch.sum(self.joint_angles[0:s]))
             self.ys[s] = self.ys[s-1] + self.link_lengths[s-1]*torch.sin(torch.sum(self.joint_angles[0:s]))
             
-    def ComputeLagrange(self):       
-        self.T = 0.5*self.I*self.joint_velocity**2                             # Kinetic Energy
+    def ComputeLagrange(self): 
+        # Reset energies to zero
+        self.T = 0.0
+        self.U = 0.0
+        # Cumulative angle for kinematics
+        cumulative_angle = 0.0
+        # Cumulative velocity for translational kinetic energy
+        cumulative_velocity = 0.0  # Cumulative velocity for translational kinetic energy
         
-        h = self.link_lengths/2 * (1-torch.cos(self.joint_angles+self.angle_offset))
-        self.U = self.link_mass*9.81*h;                                        # Potential Energy
+        cumulative_x = 0.0
+        cumulative_y = 0.0
+        
+        for i in range(self.num_segments):
+            # Update the cumulative angle
+            cumulative_angle = cumulative_angle + self.joint_angles[i]
+            cumulative_velocity = cumulative_velocity + self.joint_velocity[i]
+            
+            # Position of the COM of the current segment
+            com_x = cumulative_x + self.link_lengths[i] / 2 * torch.cos(cumulative_angle)
+            com_y = cumulative_y + self.link_lengths[i] / 2 * torch.sin(cumulative_angle)
+            
+            # Update cumulative_x and cumulative_y for the next segment
+            cumulative_x = cumulative_x + self.link_lengths[i] * torch.cos(cumulative_angle)
+            cumulative_y = cumulative_y + self.link_lengths[i] * torch.sin(cumulative_angle)
+
+            
+            # Translational velocity of the segment's center of mass
+            # This requires calculating the derivative of com_x and com_y with respect to time
+            # For simplicity, we'll assume constant velocity for this example
+            # translational_velocity = torch.sqrt(com_x**2 + com_y**2) * cumulative_velocity
+            
+            # Translational kinetic energy
+            # self.T += 0.5 * self.link_mass[i] * translational_velocity**2
+            
+            # Rotational Kinetic energy 
+            self.T += 0.5 * self.I[i] * self.joint_velocity[i]**2
+    
+            # Height of the segment's center of mass
+            # h = (self.link_lengths[i] / 2) * (1 - torch.cos(cumulative_angle + self.angle_offset))
+            h = com_y-1  # Height of the center of mass
+    
+            # Potential energy
+            self.U += self.link_mass[i] * 9.81 * h
+
         
         self.F = self.joint_velocity * 0.01                                    # Friction Energy Lost
-        
+                                                                               # I think I can just add the friction in here? 
+                                                                               
         self.L = self.T-self.U                                                 # Legrangeian
         
         
@@ -116,7 +158,8 @@ class Pendulum:
         # Euler-Lagrange equation
         self.tau = dL_dthetadot_dt - dL_dtheta
         friction_torque = self.joint_velocity * 0.1
-        input_tau = self.tau + friction_torque
+        # input_tau = self.tau + friction_torque
+        input_tau = 0
         total_tau = input_tau-self.tau-friction_torque
         self.joint_acceleration = total_tau/self.I
         
