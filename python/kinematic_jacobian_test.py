@@ -12,7 +12,7 @@ import numpy as np
 import time
 import torchviz
 
-torch.set_default_device('cuda')
+torch.set_default_device('cpu')
 #%%
 
 class PlanarArm:
@@ -21,9 +21,10 @@ class PlanarArm:
         self.num_segments = num_segments
         self.joint_angles = torch.zeros(num_segments, requires_grad=True)
         with torch.no_grad():
-            self.joint_angles += 0.001
-            
-        self.joint_lengths =  torch.ones(num_segments, requires_grad=False)/num_segments
+            self.joint_angles[0] = torch.pi/4
+            self.joint_angles[1] = torch.pi/4
+        
+        self.joint_lengths =  torch.ones(num_segments, requires_grad=False)*0.33
         self.xs = torch.zeros(num_segments+1, requires_grad=False)
         self.ys = torch.zeros(num_segments+1, requires_grad=False)
         self.x_targ=torch.tensor(-0.33, requires_grad=False)
@@ -82,6 +83,16 @@ class PlanarArm:
         self.jacobian_y = self.joint_angles.grad.clone()
         
         self.J = torch.stack((env.jacobian_x, env.jacobian_y))
+        
+        # Manual 2 segment jacobian calc (Checked out vs torch, it matches)
+        # self.test_J = torch.zeros(2,2)
+        # self.test_J[0,0]= - self.joint_lengths[0]*torch.sin(self.joint_angles[0]) - self.joint_lengths[1]*torch.sin(self.joint_angles[0] + self.joint_angles[1])
+        # self.test_J[0,1]= - self.joint_lengths[1]*torch.sin(self.joint_angles[0] + self.joint_angles[1])
+        # self.test_J[1,0]= self.joint_lengths[0]*torch.cos(self.joint_angles[0]) + self.joint_lengths[1]*torch.cos(self.joint_angles[0] + self.joint_angles[1])       
+        # self.test_J[1,1]= self.joint_lengths[1]*torch.cos(self.joint_angles[0] + self.joint_angles[1])
+        
+    
+
 
         
     def update_angles(self, dtheta):
@@ -118,7 +129,7 @@ class PlanarArm:
         # self.delta_theta = torch.matmul(self.J_inv, torch.tensor([self.dx, self.dy]))
         # self.update_angles(self.delta_theta)
         
-        JJT = torch.matmul(self.J, self.J.permute([1,0]))
+        JJT = torch.matmul(self.J + torch.eye(self.J.shape[0])*0.001, self.J.permute([1,0]) + torch.eye(self.J.shape[0])*0.001)
         Im = torch.eye(m)
         R = torch.stack((env.dx, env.dy)).view(-1,1)
         M1 = torch.linalg.solve(JJT, self.J)
@@ -137,19 +148,34 @@ class PlanarArm:
             self.y_targ = torch.tensor(y, dtype=torch.float, requires_grad=False)
             
     def endeffector_forces(self):
-        joint_torques = torch.zeros(self.num_segments, requires_grad=False).view(-1,1)
-        joint_torques[0] = 1.0
-        joint_torques[1] = 0.0
+
+        with torch.no_grad():
+            self.J_inv = torch.linalg.pinv(self.J.T + torch.eye(self.J.shape[0])*0.00001)
+            # self.J_inv = torch.linalg.pinv(self.J.T)
+            
+            # Matches the numbers from : 
+            # https://studywolf.wordpress.com/2013/09/02/robot-control-jacobians-velocity-and-force/
+            # end_effector_force = torch.tensor([[1.0],[1.0]])
+            # joint_torques = torch.matmul(self.J.T, end_effector_force)
+            # recalc_force = torch.matmul(self.J_inv, joint_torques)
+            # print(joint_torques)
+            # print(recalc_force)
+            
+            demand_force = torch.tensor([[0.0],[-10.0]])
+            # demand_torques = torch.tensor([[0.0],[1.0]])
+            demand_torques = torch.matmul(self.J.T, demand_force)
+            calc_forces = torch.matmul(self.J_inv, demand_torques)
+            
+            # print(self.J)
+            # print(self.J_inv)
+            print('----')
+            print(demand_torques)
+            print(calc_forces)
+            self.EndEffector_F = calc_forces
+            
+            pass
         
-        self.J_inv = torch.linalg.pinv(self.J.T + torch.eye(self.J.shape[0])*0.1)
-        # self.EndEffector_F = torch.matmul(self.J_inv, joint_torques)
-        self.EndEffector_F = torch.matmul(self.J, joint_torques)
         
-        # print('End Effector Force : ')
-        # print(self.EndEffector_F)
-        print('---')
-        print(self.J)
-        print(self.J_inv)
         
         
 #%%
