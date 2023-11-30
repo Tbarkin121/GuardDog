@@ -161,9 +161,9 @@ class PlanarArm:
             # print(joint_torques)
             # print(recalc_force)
             
-            demand_force = torch.tensor([[0.0],[-10.0]])
-            # demand_torques = torch.tensor([[0.0],[1.0]])
-            demand_torques = torch.matmul(self.J.T, demand_force)
+            # demand_force = torch.tensor([[1.0],[1.0]])
+            # demand_torques = torch.matmul(self.J.T, demand_force)
+            demand_torques = torch.tensor([[3.0],[0.0]])
             calc_forces = torch.matmul(self.J_inv, demand_torques)
             
             # print(self.J)
