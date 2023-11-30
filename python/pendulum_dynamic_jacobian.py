@@ -20,12 +20,12 @@ import time
 from torchviz import make_dot
 
 torch.set_default_device('cuda')
-torch.autograd.set_detect_anomaly(True)
+# torch.autograd.set_detect_anomaly(True)
 #%%
 class Pendulum:
     def __init__(self):
         print('Init Arm')
-        self.num_segments = 1
+        self.num_segments = 10
         self.angle_offset = 3.1415/2 # So gravity is down 
         
         self.joint_angles = torch.zeros(self.num_segments, requires_grad=True)

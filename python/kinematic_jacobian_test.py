@@ -4,14 +4,7 @@ Created on Fri Aug 25 01:37:05 2023
 
 @author: Plutonium
 """
-
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Aug 21 09:58:15 2023
-
-@author: Plutonium
-"""
-
+    
 
 import torch
 import matplotlib.pyplot as plt
@@ -19,12 +12,17 @@ import numpy as np
 import time
 import torchviz
 
+torch.set_default_device('cuda')
+#%%
 
 class PlanarArm:
     def __init__(self, num_segments):
         print('Init Arm')
         self.num_segments = num_segments
-        self.joint_angles = torch.ones(num_segments, requires_grad=True)
+        self.joint_angles = torch.zeros(num_segments, requires_grad=True)
+        with torch.no_grad():
+            self.joint_angles += 0.001
+            
         self.joint_lengths =  torch.ones(num_segments, requires_grad=False)/num_segments
         self.xs = torch.zeros(num_segments+1, requires_grad=False)
         self.ys = torch.zeros(num_segments+1, requires_grad=False)
@@ -45,7 +43,8 @@ class PlanarArm:
         self.ax.set_xlim([-2, 2])
         self.ax.set_ylim([-2, 2])
         self.line1, = self.ax.plot(xp, yp, 'r-') # Returns a tuple of line objects, thus the comma
-        self.line2, = self.ax.plot(self.x_targ,self.y_targ, 'o') # Returns a tuple of line objects, thus the comma
+        self.line2, = self.ax.plot(self.x_targ.detach().cpu().numpy(),self.y_targ.detach().cpu().numpy(), 'o') # Returns a tuple of line objects, thus the comma
+        self.line3, = self.ax.plot([0,0],[0,0], 'm-') # Returns a tuple of line objects, thus the comma
         
     def forward_kinematics(self):
         self.xs = torch.zeros(self.num_segments+1, requires_grad=False)
@@ -90,13 +89,17 @@ class PlanarArm:
             self.joint_angles -= dtheta.view(-1)
         
     def plot(self):
-        self.forward_kinematics()
+        # self.forward_kinematics()
         xp = torch.cat((torch.tensor([0.0]), self.xs)).detach().cpu().numpy()
         yp = torch.cat((torch.tensor([0.0]), self.ys)).detach().cpu().numpy()
         self.line1.set_xdata(xp)
         self.line1.set_ydata(yp)
-        self.line2.set_xdata(self.x_targ)
-        self.line2.set_ydata(self.y_targ)
+        self.line2.set_xdata(self.x_targ.detach().cpu().numpy())
+        self.line2.set_ydata(self.y_targ.detach().cpu().numpy())
+        
+        self.line3.set_xdata([xp[-1], xp[-1] + 0.1*self.EndEffector_F[0].detach().cpu().numpy()[0]])
+        self.line3.set_ydata([yp[-1], yp[-1] + 0.1*self.EndEffector_F[1].detach().cpu().numpy()[0]])
+        
         self.fig.canvas.draw()
         self.fig.canvas.flush_events()
         plt.connect('motion_notify_event', self.mouse_move)
@@ -134,23 +137,36 @@ class PlanarArm:
             self.y_targ = torch.tensor(y, dtype=torch.float, requires_grad=False)
             
     def endeffector_forces(self):
-        T1= torch.tensor([], requires_grad=False)
-        self.J
+        joint_torques = torch.zeros(self.num_segments, requires_grad=False).view(-1,1)
+        joint_torques[0] = 1.0
+        joint_torques[1] = 0.0
+        
+        self.J_inv = torch.linalg.pinv(self.J.T + torch.eye(self.J.shape[0])*0.1)
+        # self.EndEffector_F = torch.matmul(self.J_inv, joint_torques)
+        self.EndEffector_F = torch.matmul(self.J, joint_torques)
+        
+        # print('End Effector Force : ')
+        # print(self.EndEffector_F)
+        print('---')
+        print(self.J)
+        print(self.J_inv)
         
         
+#%%
 env = PlanarArm(2)
 
 #%%
 
-for i in range(1000):
+for i in range(10000):
     ang = torch.tensor(i*torch.pi/180)
     # env.control(-2.0, -1.5)
     start = time.perf_counter()
     env.control()
+    env.endeffector_forces()
     end = time.perf_counter()
     dt = end-start
     # print(f"Control Time : {dt}")
-    print(f"end effector pos : ({env.xs[-1]},{env.ys[-1]})")
+    # print(f"end effector pos : ({env.xs[-1]},{env.ys[-1]})")
     env.plot()
     
 
