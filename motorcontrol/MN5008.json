@@ -1,0 +1,22 @@
+{
+    "BEmfConstant": 5.096241474151611,
+    "compatibility": [
+        "FOC",
+        "sixStep"
+    ],
+    "description": "In Pully Configuration",
+    "friction": 2.44,
+    "hardwareFamily": "MOTOR",
+    "id": "MN5008",
+    "inertia": 1.56,
+    "label": "MN5008",
+    "ls": 0.06,
+    "magneticStructure": {
+        "type": "SM-PMSM"
+    },
+    "maxRatedSpeed": 2472,
+    "nominalCurrent": 5,
+    "nominalDCVoltage": 19.856689453125,
+    "polePairs": 14,
+    "rs": 0.15089678764343262
+}

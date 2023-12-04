@@ -475,6 +475,18 @@
     [
       "1fa4c72f-b85f-4d78-9713-26aa572ca2e5",
       ""
+    ],
+    [
+      "a6e3eacb-7b2e-4ad7-94d2-e19606b91cfd",
+      "Microcontroller"
+    ],
+    [
+      "bb03fcb5-c814-4162-9fb3-5a1cbb252e46",
+      "Encoder"
+    ],
+    [
+      "c363089b-1b0b-4509-af19-a6f84e71682e",
+      "MotorController"
     ]
   ],
   "text_variables": {}

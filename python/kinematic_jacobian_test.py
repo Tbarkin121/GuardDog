@@ -22,7 +22,7 @@ class PlanarArm:
         self.joint_angles = torch.zeros(num_segments, requires_grad=True)
         with torch.no_grad():
             self.joint_angles[0] = torch.pi/4
-            self.joint_angles[1] = torch.pi/4
+            self.joint_angles[1] = torch.pi/2
         
         self.joint_lengths =  torch.ones(num_segments, requires_grad=False)*0.33
         self.xs = torch.zeros(num_segments+1, requires_grad=False)
@@ -97,7 +97,8 @@ class PlanarArm:
         
     def update_angles(self, dtheta):
         with torch.no_grad():
-            self.joint_angles -= dtheta.view(-1)
+            # self.joint_angles -= dtheta.view(-1)
+            self.joint_angles[1] -= dtheta[1][0]
         
     def plot(self):
         # self.forward_kinematics()
@@ -155,11 +156,11 @@ class PlanarArm:
             
             # Matches the numbers from : 
             # https://studywolf.wordpress.com/2013/09/02/robot-control-jacobians-velocity-and-force/
-            # end_effector_force = torch.tensor([[1.0],[1.0]])
-            # joint_torques = torch.matmul(self.J.T, end_effector_force)
-            # recalc_force = torch.matmul(self.J_inv, joint_torques)
-            # print(joint_torques)
-            # print(recalc_force)
+            end_effector_force = torch.tensor([[1.0],[1.0]])
+            joint_torques = torch.matmul(self.J.T, end_effector_force)
+            recalc_force = torch.matmul(self.J_inv, joint_torques)
+            print(joint_torques)
+            print(recalc_force)
             
             # demand_force = torch.tensor([[1.0],[1.0]])
             # demand_torques = torch.matmul(self.J.T, demand_force)

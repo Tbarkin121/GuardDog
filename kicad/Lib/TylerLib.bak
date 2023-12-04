@@ -6,7 +6,7 @@
     (property "Value" "ABL-8.000MHZ-B1U-T" (at -5.0944 -5.0944 0)
       (effects (font (size 1.27 1.27)) (justify left bottom))
     )
-    (property "Footprint" "TylerLib:XTAL_ABL-8.000MHZ-B1U-T" (at 0 0 0)
+    (property "Footprint" "ABL-8.000MHZ-B1U-T:XTAL_ABL-8.000MHZ-B1U-T" (at 0 0 0)
       (effects (font (size 1.27 1.27)) (justify bottom) hide)
     )
     (property "Datasheet" "" (at 0 0 0)
