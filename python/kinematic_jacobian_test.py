@@ -22,9 +22,12 @@ class PlanarArm:
         self.joint_angles = torch.zeros(num_segments, requires_grad=True)
         with torch.no_grad():
             self.joint_angles[0] = torch.pi/4
-            self.joint_angles[1] = torch.pi/2
+            self.joint_angles[1] = torch.pi/4
         
-        self.joint_lengths =  torch.ones(num_segments, requires_grad=False)*0.33
+        self.joint_lengths =  torch.ones(num_segments, requires_grad=False)*1.0
+        with torch.no_grad():
+            self.joint_lengths[1] = self.joint_lengths[1]/2
+            
         self.xs = torch.zeros(num_segments+1, requires_grad=False)
         self.ys = torch.zeros(num_segments+1, requires_grad=False)
         self.x_targ=torch.tensor(-0.33, requires_grad=False)
@@ -130,7 +133,7 @@ class PlanarArm:
         # self.delta_theta = torch.matmul(self.J_inv, torch.tensor([self.dx, self.dy]))
         # self.update_angles(self.delta_theta)
         
-        JJT = torch.matmul(self.J + torch.eye(self.J.shape[0])*0.001, self.J.permute([1,0]) + torch.eye(self.J.shape[0])*0.001)
+        JJT = torch.matmul(self.J + torch.eye(self.J.shape[0])*0.00001, self.J.permute([1,0]) + torch.eye(self.J.shape[0])*0.00001)
         Im = torch.eye(m)
         R = torch.stack((env.dx, env.dy)).view(-1,1)
         M1 = torch.linalg.solve(JJT, self.J)
@@ -162,9 +165,9 @@ class PlanarArm:
             print(joint_torques)
             print(recalc_force)
             
-            # demand_force = torch.tensor([[1.0],[1.0]])
-            # demand_torques = torch.matmul(self.J.T, demand_force)
-            demand_torques = torch.tensor([[3.0],[0.0]])
+            demand_force = torch.tensor([[1.0],[0.0]])
+            demand_torques = torch.matmul(self.J.T, demand_force)
+            # demand_torques = torch.tensor([[3.0],[0.0]])
             calc_forces = torch.matmul(self.J_inv, demand_torques)
             
             # print(self.J)
