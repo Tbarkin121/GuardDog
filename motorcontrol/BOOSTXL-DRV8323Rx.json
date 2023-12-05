@@ -1,0 +1,376 @@
+{
+  "name": "BOOSTXL-DRV8323Rx",
+  "type": "power",
+  "descVersion": 4,
+  "contentVersion": "1.0",
+  "PN": "BOOSTXL-DRV8323Rx",
+  "link": "https://www.ti.com/tool/BOOSTXL-DRV8323RH#tech-docs",
+  "longDescription": "DRV8323RH Three-Phase Smart Gate Driver With Buck, Shunt Amps (Hardware Interface) Evaluation Module",
+  "shortDescription": "PMSM & BLDC power board based on DRV8323",
+  "motorDrives": [
+    {
+      "name": "M1",
+      "minRatedVoltage": 6,
+      "maxRatedVoltage": 60,
+      "maxRatedCurrent": 15,
+      "connectorType": "morpho",
+      "resistorOffset": 0.02,
+      "features": [
+        {
+          "name": "CurrentSensing",
+          "type": "CurrentSensing",
+          "tRise": 1000,
+          "hwVariants": [
+            {
+              "type": "ThreeShunt_AmplifiedCurrents",
+              "help": "Soldering the pins SENS2 to Vshunt_2 of connector J5 and the pins SENS3 to Vshunt_3 of the connector J6",
+              "signals": {
+                "CURRENT_AMPL_U": [
+                  {
+                    "name": "ML28",
+                    "help": "",
+                    "cost": 10
+                  }
+                ],
+                "CURRENT_AMPL_V": [
+                  {
+                    "name": "ML36",
+                    "help": "",
+                    "cost": 10
+                  }
+                ],
+                "CURRENT_AMPL_W": [
+                  {
+                    "name": "ML38",
+                    "help": "",
+                    "cost": 10
+                  }
+                ]
+              },
+              "shuntResistor": 0.007,
+              "amplifyingNetworkImax": 11.78,
+              "amplifyingNetworkVm": 3.3,
+              "amplifyingNetworkPrating": 1.5, 
+              "offsetNetworkAttenuation": 1.0,
+              "opAmpGain": 20,
+              "polarizationOffset": 1.65
+            },
+            {
+              "type": "SingleShunt_AmplifiedCurrents",
+              "help": "",
+              "signals": {
+                "CURRENT_AMPL": [
+                  {
+                    "name": "ML36",
+                    "help": "CN7t.36. Factory default. Solder R48.",
+                    "cost": 10
+                  }
+                ]
+              },
+              "shuntResistor": 0.007,
+              "amplifyingNetworkImax": 11.78,
+              "amplifyingNetworkVm": 3.3,
+              "amplifyingNetworkPrating": 1.5, 
+              "offsetNetworkAttenuation": 1.0,
+              "opAmpGain": 20,
+              "polarizationOffset": 1.65
+            },
+            {
+              "type": "SingleShunt_AmplifiedCurrents_noOffset",
+              "help": "",
+              "signals": {
+                "CURRENT_AMPL": [
+                  {
+                    "name": "ML36",
+                    "help": "CN7t.36. Factory default. Solder R48.",
+                    "cost": 0
+                  }
+                ]
+              },
+              "shuntResistor": 0.007,
+              "amplifyingNetworkImax": 11.78,
+              "amplifyingNetworkVm": 3.3,
+              "amplifyingNetworkPrating": 1.0,
+              "opAmpGain": 20.0
+            }
+          ]
+        },
+        {
+          "name": "PhaseVoltageGeneration",
+          "type": "PhaseVoltageGeneration",
+          "driverName": "DRV8323 driver",
+          "driverPN": "DRV8323",
+          "minDeadTime": 700,
+          "maxSwitchingFreq": 100,
+          "tNoise": 1000,
+          "hwVariants": [
+            {
+              "type": "DrivingHighAndLowSides",
+              "help": "How to enable this variant",
+              "signals": {
+                "PWM_CHU_H": [
+                  {
+                    "name": "MR23",
+                    "help": "CN10.23. Factory default. Solder R56.",
+                    "cost": 0
+                  },
+                  {
+                    "name": "MR23",
+                    "help": "CN10.23. Factory default. Solder R56.",
+                    "cost": 0
+                  }
+                ],
+                "PWM_CHV_H": [
+                  {
+                    "name": "MR21",
+                    "help": "CN10.21. Factory default. Solder R64.",
+                    "cost": 0
+                  },
+                  {
+                    "name": "MR21",
+                    "help": "CN10.21. Factory default. Solder R64.",
+                    "cost": 0
+                  }
+                ],
+                "PWM_CHW_H": [
+                  {
+                    "name": "MR33",
+                    "help": "CN10.33. Factory default. Solder R70.",
+                    "cost": 0
+                  },
+                  {
+                    "name": "MR33",
+                    "help": "CN10.33. Factory default. Solder R70.",
+                    "cost": 0
+                  }
+                ],
+                "PWM_CHU_L": [
+                  {
+                    "name": "MR15",
+                    "help": "CN10.15. Factory Default. Solder R58",
+                    "cost": 0
+                  },
+                  {
+                    "name": "MR30",
+                    "help": "For F466 Build",
+                    "cost": 0
+                  }
+                ],
+                "PWM_CHV_L": [
+                  {
+                    "name": "ML34",
+                    "help": "CN7t.34. Factory default. Solder R67.",
+                    "cost": 0
+                  },
+                  {
+                    "name": "MR28",
+                    "help": "For F466 Build",
+                    "cost": 0
+                  }
+                ],
+                "PWM_CHW_L": [
+                  {
+                    "name": "MR24",
+                    "help": "CN10.24. Factory default. Solder R72.",
+                    "cost": 0
+                  },
+                  {
+                    "name": "MR26",
+                    "help": "For F466 Build",
+                    "cost": 0
+                  }
+                ]
+              },
+              "highSideSwitchesDrivingPolarity": "Active high",
+              "lowSideSwitchesDrivingPolarity": "Active high",
+              "deadTime": 1000
+            }
+          ]
+        },
+        {
+          "name": "SpeedAndPositionSensing",
+          "type": "SpeedAndPositionSensing",
+          "hwVariants": [
+            {
+              "type": "HallEffectSensor",
+              "help": "How to enable this variant",
+              "signals": {
+                "HALLSENSOR_H1": [
+                  {
+                    "name": "ML17",
+                    "help": "CN7t.17. Factory default. Solder R79",
+                    "cost": 0
+                  }
+                ],
+                "HALLSENSOR_H2": [
+                  {
+                    "name": "MR31",
+                    "help": "CN10.31. Factory default. Solder R81",
+                    "cost": 0
+                  }
+                ],
+                "HALLSENSOR_H3": [
+                  {
+                    "name": "MR25",
+                    "help": "CN10.25. Factory default. Solder R84",
+                    "cost": 0
+                  }
+                ]
+              }
+            },
+            {
+              "type": "QuadratureEncoderRelative",
+              "help": "How to enable this variant",
+              "signals": {
+                "QENC_A": [
+                  {
+                    "name": "ML17",
+                    "help": "CN7t.17. Factory default. Solder R79.",
+                    "cost": 0
+                  },
+                  {
+                    "name": "MR12",
+                    "help": "CN7t.17. Factory default. Solder R79.",
+                    "cost": 0
+                  },
+                  {
+                    "name": "MR3",
+                    "help": "F446 B9",
+                    "cost": 0
+                  }
+                ],
+                "QENC_B": [
+                  {
+                    "name": "MR31",
+                    "help": "CN10.31. Factory default. Solder R81",
+                    "cost": 0
+                  },
+                  {
+                    "name": "MR14",
+                    "help": "CN7t.17. Factory default. Solder R79.",
+                    "cost": 0
+                  },
+                  {
+                    "name": "MR5",
+                    "help": "F446 B8",
+                    "cost": 0
+                  }
+                ]
+              }
+            },
+            {
+              "type": "QuadratureEncoderAbsolute",
+              "help": "How to enable this variant",
+              "signals": {
+                "QENC_A": [
+                  {
+                    "name": "ML17",
+                    "help": "CN7t.17. Factory default. Solder R79.",
+                    "cost": 0
+                  },
+                  {
+                    "name": "MR12",
+                    "help": "CN7t.17. Factory default. Solder R79.",
+                    "cost": 0
+                  },
+                  {
+                    "name": "MR3",
+                    "help": "F446 B9",
+                    "cost": 0
+                  }
+                ],
+                "QENC_B": [
+                  {
+                    "name": "MR31",
+                    "help": "CN10.31. Factory default. Solder R81",
+                    "cost": 0
+                  },
+                  {
+                    "name": "MR14",
+                    "help": "CN7t.17. Factory default. Solder R79.",
+                    "cost": 0
+                  },
+                  {
+                    "name": "MR5",
+                    "help": "F446 B8",
+                    "cost": 0
+                  }
+                ],
+                "QENC_Z": [
+                  {
+                    "name": "MR25",
+                    "help": "CN10.25. Factory default. Solder R84",
+                    "cost": 0
+                  },
+                  {
+                    "name": "MR16",
+                    "help": "CN10.25. Factory default. Solder R84",
+                    "cost": 0
+                  },
+                  {
+                    "name": "ML21",
+                    "help": "F446 B7",
+                    "cost": 0
+                  }
+                ]
+              }
+            },
+            {
+              "type": "BEMFSensingADCFixedDivider",
+              "help": "How to enable this variant",
+              "signals": {
+                "BEMF_U": [
+                  {
+                    "name": "ML37",
+                    "help": "CN7t.37. Factory default. Solder R59",
+                    "cost": 0
+                  }
+                ],
+                "BEMF_V": [
+                  {
+                    "name": "MR34",
+                    "help": "CN10.34. Factory default. Solder R61",
+                    "cost": 0
+                  }
+                ],
+                "BEMF_W": [
+                  {
+                    "name": "MR6",
+                    "help": "CN10.6. Factory default. Solder R65",
+                    "cost": 0
+                  }
+                ]
+              },
+              "dividingNetworkR1": 82000,
+              "dividingNetworkR2": 4990
+            }
+          ]
+        },
+        {
+          "name": "VBusSensing",
+          "type": "VBusSensing",
+          "busVoltageDivider": 19.17,
+          "hwVariants": [
+            {
+              "type": "VBusSensing",
+              "help": "How to enable this variant",
+              "signals": {
+                "VBUS": [
+                  {
+                    "name": "ML30",
+                    "help": "CN7t.30. Factory default. Solder R51",
+                    "cost": 0
+                  }
+                ]
+              },
+              "busVoltageDivider": 19.17,
+              "busVoltageDividerR1": 82000,
+              "busVoltageDividerR2": 4990,
+              "busVoltageDividerR3": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
