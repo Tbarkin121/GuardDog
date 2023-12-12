@@ -1,1 +1,2 @@
-Record=TopLevelDocument|FileName=MDBU017A.SchDoc
+Record=TopLevelDocument|FileName=MDBU017A.SchDoc|SheetNumber=1
+Record=NoMainPathDocument|SourceDocument=MDBU017A.SchDoc|FileName=MDBU017A_Hardware.SchDoc|SheetNumber=2
