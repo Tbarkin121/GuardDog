@@ -3,22 +3,22 @@
      Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot
-  name="TorquePole">
+  name="TorquePoleLong">
   <link
     name="base_link">
     <inertial>
       <origin
-        xyz="-0.014583 0.00028957 -0.19308"
+        xyz="-0.014371 0.00028403 -0.46179"
         rpy="0 0 0" />
       <mass
-        value="0.36224" />
+        value="0.36931" />
       <inertia
-        ixx="0.00046889"
+        ixx="0.00069867"
         ixy="1.9195E-10"
         ixz="1.1612E-06"
-        iyy="0.0002774"
+        iyy="0.00050718"
         iyz="1.3223E-09"
-        izz="0.00038212" />
+        izz="0.00038222" />
     </inertial>
     <visual>
       <origin
@@ -26,7 +26,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://TorquePole/meshes/base_link.STL" />
+          filename="package://TorquePoleLong/meshes/base_link.STL" />
       </geometry>
       <material
         name="">
@@ -40,7 +40,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://TorquePole/meshes/base_link.STL" />
+          filename="package://TorquePoleLong/meshes/base_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -48,17 +48,17 @@
     name="pendulum">
     <inertial>
       <origin
-        xyz="-0.0039392 -0.073535 -2.3638E-05"
+        xyz="-0.0039932 -0.18792 -2.1363E-05"
         rpy="0 0 0" />
       <mass
-        value="0.066367" />
+        value="0.073435" />
       <inertia
-        ixx="2.6897E-05"
+        ixx="0.00025668"
         ixy="-8.6352E-09"
         ixz="-1.1815E-08"
-        iyy="1.5509E-05"
+        iyy="1.5609E-05"
         iyz="6.4928E-11"
-        izz="3.2672E-05" />
+        izz="0.00026245" />
     </inertial>
     <visual>
       <origin
@@ -66,7 +66,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://TorquePole/meshes/pendulum.STL" />
+          filename="package://TorquePoleLong/meshes/pendulum.STL" />
       </geometry>
       <material
         name="">
@@ -80,7 +80,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://TorquePole/meshes/pendulum.STL" />
+          filename="package://TorquePoleLong/meshes/pendulum.STL" />
       </geometry>
     </collision>
   </link>
@@ -97,9 +97,9 @@
     <axis
       xyz="-1 0 0" />
     <limit
-      lower="6.28"
-      upper="-1.57"
+      lower="-1.35"
+      upper="4.5"
       effort="3"
-      velocity="300" />
+      velocity="60" />
   </joint>
 </robot>
