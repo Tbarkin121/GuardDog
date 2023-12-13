@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>C:\Users\Plutonium\MyProjects\GuardDog\kicad\MotorDriver\MotorDriver.kicad_sch</source>
-    <date>12/12/2023 3:13:32 AM</date>
+    <date>12/12/2023 4:55:50 PM</date>
     <tool>Eeschema 7.0.9</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -81,6 +81,7 @@
     <comp ref="C1">
       <value>18pF</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/yageo/CC0603FRNPO9BN180/5883494</datasheet>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="Sheetname" value="Microcontroller"/>
       <property name="Sheetfile" value="stm32f446.kicad_sch"/>
@@ -92,6 +93,7 @@
     <comp ref="C2">
       <value>18pF</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/yageo/CC0603FRNPO9BN180/5883494</datasheet>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="Sheetname" value="Microcontroller"/>
       <property name="Sheetfile" value="stm32f446.kicad_sch"/>
@@ -101,8 +103,9 @@
       <tstamps>103f6f70-6f3c-40f6-abfe-84166fcc4486</tstamps>
     </comp>
     <comp ref="C3">
-      <value>100nF</value>
+      <value>0.1uF</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL10B104KB8NNWC/3887593</datasheet>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="Sheetname" value="Microcontroller"/>
       <property name="Sheetfile" value="stm32f446.kicad_sch"/>
@@ -112,103 +115,76 @@
       <tstamps>0a0db3c1-78d2-4f83-90ed-f6259e281e1e</tstamps>
     </comp>
     <comp ref="C4">
-      <value>100nF</value>
+      <value>0.1uF</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL10B104KB8NNWC/3887593</datasheet>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="Sheetname" value="Microcontroller"/>
       <property name="Sheetfile" value="stm32f446.kicad_sch"/>
       <property name="ki_description" value="Unpolarized capacitor"/>
       <property name="ki_keywords" value="cap capacitor"/>
       <sheetpath names="/Microcontroller/" tstamps="/a6e3eacb-7b2e-4ad7-94d2-e19606b91cfd/"/>
-      <tstamps>8d800df0-6b2d-4688-ad0a-c29bf8ef8471</tstamps>
+      <tstamps>66090ad2-da4b-4dd6-beaf-413dc6af2698</tstamps>
     </comp>
     <comp ref="C5">
-      <value>100nF</value>
+      <value>0.1uF</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL10B104KB8NNWC/3887593</datasheet>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="Sheetname" value="Microcontroller"/>
       <property name="Sheetfile" value="stm32f446.kicad_sch"/>
       <property name="ki_description" value="Unpolarized capacitor"/>
       <property name="ki_keywords" value="cap capacitor"/>
       <sheetpath names="/Microcontroller/" tstamps="/a6e3eacb-7b2e-4ad7-94d2-e19606b91cfd/"/>
-      <tstamps>88ffdae9-8891-4dc7-b7bf-7c858a8d98fb</tstamps>
+      <tstamps>be65c927-fe1c-43a8-8a8e-25699cf29914</tstamps>
     </comp>
     <comp ref="C6">
-      <value>100nF</value>
+      <value>0.1uF</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL10B104KB8NNWC/3887593</datasheet>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="Sheetname" value="Microcontroller"/>
       <property name="Sheetfile" value="stm32f446.kicad_sch"/>
       <property name="ki_description" value="Unpolarized capacitor"/>
       <property name="ki_keywords" value="cap capacitor"/>
       <sheetpath names="/Microcontroller/" tstamps="/a6e3eacb-7b2e-4ad7-94d2-e19606b91cfd/"/>
-      <tstamps>eddd6b4a-a300-4c3b-99cf-b1cf6253ae5a</tstamps>
+      <tstamps>5d372a31-e27f-463e-9f50-b2074a6a0e2e</tstamps>
     </comp>
     <comp ref="C7">
-      <value>100nF</value>
+      <value>0.1uF</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL10B104KB8NNWC/3887593</datasheet>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="Sheetname" value="Microcontroller"/>
       <property name="Sheetfile" value="stm32f446.kicad_sch"/>
       <property name="ki_description" value="Unpolarized capacitor"/>
       <property name="ki_keywords" value="cap capacitor"/>
       <sheetpath names="/Microcontroller/" tstamps="/a6e3eacb-7b2e-4ad7-94d2-e19606b91cfd/"/>
-      <tstamps>f28300a1-b67e-44cd-b48c-9b1a1495c189</tstamps>
+      <tstamps>eae26346-655a-41a3-91fb-25359886f2e4</tstamps>
     </comp>
     <comp ref="C8">
-      <value>100nF</value>
+      <value>0.1uF</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL10B104KB8NNWC/3887593</datasheet>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="Sheetname" value="Microcontroller"/>
       <property name="Sheetfile" value="stm32f446.kicad_sch"/>
       <property name="ki_description" value="Unpolarized capacitor"/>
       <property name="ki_keywords" value="cap capacitor"/>
       <sheetpath names="/Microcontroller/" tstamps="/a6e3eacb-7b2e-4ad7-94d2-e19606b91cfd/"/>
-      <tstamps>77d1a112-41fc-4af6-bbdd-9d7cf099eba1</tstamps>
+      <tstamps>28777b13-6ca5-4533-8339-1ad25d66eaf4</tstamps>
     </comp>
-    <comp ref="C9">
+    <comp ref="C11">
       <value>4.7uF</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <footprint>Capacitor_SMD:C_1210_3225Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/venkel/AGC1210X7R101-475KNE/20484997</datasheet>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="Sheetname" value="Microcontroller"/>
       <property name="Sheetfile" value="stm32f446.kicad_sch"/>
       <property name="ki_description" value="Unpolarized capacitor"/>
       <property name="ki_keywords" value="cap capacitor"/>
       <sheetpath names="/Microcontroller/" tstamps="/a6e3eacb-7b2e-4ad7-94d2-e19606b91cfd/"/>
-      <tstamps>56bc29c6-6afa-4d23-a7e7-9448f713f27e</tstamps>
-    </comp>
-    <comp ref="D1">
-      <value>LED</value>
-      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
-      <libsource lib="Device" part="LED" description="Light emitting diode"/>
-      <property name="Sheetname" value="Microcontroller"/>
-      <property name="Sheetfile" value="stm32f446.kicad_sch"/>
-      <property name="ki_description" value="Light emitting diode"/>
-      <property name="ki_keywords" value="LED diode"/>
-      <sheetpath names="/Microcontroller/" tstamps="/a6e3eacb-7b2e-4ad7-94d2-e19606b91cfd/"/>
-      <tstamps>f84dfbda-3605-4aee-9fbd-dbd52067ec5a</tstamps>
-    </comp>
-    <comp ref="D2">
-      <value>LED</value>
-      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
-      <libsource lib="Device" part="LED" description="Light emitting diode"/>
-      <property name="Sheetname" value="Microcontroller"/>
-      <property name="Sheetfile" value="stm32f446.kicad_sch"/>
-      <property name="ki_description" value="Light emitting diode"/>
-      <property name="ki_keywords" value="LED diode"/>
-      <sheetpath names="/Microcontroller/" tstamps="/a6e3eacb-7b2e-4ad7-94d2-e19606b91cfd/"/>
-      <tstamps>c178c7dc-00c8-431e-b8a5-f5873ceb0021</tstamps>
-    </comp>
-    <comp ref="D3">
-      <value>LED</value>
-      <footprint>LED_SMD:LED_0603_1608Metric</footprint>
-      <libsource lib="Device" part="LED" description="Light emitting diode"/>
-      <property name="Sheetname" value="Microcontroller"/>
-      <property name="Sheetfile" value="stm32f446.kicad_sch"/>
-      <property name="ki_description" value="Light emitting diode"/>
-      <property name="ki_keywords" value="LED diode"/>
-      <sheetpath names="/Microcontroller/" tstamps="/a6e3eacb-7b2e-4ad7-94d2-e19606b91cfd/"/>
-      <tstamps>4d935ed0-1d94-4942-8902-183db6a27104</tstamps>
+      <tstamps>affef8b6-6ba9-41f3-aa70-9bedfa63cf5f</tstamps>
     </comp>
     <comp ref="J1">
       <value>Conn_01x03_Pin</value>
@@ -246,7 +222,7 @@
     <comp ref="L1">
       <value>MMZ1608B601CTAH0</value>
       <footprint>TylerLib:IND_1608_TDK</footprint>
-      <datasheet>MMZ1608B601CTAH0</datasheet>
+      <datasheet>https://www.digikey.com/en/products/detail/tdk-corporation/MMZ1608B601CTAH0/600533?s=N4IgTCBcDaILJwFoEYBsAGAHAIQ8gwgCoCCAEuiALoC%2BQA</datasheet>
       <libsource lib="TylerLib" part="MMZ1608B601CTAH0" description=""/>
       <property name="Sheetname" value="Microcontroller"/>
       <property name="Sheetfile" value="stm32f446.kicad_sch"/>
@@ -255,8 +231,9 @@
       <tstamps>222ce221-e528-4a2a-af7a-cbf9ce0939b1</tstamps>
     </comp>
     <comp ref="R1">
-      <value>1k</value>
+      <value>330</value>
       <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-3GEYJ331V/135755</datasheet>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="Microcontroller"/>
       <property name="Sheetfile" value="stm32f446.kicad_sch"/>
@@ -268,6 +245,7 @@
     <comp ref="R2">
       <value>1k</value>
       <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-3GEYJ331V/135755</datasheet>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="Microcontroller"/>
       <property name="Sheetfile" value="stm32f446.kicad_sch"/>
@@ -279,6 +257,7 @@
     <comp ref="R3">
       <value>1k</value>
       <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-3GEYJ331V/135755</datasheet>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="Microcontroller"/>
       <property name="Sheetfile" value="stm32f446.kicad_sch"/>
@@ -287,31 +266,10 @@
       <sheetpath names="/Microcontroller/" tstamps="/a6e3eacb-7b2e-4ad7-94d2-e19606b91cfd/"/>
       <tstamps>c2a0caa3-aa64-49a9-a729-cac13c1ac227</tstamps>
     </comp>
-    <comp ref="R4">
-      <value>80</value>
-      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <property name="Sheetname" value="Microcontroller"/>
-      <property name="Sheetfile" value="stm32f446.kicad_sch"/>
-      <property name="ki_description" value="Resistor"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <sheetpath names="/Microcontroller/" tstamps="/a6e3eacb-7b2e-4ad7-94d2-e19606b91cfd/"/>
-      <tstamps>8c6742f2-8dde-49b2-8f75-33e7fa0f35a7</tstamps>
-    </comp>
-    <comp ref="R5">
-      <value>80</value>
-      <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
-      <libsource lib="Device" part="R" description="Resistor"/>
-      <property name="Sheetname" value="Microcontroller"/>
-      <property name="Sheetfile" value="stm32f446.kicad_sch"/>
-      <property name="ki_description" value="Resistor"/>
-      <property name="ki_keywords" value="R res resistor"/>
-      <sheetpath names="/Microcontroller/" tstamps="/a6e3eacb-7b2e-4ad7-94d2-e19606b91cfd/"/>
-      <tstamps>b04a4135-5dd3-43dc-bacc-b8adbd22571d</tstamps>
-    </comp>
     <comp ref="R6">
       <value>10k</value>
       <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-3EKF1002V/196066</datasheet>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="Microcontroller"/>
       <property name="Sheetfile" value="stm32f446.kicad_sch"/>
@@ -323,7 +281,7 @@
     <comp ref="U1">
       <value>STM32F446RETx</value>
       <footprint>Package_QFP:LQFP-64_10x10mm_P0.5mm</footprint>
-      <datasheet>https://www.st.com/resource/en/datasheet/stm32f446re.pdf</datasheet>
+      <datasheet>https://www.digikey.com/en/products/detail/stmicroelectronics/STM32F446RET6/5175962</datasheet>
       <libsource lib="MCU_ST_STM32F4" part="STM32F446RETx" description="STMicroelectronics Arm Cortex-M4 MCU, 512KB flash, 128KB RAM, 180 MHz, 1.8-3.6V, 50 GPIO, LQFP64"/>
       <property name="Sheetname" value="Microcontroller"/>
       <property name="Sheetfile" value="stm32f446.kicad_sch"/>
@@ -335,6 +293,7 @@
     <comp ref="U2">
       <value>ATA6560-GAQW</value>
       <footprint>TylerLib:SOIC127P600X175-8N</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/microchip-technology/ATA6560-GAQW-N/9453104</datasheet>
       <fields>
         <field name="Availability">In Stock</field>
         <field name="Check_prices">https://www.snapeda.com/parts/ATA6560-GAQW/Microchip/view-part/?ref=eda</field>
@@ -371,9 +330,21 @@
       <sheetpath names="/Microcontroller/" tstamps="/a6e3eacb-7b2e-4ad7-94d2-e19606b91cfd/"/>
       <tstamps>9f1ab0c1-6a59-4102-bb14-de9983d7d419</tstamps>
     </comp>
+    <comp ref="U9">
+      <value>150066M153000</value>
+      <footprint>TylerLib:CHIP_M153000_WRE</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/w%C3%BCrth-elektronik/150066M153000/7315709</datasheet>
+      <libsource lib="TylerLib" part="150066M153000" description=""/>
+      <property name="Sheetname" value="Microcontroller"/>
+      <property name="Sheetfile" value="stm32f446.kicad_sch"/>
+      <property name="ki_keywords" value="150066M153000"/>
+      <sheetpath names="/Microcontroller/" tstamps="/a6e3eacb-7b2e-4ad7-94d2-e19606b91cfd/"/>
+      <tstamps>cbcf36df-985b-456e-8a32-520b8f9a386b</tstamps>
+    </comp>
     <comp ref="Y2">
       <value>ABL-8.000MHZ-B1U-T</value>
       <footprint>TylerLib:XTAL_ABL-8.000MHZ-B1U-T</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/abracon-llc/ABL-8-000MHZ-B1U-T/4866038</datasheet>
       <fields>
         <field name="Check_prices">https://www.snapeda.com/parts/ABL-8.000MHZ-B1U-T/Abracon/view-part/?ref=eda</field>
         <field name="Description">
@@ -406,9 +377,22 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
       <sheetpath names="/Microcontroller/" tstamps="/a6e3eacb-7b2e-4ad7-94d2-e19606b91cfd/"/>
       <tstamps>dbf91b25-a1a2-46da-9dfb-5f77e3e5e59f</tstamps>
     </comp>
+    <comp ref="C10">
+      <value>.1uF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL10B104KB8NNWC/3887593</datasheet>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <property name="Sheetname" value="Encoder"/>
+      <property name="Sheetfile" value="AS5147U.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor"/>
+      <property name="ki_keywords" value="cap capacitor"/>
+      <sheetpath names="/Encoder/" tstamps="/bb03fcb5-c814-4162-9fb3-5a1cbb252e46/"/>
+      <tstamps>77b06d28-d690-4e5f-a8cd-9c847631cbad</tstamps>
+    </comp>
     <comp ref="U3">
       <value>AS5147U</value>
       <footprint>Package_SO:TSSOP-14_4.4x5mm_P0.65mm</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/ams-osram-usa-inc/AS5147U-HTSM/10324300</datasheet>
       <libsource lib="TylerLib" part="AS5147U-HTSM" description=""/>
       <property name="Sheetname" value="Encoder"/>
       <property name="Sheetfile" value="AS5147U.kicad_sch"/>
@@ -418,17 +402,19 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
     <comp ref="C12">
       <value>0.1uF</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL10B104KB8NNWC/3887593</datasheet>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
       <property name="ki_description" value="Unpolarized capacitor"/>
       <property name="ki_keywords" value="cap capacitor"/>
       <sheetpath names="/MotorController/" tstamps="/c363089b-1b0b-4509-af19-a6f84e71682e/"/>
-      <tstamps>32f06ae7-47b2-425b-ada3-af1eca44f7cc</tstamps>
+      <tstamps>68cabf3e-e76e-4f8c-9d67-a18782ccd8fa</tstamps>
     </comp>
     <comp ref="C13">
       <value>4.7uF</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <footprint>Capacitor_SMD:C_1210_3225Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/venkel/AGC1210X7R101-475KNE/20484997</datasheet>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -439,7 +425,8 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
     </comp>
     <comp ref="C14">
       <value>2.2uF</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <footprint>Capacitor_SMD:C_1210_3225Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/venkel/C1210X7R101-225KNE/12328343</datasheet>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -451,17 +438,19 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
     <comp ref="C15">
       <value>0.1uF</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL10B104KB8NNWC/3887593</datasheet>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
       <property name="ki_description" value="Unpolarized capacitor"/>
       <property name="ki_keywords" value="cap capacitor"/>
       <sheetpath names="/MotorController/" tstamps="/c363089b-1b0b-4509-af19-a6f84e71682e/"/>
-      <tstamps>59dba77a-f1c6-41d3-8d8b-17ce5c21f4af</tstamps>
+      <tstamps>6a693e93-6fde-4f75-a6a2-7bd3c052509c</tstamps>
     </comp>
     <comp ref="C16">
       <value>1uF</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL10A105KA8NNNC/3886760</datasheet>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -473,6 +462,7 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
     <comp ref="C17">
       <value>1uF</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL10A105KA8NNNC/3886760</datasheet>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -484,6 +474,7 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
     <comp ref="C18">
       <value>0.047uF</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL10B473KB8NNNC/3886721</datasheet>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -495,6 +486,7 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
     <comp ref="C19">
       <value>1000pF</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL10B102KB8NNNC/3886676</datasheet>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -506,6 +498,7 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
     <comp ref="C20">
       <value>1000pF</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL10B102KB8NNNC/3886676</datasheet>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -517,17 +510,19 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
     <comp ref="C21">
       <value>0.1uF</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL10B104KB8NNWC/3887593</datasheet>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
       <property name="ki_description" value="Unpolarized capacitor"/>
       <property name="ki_keywords" value="cap capacitor"/>
       <sheetpath names="/MotorController/" tstamps="/c363089b-1b0b-4509-af19-a6f84e71682e/"/>
-      <tstamps>e8e4d849-5bee-43b7-90d0-515b33772b51</tstamps>
+      <tstamps>da1ed33f-3497-421b-b854-7218dc622e07</tstamps>
     </comp>
     <comp ref="C22">
       <value>1000pF</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL10B102KB8NNNC/3886676</datasheet>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -538,7 +533,8 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
     </comp>
     <comp ref="C23">
       <value>22uF</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/tdk-corporation/C2012X7S1A226M125AC/3951796</datasheet>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -548,8 +544,9 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
       <tstamps>87318fca-e8d2-4ddb-bfaa-f6a34fa41425</tstamps>
     </comp>
     <comp ref="C24">
-      <value>0.01 uF</value>
+      <value>10000pF</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL10B103KB8NNNC/3886667</datasheet>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -561,6 +558,7 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
     <comp ref="C25">
       <value>0.1 uF</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL10B104KB8NNWC/3887593</datasheet>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -572,9 +570,9 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
       <tstamps>53a44906-52b2-4d3f-9ff4-2b1e53b68ece</tstamps>
     </comp>
     <comp ref="C26">
-      <value>EMVY350ADA221MHA0G</value>
+      <value>220uF</value>
       <footprint>TylerLib:CHEMI-HA0</footprint>
-      <datasheet>EMVY350ADA221MHA0G</datasheet>
+      <datasheet>https://www.digikey.com/en/products/detail/chemi-con/EMVY350ARA221MHA0G/757124?s=N4IgTCBcDaIKIFkBqBNAzAVgAwEEAiOYYAjAgBI5YDiIAugL5A</datasheet>
       <libsource lib="TylerLib" part="EMVY350ADA221MHA0G" description=""/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -583,9 +581,9 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
       <tstamps>0ff77ef9-cea3-4759-ac4c-b024d9692e89</tstamps>
     </comp>
     <comp ref="C27">
-      <value>EMVY350ADA221MHA0G</value>
+      <value>220uF</value>
       <footprint>TylerLib:CHEMI-HA0</footprint>
-      <datasheet>EMVY350ADA221MHA0G</datasheet>
+      <datasheet>https://www.digikey.com/en/products/detail/chemi-con/EMVY350ARA221MHA0G/757124?s=N4IgTCBcDaIKIFkBqBNAzAVgAwEEAiOYYAjAgBI5YDiIAugL5A</datasheet>
       <libsource lib="TylerLib" part="EMVY350ADA221MHA0G" description=""/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -596,6 +594,7 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
     <comp ref="C28">
       <value>2200pF</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL10B222KB8NNNC/3886768</datasheet>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -607,6 +606,7 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
     <comp ref="C29">
       <value>2200pF</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL10B222KB8NNNC/3886768</datasheet>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -629,6 +629,7 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
     <comp ref="C31">
       <value>2200pF</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL10B222KB8NNNC/3886768</datasheet>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -638,8 +639,9 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
       <tstamps>4670b93b-f013-4e92-95ab-56c1903e58cb</tstamps>
     </comp>
     <comp ref="C32">
-      <value>0.01 uF</value>
+      <value>10000 pF</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL10B103KB8NNNC/3886667</datasheet>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -651,6 +653,7 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
     <comp ref="C33">
       <value>0.1 uF</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL10B104KB8NNWC/3887593</datasheet>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -662,8 +665,9 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
       <tstamps>f1815923-0267-4c25-b89c-2b9608756cad</tstamps>
     </comp>
     <comp ref="C34">
-      <value>0.01 uF</value>
+      <value>10000pF</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL10B103KB8NNNC/3886667</datasheet>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -675,6 +679,7 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
     <comp ref="C35">
       <value>0.1 uF</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL10B104KB8NNWC/3887593</datasheet>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -686,8 +691,9 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
       <tstamps>cf21fb91-3255-4686-8502-b6ccf10a209f</tstamps>
     </comp>
     <comp ref="D4">
-      <value>LED</value>
+      <value>RedLED</value>
       <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/harvatek-corporation/B1911USD-20D000114U1930/15519991</datasheet>
       <libsource lib="Device" part="LED" description="Light emitting diode"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -697,9 +703,9 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
       <tstamps>5029eae6-6a3b-4f6f-b076-fa1598e8b1f8</tstamps>
     </comp>
     <comp ref="D5">
-      <value>MBR1H100SFT3G</value>
-      <footprint>Diode_SMD:D_MELF</footprint>
-      <datasheet>https://www.microsemi.com/document-portal/doc_download/131890-lds-0040-1-datasheet</datasheet>
+      <value>NRVB1H100SFT3G</value>
+      <footprint>TylerLib:DIODE_SOD123LF_2P9X1P8_ONS</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/onsemi/NRVB1H100SFT3G/5257325</datasheet>
       <libsource lib="Diode" part="1N6857UR" description="20V 150mA Schottky diode, MELF(DO-213AA)"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -709,8 +715,9 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
       <tstamps>bdc67303-e2d3-4000-a840-ad136519fa37</tstamps>
     </comp>
     <comp ref="D6">
-      <value>LED</value>
+      <value>BlueLED</value>
       <footprint>LED_SMD:LED_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/harvatek-corporation/B1911USD-20D000114U1930/15519991</datasheet>
       <libsource lib="Device" part="LED" description="Light emitting diode"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -743,7 +750,8 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
     </comp>
     <comp ref="L2">
       <value>15uH</value>
-      <footprint>Inductor_SMD:L_0603_1608Metric</footprint>
+      <footprint>TylerLib:IND_VLS3015CX-150M-1</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/tdk-corporation/VLS3015CX-150M-1/13663532</datasheet>
       <libsource lib="Device" part="L" description="Inductor"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -766,6 +774,7 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
     <comp ref="R10">
       <value>10k</value>
       <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-3EKF1002V/196066</datasheet>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -777,6 +786,7 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
     <comp ref="R11">
       <value>28.0k</value>
       <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-3EKF2802V/196257</datasheet>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -788,6 +798,7 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
     <comp ref="R12">
       <value>8.45k</value>
       <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-3EKF8451V/196484</datasheet>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -799,6 +810,7 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
     <comp ref="R13">
       <value>82.0k</value>
       <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-3EKF8202V/1746449</datasheet>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -812,6 +824,7 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
     <comp ref="R14">
       <value>4.99k</value>
       <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-3EKF4991V/196341</datasheet>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -825,6 +838,7 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
     <comp ref="R15">
       <value>0.007</value>
       <footprint>Resistor_SMD:R_2512_6332Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/te-connectivity-passive-product/TLRP3A30DR007FTE/14652149</datasheet>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -836,6 +850,7 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
     <comp ref="R16">
       <value>82.0k</value>
       <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-3EKF8202V/1746449</datasheet>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -847,6 +862,7 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
     <comp ref="R17">
       <value>4.99k</value>
       <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-3EKF4991V/196341</datasheet>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -858,6 +874,7 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
     <comp ref="R18">
       <value>56</value>
       <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-3EKF56R0V/1024415</datasheet>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -869,6 +886,7 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
     <comp ref="R19">
       <value>56</value>
       <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-3EKF56R0V/1024415</datasheet>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -880,6 +898,7 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
     <comp ref="R20">
       <value>56</value>
       <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-3EKF56R0V/1024415</datasheet>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -891,6 +910,7 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
     <comp ref="R21">
       <value>82.0k</value>
       <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-3EKF8202V/1746449</datasheet>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -904,6 +924,7 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
     <comp ref="R22">
       <value>4.99k</value>
       <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-3EKF4991V/196341</datasheet>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -917,6 +938,7 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
     <comp ref="R23">
       <value>0.007</value>
       <footprint>Resistor_SMD:R_2512_6332Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/te-connectivity-passive-product/TLRP3A30DR007FTE/14652149</datasheet>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -928,6 +950,7 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
     <comp ref="R24">
       <value>82.0k</value>
       <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-3EKF8202V/1746449</datasheet>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -941,6 +964,7 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
     <comp ref="R25">
       <value>4.99k</value>
       <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-3EKF4991V/196341</datasheet>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -954,6 +978,7 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
     <comp ref="R26">
       <value>0.007</value>
       <footprint>Resistor_SMD:R_2512_6332Metric</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/te-connectivity-passive-product/TLRP3A30DR007FTE/14652149</datasheet>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -1042,6 +1067,7 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
     <comp ref="U4">
       <value>DRV8323RSRGZR</value>
       <footprint>TylerLib:QFN50P700X700X100-49N</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/texas-instruments/DRV8323RSRGZR/7345129</datasheet>
       <fields>
         <field name="Availability">In Stock</field>
         <field name="Check_prices">https://www.snapeda.com/parts/DRV8323RSRGZR/Texas+Instruments/view-part/?ref=eda</field>
@@ -1081,6 +1107,7 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
     <comp ref="U5">
       <value>CSD88599Q5DC</value>
       <footprint>TylerLib:MOSFET_CSD88599Q5DC</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/texas-instruments/CSD88599Q5DC/7244175</datasheet>
       <fields>
         <field name="Availability">In Stock</field>
         <field name="Check_prices">https://www.snapeda.com/parts/CSD88599Q5DC/Texas+Instruments/view-part/?ref=eda</field>
@@ -1116,6 +1143,7 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
     <comp ref="U6">
       <value>CSD88599Q5DC</value>
       <footprint>TylerLib:MOSFET_CSD88599Q5DC</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/texas-instruments/CSD88599Q5DC/7244175</datasheet>
       <fields>
         <field name="Availability">In Stock</field>
         <field name="Check_prices">https://www.snapeda.com/parts/CSD88599Q5DC/Texas+Instruments/view-part/?ref=eda</field>
@@ -1149,8 +1177,9 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
       <tstamps>9e6897a5-f5dd-4d1b-b3a8-25048a2ce7be</tstamps>
     </comp>
     <comp ref="U7">
-      <value>~</value>
+      <value>TPD4S009DCKR</value>
       <footprint>TylerLib:SOT65P210X110-6N</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/texas-instruments/TPD4S009DCKR/2057674</datasheet>
       <libsource lib="TylerLib" part="SOT65P210X110-6N" description=""/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -1160,6 +1189,7 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
     <comp ref="U8">
       <value>CSD88599Q5DC</value>
       <footprint>TylerLib:MOSFET_CSD88599Q5DC</footprint>
+      <datasheet>https://www.digikey.com/en/products/detail/texas-instruments/CSD88599Q5DC/7244175</datasheet>
       <fields>
         <field name="Availability">In Stock</field>
         <field name="Check_prices">https://www.snapeda.com/parts/CSD88599Q5DC/Texas+Instruments/view-part/?ref=eda</field>
@@ -1477,6 +1507,26 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
         <pin num="64" name="VDD" type="power_in"/>
       </pins>
     </libpart>
+    <libpart lib="TylerLib" part="150066M153000">
+      <docs>150066M153000</docs>
+      <footprints>
+        <fp>CHIP_M153000_WRE</fp>
+        <fp>CHIP_M153000_WRE-M</fp>
+        <fp>CHIP_M153000_WRE-L</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">150066M153000</field>
+        <field name="Footprint">TylerLib:CHIP_M153000_WRE</field>
+        <field name="Datasheet">150066M153000</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="unspecified"/>
+        <pin num="2" name="2" type="unspecified"/>
+        <pin num="3" name="3" type="unspecified"/>
+        <pin num="4" name="4" type="unspecified"/>
+      </pins>
+    </libpart>
     <libpart lib="TylerLib" part="ABL-8.000MHZ-B1U-T">
       <fields>
         <field name="Reference">Y</field>
@@ -1747,6 +1797,7 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
   </libraries>
   <nets>
     <net code="1" name="+3.3V">
+      <node ref="C10" pin="2" pintype="passive"/>
       <node ref="C12" pin="1" pintype="passive"/>
       <node ref="C23" pin="1" pintype="passive"/>
       <node ref="C3" pin="2" pintype="passive"/>
@@ -1771,6 +1822,7 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
       <node ref="U3" pin="12" pinfunction="3V3" pintype="output"/>
       <node ref="U4" pin="26" pinfunction="VREF" pintype="power_in"/>
       <node ref="U7" pin="5" pinfunction="VCC" pintype="input"/>
+      <node ref="U9" pin="4" pinfunction="4" pintype="unspecified"/>
     </net>
     <net code="2" name="/Encoder/M1_ENC.A">
       <node ref="U1" pin="61" pinfunction="PB8" pintype="bidirectional"/>
@@ -1822,12 +1874,14 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
       <node ref="U2" pin="1" pinfunction="TXD" pintype="input"/>
     </net>
     <net code="17" name="/Microcontroller/CLK_N">
-      <node ref="R5" pin="1" pintype="passive"/>
+      <node ref="C2" pin="2" pintype="passive"/>
       <node ref="U1" pin="6" pinfunction="PH1" pintype="bidirectional"/>
+      <node ref="Y2" pin="1" pintype="passive"/>
     </net>
     <net code="18" name="/Microcontroller/CLK_P">
-      <node ref="R4" pin="1" pintype="passive"/>
+      <node ref="C1" pin="2" pintype="passive"/>
       <node ref="U1" pin="5" pinfunction="PH0" pintype="bidirectional"/>
+      <node ref="Y2" pin="2" pintype="passive"/>
     </net>
     <net code="19" name="/Microcontroller/DRV.ENABLE">
       <node ref="U1" pin="3" pinfunction="PC14" pintype="bidirectional"/>
@@ -2108,6 +2162,8 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
     </net>
     <net code="74" name="GND">
       <node ref="C1" pin="1" pintype="passive"/>
+      <node ref="C10" pin="1" pintype="passive"/>
+      <node ref="C11" pin="1" pintype="passive"/>
       <node ref="C12" pin="2" pintype="passive"/>
       <node ref="C13" pin="2" pintype="passive"/>
       <node ref="C14" pin="2" pintype="passive"/>
@@ -2130,23 +2186,19 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
       <node ref="C6" pin="1" pintype="passive"/>
       <node ref="C7" pin="1" pintype="passive"/>
       <node ref="C8" pin="1" pintype="passive"/>
-      <node ref="C9" pin="1" pintype="passive"/>
       <node ref="D5" pin="2" pinfunction="A" pintype="passive"/>
       <node ref="J1" pin="1" pinfunction="Pin_1" pintype="passive"/>
       <node ref="J2" pin="5" pinfunction="Pin_5" pintype="passive"/>
       <node ref="J4" pin="2" pinfunction="Pin_2" pintype="passive"/>
-      <node ref="R1" pin="2" pintype="passive"/>
       <node ref="R12" pin="2" pintype="passive"/>
       <node ref="R14" pin="2" pintype="passive"/>
       <node ref="R15" pin="2" pintype="passive"/>
       <node ref="R17" pin="2" pintype="passive"/>
-      <node ref="R2" pin="2" pintype="passive"/>
       <node ref="R22" pin="2" pintype="passive"/>
       <node ref="R23" pin="2" pintype="passive"/>
       <node ref="R25" pin="2" pintype="passive"/>
       <node ref="R26" pin="2" pintype="passive"/>
       <node ref="R27" pin="2" pintype="passive"/>
-      <node ref="R3" pin="2" pintype="passive"/>
       <node ref="R6" pin="2" pintype="passive"/>
       <node ref="U1" pin="12" pinfunction="VSSA" pintype="power_in"/>
       <node ref="U1" pin="18" pinfunction="VSS" pintype="power_in"/>
@@ -2162,101 +2214,91 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
       <node ref="U4" pin="49" pinfunction="EP" pintype="power_in"/>
       <node ref="U7" pin="2" pinfunction="GND" pintype="input"/>
     </net>
-    <net code="75" name="Net-(C1-Pad2)">
-      <node ref="C1" pin="2" pintype="passive"/>
-      <node ref="R4" pin="2" pintype="passive"/>
-      <node ref="Y2" pin="2" pintype="passive"/>
-    </net>
-    <net code="76" name="Net-(C2-Pad2)">
-      <node ref="C2" pin="2" pintype="passive"/>
-      <node ref="R5" pin="2" pintype="passive"/>
-      <node ref="Y2" pin="1" pintype="passive"/>
-    </net>
-    <net code="77" name="Net-(D1-A)">
-      <node ref="D1" pin="2" pinfunction="A" pintype="passive"/>
-      <node ref="U1" pin="38" pinfunction="PC7" pintype="bidirectional"/>
-    </net>
-    <net code="78" name="Net-(D1-K)">
-      <node ref="D1" pin="1" pinfunction="K" pintype="passive"/>
-      <node ref="R1" pin="1" pintype="passive"/>
-    </net>
-    <net code="79" name="Net-(D2-A)">
-      <node ref="D2" pin="2" pinfunction="A" pintype="passive"/>
-      <node ref="U1" pin="39" pinfunction="PC8" pintype="bidirectional"/>
-    </net>
-    <net code="80" name="Net-(D2-K)">
-      <node ref="D2" pin="1" pinfunction="K" pintype="passive"/>
-      <node ref="R2" pin="1" pintype="passive"/>
-    </net>
-    <net code="81" name="Net-(D3-A)">
-      <node ref="D3" pin="2" pinfunction="A" pintype="passive"/>
-      <node ref="U1" pin="40" pinfunction="PC9" pintype="bidirectional"/>
-    </net>
-    <net code="82" name="Net-(D3-K)">
-      <node ref="D3" pin="1" pinfunction="K" pintype="passive"/>
-      <node ref="R3" pin="1" pintype="passive"/>
-    </net>
-    <net code="83" name="Net-(D4-K)">
+    <net code="75" name="Net-(D4-K)">
       <node ref="D4" pin="1" pinfunction="K" pintype="passive"/>
       <node ref="R9" pin="1" pintype="passive"/>
     </net>
-    <net code="84" name="Net-(D5-K)">
+    <net code="76" name="Net-(D5-K)">
       <node ref="C21" pin="2" pintype="passive"/>
       <node ref="D5" pin="1" pinfunction="K" pintype="passive"/>
       <node ref="L2" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U4" pin="45" pinfunction="SW" pintype="output"/>
     </net>
-    <net code="85" name="Net-(D6-K)">
+    <net code="77" name="Net-(D6-K)">
       <node ref="D6" pin="1" pinfunction="K" pintype="passive"/>
       <node ref="R27" pin="1" pintype="passive"/>
     </net>
-    <net code="86" name="Net-(J3-Pin_1)">
+    <net code="78" name="Net-(J3-Pin_1)">
       <node ref="J3" pin="1" pinfunction="Pin_1" pintype="passive"/>
       <node ref="U2" pin="6" pinfunction="CANL" pintype="bidirectional"/>
     </net>
-    <net code="87" name="Net-(J3-Pin_2)">
+    <net code="79" name="Net-(J3-Pin_2)">
       <node ref="J3" pin="2" pinfunction="Pin_2" pintype="passive"/>
       <node ref="U2" pin="7" pinfunction="CANH" pintype="bidirectional"/>
     </net>
-    <net code="88" name="Net-(U1-VCAP_1)">
-      <node ref="C9" pin="2" pintype="passive"/>
+    <net code="80" name="Net-(R1-Pad2)">
+      <node ref="R1" pin="2" pintype="passive"/>
+      <node ref="U9" pin="3" pinfunction="3" pintype="unspecified"/>
+    </net>
+    <net code="81" name="Net-(R2-Pad2)">
+      <node ref="R2" pin="2" pintype="passive"/>
+      <node ref="U9" pin="2" pinfunction="2" pintype="unspecified"/>
+    </net>
+    <net code="82" name="Net-(R3-Pad2)">
+      <node ref="R3" pin="2" pintype="passive"/>
+      <node ref="U9" pin="1" pinfunction="1" pintype="unspecified"/>
+    </net>
+    <net code="83" name="Net-(U1-PC6)">
+      <node ref="R1" pin="1" pintype="passive"/>
+      <node ref="U1" pin="37" pinfunction="PC6" pintype="bidirectional"/>
+    </net>
+    <net code="84" name="Net-(U1-PC7)">
+      <node ref="R2" pin="1" pintype="passive"/>
+      <node ref="U1" pin="38" pinfunction="PC7" pintype="bidirectional"/>
+    </net>
+    <net code="85" name="Net-(U1-PC8)">
+      <node ref="R3" pin="1" pintype="passive"/>
+      <node ref="U1" pin="39" pinfunction="PC8" pintype="bidirectional"/>
+    </net>
+    <net code="86" name="Net-(U1-VCAP_1)">
+      <node ref="C11" pin="2" pintype="passive"/>
       <node ref="U1" pin="30" pinfunction="VCAP_1" pintype="power_out"/>
     </net>
-    <net code="89" name="Net-(U4-CB)">
+    <net code="87" name="Net-(U4-CB)">
       <node ref="C21" pin="1" pintype="passive"/>
       <node ref="U4" pin="44" pinfunction="CB" pintype="power_in"/>
     </net>
-    <net code="90" name="Net-(U4-CPH)">
+    <net code="88" name="Net-(U4-CPH)">
       <node ref="C18" pin="1" pintype="passive"/>
       <node ref="U4" pin="4" pinfunction="CPH" pintype="passive"/>
     </net>
-    <net code="91" name="Net-(U4-CPL)">
+    <net code="89" name="Net-(U4-CPL)">
       <node ref="C18" pin="2" pintype="passive"/>
       <node ref="U4" pin="3" pinfunction="CPL" pintype="passive"/>
     </net>
-    <net code="92" name="Net-(U4-DVDD)">
+    <net code="90" name="Net-(U4-DVDD)">
       <node ref="C16" pin="1" pintype="passive"/>
       <node ref="U4" pin="36" pinfunction="DVDD" pintype="power_in"/>
     </net>
-    <net code="93" name="Net-(U4-FB)">
+    <net code="91" name="Net-(U4-FB)">
       <node ref="R11" pin="2" pintype="passive"/>
       <node ref="R12" pin="1" pintype="passive"/>
       <node ref="U4" pin="1" pinfunction="FB" pintype="input"/>
     </net>
-    <net code="94" name="Net-(U4-VCP)">
+    <net code="92" name="Net-(U4-VCP)">
       <node ref="C17" pin="2" pintype="passive"/>
       <node ref="U4" pin="5" pinfunction="VCP" pintype="power_in"/>
     </net>
-    <net code="95" name="Net-(U5-SH)">
+    <net code="93" name="Net-(U5-SH)">
       <node ref="U5" pin="2" pinfunction="SH" pintype="input"/>
     </net>
-    <net code="96" name="Net-(U6-SH)">
+    <net code="94" name="Net-(U6-SH)">
       <node ref="U6" pin="2" pinfunction="SH" pintype="input"/>
     </net>
-    <net code="97" name="Net-(U8-SH)">
+    <net code="95" name="Net-(U8-SH)">
       <node ref="U8" pin="2" pinfunction="SH" pintype="input"/>
     </net>
-    <net code="98" name="Vdrive">
+    <net code="96" name="Vdrive">
       <node ref="C13" pin="1" pintype="passive"/>
       <node ref="C14" pin="1" pintype="passive"/>
       <node ref="C15" pin="1" pintype="passive"/>
@@ -2275,109 +2317,109 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
       <node ref="U6" pin="27" pinfunction="VIN" pintype="input"/>
       <node ref="U8" pin="27" pinfunction="VIN" pintype="input"/>
     </net>
-    <net code="99" name="unconnected-(U1-PA11-Pad44)">
+    <net code="97" name="unconnected-(U1-PA11-Pad44)">
       <node ref="U1" pin="44" pinfunction="PA11" pintype="bidirectional"/>
     </net>
-    <net code="100" name="unconnected-(U1-PA12-Pad45)">
+    <net code="98" name="unconnected-(U1-PA12-Pad45)">
       <node ref="U1" pin="45" pinfunction="PA12" pintype="bidirectional"/>
     </net>
-    <net code="101" name="unconnected-(U1-PB0-Pad26)">
+    <net code="99" name="unconnected-(U1-PB0-Pad26)">
       <node ref="U1" pin="26" pinfunction="PB0" pintype="bidirectional"/>
     </net>
-    <net code="102" name="unconnected-(U1-PB1-Pad27)">
+    <net code="100" name="unconnected-(U1-PB1-Pad27)">
       <node ref="U1" pin="27" pinfunction="PB1" pintype="bidirectional"/>
     </net>
-    <net code="103" name="unconnected-(U1-PB2-Pad28)">
+    <net code="101" name="unconnected-(U1-PB2-Pad28)">
       <node ref="U1" pin="28" pinfunction="PB2" pintype="bidirectional"/>
     </net>
-    <net code="104" name="unconnected-(U1-PB4-Pad56)">
+    <net code="102" name="unconnected-(U1-PB4-Pad56)">
       <node ref="U1" pin="56" pinfunction="PB4" pintype="bidirectional"/>
     </net>
-    <net code="105" name="unconnected-(U1-PB10-Pad29)">
+    <net code="103" name="unconnected-(U1-PB10-Pad29)">
       <node ref="U1" pin="29" pinfunction="PB10" pintype="bidirectional"/>
     </net>
-    <net code="106" name="unconnected-(U1-PB12-Pad33)">
+    <net code="104" name="unconnected-(U1-PB12-Pad33)">
       <node ref="U1" pin="33" pinfunction="PB12" pintype="bidirectional"/>
     </net>
-    <net code="107" name="unconnected-(U1-PC2-Pad10)">
+    <net code="105" name="unconnected-(U1-PC2-Pad10)">
       <node ref="U1" pin="10" pinfunction="PC2" pintype="bidirectional"/>
     </net>
-    <net code="108" name="unconnected-(U1-PC6-Pad37)">
-      <node ref="U1" pin="37" pinfunction="PC6" pintype="bidirectional"/>
+    <net code="106" name="unconnected-(U1-PC9-Pad40)">
+      <node ref="U1" pin="40" pinfunction="PC9" pintype="bidirectional"/>
     </net>
-    <net code="109" name="unconnected-(U1-PC15-Pad4)">
+    <net code="107" name="unconnected-(U1-PC15-Pad4)">
       <node ref="U1" pin="4" pinfunction="PC15" pintype="bidirectional"/>
     </net>
-    <net code="110" name="unconnected-(U1-PD2-Pad54)">
+    <net code="108" name="unconnected-(U1-PD2-Pad54)">
       <node ref="U1" pin="54" pinfunction="PD2" pintype="bidirectional"/>
     </net>
-    <net code="111" name="unconnected-(U3-TEST-Pad5)">
+    <net code="109" name="unconnected-(U3-TEST-Pad5)">
       <node ref="U3" pin="5" pinfunction="TEST" pintype="input"/>
     </net>
-    <net code="112" name="unconnected-(U3-U-Pad10)">
+    <net code="110" name="unconnected-(U3-U-Pad10)">
       <node ref="U3" pin="10" pinfunction="U" pintype="input"/>
     </net>
-    <net code="113" name="unconnected-(U3-V-Pad9)">
+    <net code="111" name="unconnected-(U3-V-Pad9)">
       <node ref="U3" pin="9" pinfunction="V" pintype="input"/>
     </net>
-    <net code="114" name="unconnected-(U3-W{slash}PWM-Pad8)">
+    <net code="112" name="unconnected-(U3-W{slash}PWM-Pad8)">
       <node ref="U3" pin="8" pinfunction="W/PWM" pintype="input"/>
     </net>
-    <net code="115" name="unconnected-(U4-NC-Pad46)">
+    <net code="113" name="unconnected-(U4-NC-Pad46)">
       <node ref="U4" pin="46" pinfunction="NC" pintype="no_connect"/>
     </net>
-    <net code="116" name="unconnected-(U5-NC-Pad21)">
+    <net code="114" name="unconnected-(U5-NC-Pad21)">
       <node ref="U5" pin="21" pinfunction="NC" pintype="no_connect"/>
     </net>
-    <net code="117" name="unconnected-(U5-NC-Pad23)">
+    <net code="115" name="unconnected-(U5-NC-Pad23)">
       <node ref="U5" pin="23" pinfunction="NC" pintype="no_connect"/>
     </net>
-    <net code="118" name="unconnected-(U5-NC-Pad24)">
+    <net code="116" name="unconnected-(U5-NC-Pad24)">
       <node ref="U5" pin="24" pinfunction="NC" pintype="no_connect"/>
     </net>
-    <net code="119" name="unconnected-(U5-NC-Pad25)">
+    <net code="117" name="unconnected-(U5-NC-Pad25)">
       <node ref="U5" pin="25" pinfunction="NC" pintype="no_connect"/>
     </net>
-    <net code="120" name="unconnected-(U5-NC-Pad26)">
+    <net code="118" name="unconnected-(U5-NC-Pad26)">
       <node ref="U5" pin="26" pinfunction="NC" pintype="no_connect"/>
     </net>
-    <net code="121" name="unconnected-(U6-NC-Pad21)">
+    <net code="119" name="unconnected-(U6-NC-Pad21)">
       <node ref="U6" pin="21" pinfunction="NC" pintype="no_connect"/>
     </net>
-    <net code="122" name="unconnected-(U6-NC-Pad23)">
+    <net code="120" name="unconnected-(U6-NC-Pad23)">
       <node ref="U6" pin="23" pinfunction="NC" pintype="no_connect"/>
     </net>
-    <net code="123" name="unconnected-(U6-NC-Pad24)">
+    <net code="121" name="unconnected-(U6-NC-Pad24)">
       <node ref="U6" pin="24" pinfunction="NC" pintype="no_connect"/>
     </net>
-    <net code="124" name="unconnected-(U6-NC-Pad25)">
+    <net code="122" name="unconnected-(U6-NC-Pad25)">
       <node ref="U6" pin="25" pinfunction="NC" pintype="no_connect"/>
     </net>
-    <net code="125" name="unconnected-(U6-NC-Pad26)">
+    <net code="123" name="unconnected-(U6-NC-Pad26)">
       <node ref="U6" pin="26" pinfunction="NC" pintype="no_connect"/>
     </net>
-    <net code="126" name="unconnected-(U7-D1+-Pad1)">
+    <net code="124" name="unconnected-(U7-D1+-Pad1)">
       <node ref="U7" pin="1" pinfunction="D1+" pintype="input"/>
     </net>
-    <net code="127" name="unconnected-(U7-D2+-Pad3)">
+    <net code="125" name="unconnected-(U7-D2+-Pad3)">
       <node ref="U7" pin="3" pinfunction="D2+" pintype="input"/>
     </net>
-    <net code="128" name="unconnected-(U7-D2--Pad4)">
+    <net code="126" name="unconnected-(U7-D2--Pad4)">
       <node ref="U7" pin="4" pinfunction="D2-" pintype="input"/>
     </net>
-    <net code="129" name="unconnected-(U8-NC-Pad21)">
+    <net code="127" name="unconnected-(U8-NC-Pad21)">
       <node ref="U8" pin="21" pinfunction="NC" pintype="no_connect"/>
     </net>
-    <net code="130" name="unconnected-(U8-NC-Pad23)">
+    <net code="128" name="unconnected-(U8-NC-Pad23)">
       <node ref="U8" pin="23" pinfunction="NC" pintype="no_connect"/>
     </net>
-    <net code="131" name="unconnected-(U8-NC-Pad24)">
+    <net code="129" name="unconnected-(U8-NC-Pad24)">
       <node ref="U8" pin="24" pinfunction="NC" pintype="no_connect"/>
     </net>
-    <net code="132" name="unconnected-(U8-NC-Pad25)">
+    <net code="130" name="unconnected-(U8-NC-Pad25)">
       <node ref="U8" pin="25" pinfunction="NC" pintype="no_connect"/>
     </net>
-    <net code="133" name="unconnected-(U8-NC-Pad26)">
+    <net code="131" name="unconnected-(U8-NC-Pad26)">
       <node ref="U8" pin="26" pinfunction="NC" pintype="no_connect"/>
     </net>
   </nets>

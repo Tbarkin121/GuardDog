@@ -1,4 +1,4 @@
-22483974243099027
+22485676680856804
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -91748,6 +91748,13 @@ EMVY350ADA221MHA0G
 0
 2
 2
+TylerLib
+CHIP_M153000_WRE
+
+150066M153000 
+0
+4
+4
 TylerLib
 DIODE_SOD123LF_2P9X1P8_ONS
 
