@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="TorquePole">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.014583 0.00028957 -0.19308"
+        rpy="0 0 0" />
+      <mass
+        value="0.36224" />
+      <inertia
+        ixx="0.00046889"
+        ixy="1.9195E-10"
+        ixz="1.1612E-06"
+        iyy="0.0002774"
+        iyz="1.3223E-09"
+        izz="0.00038212" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TorquePole/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TorquePole/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="pendulum">
+    <inertial>
+      <origin
+        xyz="-0.0039392 -0.073535 -2.3638E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.066367" />
+      <inertia
+        ixx="2.6897E-05"
+        ixy="-8.6352E-09"
+        ixz="-1.1815E-08"
+        iyy="1.5509E-05"
+        iyz="6.4928E-11"
+        izz="3.2672E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TorquePole/meshes/pendulum.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://TorquePole/meshes/pendulum.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="PullyJoint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="pendulum" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="6.28"
+      upper="-1.57"
+      effort="3"
+      velocity="300" />
+  </joint>
+</robot>
