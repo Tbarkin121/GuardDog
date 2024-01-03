@@ -23,6 +23,7 @@ from isaacgym import gymutil, gymtorch, gymapi
 import time
 import numpy as np
 from joystick import Joystick
+from keyboard import Keyboard
 
 # initialize gym
 gym = gymapi.acquire_gym()
@@ -71,7 +72,7 @@ env_upper = gymapi.Vec3(spacing, 0.0, spacing)
 
 # add cartpole urdf asset
 asset_root = "../../assets"
-asset_file = "urdf/TorquePoleLong/urdf/TorquePoleLong.urdf"
+asset_file = "urdf/TorquePole2/urdf/TorquePole2.urdf"
 # asset_file = "urdf/WalkBot_3DOF_330/urdf/WalkBot_3DOF.urdf"
 
 # Load asset with default control type of position for all joints
@@ -100,7 +101,7 @@ props["stiffness"].fill(0.0)
 props['damping'].fill(0.0)
 props['velocity'].fill(60.0)
 props['effort'].fill(0.0)
-props['friction'].fill(0.01)
+props['friction'].fill(0.001)
 
 
 gym.set_actor_dof_properties(env0, cubebot0, props)
@@ -131,7 +132,8 @@ control_idx = 0
 loop_counter = 1
 max_loops = 250
 
-joy = Joystick()
+# joy = Joystick()
+key = Keyboard()
 while not gym.query_viewer_has_closed(viewer):
     gym.refresh_actor_root_state_tensor(sim)
     # print(root_states)
@@ -144,7 +146,9 @@ while not gym.query_viewer_has_closed(viewer):
     gym.step_graphics(sim)
     gym.draw_viewer(viewer, sim, True)
 
-    a = joy.get_axis()
+    # a = joy.get_axis()
+    a = key.get_keys()
+    print(a)
     gym.apply_dof_effort(env0, joint_idx, a[0]/40.0)
     # if(loop_counter == 0):
     #     print('control idx = {}. handle_list[{}] = {}'.format(control_idx, joint_idx, joint_idx))
