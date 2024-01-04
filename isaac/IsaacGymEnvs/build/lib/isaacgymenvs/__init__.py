@@ -24,9 +24,7 @@ def make(
     force_render: bool = True,
     cfg: DictConfig = None
 ): 
-    # from isaacgymenvs.utils.rlgames_utils import get_rlgames_env_creator
-    from utils.rlgames_utils import get_rlgames_env_creator
-    
+    from isaacgymenvs.utils.rlgames_utils import get_rlgames_env_creator
     # create hydra config if no config passed in
     if cfg is None:
         # reset current hydra config if already parsed (but not passed in here)

@@ -65,7 +65,7 @@ plane_params.normal = gymapi.Vec3(0.0, 0.0, 1.0)
 gym.add_ground(sim, plane_params)
 
 # set up the env grid
-num_envs = 4
+num_envs = 1
 spacing = 1.5
 env_lower = gymapi.Vec3(-spacing, 0.0, -spacing)
 env_upper = gymapi.Vec3(spacing, 0.0, spacing)
@@ -83,6 +83,7 @@ asset_options.max_angular_velocity = 10000
 asset_options.default_dof_drive_mode = gymapi.DOF_MODE_EFFORT
 print("Loading asset '%s' from '%s'" % (asset_file, asset_root))
 cubebot_asset = gym.load_asset(sim, asset_root, asset_file, asset_options)
+num_dof = gym.get_asset_dof_count(cubebot_asset)
 
 # initial root pose for cartpole actors
 initial_pose = gymapi.Transform()
@@ -134,6 +135,13 @@ max_loops = 250
 
 # joy = Joystick()
 key = Keyboard()
+
+
+dof_state_tensor = gym.acquire_dof_state_tensor(sim)
+dof_state = gymtorch.wrap_tensor(dof_state_tensor)
+print(dof_state)
+dof_pos = dof_state.view(num_envs, num_dof, 2)[..., 0]
+dof_vel = dof_state.view(num_envs, num_dof, 2)[..., 1]
 while not gym.query_viewer_has_closed(viewer):
     gym.refresh_actor_root_state_tensor(sim)
     # print(root_states)
@@ -148,8 +156,8 @@ while not gym.query_viewer_has_closed(viewer):
 
     # a = joy.get_axis()
     a = key.get_keys()
-    print(a)
-    gym.apply_dof_effort(env0, joint_idx, a[0]/40.0)
+    print(dof_pos)
+    gym.apply_dof_effort(env0, joint_idx, a[0]/10.0)
     # if(loop_counter == 0):
     #     print('control idx = {}. handle_list[{}] = {}'.format(control_idx, joint_idx, joint_idx))
     #     if(control_idx == 0):
