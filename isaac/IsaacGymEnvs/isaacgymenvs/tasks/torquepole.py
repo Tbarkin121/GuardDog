@@ -32,6 +32,7 @@ import torch
 
 from isaacgym import gymutil, gymtorch, gymapi
 from .base.vec_task import VecTask
+from .keyboard import Keyboard
 
 class TorquePole(VecTask):
 
@@ -52,6 +53,7 @@ class TorquePole(VecTask):
         self.dof_state = gymtorch.wrap_tensor(dof_state_tensor)
         self.dof_pos = self.dof_state.view(self.num_envs, self.num_dof, 2)[..., 0]
         self.dof_vel = self.dof_state.view(self.num_envs, self.num_dof, 2)[..., 1]
+        self.keys = Keyboard()
 
     def create_sim(self):
         # set the up axis to be z-up given that assets are y-up by default
@@ -129,24 +131,37 @@ class TorquePole(VecTask):
             pole_angle, pole_vel,
             self.reset_dist, self.reset_buf, self.progress_buf, self.max_episode_length
         )
-        print(pole_angle[0])
+        print(pole_vel[0])
         # rew = reward = 1.0 - pole_angle * pole_angle - 0.005 * torch.abs(pole_vel)
         # rew = torch.where(torch.abs(pole_angle) > np.pi / 2, torch.ones_like(rew) * -2.0, rew)
         # print(rew[0])
 
+    def convert_angle(self, angle):
+        # Normalize angle to [-pi, pi]
+        angle = torch.remainder(angle + np.pi, 2 * np.pi) - np.pi
+        
+        # Apply offset
+        angle += np.pi
+        
+        # Normalize again if needed
+        angle = torch.remainder(angle + np.pi, 2 * np.pi) - np.pi
+
+        return angle
+
+        
     def compute_observations(self, env_ids=None):
         if env_ids is None:
             env_ids = np.arange(self.num_envs)
 
         self.gym.refresh_dof_state_tensor(self.sim)
 
-        self.obs_buf[env_ids, 0] = self.dof_pos[env_ids, 0].squeeze() + np.pi
-        self.obs_buf[env_ids, 1] = self.dof_vel[env_ids, 0].squeeze()
+        self.obs_buf[env_ids, 0] = self.convert_angle(self.dof_pos[env_ids, 0].squeeze())
+        self.obs_buf[env_ids, 1] = self.dof_vel[env_ids, 0].squeeze()/20.0
 
         return self.obs_buf
 
     def reset_idx(self, env_ids):
-        positions =  0.2 * (torch.rand((len(env_ids), self.num_dof), device=self.device) - 0.5) - np.pi
+        positions =  2.0 * (torch.rand((len(env_ids), self.num_dof), device=self.device) - 0.5) - np.pi
         velocities = 0.5 * (torch.rand((len(env_ids), self.num_dof), device=self.device) - 0.5)
 
         self.dof_pos[env_ids, :] = positions[:]
@@ -163,6 +178,11 @@ class TorquePole(VecTask):
     def pre_physics_step(self, actions):
         actions_tensor = torch.zeros(self.num_envs * self.num_dof, device=self.device, dtype=torch.float)
         actions_tensor[::self.num_dof] = actions.to(self.device).squeeze() * self.max_push_effort
+
+        a = self.keys.get_keys()
+        if(a[0] != 0):
+            actions_tensor[0] = 0
+
         forces = gymtorch.unwrap_tensor(actions_tensor)
         self.gym.set_dof_actuation_force_tensor(self.sim, forces)
 
@@ -187,12 +207,12 @@ def compute_torquepole_reward(pole_angle, pole_vel,
     # type: (Tensor, Tensor, float, Tensor, Tensor, float) -> Tuple[Tensor, Tensor]
 
     # reward is combo of angle deviated from upright, velocity of cart, and velocity of pole moving
-    reward = 1.0 - pole_angle * pole_angle - 0.005 * torch.abs(pole_vel)
+    reward = 1.0 - pole_angle * pole_angle - 0.05 * torch.abs(pole_vel)
 
     # adjust reward for reset agents
     # reward = torch.where(torch.abs(pole_angle) > np.pi / 2, torch.ones_like(reward) * -2.0, reward)
 
-    reset = torch.where(torch.abs(pole_angle) > np.pi*1.9, torch.ones_like(reset_buf), reset_buf)
-    reset = torch.where(progress_buf >= max_episode_length - 1, torch.ones_like(reset_buf), reset)
+    # reset = torch.where(torch.abs(pole_angle) > np.pi*1.9, torch.ones_like(reset_buf), reset_buf)
+    reset = torch.where(progress_buf >= max_episode_length - 1, torch.ones_like(reset_buf), reset_buf)
 
     return reward, reset

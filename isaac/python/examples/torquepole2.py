@@ -25,6 +25,18 @@ import numpy as np
 from joystick import Joystick
 from keyboard import Keyboard
 
+def convert_angle(angle):
+    # Normalize angle to [-pi, pi]
+    angle = np.mod(angle + np.pi, 2 * np.pi) - np.pi
+    
+    # Apply offset
+    angle += np.pi
+    
+    # Normalize again if needed
+    angle = np.mod(angle + np.pi, 2 * np.pi) - np.pi
+
+    return angle
+
 # initialize gym
 gym = gymapi.acquire_gym()
 
@@ -156,7 +168,8 @@ while not gym.query_viewer_has_closed(viewer):
 
     # a = joy.get_axis()
     a = key.get_keys()
-    print(dof_pos)
+    pole_pos = convert_angle(dof_pos)
+    print(pole_pos)
     gym.apply_dof_effort(env0, joint_idx, a[0]/10.0)
     # if(loop_counter == 0):
     #     print('control idx = {}. handle_list[{}] = {}'.format(control_idx, joint_idx, joint_idx))
@@ -187,3 +200,5 @@ print('Done')
 
 gym.destroy_viewer(viewer)
 gym.destroy_sim(sim)
+
+
