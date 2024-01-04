@@ -131,7 +131,7 @@ class TorquePole(VecTask):
             pole_angle, pole_vel,
             self.reset_dist, self.reset_buf, self.progress_buf, self.max_episode_length
         )
-        print(pole_vel[0])
+        # print(pole_vel[0])
         # rew = reward = 1.0 - pole_angle * pole_angle - 0.005 * torch.abs(pole_vel)
         # rew = torch.where(torch.abs(pole_angle) > np.pi / 2, torch.ones_like(rew) * -2.0, rew)
         # print(rew[0])
