@@ -9,17 +9,25 @@ import serial
 import struct
 import time
 import numpy as np
+import platform
 
 class MCU_Comms():
     def __init__(self):
         self.in_data = np.zeros(4)
         self.out_data = np.zeros(4)
+
+        if platform.system() == 'Windows':
+            self.port = 'COM6'
+        else:
+            self.port = '/dev/ttyACM0'
+            
+        print('Using Port : {}'.format(self.port))
         self.open_port()
     
     def open_port(self):
         # Configure the serial connection
         self.ser = serial.Serial(
-                        port='COM6',                         # Serial port
+                        port=self.port,                      # Serial port
                         baudrate=115200,                     # Baud rate, should match STM32 setting
                         parity=serial.PARITY_NONE,
                         stopbits=serial.STOPBITS_ONE,
@@ -71,7 +79,7 @@ class MCU_Comms():
 
 comm_obj = MCU_Comms()
 
-comm_obj.out_data = np.array([0.52, -0.32, 0.0, 0.0])
+comm_obj.out_data = np.array([0.05, -0.03, 0.0, 0.0])
 
 for _ in range(1):
     start_time = time.perf_counter()

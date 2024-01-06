@@ -124,20 +124,22 @@ int main(void)
 
       TIM2->CNT = 0;
       HAL_TIM_Base_Start(&htim2);
-      in_data1[0] = data.floatValue[0];
-      in_data1[1] = data.floatValue[1];
+      in_data1[0] = data.floatValue[0]; // Sin Encoding
+      in_data1[1] = data.floatValue[1]; // Cosine Encoding
+      in_data1[2] = data.floatValue[2]; // Velocity
       MX_X_CUBE_AI_Process();
       HAL_TIM_Base_Stop(&htim2);
-      data.floatValue[0] = out_data1[0];
-      data.floatValue[1] = out_data2[0];
-      data.floatValue[2] = out_data3[0];
-      data.floatValue[3] = (float)TIM2->CNT/(1000000);
+      data.floatValue[0] = out_data1[0]; // Value
+      data.floatValue[1] = out_data2[0]; // Mu
+      data.floatValue[2] = out_data3[0]; // STD
+      data.floatValue[3] = (float)TIM2->CNT/(1000000); // Execution Time
       data_flag = 0;
       HAL_UART_Transmit(&huart2, data.bytes, sizeof(data.bytes), 100);
       HAL_UART_Receive_IT(&huart2, data.bytes, sizeof(data.bytes));
     }
     /* USER CODE END WHILE */
 
+  MX_X_CUBE_AI_Process();
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

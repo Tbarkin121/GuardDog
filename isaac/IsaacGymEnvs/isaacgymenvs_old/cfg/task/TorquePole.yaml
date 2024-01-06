@@ -15,7 +15,7 @@ env:
 
   asset:
     assetRoot: "../../assets"
-    assetFileName: "urdf/TorquePole2/urdf/TorquePole2.urdf"
+    assetFileName: "urdf/TorquePole/urdf/TorquePole.urdf"
 
   # set to True if you use camera sensors in the environment
   enableCameraSensors: False

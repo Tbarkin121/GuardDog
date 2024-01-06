@@ -2,6 +2,7 @@ LICENSE.txt
 README.md
 setup.py
 isaacgymenvs/__init__.py
+isaacgymenvs/test_onnx.py
 isaacgymenvs/train.py
 isaacgymenvs.egg-info/PKG-INFO
 isaacgymenvs.egg-info/SOURCES.txt
@@ -56,6 +57,7 @@ isaacgymenvs/tasks/franka_cube_stack.py
 isaacgymenvs/tasks/humanoid.py
 isaacgymenvs/tasks/humanoid_amp.py
 isaacgymenvs/tasks/ingenuity.py
+isaacgymenvs/tasks/keyboard.py
 isaacgymenvs/tasks/quadcopter.py
 isaacgymenvs/tasks/shadow_hand.py
 isaacgymenvs/tasks/torquepole.py
@@ -109,6 +111,7 @@ isaacgymenvs_old/tasks/dynasoar_env.py
 isaacgymenvs_old/tasks/dynasoarui.py
 isaacgymenvs_old/tasks/glider_physics.py
 isaacgymenvs_old/tasks/joystick.py
+isaacgymenvs_old/tasks/keyboard.py
 isaacgymenvs_old/tasks/torquepole.py
 isaacgymenvs_old/tasks/amp/__init__.py
 isaacgymenvs_old/tasks/amp/humanoid_amp_base.py

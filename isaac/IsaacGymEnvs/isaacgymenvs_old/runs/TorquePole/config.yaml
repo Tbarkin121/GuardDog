@@ -10,7 +10,7 @@ task:
     clipActions: 1.0
     asset:
       assetRoot: ../../assets
-      assetFileName: urdf/TorquePole2/urdf/TorquePole2.urdf
+      assetFileName: urdf/TorquePole/urdf/TorquePole.urdf
     enableCameraSensors: false
   sim:
     dt: 0.0166

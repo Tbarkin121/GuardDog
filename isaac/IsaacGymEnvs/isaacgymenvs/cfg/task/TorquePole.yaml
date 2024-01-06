@@ -15,13 +15,13 @@ env:
 
   asset:
     assetRoot: "../../assets"
-    assetFileName: "urdf/TorquePole2/urdf/TorquePole2.urdf"
+    assetFileName: "urdf/TorquePole/urdf/TorquePole.urdf"
 
   # set to True if you use camera sensors in the environment
   enableCameraSensors: False
 
 sim:
-  dt: 0.0166 # 1/60 s
+  dt: 0.01 # 1/100 s
   substeps: 2
   up_axis: "z"
   use_gpu_pipeline: ${eq:${...pipeline},"gpu"}

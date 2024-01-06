@@ -22,7 +22,8 @@ params:
           val: 0
         fixed_sigma: True
     mlp:
-      units: [128, 128]
+      d2rl: True
+      units: [128, 64, 32]
       activation: elu
       
       initializer:
@@ -39,12 +40,12 @@ params:
     env_name: rlgpu
     multi_gpu: ${....multi_gpu}
     ppo: True
-    mixed_precision: False
+    mixed_precision: True
     normalize_input: True
     normalize_value: True
     num_actors: ${....task.env.numEnvs}
     reward_shaper:
-      scale_value: 0.1
+      scale_value: 1.0
     normalize_advantage: True
     gamma: 0.99
     tau: 0.95

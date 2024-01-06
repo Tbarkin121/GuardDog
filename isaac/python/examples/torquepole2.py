@@ -24,18 +24,29 @@ import time
 import numpy as np
 from joystick import Joystick
 from keyboard import Keyboard
+import stm32_comms
+import torch
+
+import onnx
+import onnxruntime as ort
+
+comm_obj = stm32_comms.MCU_Comms()
 
 def convert_angle(angle):
-    # Normalize angle to [-pi, pi]
-    angle = np.mod(angle + np.pi, 2 * np.pi) - np.pi
-    
-    # Apply offset
-    angle += np.pi
-    
-    # Normalize again if needed
-    angle = np.mod(angle + np.pi, 2 * np.pi) - np.pi
+    # Apply sine and cosine functions
+    sin_component = torch.sin(angle)
+    cos_component = torch.cos(angle)
 
-    return angle
+    #  Normalize angle to [-pi, pi]
+    normalized_angle = torch.remainder(angle + np.pi, 2 * np.pi) - np.pi
+    # Apply offset
+    normalized_angle += np.pi
+    # Normalize again if needed
+    normalized_angle = torch.remainder(normalized_angle + np.pi, 2 * np.pi) - np.pi
+    #  Normalize angle to [-1, 1]
+    normalized_angle /= torch.pi
+
+    return sin_component, cos_component, normalized_angle
 
 # initialize gym
 gym = gymapi.acquire_gym()
@@ -50,8 +61,8 @@ sim_params.dt = 1.0 / 100.0
 
 
 sim_params.physx.solver_type = 1
-sim_params.physx.num_position_iterations = 8
-sim_params.physx.num_velocity_iterations = 2
+sim_params.physx.num_position_iterations = 4 #8
+sim_params.physx.num_velocity_iterations = 0 #2
 
 sim_params.physx.num_threads = args.num_threads
 sim_params.physx.use_gpu = args.use_gpu
@@ -83,8 +94,8 @@ env_lower = gymapi.Vec3(-spacing, 0.0, -spacing)
 env_upper = gymapi.Vec3(spacing, 0.0, spacing)
 
 # add cartpole urdf asset
-asset_root = "../../assets"
-asset_file = "urdf/TorquePole2/urdf/TorquePole2.urdf"
+asset_root = "../../IsaacGymEnvs/assets"
+asset_file = "urdf/TorquePole/urdf/TorquePole.urdf"
 # asset_file = "urdf/WalkBot_3DOF_330/urdf/WalkBot_3DOF.urdf"
 
 # Load asset with default control type of position for all joints
@@ -154,6 +165,18 @@ dof_state = gymtorch.wrap_tensor(dof_state_tensor)
 print(dof_state)
 dof_pos = dof_state.view(num_envs, num_dof, 2)[..., 0]
 dof_vel = dof_state.view(num_envs, num_dof, 2)[..., 1]
+
+positions =  6.0 * (torch.rand((1)) - 0.5) - np.pi
+velocities = 2.0 * (torch.rand((1)) - 0.5)
+dof_pos[0, :] = positions[:]
+dof_vel[0, :] = velocities[:]
+env_ids = torch.tensor([0])
+env_ids_int32 = env_ids.to(dtype=torch.int32)
+gym.set_dof_state_tensor_indexed(sim,
+                                gymtorch.unwrap_tensor(dof_state),
+                                gymtorch.unwrap_tensor(env_ids_int32), len(env_ids_int32))
+onnx_model = onnx.load("pendulum.onnx")
+ort_model = ort.InferenceSession("pendulum.onnx")
 while not gym.query_viewer_has_closed(viewer):
     gym.refresh_actor_root_state_tensor(sim)
     # print(root_states)
@@ -168,28 +191,30 @@ while not gym.query_viewer_has_closed(viewer):
 
     # a = joy.get_axis()
     a = key.get_keys()
-    pole_pos = convert_angle(dof_pos)
-    print(pole_pos)
-    gym.apply_dof_effort(env0, joint_idx, a[0]/10.0)
-    # if(loop_counter == 0):
-    #     print('control idx = {}. handle_list[{}] = {}'.format(control_idx, joint_idx, joint_idx))
-    #     if(control_idx == 0):
-    #         gym.apply_dof_effort(env0, joint_idx, 0.2)
-    #     elif(control_idx == 1):
-    #         gym.apply_dof_effort(env0, joint_idx, -0.2)
-    #     else:
-    #         gym.apply_dof_effort(env0, joint_idx, 0.0)
-            
-    #     control_idx += 1
-    #     if(control_idx>2):
-    #         control_idx = 0
-    #         # joint_idx += 1
-    #         # if(joint_idx > 5):
-    #         #     joint_idx = 0
-
-    # loop_counter += 1
-    # if(loop_counter > max_loops):
-    #     loop_counter=0
+    enc_sin, enc_cos, pole_pos = convert_angle(dof_pos)
+    pole_vel = dof_vel/20.0
+    # print('~~~~~~~~~~~~~~~~~~~')
+    # print(pole_pos)
+    # print(pole_vel)
+    if(1):
+        comm_obj.out_data = np.array([enc_sin, enc_cos, pole_vel, 0.0])
+        comm_obj.write_data()
+        comm_obj.read_data()
+        max_push_effort = 0.10    
+        action = comm_obj.in_data[0] * max_push_effort
+    else:
+        outputs = ort_model.run(
+        None,
+        {"obs": comm_obj.out_data[0:3].reshape(1,-1).astype(np.float32)},
+        )
+        print(outputs[0])
+        action=outputs[0]* max_push_effort
+    # print(comm_obj.in_data)
+    # gym.apply_dof_effort(env0, joint_idx, a[0]/20.0)
+    if(a[0]):
+        action = 0.0
+    gym.apply_dof_effort(env0, joint_idx, action)
+    
 
  
     # Wait for dt to elapse in real time.
