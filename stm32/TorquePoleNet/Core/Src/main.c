@@ -19,12 +19,15 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "crc.h"
+#include "tim.h"
 #include "usart.h"
 #include "gpio.h"
+#include "app_x-cube-ai.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <stdint.h>
+#include "network.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -50,6 +53,12 @@ union floatUnion {
     uint8_t bytes[4 * sizeof(float)];
 };
 union floatUnion data;
+
+ai_float in_data1[AI_NETWORK_IN_1_SIZE];
+ai_float out_data1[AI_NETWORK_OUT_1_SIZE];
+ai_float out_data2[AI_NETWORK_OUT_2_SIZE];
+ai_float out_data3[AI_NETWORK_OUT_3_SIZE];
+uint8_t data_flag;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -70,7 +79,7 @@ void SystemClock_Config(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
+  data_flag=0;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -93,6 +102,8 @@ int main(void)
   MX_GPIO_Init();
   MX_USART2_UART_Init();
   MX_CRC_Init();
+  MX_TIM2_Init();
+  MX_X_CUBE_AI_Init();
   /* USER CODE BEGIN 2 */
   HAL_UART_Receive_IT(&huart2, data.bytes, sizeof(data.bytes)); //You need to toggle a breakpoint on this line!
 
@@ -101,12 +112,6 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 
-
-  data.floatValue[0] = 123.456; // First float value
-  data.floatValue[1] = 234.567; // Second float value
-  data.floatValue[2] = 345.678; // Third float value
-  data.floatValue[3] = 456.789; // Fourth float value
-
   while (1)
   {
 //    HAL_UART_Transmit(&huart2, data.bytes, sizeof(data.bytes), 100);
@@ -114,8 +119,23 @@ int main(void)
     // Read 16 bytes into data.bytes
 //    HAL_UART_Receive(&huart2, data.bytes, sizeof(data.bytes), 1000);
 
-    HAL_Delay(500);
+    if(data_flag)
+    {
 
+      TIM2->CNT = 0;
+      HAL_TIM_Base_Start(&htim2);
+      in_data1[0] = data.floatValue[0];
+      in_data1[1] = data.floatValue[1];
+      MX_X_CUBE_AI_Process();
+      HAL_TIM_Base_Stop(&htim2);
+      data.floatValue[0] = out_data1[0];
+      data.floatValue[1] = out_data2[0];
+      data.floatValue[2] = out_data3[0];
+      data.floatValue[3] = (float)TIM2->CNT/(1000000);
+      data_flag = 0;
+      HAL_UART_Transmit(&huart2, data.bytes, sizeof(data.bytes), 100);
+      HAL_UART_Receive_IT(&huart2, data.bytes, sizeof(data.bytes));
+    }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -172,8 +192,8 @@ void SystemClock_Config(void)
 /* USER CODE BEGIN 4 */
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
-  HAL_UART_Transmit(&huart2, data.bytes, sizeof(data.bytes), 100); //You need to toggle a breakpoint on this line!
-  HAL_UART_Receive_IT(&huart2, data.bytes, sizeof(data.bytes)); //You need to toggle a breakpoint on this line!
+  // We will set a data flag here and execute in the main loop
+  data_flag = 1;
 }
 void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart)
 {
