@@ -38,13 +38,14 @@ from isaacgymenvs.tasks.base.vec_task import VecTask
 
 from typing import Tuple, Dict
 
+from isaacgymenvs.tasks.stm32_comms import MCU_Comms
 
 class Anymal(VecTask):
 
     def __init__(self, cfg, rl_device, sim_device, graphics_device_id, headless, virtual_screen_capture, force_render):
 
         self.cfg = cfg
-        
+        self.comm_obj = MCU_Comms()
         # normalization
         self.lin_vel_scale = self.cfg["env"]["learn"]["linearVelocityScale"]
         self.ang_vel_scale = self.cfg["env"]["learn"]["angularVelocityScale"]
@@ -227,6 +228,11 @@ class Anymal(VecTask):
         self.actions = actions.clone().to(self.device)
         targets = self.action_scale * self.actions + self.default_dof_pos
         self.gym.set_dof_position_target_tensor(self.sim, gymtorch.unwrap_tensor(targets))
+
+        self.comm_obj.obs_data = self.obs_buf[0].detach().cpu().numpy()
+        self.comm_obj.write_data()
+        self.comm_obj.read_data()
+        self.actions[0,:] = torch.tensor(self.comm_obj.act_data)
 
     def post_physics_step(self):
         self.progress_buf += 1

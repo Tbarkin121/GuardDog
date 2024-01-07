@@ -13,7 +13,7 @@ import platform
 
 class MCU_Comms():
     def __init__(self):
-        self.in_data = np.zeros(4)
+        self.act_data = np.zeros(4)
         self.out_data = np.zeros(4)
 
         if platform.system() == 'Windows':

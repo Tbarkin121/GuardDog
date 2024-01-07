@@ -1,7 +1,7 @@
 # Custom
 solidworks/3dprint/*
 *.zip
-
+runs/
 # Prerequisites
 *.d
 

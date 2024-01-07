@@ -1,0 +1,1077 @@
+{
+    "outputs": [
+        "mu_output",
+        "log_std_output",
+        "value_output"
+    ],
+    "c_layers": [
+        {
+            "next": "_model_running_mean_std_Div_output_0",
+            "rom": 8,
+            "op_by_type": {"op_f32_f32": 2},
+            "c_forward": "forward_eltwise",
+            "c_code_emit": true,
+            "macc": 2,
+            "name": "_model_running_mean_std_Sub_output_0",
+            "c_id": 0,
+            "tensors": {
+                "outputs": ["_model_running_mean_std_Sub_output_0_output"],
+                "inputs": [
+                    "obs_output",
+                    "onnxSub_34"
+                ],
+                "scratchs": [],
+                "weights": []
+            },
+            "weight_sparsity": [
+                0,
+                2,
+                0
+            ],
+            "layer_type": "eltwise/sub",
+            "m_id": 1
+        },
+        {
+            "next": "_model_running_mean_std_Clip_output_0",
+            "rom": 8,
+            "op_by_type": {"op_f32_f32": 10},
+            "c_forward": "forward_eltwise",
+            "c_code_emit": true,
+            "macc": 10,
+            "name": "_model_running_mean_std_Div_output_0",
+            "c_id": 1,
+            "tensors": {
+                "outputs": ["_model_running_mean_std_Div_output_0_output"],
+                "inputs": [
+                    "_model_running_mean_std_Sub_output_0_output",
+                    "onnxDiv_37"
+                ],
+                "scratchs": [],
+                "weights": []
+            },
+            "weight_sparsity": [
+                0,
+                2,
+                0
+            ],
+            "layer_type": "eltwise/div",
+            "m_id": 2
+        },
+        {
+            "next": "_model_a2c_network_actor_mlp_0_Gemm_output_0",
+            "rom": 0,
+            "op_by_type": {"op_f32_f32": 4},
+            "c_forward": "forward_clip",
+            "c_code_emit": true,
+            "macc": 4,
+            "name": "_model_running_mean_std_Clip_output_0",
+            "c_id": 2,
+            "tensors": {
+                "outputs": ["_model_running_mean_std_Clip_output_0_output"],
+                "inputs": ["_model_running_mean_std_Div_output_0_output"],
+                "scratchs": [],
+                "weights": []
+            },
+            "weight_sparsity": [
+                0,
+                1,
+                0
+            ],
+            "layer_type": "nl",
+            "m_id": 5
+        },
+        {
+            "next": "_model_a2c_network_actor_mlp_1_Elu_output_0",
+            "rom": 1536,
+            "op_by_type": {"smul_f32_f32": 384},
+            "c_forward": "forward_dense",
+            "c_code_emit": true,
+            "macc": 384,
+            "name": "_model_a2c_network_actor_mlp_0_Gemm_output_0",
+            "c_id": 3,
+            "tensors": {
+                "outputs": ["_model_a2c_network_actor_mlp_0_Gemm_output_0_output"],
+                "inputs": ["_model_running_mean_std_Clip_output_0_output"],
+                "scratchs": [],
+                "weights": [
+                    "_model_a2c_network_actor_mlp_0_Gemm_output_0_weights",
+                    "_model_a2c_network_actor_mlp_0_Gemm_output_0_bias"
+                ]
+            },
+            "weight_sparsity": [
+                0,
+                384,
+                0
+            ],
+            "layer_type": "dense",
+            "m_id": 7
+        },
+        {
+            "next": "_model_a2c_network_actor_mlp_2_Gemm_output_0",
+            "rom": 0,
+            "op_by_type": {"op_f32_f32": 1408},
+            "c_forward": "forward_elu",
+            "c_code_emit": true,
+            "macc": 1408,
+            "name": "_model_a2c_network_actor_mlp_1_Elu_output_0",
+            "c_id": 4,
+            "tensors": {
+                "outputs": ["_model_a2c_network_actor_mlp_1_Elu_output_0_output"],
+                "inputs": ["_model_a2c_network_actor_mlp_0_Gemm_output_0_output"],
+                "scratchs": [],
+                "weights": []
+            },
+            "weight_sparsity": [
+                0,
+                1,
+                0
+            ],
+            "layer_type": "nl",
+            "m_id": 8
+        },
+        {
+            "next": "_model_a2c_network_actor_mlp_3_Elu_output_0",
+            "rom": 17920,
+            "op_by_type": {"smul_f32_f32c8": 16512},
+            "c_forward": "forward_dense",
+            "c_code_emit": true,
+            "macc": 16512,
+            "name": "_model_a2c_network_actor_mlp_2_Gemm_output_0",
+            "c_id": 5,
+            "tensors": {
+                "outputs": ["_model_a2c_network_actor_mlp_2_Gemm_output_0_output"],
+                "inputs": ["_model_a2c_network_actor_mlp_1_Elu_output_0_output"],
+                "scratchs": [],
+                "weights": [
+                    "_model_a2c_network_actor_mlp_2_Gemm_output_0_weights",
+                    "_model_a2c_network_actor_mlp_2_Gemm_output_0_bias"
+                ]
+            },
+            "weight_sparsity": [
+                6.05620155038622E-5,
+                16512,
+                1
+            ],
+            "layer_type": "dense",
+            "m_id": 9
+        },
+        {
+            "next": "value",
+            "rom": 0,
+            "op_by_type": {"op_f32_f32": 1408},
+            "c_forward": "forward_elu",
+            "c_code_emit": true,
+            "macc": 1408,
+            "name": "_model_a2c_network_actor_mlp_3_Elu_output_0",
+            "c_id": 6,
+            "tensors": {
+                "outputs": ["_model_a2c_network_actor_mlp_3_Elu_output_0_output"],
+                "inputs": ["_model_a2c_network_actor_mlp_2_Gemm_output_0_output"],
+                "scratchs": [],
+                "weights": []
+            },
+            "weight_sparsity": [
+                0,
+                1,
+                0
+            ],
+            "layer_type": "nl",
+            "m_id": 10
+        },
+        {
+            "next": "mu",
+            "rom": 516,
+            "op_by_type": {"smul_f32_f32": 129},
+            "c_forward": "forward_dense",
+            "c_code_emit": true,
+            "macc": 129,
+            "name": "value",
+            "c_id": 7,
+            "tensors": {
+                "outputs": ["value_output"],
+                "inputs": ["_model_a2c_network_actor_mlp_3_Elu_output_0_output"],
+                "scratchs": [],
+                "weights": [
+                    "value_weights",
+                    "value_bias"
+                ]
+            },
+            "weight_sparsity": [
+                0,
+                129,
+                0
+            ],
+            "layer_type": "dense",
+            "m_id": 11
+        },
+        {
+            "next": "_model_a2c_network_Mul_output_0",
+            "rom": 516,
+            "op_by_type": {"smul_f32_f32": 129},
+            "c_forward": "forward_dense",
+            "c_code_emit": true,
+            "macc": 129,
+            "name": "mu",
+            "c_id": 8,
+            "tensors": {
+                "outputs": ["mu_output"],
+                "inputs": ["_model_a2c_network_actor_mlp_3_Elu_output_0_output"],
+                "scratchs": [],
+                "weights": [
+                    "mu_weights",
+                    "mu_bias"
+                ]
+            },
+            "weight_sparsity": [
+                0,
+                129,
+                0
+            ],
+            "layer_type": "dense",
+            "m_id": 12
+        },
+        {
+            "next": "log_std",
+            "rom": 4,
+            "op_by_type": {"op_f32_f32": 1},
+            "c_forward": "forward_eltwise",
+            "c_code_emit": true,
+            "macc": 1,
+            "name": "_model_a2c_network_Mul_output_0",
+            "c_id": 9,
+            "tensors": {
+                "outputs": ["_model_a2c_network_Mul_output_0_output"],
+                "inputs": [
+                    "mu_output",
+                    "_model_a2c_network_Constant_output_0"
+                ],
+                "scratchs": [],
+                "weights": []
+            },
+            "weight_sparsity": [
+                1,
+                1,
+                1
+            ],
+            "layer_type": "eltwise/mul",
+            "m_id": 14
+        },
+        {
+            "next": "log_std",
+            "rom": 4,
+            "op_by_type": {"op_f32_f32": 1},
+            "c_forward": "forward_eltwise",
+            "c_code_emit": true,
+            "macc": 1,
+            "name": "log_std",
+            "c_id": 10,
+            "tensors": {
+                "outputs": ["log_std_output"],
+                "inputs": [
+                    "_model_a2c_network_Mul_output_0_output",
+                    "model__model_a2c_network_sigma"
+                ],
+                "scratchs": [],
+                "weights": []
+            },
+            "weight_sparsity": [
+                0,
+                1,
+                0
+            ],
+            "layer_type": "eltwise/sum",
+            "m_id": 15
+        }
+    ],
+    "data_alignment": 4,
+    "compilation_options": {
+        "optimization": "balanced",
+        "options": [
+            "allocate-inputs",
+            "allocate-outputs"
+        ],
+        "compression": "low"
+    },
+    "inputs": ["obs_output"],
+    "macc": 19988,
+    "c_weights_header": 0,
+    "activations_alignment": 4,
+    "c_nodes_n": 11,
+    "c_tensors_n": 24,
+    "type": "onnx",
+    "c_arrays": [
+        {
+            "mem_pool": "activations",
+            "offset": 504,
+            "is_const": false,
+            "format": "float32",
+            "n_items": 2,
+            "tensors": [{
+                "shape": [
+                    1,
+                    2
+                ],
+                "name": "_model_running_mean_std_Clip_output_0_output"
+            }],
+            "raw_fmt": "(FLOAT, 32 bit, C Size: 32 bits)",
+            "c_mem_pool": "**default**",
+            "padded": true,
+            "size": 2,
+            "c_type": "float",
+            "name": "_model_running_mean_std_Clip_output_0_output_array",
+            "c_id": 0,
+            "c_bits": 32,
+            "c_size_in_byte": 8
+        },
+        {
+            "mem_pool": "activations",
+            "offset": 512,
+            "is_const": false,
+            "format": "float32",
+            "n_items": 128,
+            "tensors": [{
+                "shape": [
+                    1,
+                    128
+                ],
+                "name": "_model_a2c_network_actor_mlp_0_Gemm_output_0_output"
+            }],
+            "raw_fmt": "(FLOAT, 32 bit, C Size: 32 bits)",
+            "c_mem_pool": "**default**",
+            "padded": true,
+            "size": 128,
+            "c_type": "float",
+            "name": "_model_a2c_network_actor_mlp_0_Gemm_output_0_output_array",
+            "c_id": 1,
+            "c_bits": 32,
+            "c_size_in_byte": 512
+        },
+        {
+            "mem_pool": "activations",
+            "offset": 512,
+            "is_const": false,
+            "format": "float32",
+            "n_items": 128,
+            "tensors": [{
+                "shape": [
+                    1,
+                    128
+                ],
+                "name": "_model_a2c_network_actor_mlp_1_Elu_output_0_output"
+            }],
+            "raw_fmt": "(FLOAT, 32 bit, C Size: 32 bits)",
+            "c_mem_pool": "**default**",
+            "padded": true,
+            "size": 128,
+            "c_type": "float",
+            "name": "_model_a2c_network_actor_mlp_1_Elu_output_0_output_array",
+            "c_id": 2,
+            "c_bits": 32,
+            "c_size_in_byte": 512
+        },
+        {
+            "mem_pool": "activations",
+            "offset": 0,
+            "is_const": false,
+            "format": "float32",
+            "n_items": 128,
+            "tensors": [{
+                "shape": [
+                    1,
+                    128
+                ],
+                "name": "_model_a2c_network_actor_mlp_2_Gemm_output_0_output"
+            }],
+            "raw_fmt": "(FLOAT, 32 bit, C Size: 32 bits)",
+            "c_mem_pool": "**default**",
+            "padded": true,
+            "size": 128,
+            "c_type": "float",
+            "name": "_model_a2c_network_actor_mlp_2_Gemm_output_0_output_array",
+            "c_id": 3,
+            "c_bits": 32,
+            "c_size_in_byte": 512
+        },
+        {
+            "mem_pool": "activations",
+            "offset": 512,
+            "is_const": false,
+            "format": "float32",
+            "n_items": 128,
+            "tensors": [{
+                "shape": [
+                    1,
+                    128
+                ],
+                "name": "_model_a2c_network_actor_mlp_3_Elu_output_0_output"
+            }],
+            "raw_fmt": "(FLOAT, 32 bit, C Size: 32 bits)",
+            "c_mem_pool": "**default**",
+            "padded": true,
+            "size": 128,
+            "c_type": "float",
+            "name": "_model_a2c_network_actor_mlp_3_Elu_output_0_output_array",
+            "c_id": 4,
+            "c_bits": 32,
+            "c_size_in_byte": 512
+        },
+        {
+            "mem_pool": "activations",
+            "offset": 0,
+            "is_const": false,
+            "format": "float32",
+            "n_items": 1,
+            "tensors": [{
+                "shape": [
+                    1,
+                    1
+                ],
+                "name": "value_output"
+            }],
+            "raw_fmt": "(FLOAT, 32 bit, C Size: 32 bits)",
+            "c_mem_pool": "**default**",
+            "padded": true,
+            "size": 1,
+            "c_type": "float",
+            "name": "value_output_array",
+            "c_id": 5,
+            "c_bits": 32,
+            "c_size_in_byte": 4,
+            "io_type": "output"
+        },
+        {
+            "mem_pool": "activations",
+            "offset": 4,
+            "is_const": false,
+            "format": "float32",
+            "n_items": 1,
+            "tensors": [{
+                "shape": [
+                    1,
+                    1
+                ],
+                "name": "mu_output"
+            }],
+            "raw_fmt": "(FLOAT, 32 bit, C Size: 32 bits)",
+            "c_mem_pool": "**default**",
+            "padded": true,
+            "size": 1,
+            "c_type": "float",
+            "name": "mu_output_array",
+            "c_id": 6,
+            "c_bits": 32,
+            "c_size_in_byte": 4,
+            "io_type": "output"
+        },
+        {
+            "mem_pool": "activations",
+            "offset": 8,
+            "is_const": false,
+            "format": "float32",
+            "n_items": 1,
+            "tensors": [{
+                "shape": [
+                    1,
+                    1
+                ],
+                "name": "_model_a2c_network_Mul_output_0_output"
+            }],
+            "raw_fmt": "(FLOAT, 32 bit, C Size: 32 bits)",
+            "c_mem_pool": "**default**",
+            "padded": true,
+            "size": 1,
+            "c_type": "float",
+            "name": "_model_a2c_network_Mul_output_0_output_array",
+            "c_id": 7,
+            "c_bits": 32,
+            "c_size_in_byte": 4
+        },
+        {
+            "mem_pool": "activations",
+            "offset": 12,
+            "is_const": false,
+            "format": "float32",
+            "n_items": 1,
+            "tensors": [{
+                "shape": [
+                    1,
+                    1
+                ],
+                "name": "log_std_output"
+            }],
+            "raw_fmt": "(FLOAT, 32 bit, C Size: 32 bits)",
+            "c_mem_pool": "**default**",
+            "padded": true,
+            "size": 1,
+            "c_type": "float",
+            "name": "log_std_output_array",
+            "c_id": 8,
+            "c_bits": 32,
+            "c_size_in_byte": 4,
+            "io_type": "output"
+        },
+        {
+            "mem_pool": "weights",
+            "offset": 0,
+            "is_const": true,
+            "format": "float32",
+            "n_items": 1,
+            "tensors": [{
+                "shape": [1],
+                "name": "model__model_a2c_network_sigma"
+            }],
+            "zeros": 0,
+            "raw_fmt": "(FLOAT, 32 bit, C Size: 32 bits)",
+            "c_mem_pool": "weights",
+            "padded": true,
+            "size": 1,
+            "c_type": "const float",
+            "name": "model__model_a2c_network_sigma_array",
+            "c_id": 9,
+            "c_bits": 32,
+            "c_size_in_byte": 4
+        },
+        {
+            "mem_pool": "weights",
+            "offset": 4,
+            "is_const": true,
+            "format": "float32",
+            "n_items": 1,
+            "tensors": [{
+                "shape": [1],
+                "name": "_model_a2c_network_Constant_output_0"
+            }],
+            "zeros": 1,
+            "raw_fmt": "(FLOAT, 32 bit, C Size: 32 bits)",
+            "c_mem_pool": "weights",
+            "padded": true,
+            "size": 1,
+            "c_type": "const float",
+            "name": "_model_a2c_network_Constant_output_0_array",
+            "c_id": 10,
+            "c_bits": 32,
+            "c_size_in_byte": 4
+        },
+        {
+            "mem_pool": "weights",
+            "offset": 8,
+            "is_const": true,
+            "format": "float32",
+            "n_items": 2,
+            "tensors": [{
+                "shape": [2],
+                "name": "onnxDiv_37"
+            }],
+            "zeros": 0,
+            "raw_fmt": "(FLOAT, 32 bit, C Size: 32 bits)",
+            "c_mem_pool": "weights",
+            "padded": true,
+            "size": 2,
+            "c_type": "const float",
+            "name": "onnxDiv_37_array",
+            "c_id": 11,
+            "c_bits": 32,
+            "c_size_in_byte": 8
+        },
+        {
+            "mem_pool": "weights",
+            "offset": 16,
+            "is_const": true,
+            "format": "float32",
+            "n_items": 2,
+            "tensors": [{
+                "shape": [2],
+                "name": "onnxSub_34"
+            }],
+            "zeros": 0,
+            "raw_fmt": "(FLOAT, 32 bit, C Size: 32 bits)",
+            "c_mem_pool": "weights",
+            "padded": true,
+            "size": 2,
+            "c_type": "const float",
+            "name": "onnxSub_34_array",
+            "c_id": 12,
+            "c_bits": 32,
+            "c_size_in_byte": 8
+        },
+        {
+            "mem_pool": "weights",
+            "offset": 24,
+            "is_const": true,
+            "format": "float32",
+            "n_items": 256,
+            "tensors": [{
+                "shape": [
+                    2,
+                    128
+                ],
+                "name": "_model_a2c_network_actor_mlp_0_Gemm_output_0_weights"
+            }],
+            "zeros": 0,
+            "raw_fmt": "(FLOAT, 32 bit, C Size: 32 bits)",
+            "c_mem_pool": "weights",
+            "padded": true,
+            "size": 256,
+            "c_type": "const float",
+            "name": "_model_a2c_network_actor_mlp_0_Gemm_output_0_weights_array",
+            "c_id": 13,
+            "c_bits": 32,
+            "c_size_in_byte": 1024
+        },
+        {
+            "mem_pool": "weights",
+            "offset": 1048,
+            "is_const": true,
+            "format": "float32",
+            "n_items": 128,
+            "tensors": [{
+                "shape": [128],
+                "name": "_model_a2c_network_actor_mlp_0_Gemm_output_0_bias"
+            }],
+            "zeros": 0,
+            "raw_fmt": "(FLOAT, 32 bit, C Size: 32 bits)",
+            "c_mem_pool": "weights",
+            "padded": true,
+            "size": 128,
+            "c_type": "const float",
+            "name": "_model_a2c_network_actor_mlp_0_Gemm_output_0_bias_array",
+            "c_id": 14,
+            "c_bits": 32,
+            "c_size_in_byte": 512
+        },
+        {
+            "mem_pool": "weights",
+            "offset": 2584,
+            "is_const": true,
+            "format": "c8 (LUT8)",
+            "n_items": 16384,
+            "tensors": [{
+                "shape": [
+                    128,
+                    128
+                ],
+                "name": "_model_a2c_network_actor_mlp_2_Gemm_output_0_weights"
+            }],
+            "zeros": 1,
+            "raw_fmt": "(LUT_FLOAT, 8 bit, C Size: 8 bits)",
+            "c_mem_pool": "weights",
+            "padded": true,
+            "size": 16384,
+            "c_type": "const float",
+            "name": "_model_a2c_network_actor_mlp_2_Gemm_output_0_weights_array",
+            "c_id": 15,
+            "c_bits": 8,
+            "c_size_in_byte": 17408
+        },
+        {
+            "mem_pool": "weights",
+            "offset": 18968,
+            "is_const": true,
+            "format": "float32",
+            "n_items": 128,
+            "tensors": [{
+                "shape": [128],
+                "name": "_model_a2c_network_actor_mlp_2_Gemm_output_0_bias"
+            }],
+            "zeros": 0,
+            "raw_fmt": "(FLOAT, 32 bit, C Size: 32 bits)",
+            "c_mem_pool": "weights",
+            "padded": true,
+            "size": 128,
+            "c_type": "const float",
+            "name": "_model_a2c_network_actor_mlp_2_Gemm_output_0_bias_array",
+            "c_id": 16,
+            "c_bits": 32,
+            "c_size_in_byte": 512
+        },
+        {
+            "mem_pool": "weights",
+            "offset": 19480,
+            "is_const": true,
+            "format": "float32",
+            "n_items": 128,
+            "tensors": [{
+                "shape": [
+                    128,
+                    1
+                ],
+                "name": "value_weights"
+            }],
+            "zeros": 0,
+            "raw_fmt": "(FLOAT, 32 bit, C Size: 32 bits)",
+            "c_mem_pool": "weights",
+            "padded": true,
+            "size": 128,
+            "c_type": "const float",
+            "name": "value_weights_array",
+            "c_id": 17,
+            "c_bits": 32,
+            "c_size_in_byte": 512
+        },
+        {
+            "mem_pool": "weights",
+            "offset": 19992,
+            "is_const": true,
+            "format": "float32",
+            "n_items": 1,
+            "tensors": [{
+                "shape": [1],
+                "name": "value_bias"
+            }],
+            "zeros": 0,
+            "raw_fmt": "(FLOAT, 32 bit, C Size: 32 bits)",
+            "c_mem_pool": "weights",
+            "padded": true,
+            "size": 1,
+            "c_type": "const float",
+            "name": "value_bias_array",
+            "c_id": 18,
+            "c_bits": 32,
+            "c_size_in_byte": 4
+        },
+        {
+            "mem_pool": "weights",
+            "offset": 19996,
+            "is_const": true,
+            "format": "float32",
+            "n_items": 128,
+            "tensors": [{
+                "shape": [
+                    128,
+                    1
+                ],
+                "name": "mu_weights"
+            }],
+            "zeros": 0,
+            "raw_fmt": "(FLOAT, 32 bit, C Size: 32 bits)",
+            "c_mem_pool": "weights",
+            "padded": true,
+            "size": 128,
+            "c_type": "const float",
+            "name": "mu_weights_array",
+            "c_id": 19,
+            "c_bits": 32,
+            "c_size_in_byte": 512
+        },
+        {
+            "mem_pool": "weights",
+            "offset": 20508,
+            "is_const": true,
+            "format": "float32",
+            "n_items": 1,
+            "tensors": [{
+                "shape": [1],
+                "name": "mu_bias"
+            }],
+            "zeros": 0,
+            "raw_fmt": "(FLOAT, 32 bit, C Size: 32 bits)",
+            "c_mem_pool": "weights",
+            "padded": true,
+            "size": 1,
+            "c_type": "const float",
+            "name": "mu_bias_array",
+            "c_id": 20,
+            "c_bits": 32,
+            "c_size_in_byte": 4
+        },
+        {
+            "mem_pool": "activations",
+            "offset": 504,
+            "is_const": false,
+            "format": "float32",
+            "n_items": 2,
+            "tensors": [{
+                "shape": [
+                    1,
+                    2
+                ],
+                "name": "obs_output"
+            }],
+            "raw_fmt": "(FLOAT, 32 bit, C Size: 32 bits)",
+            "c_mem_pool": "**default**",
+            "padded": true,
+            "size": 2,
+            "c_type": "float",
+            "name": "obs_output_array",
+            "c_id": 21,
+            "c_bits": 32,
+            "c_size_in_byte": 8,
+            "io_type": "input"
+        },
+        {
+            "mem_pool": "activations",
+            "offset": 504,
+            "is_const": false,
+            "format": "float32",
+            "n_items": 2,
+            "tensors": [{
+                "shape": [
+                    1,
+                    2
+                ],
+                "name": "_model_running_mean_std_Sub_output_0_output"
+            }],
+            "raw_fmt": "(FLOAT, 32 bit, C Size: 32 bits)",
+            "c_mem_pool": "**default**",
+            "padded": true,
+            "size": 2,
+            "c_type": "float",
+            "name": "_model_running_mean_std_Sub_output_0_output_array",
+            "c_id": 22,
+            "c_bits": 32,
+            "c_size_in_byte": 8
+        },
+        {
+            "mem_pool": "activations",
+            "offset": 504,
+            "is_const": false,
+            "format": "float32",
+            "n_items": 2,
+            "tensors": [{
+                "shape": [
+                    1,
+                    2
+                ],
+                "name": "_model_running_mean_std_Div_output_0_output"
+            }],
+            "raw_fmt": "(FLOAT, 32 bit, C Size: 32 bits)",
+            "c_mem_pool": "**default**",
+            "padded": true,
+            "size": 2,
+            "c_type": "float",
+            "name": "_model_running_mean_std_Div_output_0_output_array",
+            "c_id": 23,
+            "c_bits": 32,
+            "c_size_in_byte": 8
+        }
+    ],
+    "c_activations_count": 1,
+    "date_time": "Fri Jan  5 19:46:59 2024",
+    "model_name": "pendulum",
+    "tool_version": {
+        "major": 1,
+        "minor": 7,
+        "micro": 0
+    },
+    "c_intq_n": 0,
+    "stm_ai_version": {
+        "major": 8,
+        "minor": 1,
+        "micro": 0,
+        "extra": "19520"
+    },
+    "model_fmt": "float",
+    "c_weights_count": 1,
+    "weights": {"weights_array": {
+        "buffer_data_size": 20512,
+        "buffer_crc": 0,
+        "pool_size": 20512,
+        "buffer_c_type": "u64",
+        "buffer_c_name": "s_network_weights_array_u64",
+        "buffer_offsets": [
+            {
+                "lite_tag": null,
+                "offset": 0,
+                "size": 4,
+                "start_offset": 0,
+                "buffer_name": "model__model_a2c_network_sigma_array"
+            },
+            {
+                "lite_tag": null,
+                "offset": 4,
+                "size": 4,
+                "start_offset": 4,
+                "buffer_name": "_model_a2c_network_Constant_output_0_array"
+            },
+            {
+                "lite_tag": null,
+                "offset": 8,
+                "size": 8,
+                "start_offset": 8,
+                "buffer_name": "onnxDiv_37_array"
+            },
+            {
+                "lite_tag": null,
+                "offset": 16,
+                "size": 8,
+                "start_offset": 16,
+                "buffer_name": "onnxSub_34_array"
+            },
+            {
+                "lite_tag": null,
+                "offset": 24,
+                "size": 1024,
+                "start_offset": 24,
+                "buffer_name": "_model_a2c_network_actor_mlp_0_Gemm_output_0_weights_array"
+            },
+            {
+                "lite_tag": null,
+                "offset": 1048,
+                "size": 512,
+                "start_offset": 1048,
+                "buffer_name": "_model_a2c_network_actor_mlp_0_Gemm_output_0_bias_array"
+            },
+            {
+                "lite_tag": null,
+                "offset": 2584,
+                "size": 17408,
+                "start_offset": 1560,
+                "buffer_name": "_model_a2c_network_actor_mlp_2_Gemm_output_0_weights_array"
+            },
+            {
+                "lite_tag": null,
+                "offset": 18968,
+                "size": 512,
+                "start_offset": 18968,
+                "buffer_name": "_model_a2c_network_actor_mlp_2_Gemm_output_0_bias_array"
+            },
+            {
+                "lite_tag": null,
+                "offset": 19480,
+                "size": 512,
+                "start_offset": 19480,
+                "buffer_name": "value_weights_array"
+            },
+            {
+                "lite_tag": null,
+                "offset": 19992,
+                "size": 4,
+                "start_offset": 19992,
+                "buffer_name": "value_bias_array"
+            },
+            {
+                "lite_tag": null,
+                "offset": 19996,
+                "size": 512,
+                "start_offset": 19996,
+                "buffer_name": "mu_weights_array"
+            },
+            {
+                "lite_tag": null,
+                "offset": 20508,
+                "size": 4,
+                "start_offset": 20508,
+                "buffer_name": "mu_bias_array"
+            }
+        ],
+        "buffer_c_name_addr": "s_network_weights_array_u64",
+        "buffer_c_count": 2564,
+        "pool_id": 0,
+        "buffer_c_data": []
+    }},
+    "memory_footprint": {
+        "kernel_ram": 3444,
+        "kernel_flash": 13426,
+        "io": [
+            0,
+            0
+        ],
+        "series": "generic",
+        "activations": 1024,
+        "weights": 20512
+    },
+    "version": "1.2",
+    "tool_api_version": {
+        "major": 1,
+        "minor": 5,
+        "micro": 0
+    },
+    "model_signature": "37fbe929931d63da6e89dfe3e5a6d678",
+    "params_alignment": 4,
+    "activations": {"heap_overlay_pool": {
+        "buffer_data_size": 0,
+        "pool_size": 1024,
+        "buffer_c_name": "NULL",
+        "buffer_offsets": [
+            {
+                "lite_tag": null,
+                "offset": 504,
+                "size": 8,
+                "start_offset": 504,
+                "buffer_name": "obs_output_array"
+            },
+            {
+                "lite_tag": null,
+                "offset": 504,
+                "size": 8,
+                "start_offset": 504,
+                "buffer_name": "_model_running_mean_std_Sub_output_0_output_array"
+            },
+            {
+                "lite_tag": null,
+                "offset": 504,
+                "size": 8,
+                "start_offset": 504,
+                "buffer_name": "_model_running_mean_std_Div_output_0_output_array"
+            },
+            {
+                "lite_tag": null,
+                "offset": 504,
+                "size": 8,
+                "start_offset": 504,
+                "buffer_name": "_model_running_mean_std_Clip_output_0_output_array"
+            },
+            {
+                "lite_tag": null,
+                "offset": 512,
+                "size": 512,
+                "start_offset": 512,
+                "buffer_name": "_model_a2c_network_actor_mlp_0_Gemm_output_0_output_array"
+            },
+            {
+                "lite_tag": null,
+                "offset": 512,
+                "size": 512,
+                "start_offset": 512,
+                "buffer_name": "_model_a2c_network_actor_mlp_1_Elu_output_0_output_array"
+            },
+            {
+                "lite_tag": null,
+                "offset": 0,
+                "size": 512,
+                "start_offset": 0,
+                "buffer_name": "_model_a2c_network_actor_mlp_2_Gemm_output_0_output_array"
+            },
+            {
+                "lite_tag": null,
+                "offset": 512,
+                "size": 512,
+                "start_offset": 512,
+                "buffer_name": "_model_a2c_network_actor_mlp_3_Elu_output_0_output_array"
+            },
+            {
+                "lite_tag": null,
+                "offset": 0,
+                "size": 4,
+                "start_offset": 0,
+                "buffer_name": "value_output_array"
+            },
+            {
+                "lite_tag": null,
+                "offset": 4,
+                "size": 4,
+                "start_offset": 4,
+                "buffer_name": "mu_output_array"
+            },
+            {
+                "lite_tag": null,
+                "offset": 8,
+                "size": 4,
+                "start_offset": 8,
+                "buffer_name": "_model_a2c_network_Mul_output_0_output_array"
+            },
+            {
+                "lite_tag": null,
+                "offset": 12,
+                "size": 4,
+                "start_offset": 12,
+                "buffer_name": "log_std_output_array"
+            }
+        ],
+        "buffer_c_name_addr": "NULL",
+        "pool_id": 0
+    }},
+    "c_arrays_n": 24,
+    "c_name": "network",
+    "memory_pools": []
+}

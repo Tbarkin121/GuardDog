@@ -105,7 +105,7 @@ int main(void)
   MX_TIM2_Init();
   MX_X_CUBE_AI_Init();
   /* USER CODE BEGIN 2 */
-  HAL_UART_Receive_IT(&huart2, data.bytes, sizeof(data.bytes)); //You need to toggle a breakpoint on this line!
+  HAL_UART_Receive_IT(&huart2, data.bytes, sizeof(data.bytes));
 
   /* USER CODE END 2 */
 
@@ -139,7 +139,6 @@ int main(void)
     }
     /* USER CODE END WHILE */
 
-  MX_X_CUBE_AI_Process();
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
