@@ -1,0 +1,4 @@
+E:/MyProjects/MotorDrive/LegDay/Src/app_x-cube-ai.c:182:5:acquire_and_process_data	1
+E:/MyProjects/MotorDrive/LegDay/Src/app_x-cube-ai.c:198:5:post_process	1
+E:/MyProjects/MotorDrive/LegDay/Src/app_x-cube-ai.c:216:6:MX_X_CUBE_AI_Init	2
+E:/MyProjects/MotorDrive/LegDay/Src/app_x-cube-ai.c:225:6:MX_X_CUBE_AI_Process	3

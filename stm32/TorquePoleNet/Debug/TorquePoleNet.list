@@ -39,13 +39,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  17 .debug_macro  000216c7  00000000  00000000  0004ceff  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   00017c40  00000000  00000000  0006e5c6  2**0
+ 18 .debug_line   00018c9c  00000000  00000000  0006e5c6  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    000d41f6  00000000  00000000  00086206  2**0
+ 19 .debug_str    000d422b  00000000  00000000  00087262  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .debug_frame  00005514  00000000  00000000  0015a3fc  2**2
+ 20 .debug_frame  00005514  00000000  00000000  0015b490  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 0000006b  00000000  00000000  0015f910  2**0
+ 21 .debug_line_str 0000006f  00000000  00000000  001609a4  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -145,8 +145,8 @@ Disassembly of section .text:
  80002c6:	bf08      	it	eq
  80002c8:	2800      	cmpeq	r0, #0
  80002ca:	bf1c      	itt	ne
- 80002cc:	f04f 31ff 	movne.w	r1, #4294967295	; 0xffffffff
- 80002d0:	f04f 30ff 	movne.w	r0, #4294967295	; 0xffffffff
+ 80002cc:	f04f 31ff 	movne.w	r1, #4294967295
+ 80002d0:	f04f 30ff 	movne.w	r0, #4294967295
  80002d4:	f000 b970 	b.w	80005b8 <__aeabi_idiv0>
  80002d8:	f1ad 0c08 	sub.w	ip, sp, #8
  80002dc:	e96d ce04 	strd	ip, lr, [sp, #-16]!
@@ -185,7 +185,7 @@ Disassembly of section .text:
  8000338:	4290      	cmp	r0, r2
  800033a:	d90a      	bls.n	8000352 <__udivmoddi4+0x62>
  800033c:	eb1c 0202 	adds.w	r2, ip, r2
- 8000340:	f101 37ff 	add.w	r7, r1, #4294967295	; 0xffffffff
+ 8000340:	f101 37ff 	add.w	r7, r1, #4294967295
  8000344:	f080 811c 	bcs.w	8000580 <__udivmoddi4+0x290>
  8000348:	4290      	cmp	r0, r2
  800034a:	f240 8119 	bls.w	8000580 <__udivmoddi4+0x290>
@@ -200,7 +200,7 @@ Disassembly of section .text:
  8000366:	42a5      	cmp	r5, r4
  8000368:	d90a      	bls.n	8000380 <__udivmoddi4+0x90>
  800036a:	eb1c 0404 	adds.w	r4, ip, r4
- 800036e:	f100 32ff 	add.w	r2, r0, #4294967295	; 0xffffffff
+ 800036e:	f100 32ff 	add.w	r2, r0, #4294967295
  8000372:	f080 8107 	bcs.w	8000584 <__udivmoddi4+0x294>
  8000376:	42a5      	cmp	r5, r4
  8000378:	f240 8104 	bls.w	8000584 <__udivmoddi4+0x294>
@@ -254,7 +254,7 @@ Disassembly of section .text:
  80003fe:	4290      	cmp	r0, r2
  8000400:	d908      	bls.n	8000414 <__udivmoddi4+0x124>
  8000402:	eb1c 0202 	adds.w	r2, ip, r2
- 8000406:	f105 38ff 	add.w	r8, r5, #4294967295	; 0xffffffff
+ 8000406:	f105 38ff 	add.w	r8, r5, #4294967295
  800040a:	d202      	bcs.n	8000412 <__udivmoddi4+0x122>
  800040c:	4290      	cmp	r0, r2
  800040e:	f200 80cb 	bhi.w	80005a8 <__udivmoddi4+0x2b8>
@@ -268,7 +268,7 @@ Disassembly of section .text:
  8000428:	45a6      	cmp	lr, r4
  800042a:	d908      	bls.n	800043e <__udivmoddi4+0x14e>
  800042c:	eb1c 0404 	adds.w	r4, ip, r4
- 8000430:	f100 32ff 	add.w	r2, r0, #4294967295	; 0xffffffff
+ 8000430:	f100 32ff 	add.w	r2, r0, #4294967295
  8000434:	d202      	bcs.n	800043c <__udivmoddi4+0x14c>
  8000436:	45a6      	cmp	lr, r4
  8000438:	f200 80bb 	bhi.w	80005b2 <__udivmoddi4+0x2c2>
@@ -296,7 +296,7 @@ Disassembly of section .text:
  8000482:	fa00 f001 	lsl.w	r0, r0, r1
  8000486:	d90b      	bls.n	80004a0 <__udivmoddi4+0x1b0>
  8000488:	eb1c 0404 	adds.w	r4, ip, r4
- 800048c:	f108 3aff 	add.w	sl, r8, #4294967295	; 0xffffffff
+ 800048c:	f108 3aff 	add.w	sl, r8, #4294967295
  8000490:	f080 8088 	bcs.w	80005a4 <__udivmoddi4+0x2b4>
  8000494:	42a5      	cmp	r5, r4
  8000496:	f240 8085 	bls.w	80005a4 <__udivmoddi4+0x2b4>
@@ -311,7 +311,7 @@ Disassembly of section .text:
  80004b4:	45a6      	cmp	lr, r4
  80004b6:	d908      	bls.n	80004ca <__udivmoddi4+0x1da>
  80004b8:	eb1c 0404 	adds.w	r4, ip, r4
- 80004bc:	f103 35ff 	add.w	r5, r3, #4294967295	; 0xffffffff
+ 80004bc:	f103 35ff 	add.w	r5, r3, #4294967295
  80004c0:	d26c      	bcs.n	800059c <__udivmoddi4+0x2ac>
  80004c2:	45a6      	cmp	lr, r4
  80004c4:	d96a      	bls.n	800059c <__udivmoddi4+0x2ac>
@@ -353,7 +353,7 @@ Disassembly of section .text:
  8000530:	fa04 f403 	lsl.w	r4, r4, r3
  8000534:	d908      	bls.n	8000548 <__udivmoddi4+0x258>
  8000536:	eb1c 0101 	adds.w	r1, ip, r1
- 800053a:	f100 38ff 	add.w	r8, r0, #4294967295	; 0xffffffff
+ 800053a:	f100 38ff 	add.w	r8, r0, #4294967295
  800053e:	d22f      	bcs.n	80005a0 <__udivmoddi4+0x2b0>
  8000540:	428d      	cmp	r5, r1
  8000542:	d92d      	bls.n	80005a0 <__udivmoddi4+0x2b0>
@@ -368,7 +368,7 @@ Disassembly of section .text:
  800055c:	4291      	cmp	r1, r2
  800055e:	d908      	bls.n	8000572 <__udivmoddi4+0x282>
  8000560:	eb1c 0202 	adds.w	r2, ip, r2
- 8000564:	f105 38ff 	add.w	r8, r5, #4294967295	; 0xffffffff
+ 8000564:	f105 38ff 	add.w	r8, r5, #4294967295
  8000568:	d216      	bcs.n	8000598 <__udivmoddi4+0x2a8>
  800056a:	4291      	cmp	r1, r2
  800056c:	d914      	bls.n	8000598 <__udivmoddi4+0x2a8>
@@ -1198,7 +1198,7 @@ void *_sbrk(ptrdiff_t incr)
  800095e:	220c      	movs	r2, #12
  8000960:	601a      	str	r2, [r3, #0]
     return (void *)-1;
- 8000962:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
+ 8000962:	f04f 33ff 	mov.w	r3, #4294967295
  8000966:	e009      	b.n	800097c <_sbrk+0x54>
   }
 
@@ -1302,7 +1302,7 @@ void MX_TIM2_Init(void)
  80009e8:	609a      	str	r2, [r3, #8]
   htim2.Init.Period = 4.294967295E9;
  80009ea:	4b19      	ldr	r3, [pc, #100]	; (8000a50 <MX_TIM2_Init+0x98>)
- 80009ec:	f04f 32ff 	mov.w	r2, #4294967295	; 0xffffffff
+ 80009ec:	f04f 32ff 	mov.w	r2, #4294967295
  80009f0:	60da      	str	r2, [r3, #12]
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
  80009f2:	4b17      	ldr	r3, [pc, #92]	; (8000a50 <MX_TIM2_Init+0x98>)
@@ -1644,109 +1644,49 @@ void HAL_UART_MspInit(UART_HandleTypeDef* uartHandle)
  8000be4:	40021000 	.word	0x40021000
 
 08000be8 <Reset_Handler>:
-
-    .section	.text.Reset_Handler
-	.weak	Reset_Handler
-	.type	Reset_Handler, %function
-Reset_Handler:
-  ldr   r0, =_estack
  8000be8:	480d      	ldr	r0, [pc, #52]	; (8000c20 <LoopForever+0x2>)
-  mov   sp, r0          /* set stack pointer */
  8000bea:	4685      	mov	sp, r0
-  
-/* Call the clock system initialization function.*/
-    bl  SystemInit
  8000bec:	f7ff fed2 	bl	8000994 <SystemInit>
-
-/* Copy the data segment initializers from flash to SRAM */
-  ldr r0, =_sdata
  8000bf0:	480c      	ldr	r0, [pc, #48]	; (8000c24 <LoopForever+0x6>)
-  ldr r1, =_edata
  8000bf2:	490d      	ldr	r1, [pc, #52]	; (8000c28 <LoopForever+0xa>)
-  ldr r2, =_sidata
  8000bf4:	4a0d      	ldr	r2, [pc, #52]	; (8000c2c <LoopForever+0xe>)
-  movs r3, #0
  8000bf6:	2300      	movs	r3, #0
-  b	LoopCopyDataInit
  8000bf8:	e002      	b.n	8000c00 <LoopCopyDataInit>
 
 08000bfa <CopyDataInit>:
-
-CopyDataInit:
-  ldr r4, [r2, r3]
  8000bfa:	58d4      	ldr	r4, [r2, r3]
-  str r4, [r0, r3]
  8000bfc:	50c4      	str	r4, [r0, r3]
-  adds r3, r3, #4
  8000bfe:	3304      	adds	r3, #4
 
 08000c00 <LoopCopyDataInit>:
-
-LoopCopyDataInit:
-  adds r4, r0, r3
  8000c00:	18c4      	adds	r4, r0, r3
-  cmp r4, r1
  8000c02:	428c      	cmp	r4, r1
-  bcc CopyDataInit
  8000c04:	d3f9      	bcc.n	8000bfa <CopyDataInit>
-  
-/* Zero fill the bss segment. */
-  ldr r2, =_sbss
  8000c06:	4a0a      	ldr	r2, [pc, #40]	; (8000c30 <LoopForever+0x12>)
-  ldr r4, =_ebss
  8000c08:	4c0a      	ldr	r4, [pc, #40]	; (8000c34 <LoopForever+0x16>)
-  movs r3, #0
  8000c0a:	2300      	movs	r3, #0
-  b LoopFillZerobss
  8000c0c:	e001      	b.n	8000c12 <LoopFillZerobss>
 
 08000c0e <FillZerobss>:
-
-FillZerobss:
-  str  r3, [r2]
  8000c0e:	6013      	str	r3, [r2, #0]
-  adds r2, r2, #4
  8000c10:	3204      	adds	r2, #4
 
 08000c12 <LoopFillZerobss>:
-
-LoopFillZerobss:
-  cmp r2, r4
  8000c12:	42a2      	cmp	r2, r4
-  bcc FillZerobss
  8000c14:	d3fb      	bcc.n	8000c0e <FillZerobss>
-/* Call static constructors */
-    bl __libc_init_array
  8000c16:	f007 fc3b 	bl	8008490 <__libc_init_array>
-/* Call the application's entry point.*/
-	bl	main
  8000c1a:	f7ff fd51 	bl	80006c0 <main>
 
 08000c1e <LoopForever>:
-
-LoopForever:
-    b LoopForever
  8000c1e:	e7fe      	b.n	8000c1e <LoopForever>
-  ldr   r0, =_estack
  8000c20:	20008000 	.word	0x20008000
-  ldr r0, =_sdata
  8000c24:	20000000 	.word	0x20000000
-  ldr r1, =_edata
  8000c28:	20000ff4 	.word	0x20000ff4
-  ldr r2, =_sidata
  8000c2c:	08014224 	.word	0x08014224
-  ldr r2, =_sbss
  8000c30:	20001000 	.word	0x20001000
-  ldr r4, =_ebss
  8000c34:	2000182c 	.word	0x2000182c
 
 08000c38 <ADC1_2_IRQHandler>:
- * @retval : None
-*/
-    .section	.text.Default_Handler,"ax",%progbits
-Default_Handler:
-Infinite_Loop:
-	b	Infinite_Loop
  8000c38:	e7fe      	b.n	8000c38 <ADC1_2_IRQHandler>
 
 08000c3a <HAL_Init>:
@@ -1847,7 +1787,7 @@ __weak HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority)
         HAL_NVIC_SetPriority(SysTick_IRQn, TickPriority, 0U);
  8000ca6:	2200      	movs	r2, #0
  8000ca8:	6879      	ldr	r1, [r7, #4]
- 8000caa:	f04f 30ff 	mov.w	r0, #4294967295	; 0xffffffff
+ 8000caa:	f04f 30ff 	mov.w	r0, #4294967295
  8000cae:	f000 f910 	bl	8000ed2 <HAL_NVIC_SetPriority>
         uwTickPrio = TickPriority;
  8000cb2:	4a0a      	ldr	r2, [pc, #40]	; (8000cdc <HAL_InitTick+0x70>)
@@ -2138,7 +2078,7 @@ __STATIC_INLINE uint32_t NVIC_EncodePriority (uint32_t PriorityGroup, uint32_t P
 
   return (
            ((PreemptPriority & (uint32_t)((1UL << (PreemptPriorityBits)) - 1UL)) << SubPriorityBits) |
- 8000e44:	f04f 32ff 	mov.w	r2, #4294967295	; 0xffffffff
+ 8000e44:	f04f 32ff 	mov.w	r2, #4294967295
  8000e48:	69bb      	ldr	r3, [r7, #24]
  8000e4a:	fa02 f303 	lsl.w	r3, r2, r3
  8000e4e:	43da      	mvns	r2, r3
@@ -2147,7 +2087,7 @@ __STATIC_INLINE uint32_t NVIC_EncodePriority (uint32_t PriorityGroup, uint32_t P
  8000e54:	697b      	ldr	r3, [r7, #20]
  8000e56:	409a      	lsls	r2, r3
            ((SubPriority     & (uint32_t)((1UL << (SubPriorityBits    )) - 1UL)))
- 8000e58:	f04f 31ff 	mov.w	r1, #4294967295	; 0xffffffff
+ 8000e58:	f04f 31ff 	mov.w	r1, #4294967295
  8000e5c:	697b      	ldr	r3, [r7, #20]
  8000e5e:	fa01 f303 	lsl.w	r3, r1, r3
  8000e62:	43d9      	mvns	r1, r3
@@ -2193,7 +2133,7 @@ __STATIC_INLINE uint32_t SysTick_Config(uint32_t ticks)
  8000e94:	6053      	str	r3, [r2, #4]
   NVIC_SetPriority (SysTick_IRQn, (1UL << __NVIC_PRIO_BITS) - 1UL); /* set Priority for Systick Interrupt */
  8000e96:	210f      	movs	r1, #15
- 8000e98:	f04f 30ff 	mov.w	r0, #4294967295	; 0xffffffff
+ 8000e98:	f04f 30ff 	mov.w	r0, #4294967295
  8000e9c:	f7ff ff8e 	bl	8000dbc <__NVIC_SetPriority>
   SysTick->VAL   = 0UL;                                             /* Load the SysTick Counter Value */
  8000ea0:	4b05      	ldr	r3, [pc, #20]	; (8000eb8 <SysTick_Config+0x40>)
@@ -2431,7 +2371,7 @@ HAL_StatusTypeDef HAL_CRC_Init(CRC_HandleTypeDef *hcrc)
     WRITE_REG(hcrc->Instance->INIT, DEFAULT_CRC_INITVALUE);
  8000fae:	687b      	ldr	r3, [r7, #4]
  8000fb0:	681b      	ldr	r3, [r3, #0]
- 8000fb2:	f04f 32ff 	mov.w	r2, #4294967295	; 0xffffffff
+ 8000fb2:	f04f 32ff 	mov.w	r2, #4294967295
  8000fb6:	611a      	str	r2, [r3, #16]
  8000fb8:	e004      	b.n	8000fc4 <HAL_CRC_Init+0x88>
   }
@@ -10068,7 +10008,7 @@ HAL_StatusTypeDef UART_WaitOnFlagUntilTimeout(UART_HandleTypeDef *huart, uint32_
     /* Check for the Timeout */
     if (Timeout != HAL_MAX_DELAY)
  8003dae:	69bb      	ldr	r3, [r7, #24]
- 8003db0:	f1b3 3fff 	cmp.w	r3, #4294967295	; 0xffffffff
+ 8003db0:	f1b3 3fff 	cmp.w	r3, #4294967295
  8003db4:	d04b      	beq.n	8003e4e <UART_WaitOnFlagUntilTimeout+0xb2>
     {
       if (((HAL_GetTick() - Tickstart) > Timeout) || (Timeout == 0U))
@@ -12874,7 +12814,7 @@ static int ai_boostrap(ai_handle *act_addr)
  8004ee6:	68f8      	ldr	r0, [r7, #12]
  8004ee8:	f7ff ffce 	bl	8004e88 <ai_log_err>
     return -1;
- 8004eec:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
+ 8004eec:	f04f 33ff 	mov.w	r3, #4294967295
  8004ef0:	e03e      	b.n	8004f70 <ai_boostrap+0xa8>
   }
 
@@ -13007,7 +12947,7 @@ static int ai_run(void)
  8004fc0:	f7ff ff62 	bl	8004e88 <ai_log_err>
         "ai_network_run");
     return -1;
- 8004fc4:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
+ 8004fc4:	f04f 33ff 	mov.w	r3, #4294967295
  8004fc8:	e000      	b.n	8004fcc <ai_run+0x3c>
   }
 
@@ -13140,7 +13080,7 @@ void MX_X_CUBE_AI_Process(void)
  8005074:	af00      	add	r7, sp, #0
     /* USER CODE BEGIN 6 */
   int res = -1;
- 8005076:	f04f 33ff 	mov.w	r3, #4294967295	; 0xffffffff
+ 8005076:	f04f 33ff 	mov.w	r3, #4294967295
  800507a:	607b      	str	r3, [r7, #4]
 
   printf("TEMPLATE - run - main loop\r\n");
@@ -16357,7 +16297,7 @@ ai_bool ai_network_data_params_get(ai_network_params* params)
  8006cfe:	eba1 070e 	sub.w	r7, r1, lr
  8006d02:	ea4f 0ad7 	mov.w	sl, r7, lsr #3
  8006d06:	f10e 0008 	add.w	r0, lr, #8
- 8006d0a:	f108 36ff 	add.w	r6, r8, #4294967295	; 0xffffffff
+ 8006d0a:	f108 36ff 	add.w	r6, r8, #4294967295
  8006d0e:	eb08 07d7 	add.w	r7, r8, r7, lsr #3
  8006d12:	f816 1f01 	ldrb.w	r1, [r6, #1]!
  8006d16:	ed50 5a01 	vldr	s11, [r0, #-4]
@@ -17538,7 +17478,7 @@ ai_bool ai_network_data_params_get(ai_network_params* params)
  8007996:	f910 3b01 	ldrsb.w	r3, [r0], #1
  800799a:	f801 3b01 	strb.w	r3, [r1], #1
  800799e:	078b      	lsls	r3, r1, #30
- 80079a0:	f102 32ff 	add.w	r2, r2, #4294967295	; 0xffffffff
+ 80079a0:	f102 32ff 	add.w	r2, r2, #4294967295
  80079a4:	d1f5      	bne.n	8007992 <st_int8_copy+0x12>
  80079a6:	e92d 41f0 	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
  80079aa:	ea5f 1e12 	movs.w	lr, r2, lsr #4
@@ -17546,7 +17486,7 @@ ai_bool ai_network_data_params_get(ai_network_params* params)
  80079b0:	ea41 0300 	orr.w	r3, r1, r0
  80079b4:	075b      	lsls	r3, r3, #29
  80079b6:	d14c      	bne.n	8007a52 <st_int8_copy+0xd2>
- 80079b8:	f10e 33ff 	add.w	r3, lr, #4294967295	; 0xffffffff
+ 80079b8:	f10e 33ff 	add.w	r3, lr, #4294967295
  80079bc:	2b01      	cmp	r3, #1
  80079be:	d948      	bls.n	8007a52 <st_int8_copy+0xd2>
  80079c0:	f100 0310 	add.w	r3, r0, #16
@@ -18037,7 +17977,7 @@ ai_bool ai_network_data_params_get(ai_network_params* params)
  8007e8c:	f000 fad8 	bl	8008440 <_sbrk_r>
  8007e90:	3001      	adds	r0, #1
  8007e92:	d101      	bne.n	8007e98 <sbrk_aligned+0x38>
- 8007e94:	f04f 34ff 	mov.w	r4, #4294967295	; 0xffffffff
+ 8007e94:	f04f 34ff 	mov.w	r4, #4294967295
  8007e98:	4620      	mov	r0, r4
  8007e9a:	bd70      	pop	{r4, r5, r6, pc}
  8007e9c:	200016e4 	.word	0x200016e4
@@ -18386,7 +18326,7 @@ ai_bool ai_network_data_params_get(ai_network_params* params)
  80081b4:	f000 f8b0 	bl	8008318 <__swsetup_r>
  80081b8:	2800      	cmp	r0, #0
  80081ba:	d0e7      	beq.n	800818c <_puts_r+0x2c>
- 80081bc:	f04f 35ff 	mov.w	r5, #4294967295	; 0xffffffff
+ 80081bc:	f04f 35ff 	mov.w	r5, #4294967295
  80081c0:	6e63      	ldr	r3, [r4, #100]	; 0x64
  80081c2:	07da      	lsls	r2, r3, #31
  80081c4:	d405      	bmi.n	80081d2 <_puts_r+0x72>
@@ -18544,7 +18484,7 @@ ai_bool ai_network_data_params_get(ai_network_params* params)
  800830a:	f000 f805 	bl	8008318 <__swsetup_r>
  800830e:	2800      	cmp	r0, #0
  8008310:	d0d5      	beq.n	80082be <__swbuf_r+0x20>
- 8008312:	f04f 37ff 	mov.w	r7, #4294967295	; 0xffffffff
+ 8008312:	f04f 37ff 	mov.w	r7, #4294967295
  8008316:	e7f4      	b.n	8008302 <__swbuf_r+0x64>
 
 08008318 <__swsetup_r>:
@@ -18567,7 +18507,7 @@ ai_bool ai_network_data_params_get(ai_network_params* params)
  800833c:	602b      	str	r3, [r5, #0]
  800833e:	f042 0340 	orr.w	r3, r2, #64	; 0x40
  8008342:	81a3      	strh	r3, [r4, #12]
- 8008344:	f04f 30ff 	mov.w	r0, #4294967295	; 0xffffffff
+ 8008344:	f04f 30ff 	mov.w	r0, #4294967295
  8008348:	e034      	b.n	80083b4 <__swsetup_r+0x9c>
  800834a:	0758      	lsls	r0, r3, #29
  800834c:	d512      	bpl.n	8008374 <__swsetup_r+0x5c>
@@ -18767,7 +18707,7 @@ ai_bool ai_network_data_params_get(ai_network_params* params)
 080084de <memcpy>:
  80084de:	440a      	add	r2, r1
  80084e0:	4291      	cmp	r1, r2
- 80084e2:	f100 33ff 	add.w	r3, r0, #4294967295	; 0xffffffff
+ 80084e2:	f100 33ff 	add.w	r3, r0, #4294967295
  80084e6:	d100      	bne.n	80084ea <memcpy+0xc>
  80084e8:	4770      	bx	lr
  80084ea:	b510      	push	{r4, lr}
@@ -18922,7 +18862,7 @@ ai_bool ai_network_data_params_get(ai_network_params* params)
  8008626:	6e6b      	ldr	r3, [r5, #100]	; 0x64
  8008628:	07dc      	lsls	r4, r3, #31
  800862a:	d504      	bpl.n	8008636 <_vfiprintf_r+0x4e>
- 800862c:	f04f 30ff 	mov.w	r0, #4294967295	; 0xffffffff
+ 800862c:	f04f 30ff 	mov.w	r0, #4294967295
  8008630:	b01d      	add	sp, #116	; 0x74
  8008632:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
  8008636:	89ab      	ldrh	r3, [r5, #12]
@@ -18962,7 +18902,7 @@ ai_bool ai_network_data_params_get(ai_network_params* params)
  8008690:	2b00      	cmp	r3, #0
  8008692:	f000 80a1 	beq.w	80087d8 <_vfiprintf_r+0x1f0>
  8008696:	2300      	movs	r3, #0
- 8008698:	f04f 32ff 	mov.w	r2, #4294967295	; 0xffffffff
+ 8008698:	f04f 32ff 	mov.w	r2, #4294967295
  800869c:	e9cd 2305 	strd	r2, r3, [sp, #20]
  80086a0:	f10a 0a01 	add.w	sl, sl, #1
  80086a4:	9304      	str	r3, [sp, #16]
@@ -19029,7 +18969,7 @@ ai_bool ai_network_data_params_get(ai_network_params* params)
  8008734:	9203      	str	r2, [sp, #12]
  8008736:	2b00      	cmp	r3, #0
  8008738:	bfb8      	it	lt
- 800873a:	f04f 33ff 	movlt.w	r3, #4294967295	; 0xffffffff
+ 800873a:	f04f 33ff 	movlt.w	r3, #4294967295
  800873e:	3402      	adds	r4, #2
  8008740:	9305      	str	r3, [sp, #20]
  8008742:	f8df a0d4 	ldr.w	sl, [pc, #212]	; 8008818 <_vfiprintf_r+0x230>
@@ -19196,7 +19136,7 @@ ai_bool ai_network_data_params_get(ai_network_params* params)
  80088ba:	47c0      	blx	r8
  80088bc:	3001      	adds	r0, #1
  80088be:	d103      	bne.n	80088c8 <_printf_common+0xac>
- 80088c0:	f04f 30ff 	mov.w	r0, #4294967295	; 0xffffffff
+ 80088c0:	f04f 30ff 	mov.w	r0, #4294967295
  80088c4:	e8bd 87f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, pc}
  80088c8:	3501      	adds	r5, #1
  80088ca:	e7c6      	b.n	800885a <_printf_common+0x3e>
@@ -19342,7 +19282,7 @@ ai_bool ai_network_data_params_get(ai_network_params* params)
  8008a34:	bfde      	ittt	le
  8008a36:	2330      	movle	r3, #48	; 0x30
  8008a38:	f805 3c01 	strble.w	r3, [r5, #-1]
- 8008a3c:	f105 35ff 	addle.w	r5, r5, #4294967295	; 0xffffffff
+ 8008a3c:	f105 35ff 	addle.w	r5, r5, #4294967295
  8008a40:	1b52      	subs	r2, r2, r5
  8008a42:	6122      	str	r2, [r4, #16]
  8008a44:	f8cd a000 	str.w	sl, [sp]
@@ -19353,7 +19293,7 @@ ai_bool ai_network_data_params_get(ai_network_params* params)
  8008a50:	f7ff fee4 	bl	800881c <_printf_common>
  8008a54:	3001      	adds	r0, #1
  8008a56:	d14a      	bne.n	8008aee <_printf_i+0x1f6>
- 8008a58:	f04f 30ff 	mov.w	r0, #4294967295	; 0xffffffff
+ 8008a58:	f04f 30ff 	mov.w	r0, #4294967295
  8008a5c:	b004      	add	sp, #16
  8008a5e:	e8bd 87f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, pc}
  8008a62:	6823      	ldr	r3, [r4, #0]
@@ -19572,7 +19512,7 @@ ai_bool ai_network_data_params_get(ai_network_params* params)
  8008c2c:	89a3      	ldrh	r3, [r4, #12]
  8008c2e:	f043 0340 	orr.w	r3, r3, #64	; 0x40
  8008c32:	81a3      	strh	r3, [r4, #12]
- 8008c34:	f04f 30ff 	mov.w	r0, #4294967295	; 0xffffffff
+ 8008c34:	f04f 30ff 	mov.w	r0, #4294967295
  8008c38:	e78e      	b.n	8008b58 <__sflush_r+0x1c>
  8008c3a:	4407      	add	r7, r0
  8008c3c:	eba8 0800 	sub.w	r8, r8, r0
@@ -19940,7 +19880,7 @@ ai_bool ai_network_data_params_get(ai_network_params* params)
  8009008:	4b02      	ldr	r3, [pc, #8]	; (8009014 <_close+0xc>)
  800900a:	2258      	movs	r2, #88	; 0x58
  800900c:	601a      	str	r2, [r3, #0]
- 800900e:	f04f 30ff 	mov.w	r0, #4294967295	; 0xffffffff
+ 800900e:	f04f 30ff 	mov.w	r0, #4294967295
  8009012:	4770      	bx	lr
  8009014:	20001824 	.word	0x20001824
 
@@ -19948,7 +19888,7 @@ ai_bool ai_network_data_params_get(ai_network_params* params)
  8009018:	4b02      	ldr	r3, [pc, #8]	; (8009024 <_fstat+0xc>)
  800901a:	2258      	movs	r2, #88	; 0x58
  800901c:	601a      	str	r2, [r3, #0]
- 800901e:	f04f 30ff 	mov.w	r0, #4294967295	; 0xffffffff
+ 800901e:	f04f 30ff 	mov.w	r0, #4294967295
  8009022:	4770      	bx	lr
  8009024:	20001824 	.word	0x20001824
 
@@ -19965,7 +19905,7 @@ ai_bool ai_network_data_params_get(ai_network_params* params)
  8009038:	4b02      	ldr	r3, [pc, #8]	; (8009044 <_lseek+0xc>)
  800903a:	2258      	movs	r2, #88	; 0x58
  800903c:	601a      	str	r2, [r3, #0]
- 800903e:	f04f 30ff 	mov.w	r0, #4294967295	; 0xffffffff
+ 800903e:	f04f 30ff 	mov.w	r0, #4294967295
  8009042:	4770      	bx	lr
  8009044:	20001824 	.word	0x20001824
 
@@ -19973,7 +19913,7 @@ ai_bool ai_network_data_params_get(ai_network_params* params)
  8009048:	4b02      	ldr	r3, [pc, #8]	; (8009054 <_read+0xc>)
  800904a:	2258      	movs	r2, #88	; 0x58
  800904c:	601a      	str	r2, [r3, #0]
- 800904e:	f04f 30ff 	mov.w	r0, #4294967295	; 0xffffffff
+ 800904e:	f04f 30ff 	mov.w	r0, #4294967295
  8009052:	4770      	bx	lr
  8009054:	20001824 	.word	0x20001824
 
@@ -19981,7 +19921,7 @@ ai_bool ai_network_data_params_get(ai_network_params* params)
  8009058:	4b02      	ldr	r3, [pc, #8]	; (8009064 <_write+0xc>)
  800905a:	2258      	movs	r2, #88	; 0x58
  800905c:	601a      	str	r2, [r3, #0]
- 800905e:	f04f 30ff 	mov.w	r0, #4294967295	; 0xffffffff
+ 800905e:	f04f 30ff 	mov.w	r0, #4294967295
  8009062:	4770      	bx	lr
  8009064:	20001824 	.word	0x20001824
 

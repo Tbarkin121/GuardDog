@@ -12,15 +12,15 @@ import numpy as np
 
 class MCU_Comms():
     def __init__(self):
-        self.in_data = np.zeros(4)
+        self.in_data = np.zeros(5)
         self.out_data = np.zeros(4)
         self.open_port()
     
     def open_port(self):
         # Configure the serial connection
         self.ser = serial.Serial(
-                        port='COM6',                         # Serial port
-                        baudrate=115200,                     # Baud rate, should match STM32 setting
+                        port='COM5',                         # Serial port
+                        baudrate=1843200,                     # Baud rate, should match STM32 setting
                         parity=serial.PARITY_NONE,
                         stopbits=serial.STOPBITS_ONE,
                         bytesize=serial.EIGHTBITS,
@@ -36,12 +36,12 @@ class MCU_Comms():
     def read_data(self):
         try:
             # Read 16 bytes from the serial port (size of 4 floats)
-            data = self.ser.read(4 * 4)
+            data = self.ser.read(5 * 4)
             
-            # Check if we received 16 bytes
-            if len(data) == 16:
+            # Check if we received 20 bytes
+            if len(data) == 20:
                 # Unpack the bytes to four floats
-                float_values = struct.unpack('4f', data)
+                float_values = struct.unpack('5f', data)
                 self.in_data = np.array(float_values)
                 print(f"Received floats: {float_values}")
             else:
@@ -72,16 +72,10 @@ class MCU_Comms():
 
 comm_obj = MCU_Comms()
 
-comm_obj.out_data = np.array([1.2, 2.3, 3.4, 4.5])
-comm_obj.write_data()
 comm_obj.read_data()
-
-comm_obj.out_data = np.array([1.2, 2.3, 3.4, 4.5])*2.0
-comm_obj.write_data()
 comm_obj.read_data()
-
-comm_obj.out_data = np.array([1.2, 2.3, 3.4, 4.5])*3.0
-comm_obj.write_data()
+comm_obj.read_data()
+comm_obj.read_data()
 comm_obj.read_data()
 
 comm_obj.close_port()

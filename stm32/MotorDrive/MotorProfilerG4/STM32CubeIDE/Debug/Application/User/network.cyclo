@@ -1,0 +1,11 @@
+E:/MyProjects/MotorDrive/MotorProfilerG4/Src/network.c:851:9:ai_network_get_info	4
+E:/MyProjects/MotorDrive/MotorProfilerG4/Src/network.c:897:9:ai_network_get_report	4
+E:/MyProjects/MotorDrive/MotorProfilerG4/Src/network.c:943:10:ai_network_get_error	1
+E:/MyProjects/MotorDrive/MotorProfilerG4/Src/network.c:949:10:ai_network_create	1
+E:/MyProjects/MotorDrive/MotorProfilerG4/Src/network.c:993:12:ai_network_inputs_get	2
+E:/MyProjects/MotorDrive/MotorProfilerG4/Src/network.c:1003:12:ai_network_outputs_get	2
+E:/MyProjects/MotorDrive/MotorProfilerG4/Src/network.c:1013:11:ai_network_destroy	1
+E:/MyProjects/MotorDrive/MotorProfilerG4/Src/network.c:1019:9:ai_network_init	4
+E:/MyProjects/MotorDrive/MotorProfilerG4/Src/network.c:959:10:ai_network_create_and_init	10
+E:/MyProjects/MotorDrive/MotorProfilerG4/Src/network.c:1036:8:ai_network_run	1
+E:/MyProjects/MotorDrive/MotorProfilerG4/Src/network.c:1043:8:ai_network_forward	1

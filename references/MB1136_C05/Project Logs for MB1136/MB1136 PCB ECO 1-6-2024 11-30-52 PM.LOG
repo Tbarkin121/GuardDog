@@ -1,0 +1,774 @@
+Change Footprint: Footprint Not Found ICC_SO8_5X4_P127
+Change Component Comment : Designator=C26 Old Comment=2.2uF New Comment=4.7uF
+Change Component Comment : Designator=R2 Old Comment=10K New Comment=10K[N/A]
+Change Component Comment : Designator=R26 Old Comment=10K New Comment=[N/A]
+Change Component Comment : Designator=C31 Old Comment=10pF[N/A] New Comment=4.3pF
+Change Component Comment : Designator=C32 Old Comment=10pF[N/A] New Comment=4.3pF
+Change Component Comment : Designator=C10 Old Comment=20pF New Comment=20pF[N/A]
+Change Component Comment : Designator=X2 Old Comment=32.768K[N/A] New Comment=ABS25-32.768KHZ-6-T
+Change Component Comment : Designator=R9 Old Comment=100 New Comment=100[N/A]
+Change Component Comment : Designator=R34 Old Comment=[N/A] New Comment=0
+Change Component Comment : Designator=R36 Old Comment=[N/A] New Comment=0
+Change Component Comment : Designator=T2 Old Comment=STS7PF30L New Comment=TRANS_P-CHANNEL_STS9P3LLH6
+Change component parameters: Designator = "C1" ("C1"); Footprint = "0603C"; UniqueID = "\LLJUEYMN\TGPDEUNA\EVTYYXMA" ("\LLJUEYMN\TGPDEUNA\EVTYYXMA")
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "100nF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C2" ("C2"); Footprint = "0603C"; UniqueID = "\LLJUEYMN\TGPDEUNA\XDUPEBQH" ("\LLJUEYMN\TGPDEUNA\XDUPEBQH")
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer P/N"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Order code Farnell"; Value = "1288202RL"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Order code RS"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Power"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Rated voltage"; Value = "25V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "STS Code"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Technology"; Value = "X5R"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Temperature  Factor"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Temperature Max"; Value = "+125°C"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Temperature Min"; Value = "-55°C"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = "10%"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1µF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C3" ("C3"); Footprint = "0603C"; UniqueID = "\LLJUEYMN\TGPDEUNA\GTBWYGHG" ("\LLJUEYMN\TGPDEUNA\GTBWYGHG")
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "100nF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C4" ("C4"); Footprint = "0603C"; UniqueID = "\LLJUEYMN\TGPDEUNA\QKIHBWNY" ("\LLJUEYMN\TGPDEUNA\QKIHBWNY")
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "100nF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C5" ("C5"); Footprint = "0603C"; UniqueID = "\LLJUEYMN\TGPDEUNA\IXSWBTUF" ("\LLJUEYMN\TGPDEUNA\IXSWBTUF")
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "100nF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C6" ("C6"); Footprint = "0603C"; UniqueID = "\LLJUEYMN\TGPDEUNA\GCILNTWL" ("\LLJUEYMN\TGPDEUNA\GCILNTWL")
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "100nF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C7" ("C7"); Footprint = "0603C"; UniqueID = "\LLJUEYMN\TGPDEUNA\GMYFUMHW" ("\LLJUEYMN\TGPDEUNA\GMYFUMHW")
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "100nF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C8" ("C8"); Footprint = "0603C"; UniqueID = "\LLJUEYMN\TGPDEUNA\DJIPLCFT" ("\LLJUEYMN\TGPDEUNA\DJIPLCFT")
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "100nF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C9" ("C9"); Footprint = "0603C"; UniqueID = "\LLJUEYMN\TGPDEUNA\PXWTROCN" ("\LLJUEYMN\TGPDEUNA\PXWTROCN")
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer P/N"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Order code Farnell"; Value = "7569548RL"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Order code RS"; Value = "2040779"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Power"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Rated voltage"; Value = "50V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "STS Code"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Technology"; Value = "X7R"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Temperature Factor"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Temperature Max"; Value = "+125°C"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Temperature Min"; Value = "-55°C"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = "10%"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "10NF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C10" ("C10"); Footprint = "0603C"; UniqueID = "\LLJUEYMN\TGPDEUNA\FGOWWKAJ" ("\LLJUEYMN\TGPDEUNA\FGOWWKAJ")
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "100nF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C11" ("C11"); Footprint = "0603C"; UniqueID = "\LLJUEYMN\TGPDEUNA\NFFNNRWA" ("\LLJUEYMN\TGPDEUNA\NFFNNRWA")
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "100nF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C12" ("C12"); Footprint = "0603C"; UniqueID = "\LLJUEYMN\TGPDEUNA\COPWDEEJ" ("\LLJUEYMN\TGPDEUNA\COPWDEEJ")
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "100nF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C13" ("C13"); Footprint = "0603C"; UniqueID = "\LLJUEYMN\TGPDEUNA\PSEJPTNJ" ("\LLJUEYMN\TGPDEUNA\PSEJPTNJ")
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer P/N"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Order code Farnell"; Value = "1288202RL"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Order code RS"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Power"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Rated voltage"; Value = "25V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "STS Code"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Technology"; Value = "X5R"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Temperature  Factor"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Temperature Max"; Value = "+125°C"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Temperature Min"; Value = "-55°C"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = "10%"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1µF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C14" ("C14"); Footprint = "0603C"; UniqueID = "\LLJUEYMN\BEXQGTLB\CUJHGSTJ" ("\LLJUEYMN\BEXQGTLB\CUJHGSTJ")
+Change component parameters (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "100pF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C15" ("C15"); Footprint = "0603C"; UniqueID = "\LLJUEYMN\BEXQGTLB\QTFPGJSI" ("\LLJUEYMN\BEXQGTLB\QTFPGJSI")
+Change component parameters (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "100pF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C16" ("C16"); Footprint = "TAN-B"; UniqueID = "\LLJUEYMN\HXNWAQQD" ("\LLJUEYMN\HXNWAQQD")
+Change component parameters (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "10uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C17" ("C17"); Footprint = "TAN-A"; UniqueID = "\LLJUEYMN\UBRXESJU" ("\LLJUEYMN\UBRXESJU")
+Change component parameters (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "10uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C18" ("C18"); Footprint = "0603C"; UniqueID = "\LLJUEYMN\ETWRYSCW" ("\LLJUEYMN\ETWRYSCW")
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer P/N"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Order code Farnell"; Value = "1288202RL"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Order code RS"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Power"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Rated voltage"; Value = "25V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "STS Code"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Technology"; Value = "X5R"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Temperature  Factor"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Temperature Max"; Value = "+125°C"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Temperature Min"; Value = "-55°C"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = "10%"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1µF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C19" ("C19"); Footprint = "0603C"; UniqueID = "\LLJUEYMN\QWPHMGAS" ("\LLJUEYMN\QWPHMGAS")
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "100nF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C20" ("C20"); Footprint = "0603C"; UniqueID = "\LLJUEYMN\DAQOUSCU" ("\LLJUEYMN\DAQOUSCU")
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "100nF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C21" ("C21"); Footprint = "0603C"; UniqueID = "\LLJUEYMN\IJRXHRCT" ("\LLJUEYMN\IJRXHRCT")
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer P/N"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Order code Farnell"; Value = "1288202RL"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Order code RS"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Power"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Rated voltage"; Value = "25V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "STS Code"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Technology"; Value = "X5R"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Temperature  Factor"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Temperature Max"; Value = "+125°C"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Temperature Min"; Value = "-55°C"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = "10%"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1µF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C22" ("C22"); Footprint = "TAN-A"; UniqueID = "\LLJUEYMN\BEXQGTLB\GSVYWAVH" ("\LLJUEYMN\BEXQGTLB\GSVYWAVH")
+Change component parameters (AddParameter): Name = "Manuf_1"; Value = "YAGEO"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manuf_Part_1"; Value = "CC0805KKX7R7BB225"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Order"; Value = "CC0805KKX7R7BB225"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "2.2uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C23" ("C23"); Footprint = "0603C"; UniqueID = "\LLJUEYMN\BEXQGTLB\BEELDUVU" ("\LLJUEYMN\BEXQGTLB\BEELDUVU")
+Change component parameters (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "10nF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C24" ("C24"); Footprint = "0603C"; UniqueID = "\LLJUEYMN\BEXQGTLB\VXOXRYFT" ("\LLJUEYMN\BEXQGTLB\VXOXRYFT")
+Change component parameters (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "10nF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C25" ("C25"); Footprint = "TAN-A"; UniqueID = "\LLJUEYMN\BEXQGTLB\TWOUXOWW" ("\LLJUEYMN\BEXQGTLB\TWOUXOWW")
+Change component parameters (AddParameter): Name = "Manuf_1"; Value = "YAGEO"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manuf_Part_1"; Value = "CC0805KKX7R7BB225"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Order"; Value = "CC0805KKX7R7BB225"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "2.2uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C26" ("C26"); Footprint = "TAN-A"; UniqueID = "\LLJUEYMN\BEXQGTLB\BXVPIDDY" ("\LLJUEYMN\BEXQGTLB\BXVPIDDY")
+Change component parameters (AddParameter): Name = "Manuf_1"; Value = "YAGEO"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manuf_Part_1"; Value = "CC0805KKX7R7BB225"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Order"; Value = "CC0805KKX7R7BB225"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "2.2uF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C27" ("C27"); Footprint = "0603C"; UniqueID = "\LLJUEYMN\BEXQGTLB\YGBFVNQS" ("\LLJUEYMN\BEXQGTLB\YGBFVNQS")
+Change component parameters (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "10nF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C28" ("C28"); Footprint = "0603C"; UniqueID = "\LLJUEYMN\BEXQGTLB\UJPYQABY" ("\LLJUEYMN\BEXQGTLB\UJPYQABY")
+Change component parameters (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "10nF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C29" ("C29"); Footprint = "0603C"; UniqueID = "\LLJUEYMN\BEXQGTLB\QMUEQSYJ" ("\LLJUEYMN\BEXQGTLB\QMUEQSYJ")
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer P/N"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Order code Farnell"; Value = "1288202RL"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Order code RS"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Power"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Rated voltage"; Value = "25V"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "STS Code"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Technology"; Value = "X5R"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Temperature  Factor"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Temperature Max"; Value = "+125°C"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Temperature Min"; Value = "-55°C"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Tolerance"; Value = "10%"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1µF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "C30" ("C30"); Footprint = "0603C"; UniqueID = "\LLJUEYMN\BEXQGTLB\FJWIDGIR" ("\LLJUEYMN\BEXQGTLB\FJWIDGIR")
+Change component parameters (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "10nF"; VariantName = "[No Variations]"
+Change component parameters: Designator = "CN1" ("CN1"); Footprint = "USB-MINI-B-SMD"; UniqueID = "\LLJUEYMN\TGPDEUNA\SLTSDEWB" ("\LLJUEYMN\TGPDEUNA\SLTSDEWB")
+Change component parameters (AddParameter): Name = "ECCN"; Value = "????"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manuf_Part_1"; Value = "5075BMR-05-SM"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Order"; Value = "5075BMR-05-SM"; VariantName = "[No Variations]"
+Change component parameters: Designator = "CN2" ("CN2"); Footprint = "1*4"; UniqueID = "\LLJUEYMN\TGPDEUNA\KWVRHWEI" ("\LLJUEYMN\TGPDEUNA\KWVRHWEI")
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "17-Jul-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters: Designator = "CN3" ("CN3"); Footprint = "SIP2/2.54"; UniqueID = "\LLJUEYMN\TGPDEUNA\TDWDANLX" ("\LLJUEYMN\TGPDEUNA\TDWDANLX")
+Change component parameters (AddParameter): Name = "Fitted"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "CN4" ("CN4"); Footprint = "1*6P"; UniqueID = "\LLJUEYMN\TGPDEUNA\OMMWSSXJ" ("\LLJUEYMN\TGPDEUNA\OMMWSSXJ")
+Change component parameters (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters: Designator = "CN5" ("CN5"); Footprint = "1*10P_FEMALE"; UniqueID = "\LLJUEYMN\IGKQHVCY\NORUWDBX" ("\LLJUEYMN\IGKQHVCY\NORUWDBX")
+Change component parameters (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters: Designator = "CN6" ("CN6"); Footprint = "1*8P_FEMALE"; UniqueID = "\LLJUEYMN\IGKQHVCY\MXQVPARU" ("\LLJUEYMN\IGKQHVCY\MXQVPARU")
+Change component parameters (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters: Designator = "CN7" ("CN7"); Footprint = "2*19P"; UniqueID = "\LLJUEYMN\IGKQHVCY\AOMUQPWI" ("\LLJUEYMN\IGKQHVCY\AOMUQPWI")
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "17-Jul-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters: Designator = "CN8" ("CN8"); Footprint = "1*6P_FEMALE"; UniqueID = "\LLJUEYMN\IGKQHVCY\WEROICQI" ("\LLJUEYMN\IGKQHVCY\WEROICQI")
+Change component parameters (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters: Designator = "CN9" ("CN9"); Footprint = "1*8P_FEMALE"; UniqueID = "\LLJUEYMN\IGKQHVCY\ARCMONKP" ("\LLJUEYMN\IGKQHVCY\ARCMONKP")
+Change component parameters (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters: Designator = "CN10" ("CN10"); Footprint = "2*19P"; UniqueID = "\LLJUEYMN\IGKQHVCY\HYXRWTIE" ("\LLJUEYMN\IGKQHVCY\HYXRWTIE")
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "17-Jul-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters: Designator = "D1" ("D1"); Footprint = "SOD323/A"; UniqueID = "\LLJUEYMN\TGPDEUNA\CTTFEUFH" ("\LLJUEYMN\TGPDEUNA\CTTFEUFH")
+Change component parameters (AddParameter): Name = "Distrib"; Value = "ST"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ECCN_US/EU"; Value = "EAR99/NEC"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manuf_1"; Value = "STM"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manuf_Part_1"; Value = "BAT60JFILM"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Order"; Value = "BAT60JFILM"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Provided"; Value = "ST"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters: Designator = "D2" ("D2"); Footprint = "SOD323/A"; UniqueID = "\LLJUEYMN\TGPDEUNA\KGVNDIVC" ("\LLJUEYMN\TGPDEUNA\KGVNDIVC")
+Change component parameters (AddParameter): Name = "Distrib"; Value = "ST"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ECCN_US/EU"; Value = "EAR99/NEC"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manuf_1"; Value = "STM"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manuf_Part_1"; Value = "BAT60JFILM"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Order"; Value = "BAT60JFILM"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Provided"; Value = "ST"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters: Designator = "D3" ("D3"); Footprint = "SOD323/A"; UniqueID = "\LLJUEYMN\TGPDEUNA\UYPMGYTB" ("\LLJUEYMN\TGPDEUNA\UYPMGYTB")
+Change component parameters (AddParameter): Name = "Distrib"; Value = "ST"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ECCN_US/EU"; Value = "EAR99/NEC"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manuf_1"; Value = "STM"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manuf_Part_1"; Value = "BAT60JFILM"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Order"; Value = "BAT60JFILM"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Provided"; Value = "ST"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters: Designator = "D4" ("D4"); Footprint = "SMA"; UniqueID = "\LLJUEYMN\VSAIVNKM" ("\LLJUEYMN\VSAIVNKM")
+Change component parameters (AddParameter): Name = "Distrib"; Value = "ST"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ECCN_US/EU"; Value = "EAR99/NEC"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manuf_1"; Value = "STM"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manuf_Part_1"; Value = "BAT60JFILM"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Order"; Value = "BAT60JFILM"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Provided"; Value = "ST"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters: Designator = "L1" ("L1"); Footprint = "0603L"; UniqueID = "\LLJUEYMN\BEXQGTLB\QAHLJNSL" ("\LLJUEYMN\BEXQGTLB\QAHLJNSL")
+Change component parameters (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "100uH"; VariantName = "[No Variations]"
+Change component parameters: Designator = "LD1" ("LD1"); Footprint = "HSMF-A201"; UniqueID = "\LLJUEYMN\TGPDEUNA\BSGTKNJL" ("\LLJUEYMN\TGPDEUNA\BSGTKNJL")
+Change component parameters (AddParameter): Name = "cap_dec"; Value = "----"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Distrib"; Value = "RADIOSPARES"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manuf_1"; Value = "Avago Technologies"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manuf_2"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manuf_Part_1"; Value = "HSMF-A201-A00J1"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manuf_Part_2"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Order"; Value = ""; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Ref St"; Value = "xxxxxx"; VariantName = "[No Variations]"
+Change component parameters: Designator = "LD2" ("LD2"); Footprint = "0603D"; UniqueID = "\LLJUEYMN\IGKQHVCY\JAPMIVKR" ("\LLJUEYMN\IGKQHVCY\JAPMIVKR")
+Change component parameters (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters: Designator = "R1" ("R1"); Footprint = "0603R"; UniqueID = "\LLJUEYMN\TGPDEUNA\GQWHBJUA" ("\LLJUEYMN\TGPDEUNA\GQWHBJUA")
+Change component parameters (AddParameter): Name = "Value"; Value = "10K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R2" ("R2"); Footprint = "0603R"; UniqueID = "\LLJUEYMN\TGPDEUNA\JUROYQUA" ("\LLJUEYMN\TGPDEUNA\JUROYQUA")
+Change component parameters (AddParameter): Name = "Fitted"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "10K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R3" ("R3"); Footprint = "0603R"; UniqueID = "\LLJUEYMN\TGPDEUNA\BDLXKPUH" ("\LLJUEYMN\TGPDEUNA\BDLXKPUH")
+Change component parameters (AddParameter): Name = "Value"; Value = "10K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R4" ("R4"); Footprint = "0603R"; UniqueID = "\LLJUEYMN\TGPDEUNA\RTKRYVWY" ("\LLJUEYMN\TGPDEUNA\RTKRYVWY")
+Change component parameters (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R5" ("R5"); Footprint = "0603R"; UniqueID = "\LLJUEYMN\TGPDEUNA\CPNTEXOT" ("\LLJUEYMN\TGPDEUNA\CPNTEXOT")
+Change component parameters (AddParameter): Name = "Value"; Value = "10K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R6" ("R6"); Footprint = "0603R"; UniqueID = "\LLJUEYMN\TGPDEUNA\PNIDXUGA" ("\LLJUEYMN\TGPDEUNA\PNIDXUGA")
+Change component parameters (AddParameter): Name = "Value"; Value = "10K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R7" ("R7"); Footprint = "0603R"; UniqueID = "\LLJUEYMN\TGPDEUNA\SMUTJPHY" ("\LLJUEYMN\TGPDEUNA\SMUTJPHY")
+Change component parameters (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R8" ("R8"); Footprint = "0603R"; UniqueID = "\LLJUEYMN\TGPDEUNA\XYYFYIXO" ("\LLJUEYMN\TGPDEUNA\XYYFYIXO")
+Change component parameters (AddParameter): Name = "Value"; Value = "10K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R9" ("R9"); Footprint = "0603R"; UniqueID = "\LLJUEYMN\TGPDEUNA\FWRSOUEF" ("\LLJUEYMN\TGPDEUNA\FWRSOUEF")
+Change component parameters (AddParameter): Name = "Value"; Value = "10K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R10" ("R10"); Footprint = "0603R"; UniqueID = "\LLJUEYMN\TGPDEUNA\CUPQCYAP" ("\LLJUEYMN\TGPDEUNA\CUPQCYAP")
+Change component parameters (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R11" ("R11"); Footprint = "0603R"; UniqueID = "\LLJUEYMN\TGPDEUNA\KDPQLJRH" ("\LLJUEYMN\TGPDEUNA\KDPQLJRH")
+Change component parameters (AddParameter): Name = "Value"; Value = "10K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R12" ("R12"); Footprint = "0603R"; UniqueID = "\LLJUEYMN\TGPDEUNA\TVJOYMIN" ("\LLJUEYMN\TGPDEUNA\TVJOYMIN")
+Change component parameters (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R13" ("R13"); Footprint = "0603R"; UniqueID = "\LLJUEYMN\TGPDEUNA\XTBAFJEV" ("\LLJUEYMN\TGPDEUNA\XTBAFJEV")
+Change component parameters (AddParameter): Name = "Value"; Value = "10K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R14" ("R14"); Footprint = "0603R"; UniqueID = "\LLJUEYMN\TGPDEUNA\YOUIMBSS" ("\LLJUEYMN\TGPDEUNA\YOUIMBSS")
+Change component parameters (AddParameter): Name = "Value"; Value = "10K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R15" ("R15"); Footprint = "0603R"; UniqueID = "\LLJUEYMN\TGPDEUNA\MFTYLSGE" ("\LLJUEYMN\TGPDEUNA\MFTYLSGE")
+Change component parameters (AddParameter): Name = "Value"; Value = "10K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R16" ("R16"); Footprint = "0603R"; UniqueID = "\LLJUEYMN\TGPDEUNA\QDNJDPEE" ("\LLJUEYMN\TGPDEUNA\QDNJDPEE")
+Change component parameters (AddParameter): Name = "Value"; Value = "10K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R17" ("R17"); Footprint = "0603R"; UniqueID = "\LLJUEYMN\TGPDEUNA\RCUOTBRC" ("\LLJUEYMN\TGPDEUNA\RCUOTBRC")
+Change component parameters (AddParameter): Name = "Value"; Value = "10K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R18" ("R18"); Footprint = "0603R"; UniqueID = "\LLJUEYMN\TGPDEUNA\ATCMIBAS" ("\LLJUEYMN\TGPDEUNA\ATCMIBAS")
+Change component parameters (AddParameter): Name = "Value"; Value = "10K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R19" ("R19"); Footprint = "0603R"; UniqueID = "\LLJUEYMN\TGPDEUNA\TQWOSKYX" ("\LLJUEYMN\TGPDEUNA\TQWOSKYX")
+Change component parameters (AddParameter): Name = "Value"; Value = "10K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R20" ("R20"); Footprint = "0603R"; UniqueID = "\LLJUEYMN\TGPDEUNA\HUEKHUQA" ("\LLJUEYMN\TGPDEUNA\HUEKHUQA")
+Change component parameters (AddParameter): Name = "Value"; Value = "10K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R21" ("R21"); Footprint = "0603R"; UniqueID = "\LLJUEYMN\TGPDEUNA\EVHVEUGH" ("\LLJUEYMN\TGPDEUNA\EVHVEUGH")
+Change component parameters (AddParameter): Name = "Value"; Value = "10K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R22" ("R22"); Footprint = "0603R"; UniqueID = "\LLJUEYMN\TGPDEUNA\TOYNRAYY" ("\LLJUEYMN\TGPDEUNA\TOYNRAYY")
+Change component parameters (AddParameter): Name = "Value"; Value = "10K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R23" ("R23"); Footprint = "0603R"; UniqueID = "\LLJUEYMN\TGPDEUNA\TVFDBIEQ" ("\LLJUEYMN\TGPDEUNA\TVFDBIEQ")
+Change component parameters (AddParameter): Name = "Fitted"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "10K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R24" ("R24"); Footprint = "0603R"; UniqueID = "\LLJUEYMN\TGPDEUNA\XJABAIDK" ("\LLJUEYMN\TGPDEUNA\XJABAIDK")
+Change component parameters (AddParameter): Name = "Value"; Value = "10K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R25" ("R25"); Footprint = "0603R"; UniqueID = "\LLJUEYMN\TGPDEUNA\TYXQJLKT" ("\LLJUEYMN\TGPDEUNA\TYXQJLKT")
+Change component parameters (AddParameter): Name = "Value"; Value = "10K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R26" ("R26"); Footprint = "0603R"; UniqueID = "\LLJUEYMN\TGPDEUNA\CHPMFHFX" ("\LLJUEYMN\TGPDEUNA\CHPMFHFX")
+Change component parameters (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R27" ("R27"); Footprint = "0603R"; UniqueID = "\LLJUEYMN\TGPDEUNA\XBETNNUD" ("\LLJUEYMN\TGPDEUNA\XBETNNUD")
+Change component parameters (AddParameter): Name = "Fitted"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "10K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R28" ("R28"); Footprint = "0603R"; UniqueID = "\LLJUEYMN\AGJVFWFV" ("\LLJUEYMN\AGJVFWFV")
+Change component parameters (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R29" ("R29"); Footprint = "0603R"; UniqueID = "\LLJUEYMN\BEXQGTLB\VPQRWWIO" ("\LLJUEYMN\BEXQGTLB\VPQRWWIO")
+Change component parameters (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R30" ("R30"); Footprint = "0603R"; UniqueID = "\LLJUEYMN\BEXQGTLB\WVXLQCQE" ("\LLJUEYMN\BEXQGTLB\WVXLQCQE")
+Change component parameters (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R31" ("R31"); Footprint = "0603R"; UniqueID = "\LLJUEYMN\IGKQHVCY\BCWERCOD" ("\LLJUEYMN\IGKQHVCY\BCWERCOD")
+Change component parameters (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R32" ("R32"); Footprint = "0603R"; UniqueID = "\LLJUEYMN\RLTKYEEW" ("\LLJUEYMN\RLTKYEEW")
+Change component parameters (AddParameter): Name = "Value"; Value = "10K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R33" ("R33"); Footprint = "0603R"; UniqueID = "\LLJUEYMN\BEXQGTLB\EHKFMHBX" ("\LLJUEYMN\BEXQGTLB\EHKFMHBX")
+Change component parameters (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R34" ("R34"); Footprint = "0603R"; UniqueID = "\LLJUEYMN\BEXQGTLB\FSKULPOC" ("\LLJUEYMN\BEXQGTLB\FSKULPOC")
+Change component parameters (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R35" ("R35"); Footprint = "0603R"; UniqueID = "\LLJUEYMN\BEXQGTLB\ICROHDXI" ("\LLJUEYMN\BEXQGTLB\ICROHDXI")
+Change component parameters (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R36" ("R36"); Footprint = "0603R"; UniqueID = "\LLJUEYMN\BEXQGTLB\ABERQBWP" ("\LLJUEYMN\BEXQGTLB\ABERQBWP")
+Change component parameters (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "R37" ("R37"); Footprint = "0603R"; UniqueID = "\LLJUEYMN\BEXQGTLB\JRSXSTYB" ("\LLJUEYMN\BEXQGTLB\JRSXSTYB")
+Change component parameters (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "1K"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB1" ("SB1"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\LMPCYEIB" ("\LLJUEYMN\LMPCYEIB")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB2" ("SB2"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\SNGHGAWS" ("\LLJUEYMN\SNGHGAWS")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB3" ("SB3"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\TGPDEUNA\TAYIVUBY" ("\LLJUEYMN\TGPDEUNA\TAYIVUBY")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB4" ("SB4"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\TGPDEUNA\YAPPDFSK" ("\LLJUEYMN\TGPDEUNA\YAPPDFSK")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "YES"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB5" ("SB5"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\TGPDEUNA\TEKLXUXG" ("\LLJUEYMN\TGPDEUNA\TEKLXUXG")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB6" ("SB6"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\TGPDEUNA\NCYPTLJX" ("\LLJUEYMN\TGPDEUNA\NCYPTLJX")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "YES"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB7" ("SB7"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\TGPDEUNA\WYBOBIBI" ("\LLJUEYMN\TGPDEUNA\WYBOBIBI")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB8" ("SB8"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\TGPDEUNA\QGQNGSMK" ("\LLJUEYMN\TGPDEUNA\QGQNGSMK")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "YES"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB9" ("SB9"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\TGPDEUNA\EBRFTROW" ("\LLJUEYMN\TGPDEUNA\EBRFTROW")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB10" ("SB10"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\TGPDEUNA\TCPVTOID" ("\LLJUEYMN\TGPDEUNA\TCPVTOID")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "YES"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB11" ("SB11"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\TGPDEUNA\HTHLPEKE" ("\LLJUEYMN\TGPDEUNA\HTHLPEKE")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB12" ("SB12"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\TGPDEUNA\PEXXFXTG" ("\LLJUEYMN\TGPDEUNA\PEXXFXTG")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "YES"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB13" ("SB13"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\TGPDEUNA\LFCWSFAH" ("\LLJUEYMN\TGPDEUNA\LFCWSFAH")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB14" ("SB14"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\TGPDEUNA\RAWKMFDG" ("\LLJUEYMN\TGPDEUNA\RAWKMFDG")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB15" ("SB15"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\TGPDEUNA\JFITXMCQ" ("\LLJUEYMN\TGPDEUNA\JFITXMCQ")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB16" ("SB16"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\TGPDEUNA\JARYJRYA" ("\LLJUEYMN\TGPDEUNA\JARYJRYA")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB17" ("SB17"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\BEXQGTLB\MKIOCONM" ("\LLJUEYMN\BEXQGTLB\MKIOCONM")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB18" ("SB18"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\BEXQGTLB\MWYUEADB" ("\LLJUEYMN\BEXQGTLB\MWYUEADB")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB19" ("SB19"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\BEXQGTLB\FYAVMYUE" ("\LLJUEYMN\BEXQGTLB\FYAVMYUE")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB20" ("SB20"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\IGKQHVCY\NAPKLMIK" ("\LLJUEYMN\IGKQHVCY\NAPKLMIK")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB21" ("SB21"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\IGKQHVCY\MESRYVNG" ("\LLJUEYMN\IGKQHVCY\MESRYVNG")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB22" ("SB22"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\BEXQGTLB\XLRNVFBY" ("\LLJUEYMN\BEXQGTLB\XLRNVFBY")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB23" ("SB23"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\BEXQGTLB\BADEGGIC" ("\LLJUEYMN\BEXQGTLB\BADEGGIC")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB24" ("SB24"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\IGKQHVCY\BFQQYMLH" ("\LLJUEYMN\IGKQHVCY\BFQQYMLH")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB25" ("SB25"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\IGKQHVCY\UVGVALCK" ("\LLJUEYMN\IGKQHVCY\UVGVALCK")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB26" ("SB26"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\BEXQGTLB\KQVYMCDS" ("\LLJUEYMN\BEXQGTLB\KQVYMCDS")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB27" ("SB27"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\BEXQGTLB\WULXPIDO" ("\LLJUEYMN\BEXQGTLB\WULXPIDO")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB28" ("SB28"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\IGKQHVCY\DPDEOKKE" ("\LLJUEYMN\IGKQHVCY\DPDEOKKE")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB29" ("SB29"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\IGKQHVCY\LGXGBJLF" ("\LLJUEYMN\IGKQHVCY\LGXGBJLF")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB30" ("SB30"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\BEXQGTLB\AHIWTQWD" ("\LLJUEYMN\BEXQGTLB\AHIWTQWD")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB31" ("SB31"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\BEXQGTLB\YHDUWKBI" ("\LLJUEYMN\BEXQGTLB\YHDUWKBI")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB32" ("SB32"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\BEXQGTLB\EGGSTNFT" ("\LLJUEYMN\BEXQGTLB\EGGSTNFT")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB33" ("SB33"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\BEXQGTLB\GQBNDBPX" ("\LLJUEYMN\BEXQGTLB\GQBNDBPX")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB34" ("SB34"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\BEXQGTLB\NYMQVHWG" ("\LLJUEYMN\BEXQGTLB\NYMQVHWG")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB35" ("SB35"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\IGKQHVCY\WNWMJCKS" ("\LLJUEYMN\IGKQHVCY\WNWMJCKS")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB36" ("SB36"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\IGKQHVCY\AQRKJRFU" ("\LLJUEYMN\IGKQHVCY\AQRKJRFU")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB37" ("SB37"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\BEXQGTLB\TIQBOBGW" ("\LLJUEYMN\BEXQGTLB\TIQBOBGW")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB38" ("SB38"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\BEXQGTLB\TDNAODMC" ("\LLJUEYMN\BEXQGTLB\TDNAODMC")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB39" ("SB39"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\IGKQHVCY\HDOJCOPW" ("\LLJUEYMN\IGKQHVCY\HDOJCOPW")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB40" ("SB40"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\IGKQHVCY\JWUFJNLK" ("\LLJUEYMN\IGKQHVCY\JWUFJNLK")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB41" ("SB41"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\IGKQHVCY\QNRJJEJC" ("\LLJUEYMN\IGKQHVCY\QNRJJEJC")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB42" ("SB42"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\IGKQHVCY\PNRAEJDB" ("\LLJUEYMN\IGKQHVCY\PNRAEJDB")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB43" ("SB43"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\BEXQGTLB\UUIQUIVX" ("\LLJUEYMN\BEXQGTLB\UUIQUIVX")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB44" ("SB44"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\IGKQHVCY\BFWJBPYD" ("\LLJUEYMN\IGKQHVCY\BFWJBPYD")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB45" ("SB45"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\BEXQGTLB\RUXKNJON" ("\LLJUEYMN\BEXQGTLB\RUXKNJON")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB46" ("SB46"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\IGKQHVCY\WKKJXRLG" ("\LLJUEYMN\IGKQHVCY\WKKJXRLG")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB47" ("SB47"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\BEXQGTLB\XTLOUHWT" ("\LLJUEYMN\BEXQGTLB\XTLOUHWT")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB48" ("SB48"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\IGKQHVCY\EREKAPGS" ("\LLJUEYMN\IGKQHVCY\EREKAPGS")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB49" ("SB49"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\IGKQHVCY\IOEUPIHK" ("\LLJUEYMN\IGKQHVCY\IOEUPIHK")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB50" ("SB50"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\BEXQGTLB\EGCJJRIM" ("\LLJUEYMN\BEXQGTLB\EGCJJRIM")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB51" ("SB51"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\IGKQHVCY\EUYIHHDR" ("\LLJUEYMN\IGKQHVCY\EUYIHHDR")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB52" ("SB52"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\IGKQHVCY\CERQGFVE" ("\LLJUEYMN\IGKQHVCY\CERQGFVE")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB53" ("SB53"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\BEXQGTLB\OWUHCRVU" ("\LLJUEYMN\BEXQGTLB\OWUHCRVU")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB54" ("SB54"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\IGKQHVCY\XDOLEKDM" ("\LLJUEYMN\IGKQHVCY\XDOLEKDM")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB55" ("SB55"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\IGKQHVCY\PRFUAIDI" ("\LLJUEYMN\IGKQHVCY\PRFUAIDI")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB56" ("SB56"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\IGKQHVCY\BFKDTLSI" ("\LLJUEYMN\IGKQHVCY\BFKDTLSI")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB57" ("SB57"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\BEXQGTLB\HVSWPHHB" ("\LLJUEYMN\BEXQGTLB\HVSWPHHB")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB58" ("SB58"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\BEXQGTLB\YGCEKONO" ("\LLJUEYMN\BEXQGTLB\YGCEKONO")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB59" ("SB59"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\BEXQGTLB\TLXUECKB" ("\LLJUEYMN\BEXQGTLB\TLXUECKB")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB60" ("SB60"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\BEXQGTLB\MUYGNLGR" ("\LLJUEYMN\BEXQGTLB\MUYGNLGR")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB61" ("SB61"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\BEXQGTLB\VKFDXGWE" ("\LLJUEYMN\BEXQGTLB\VKFDXGWE")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB62" ("SB62"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\BEXQGTLB\LRMUWGAO" ("\LLJUEYMN\BEXQGTLB\LRMUWGAO")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB63" ("SB63"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\BEXQGTLB\RRTEGBRV" ("\LLJUEYMN\BEXQGTLB\RRTEGBRV")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB64" ("SB64"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\BEXQGTLB\DWSPARBY" ("\LLJUEYMN\BEXQGTLB\DWSPARBY")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "SB65" ("SB65"); Footprint = "JP2_SMD"; UniqueID = "\LLJUEYMN\BEXQGTLB\OQMQEMUS" ("\LLJUEYMN\BEXQGTLB\OQMQEMUS")
+Change component parameters (AddParameter): Name = "Published"; Value = "24-Mar-1999"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Solder"; Value = "NO"; VariantName = "[No Variations]"
+Change component parameters: Designator = "T1" ("T1"); Footprint = "SOT-23"; UniqueID = "\LLJUEYMN\TGPDEUNA\TEEQLGDR" ("\LLJUEYMN\TGPDEUNA\TEEQLGDR")
+Change component parameters (AddParameter): Name = "Code - JEDEC"; Value = "TO-226-AA"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Revision"; Value = "July-2002: Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters: Designator = "T2" ("T2"); Footprint = "SO8"; UniqueID = "\LLJUEYMN\UISSFYSZ" ("\LLJUEYMN\UISSFYSZ")
+Change component parameters (AddParameter): Name = "Component_Country_Of_Origin"; Value = "China"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentLink1URL"; Value = "http://tunmcdsvn.tun.st.com/Component_Documentation_Library/Trunk/Transistor/STMICROELECTRONICS_STS9P3LLH6/"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ID"; Value = "4613"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Internal_Part_Number"; Value = "MCD-02507"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "STMICROELECTRONICS"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer_Part_Number"; Value = "STS9P3LLH6"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Order_Code_Digikey"; Value = "STS9P3LLH6-ND"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Order_Code_Farnell"; Value = "2807224"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Order_Code_RS"; Value = "N/A"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Package"; Value = "SO-8"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Part_Preference"; Value = "Recommended"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Part_Type"; Value = "Transistor"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ShowFields"; Value = "YES"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Status"; Value = "Released"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Value"; Value = "STS9P3LLH6"; VariantName = "[No Variations]"
+Change component parameters: Designator = "U1" ("U1"); Footprint = "SOT-23-5L"; UniqueID = "\LLJUEYMN\TGPDEUNA\ITHWFMEQ" ("\LLJUEYMN\TGPDEUNA\ITHWFMEQ")
+Change component parameters (AddParameter): Name = "Distrib"; Value = "ST"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ECCN_US/EU"; Value = "EAR99/NEC"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manuf_1"; Value = "STM"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manuf_Part_1"; Value = "LD3985M33R"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Order"; Value = "LD3985M33R"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Provided"; Value = "ST"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Ref St"; Value = "9176161"; VariantName = "[No Variations]"
+Change component parameters: Designator = "U2" ("U2"); Footprint = "QFP48 7X7"; UniqueID = "\LLJUEYMN\TGPDEUNA\SQVUXTDK" ("\LLJUEYMN\TGPDEUNA\SQVUXTDK")
+Change component parameters (AddParameter): Name = "Distrib"; Value = "ST"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ECCN_US/EU"; Value = "3A991A2/NEC"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manuf_1"; Value = "STM"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manuf_Part_1"; Value = "STM32F103C8T6"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Order"; Value = "STM32F103C8T6"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Provided"; Value = "ST"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Ref St"; Value = "9175981"; VariantName = "[No Variations]"
+Change component parameters: Designator = "X1" ("X1"); Footprint = "XTAL1"; UniqueID = "\LLJUEYMN\TGPDEUNA\JJRGROWD" ("\LLJUEYMN\TGPDEUNA\JJRGROWD")
+Change component parameters (AddParameter): Name = "LatestRevisionDate"; Value = "17-Jul-2002"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "LatestRevisionNote"; Value = "Re-released for DXP Platform."; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PackageReference"; Value = "R38"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Published"; Value = "8-Jun-2000"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Publisher"; Value = "Altium Limited"; VariantName = "[No Variations]"
+Change Net Name : Old Net Name=USB_CTRL New Net Name=USB_RENUMn
+Change Net Name : Old Net Name=VBAT/VLCD New Net Name=VBAT/VLCD/VDD
+Change Class Name : Old Net Name=MB1136 New Net Name=U_Top
+Added Room: Name=U_Connectors
+Added Room: Name=U_MCU_64
+Added Room: Name=U_ST_LINK_V2-1
+Added Room: Name=U_Top

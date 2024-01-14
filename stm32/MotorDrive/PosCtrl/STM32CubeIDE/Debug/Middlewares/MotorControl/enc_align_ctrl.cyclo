@@ -1,0 +1,6 @@
+E:/MyProjects/MotorDrive/PosCtrl/MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c:45:13:EAC_Init	1
+E:/MyProjects/MotorDrive/PosCtrl/MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c:72:13:EAC_StartAlignment	1
+E:/MyProjects/MotorDrive/PosCtrl/MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c:119:13:EAC_Exec	3
+E:/MyProjects/MotorDrive/PosCtrl/MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c:163:13:EAC_IsAligned	1
+E:/MyProjects/MotorDrive/PosCtrl/MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c:177:13:EAC_SetRestartState	1
+E:/MyProjects/MotorDrive/PosCtrl/MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Src/enc_align_ctrl.c:198:13:EAC_GetRestartState	1

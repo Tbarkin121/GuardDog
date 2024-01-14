@@ -1,0 +1,9 @@
+E:/MyProjects/MotorDrive/LegDay/Src/aspep.c:179:6:ASPEP_start	1
+E:/MyProjects/MotorDrive/LegDay/Src/aspep.c:207:6:ASPEP_sendBeacon	3
+E:/MyProjects/MotorDrive/LegDay/Src/aspep.c:251:6:ASPEP_sendPing	3
+E:/MyProjects/MotorDrive/LegDay/Src/aspep.c:285:6:ASPEP_getBuffer	5
+E:/MyProjects/MotorDrive/LegDay/Src/aspep.c:404:9:ASPEP_sendPacket	14
+E:/MyProjects/MotorDrive/LegDay/Src/aspep.c:590:6:ASPEP_HWDataTransmittedIT	8
+E:/MyProjects/MotorDrive/LegDay/Src/aspep.c:668:10:ASPEP_RXframeProcess	29
+E:/MyProjects/MotorDrive/LegDay/Src/aspep.c:836:6:ASPEP_HWDataReceivedIT	9
+E:/MyProjects/MotorDrive/LegDay/Src/aspep.c:924:6:ASPEP_HWDMAReset	1

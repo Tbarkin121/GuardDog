@@ -1,0 +1,7 @@
+E:/MyProjects/MotorDrive/MotorProfilerG4/Src/register_interface.c:34:9:RI_SetRegisterGlobal	15
+E:/MyProjects/MotorDrive/MotorProfilerG4/Src/register_interface.c:168:9:RI_SetRegisterMotor1	118
+E:/MyProjects/MotorDrive/MotorProfilerG4/Src/register_interface.c:730:9:RI_GetRegisterGlobal	20
+E:/MyProjects/MotorDrive/MotorProfilerG4/Src/register_interface.c:875:11:RI_GetRegisterMotor1	139
+E:/MyProjects/MotorDrive/MotorProfilerG4/Src/register_interface.c:1629:9:RI_MovString	4
+E:/MyProjects/MotorDrive/MotorProfilerG4/Src/register_interface.c:1655:9:RI_GetIDSize	2
+E:/MyProjects/MotorDrive/MotorProfilerG4/Src/register_interface.c:1690:16:RI_GetPtrReg	21

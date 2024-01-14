@@ -1,0 +1,15 @@
+E:/MyProjects/MotorDrive/PosCtrl/MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c:59:6:TC_Init	1
+E:/MyProjects/MotorDrive/PosCtrl/MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c:107:6:TC_MoveCommand	5
+E:/MyProjects/MotorDrive/PosCtrl/MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c:187:6:TC_FollowCommand	5
+E:/MyProjects/MotorDrive/PosCtrl/MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c:300:6:TC_MoveExecution	11
+E:/MyProjects/MotorDrive/PosCtrl/MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c:252:6:TC_PositionRegulation	4
+E:/MyProjects/MotorDrive/PosCtrl/MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c:377:6:TC_FollowExecution	1
+E:/MyProjects/MotorDrive/PosCtrl/MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c:387:6:TC_EncAlignmentCommand	5
+E:/MyProjects/MotorDrive/PosCtrl/MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c:423:6:TC_RampCompleted	1
+E:/MyProjects/MotorDrive/PosCtrl/MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c:443:6:TC_EncoderReset	3
+E:/MyProjects/MotorDrive/PosCtrl/MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c:466:7:TC_GetCurrentPosition	1
+E:/MyProjects/MotorDrive/PosCtrl/MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c:477:7:TC_GetTargetPosition	1
+E:/MyProjects/MotorDrive/PosCtrl/MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c:487:7:TC_GetMoveDuration	1
+E:/MyProjects/MotorDrive/PosCtrl/MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c:497:17:TC_GetControlPositionStatus	1
+E:/MyProjects/MotorDrive/PosCtrl/MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c:506:15:TC_GetAlignmentStatus	1
+E:/MyProjects/MotorDrive/PosCtrl/MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Src/trajectory_ctrl.c:515:6:TC_IncTick	1

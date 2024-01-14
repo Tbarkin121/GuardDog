@@ -1,0 +1,5 @@
+E:/MyProjects/MotorDrive/LegDay/Src/main.c:188:6:SystemClock_Config	3
+E:/MyProjects/MotorDrive/LegDay/Src/main.c:91:5:main	2
+E:/MyProjects/MotorDrive/LegDay/Src/main.c:263:6:convert_angle	1
+E:/MyProjects/MotorDrive/LegDay/Src/main.c:270:7:scale_vel	1
+E:/MyProjects/MotorDrive/LegDay/Src/main.c:279:6:Error_Handler	1

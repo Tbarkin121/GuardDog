@@ -1,0 +1,293 @@
+Neural Network Tools for STM32 family v1.7.0 (stm.ai v8.1.0-19520)
+Created date          : 2024-01-12 00:07:53
+Parameters            : generate --name network -m E:/MyProjects/GuardDog/stm32/pendulum.onnx --type onnx --compression none --verbosity 1 --workspace C:\Users\TYLERB~1\AppData\Local\Temp\mxAI_workspace17908163485250014293674802924141999 --output C:\Users\tylerbarkin\.stm32cubemx\network_output --allocate-inputs --series stm32g4 --allocate-outputs
+
+Exec/report summary (generate)
+----------------------------------------------------------------------------------------------------------------
+model file         :   E:\MyProjects\GuardDog\stm32\pendulum.onnx                                               
+type               :   onnx                                                                                     
+c_name             :   network                                                                                  
+compression        :   none                                                                                     
+options            :   allocate-inputs, allocate-outputs                                                        
+optimization       :   balanced                                                                                 
+target/series      :   stm32g4                                                                                  
+workspace dir      :   C:\Users\TYLERB~1\AppData\Local\Temp\mxAI_workspace17908163485250014293674802924141999   
+output dir         :   C:\Users\tylerbarkin\.stm32cubemx\network_output                                         
+model_fmt          :   float                                                                                    
+model_name         :   pendulum                                                                                 
+model_hash         :   f2c7b94f7e2c2f4a5fbcd95ed24b7d73                                                         
+params #           :   11,210 items (43.79 KiB)                                                                 
+----------------------------------------------------------------------------------------------------------------
+input 1/1          :   'obs' (domain:activations/**default**)                                                   
+                   :   3 items, 12 B, ai_float, float, (1,3)                                                    
+output 1/3         :   'mu' (domain:activations/**default**)                                                    
+                   :   1 items, 4 B, ai_float, float, (1,1)                                                     
+output 2/3         :   'log_std' (domain:activations/**default**)                                               
+                   :   1 items, 4 B, ai_float, float, (1,1)                                                     
+output 3/3         :   'value' (domain:activations/**default**)                                                 
+                   :   1 items, 4 B, ai_float, float, (1,1)                                                     
+outputs (total)    :   12 B                                                                                     
+macc               :   13,692                                                                                   
+weights (ro)       :   44,840 B (43.79 KiB) (1 segment)                                                         
+activations (rw)   :   1,048 B (1.02 KiB) (1 segment) *                                                         
+ram (total)        :   1,048 B (1.02 KiB) = 1,048 + 0 + 0                                                       
+----------------------------------------------------------------------------------------------------------------
+(*) 'input'/'output' buffers can be used from the activations buffer
+
+Model name - pendulum ['obs'] ['mu', 'log_std', 'value']
+------ ----------------------------------------------------------------------------- ------------------- -------------- ------- --------------------------------------------------------- --- --------------- ----------------- ------------------------- 
+m_id   layer (type,original)                                                         oshape              param/size        macc                                              connected to   | c_size          c_macc            c_type                    
+------ ----------------------------------------------------------------------------- ------------------- -------------- ------- --------------------------------------------------------- --- --------------- ----------------- ------------------------- 
+1      onnxSub_40 (Placeholder, Sub)                                                 [c:3]               3/12                                                                               |                 +3(+100.0%)       eltwise/sub_of32[0]       
+------ ----------------------------------------------------------------------------- ------------------- -------------- ------- --------------------------------------------------------- --- --------------- ----------------- ------------------------- 
+2      onnxDiv_43 (Placeholder, Div)                                                 [c:3]               3/12                                                                               |                 +15(+100.0%)      eltwise/div_of32[1]       
+------ ----------------------------------------------------------------------------- ------------------- -------------- ------- --------------------------------------------------------- --- --------------- ----------------- ------------------------- 
+7      model__model_a2c_network_actor_mlp_linears_0_weight (Placeholder, Gemm)       [h:128,h:128,c:3]   384/1,536                                                                          | +512(+33.3%)    +512(+100.0%)     dense_of32[3]             
+       model__model_a2c_network_actor_mlp_linears_0_bias (Placeholder, Gemm)         [c:128]             128/512                                                                            | -512(-100.0%)                     
+------ ----------------------------------------------------------------------------- ------------------- -------------- ------- --------------------------------------------------------- --- --------------- ----------------- ------------------------- 
+10     model__model_a2c_network_actor_mlp_linears_1_weight (Placeholder, Gemm)       [h:64,h:64,c:131]   8,384/33,536                                                                       | +256(+0.8%)     +8,448(+100.0%)   dense_of32[6]             
+       model__model_a2c_network_actor_mlp_linears_1_bias (Placeholder, Gemm)         [c:64]              64/256                                                                             | -256(-100.0%)                     
+------ ----------------------------------------------------------------------------- ------------------- -------------- ------- --------------------------------------------------------- --- --------------- ----------------- ------------------------- 
+13     model__model_a2c_network_actor_mlp_linears_2_weight (Placeholder, Gemm)       [h:32,h:32,c:67]    2,144/8,576                                                                        | +128(+1.5%)     +2,176(+100.0%)   dense_of32[9]             
+       model__model_a2c_network_actor_mlp_linears_2_bias (Placeholder, Gemm)         [c:32]              32/128                                                                             | -128(-100.0%)                     
+------ ----------------------------------------------------------------------------- ------------------- -------------- ------- --------------------------------------------------------- --- --------------- ----------------- ------------------------- 
+15     model__model_a2c_network_value_weight (Placeholder, Gemm)                     [h:1,h:1,c:32]      32/128                                                                             | +4(+3.1%)       +33(+100.0%)      dense_of32[o][11]         
+       model__model_a2c_network_value_bias (Placeholder, Gemm)                       [c:1]               1/4                                                                                | -4(-100.0%)                       
+------ ----------------------------------------------------------------------------- ------------------- -------------- ------- --------------------------------------------------------- --- --------------- ----------------- ------------------------- 
+16     model__model_a2c_network_mu_weight (Placeholder, Gemm)                        [h:1,h:1,c:32]      32/128                                                                             | +4(+3.1%)       +33(+100.0%)      dense_of32[o][12]         
+       model__model_a2c_network_mu_bias (Placeholder, Gemm)                          [c:1]               1/4                                                                                | -4(-100.0%)                       
+------ ----------------------------------------------------------------------------- ------------------- -------------- ------- --------------------------------------------------------- --- --------------- ----------------- ------------------------- 
+18     _model_a2c_network_Constant_output_0 (Placeholder, Mul)                       []                  1/4                                                                                |                 +1(+100.0%)       eltwise/mul_of32[13]      
+------ ----------------------------------------------------------------------------- ------------------- -------------- ------- --------------------------------------------------------- --- --------------- ----------------- ------------------------- 
+19     model__model_a2c_network_sigma (Placeholder, Add)                             [c:1]               1/4                                                                                |                 +1(+100.0%)       eltwise/sum_of32[o][14]   
+------ ----------------------------------------------------------------------------- ------------------- -------------- ------- --------------------------------------------------------- --- --------------- ----------------- ------------------------- 
+0      obs (Input, )                                                                 [b:1,c:3]                                                                                              |                                   
+------ ----------------------------------------------------------------------------- ------------------- -------------- ------- --------------------------------------------------------- --- --------------- ----------------- ------------------------- 
+1      _model_running_mean_std_Sub_output_0 (Eltwise, Sub)                           [b:1,c:3]                                3                                                       obs   |                 -3(-100.0%)       
+                                                                                                                                                                               onnxSub_40   | 
+------ ----------------------------------------------------------------------------- ------------------- -------------- ------- --------------------------------------------------------- --- --------------- ----------------- ------------------------- 
+2      _model_running_mean_std_Div_output_0 (Eltwise, Div)                           [b:1,c:3]                               15                      _model_running_mean_std_Sub_output_0   |                 -15(-100.0%)      
+                                                                                                                                                                               onnxDiv_43   | 
+------ ----------------------------------------------------------------------------- ------------------- -------------- ------- --------------------------------------------------------- --- --------------- ----------------- ------------------------- 
+5      _model_running_mean_std_Clip_output_0 (Nonlinearity, Clip)                    [b:1,c:3]                                6                      _model_running_mean_std_Div_output_0   |                                   nl_of32[2]                
+------ ----------------------------------------------------------------------------- ------------------- -------------- ------- --------------------------------------------------------- --- --------------- ----------------- ------------------------- 
+6      _model_a2c_network_Flatten_output_0 (Reshape, Flatten)                        [b:1,c:3]                                                      _model_running_mean_std_Clip_output_0   |                                   
+------ ----------------------------------------------------------------------------- ------------------- -------------- ------- --------------------------------------------------------- --- --------------- ----------------- ------------------------- 
+7      _model_a2c_network_actor_mlp_0_Gemm_output_0 (Gemm, Gemm)                     [b:1,c:128]                            512                       _model_a2c_network_Flatten_output_0   |                 -512(-100.0%)     
+                                                                                                                                      model__model_a2c_network_actor_mlp_linears_0_weight   | 
+                                                                                                                                        model__model_a2c_network_actor_mlp_linears_0_bias   | 
+------ ----------------------------------------------------------------------------- ------------------- -------------- ------- --------------------------------------------------------- --- --------------- ----------------- ------------------------- 
+8      _model_a2c_network_actor_mlp_activations_0_Elu_output_0 (Nonlinearity, Elu)   [b:1,c:128]                          1,536              _model_a2c_network_actor_mlp_0_Gemm_output_0   |                 -128(-8.3%)       nl_of32[4]                
+------ ----------------------------------------------------------------------------- ------------------- -------------- ------- --------------------------------------------------------- --- --------------- ----------------- ------------------------- 
+9      _model_a2c_network_actor_mlp_Concat_output_0 (Concat, Concat)                 [b:1,c:131]                                  _model_a2c_network_actor_mlp_activations_0_Elu_output_0   |                                   concat_of32[5]            
+                                                                                                                                                      _model_a2c_network_Flatten_output_0   | 
+------ ----------------------------------------------------------------------------- ------------------- -------------- ------- --------------------------------------------------------- --- --------------- ----------------- ------------------------- 
+10     _model_a2c_network_actor_mlp_1_Gemm_output_0 (Gemm, Gemm)                     [b:1,c:64]                           8,448              _model_a2c_network_actor_mlp_Concat_output_0   |                 -8,448(-100.0%)   
+                                                                                                                                      model__model_a2c_network_actor_mlp_linears_1_weight   | 
+                                                                                                                                        model__model_a2c_network_actor_mlp_linears_1_bias   | 
+------ ----------------------------------------------------------------------------- ------------------- -------------- ------- --------------------------------------------------------- --- --------------- ----------------- ------------------------- 
+11     _model_a2c_network_actor_mlp_activations_1_Elu_output_0 (Nonlinearity, Elu)   [b:1,c:64]                             768              _model_a2c_network_actor_mlp_1_Gemm_output_0   |                 -64(-8.3%)        nl_of32[7]                
+------ ----------------------------------------------------------------------------- ------------------- -------------- ------- --------------------------------------------------------- --- --------------- ----------------- ------------------------- 
+12     _model_a2c_network_actor_mlp_Concat_1_output_0 (Concat, Concat)               [b:1,c:67]                                   _model_a2c_network_actor_mlp_activations_1_Elu_output_0   |                                   concat_of32[8]            
+                                                                                                                                                      _model_a2c_network_Flatten_output_0   | 
+------ ----------------------------------------------------------------------------- ------------------- -------------- ------- --------------------------------------------------------- --- --------------- ----------------- ------------------------- 
+13     _model_a2c_network_actor_mlp_2_Gemm_output_0 (Gemm, Gemm)                     [b:1,c:32]                           2,176            _model_a2c_network_actor_mlp_Concat_1_output_0   |                 -2,176(-100.0%)   
+                                                                                                                                      model__model_a2c_network_actor_mlp_linears_2_weight   | 
+                                                                                                                                        model__model_a2c_network_actor_mlp_linears_2_bias   | 
+------ ----------------------------------------------------------------------------- ------------------- -------------- ------- --------------------------------------------------------- --- --------------- ----------------- ------------------------- 
+14     _model_a2c_network_actor_mlp_activations_2_Elu_output_0 (Nonlinearity, Elu)   [b:1,c:32]                             384              _model_a2c_network_actor_mlp_2_Gemm_output_0   |                 -32(-8.3%)        nl_of32[10]               
+------ ----------------------------------------------------------------------------- ------------------- -------------- ------- --------------------------------------------------------- --- --------------- ----------------- ------------------------- 
+15     value (Gemm, Gemm)                                                            [b:1,c:1]                               33   _model_a2c_network_actor_mlp_activations_2_Elu_output_0   |                 -33(-100.0%)      
+                                                                                                                                                    model__model_a2c_network_value_weight   | 
+                                                                                                                                                      model__model_a2c_network_value_bias   | 
+------ ----------------------------------------------------------------------------- ------------------- -------------- ------- --------------------------------------------------------- --- --------------- ----------------- ------------------------- 
+16     mu (Gemm, Gemm)                                                               [b:1,c:1]                               33   _model_a2c_network_actor_mlp_activations_2_Elu_output_0   |                 -33(-100.0%)      
+                                                                                                                                                       model__model_a2c_network_mu_weight   | 
+                                                                                                                                                         model__model_a2c_network_mu_bias   | 
+------ ----------------------------------------------------------------------------- ------------------- -------------- ------- --------------------------------------------------------- --- --------------- ----------------- ------------------------- 
+18     _model_a2c_network_Mul_output_0 (Eltwise, Mul)                                [b:1,c:1]                                1                                                        mu   |                 -1(-100.0%)       
+                                                                                                                                                     _model_a2c_network_Constant_output_0   | 
+------ ----------------------------------------------------------------------------- ------------------- -------------- ------- --------------------------------------------------------- --- --------------- ----------------- ------------------------- 
+19     log_std (Eltwise, Add)                                                        [b:1,c:1]                                1                           _model_a2c_network_Mul_output_0   |                 -1(-100.0%)       
+                                                                                                                                                           model__model_a2c_network_sigma   | 
+------ ----------------------------------------------------------------------------- ------------------- -------------- ------- --------------------------------------------------------- --- --------------- ----------------- ------------------------- 
+model/c-model: macc=13,916/13,692 -224(-1.6%) weights=44,840/44,840  activations=--/1,048 io=--/0
+
+
+
+Generated C-graph summary
+------------------------------------------------------------------------------------------------------------------------
+model name            : pendulum
+c-name                : network
+c-node #              : 15
+c-array #             : 30
+activations size      : 1048 (1 segment)
+weights size          : 44840 (1 segment)
+macc                  : 13692
+inputs                : ['obs_output']
+outputs               : ['mu_output', 'log_std_output', 'value_output']
+
+C-Arrays (30)
+------ ---------------------------------------------------------------- ------------ ------------------------- ------------- --------- --------- 
+c_id   name (*_array)                                                   item/size    domain/mem-pool           c-type        fmt       comment   
+------ ---------------------------------------------------------------- ------------ ------------------------- ------------- --------- --------- 
+0      obs_output                                                       3/12         activations/**default**   float         float32   /input    
+1      _model_running_mean_std_Sub_output_0_output                      3/12         activations/**default**   float         float32             
+2      _model_running_mean_std_Div_output_0_output                      3/12         activations/**default**   float         float32             
+3      _model_running_mean_std_Clip_output_0_output                     3/12         activations/**default**   float         float32             
+4      _model_a2c_network_actor_mlp_0_Gemm_output_0_output              128/512      activations/**default**   float         float32             
+5      _model_a2c_network_actor_mlp_activations_0_Elu_output_0_output   128/512      activations/**default**   float         float32             
+6      _model_a2c_network_actor_mlp_Concat_output_0_output              131/524      activations/**default**   float         float32             
+7      _model_a2c_network_actor_mlp_1_Gemm_output_0_output              64/256       activations/**default**   float         float32             
+8      _model_a2c_network_actor_mlp_activations_1_Elu_output_0_output   64/256       activations/**default**   float         float32             
+9      _model_a2c_network_actor_mlp_Concat_1_output_0_output            67/268       activations/**default**   float         float32             
+10     _model_a2c_network_actor_mlp_2_Gemm_output_0_output              32/128       activations/**default**   float         float32             
+11     _model_a2c_network_actor_mlp_activations_2_Elu_output_0_output   32/128       activations/**default**   float         float32             
+12     value_output                                                     1/4          activations/**default**   float         float32   /output   
+13     mu_output                                                        1/4          activations/**default**   float         float32   /output   
+14     _model_a2c_network_Mul_output_0_output                           1/4          activations/**default**   float         float32             
+15     log_std_output                                                   1/4          activations/**default**   float         float32   /output   
+16     model__model_a2c_network_sigma                                   1/4          weights/weights           const float   float32             
+17     _model_a2c_network_Constant_output_0                             1/4          weights/weights           const float   float32             
+18     onnxDiv_43                                                       3/12         weights/weights           const float   float32             
+19     onnxSub_40                                                       3/12         weights/weights           const float   float32             
+20     _model_a2c_network_actor_mlp_0_Gemm_output_0_weights             384/1536     weights/weights           const float   float32             
+21     _model_a2c_network_actor_mlp_0_Gemm_output_0_bias                128/512      weights/weights           const float   float32             
+22     _model_a2c_network_actor_mlp_1_Gemm_output_0_weights             8384/33536   weights/weights           const float   float32             
+23     _model_a2c_network_actor_mlp_1_Gemm_output_0_bias                64/256       weights/weights           const float   float32             
+24     _model_a2c_network_actor_mlp_2_Gemm_output_0_weights             2144/8576    weights/weights           const float   float32             
+25     _model_a2c_network_actor_mlp_2_Gemm_output_0_bias                32/128       weights/weights           const float   float32             
+26     value_weights                                                    32/128       weights/weights           const float   float32             
+27     value_bias                                                       1/4          weights/weights           const float   float32             
+28     mu_weights                                                       32/128       weights/weights           const float   float32             
+29     mu_bias                                                          1/4          weights/weights           const float   float32             
+------ ---------------------------------------------------------------- ------------ ------------------------- ------------- --------- --------- 
+
+C-Layers (15)
+------ --------------------------------------------------------- ---- -------------- ------ ------- ------------------------------------------------------------------- ------------------ 
+c_id   name (*_layer)                                            id   layer_type     macc   rom     tensors                                                             shape (array id)   
+------ --------------------------------------------------------- ---- -------------- ------ ------- ------------------------------------------------------------------- ------------------ 
+0      _model_running_mean_std_Sub_output_0                      1    eltwise/sub    3      12      I: obs_output                                                       (1,3) (0)          
+                                                                                                    I: onnxSub_40                                                       (3,) (19)          
+                                                                                                    O: _model_running_mean_std_Sub_output_0_output                      (1,3) (1)          
+------ --------------------------------------------------------- ---- -------------- ------ ------- ------------------------------------------------------------------- ------------------ 
+1      _model_running_mean_std_Div_output_0                      2    eltwise/div    15     12      I: _model_running_mean_std_Sub_output_0_output                      (1,3) (1)          
+                                                                                                    I: onnxDiv_43                                                       (3,) (18)          
+                                                                                                    O: _model_running_mean_std_Div_output_0_output                      (1,3) (2)          
+------ --------------------------------------------------------- ---- -------------- ------ ------- ------------------------------------------------------------------- ------------------ 
+2      _model_running_mean_std_Clip_output_0                     5    nl             6      0       I: _model_running_mean_std_Div_output_0_output                      (1,3) (2)          
+                                                                                                    O: _model_running_mean_std_Clip_output_0_output                     (1,3) (3)          
+------ --------------------------------------------------------- ---- -------------- ------ ------- ------------------------------------------------------------------- ------------------ 
+3      _model_a2c_network_actor_mlp_0_Gemm_output_0              7    dense          512    2048    I: _model_running_mean_std_Clip_output_0_output                     (1,3) (3)          
+                                                                                                    W: _model_a2c_network_actor_mlp_0_Gemm_output_0_weights             (3,128) (20)       
+                                                                                                    W: _model_a2c_network_actor_mlp_0_Gemm_output_0_bias                (128,) (21)        
+                                                                                                    O: _model_a2c_network_actor_mlp_0_Gemm_output_0_output              (1,128) (4)        
+------ --------------------------------------------------------- ---- -------------- ------ ------- ------------------------------------------------------------------- ------------------ 
+4      _model_a2c_network_actor_mlp_activations_0_Elu_output_0   8    nl             1408   0       I: _model_a2c_network_actor_mlp_0_Gemm_output_0_output              (1,128) (4)        
+                                                                                                    O: _model_a2c_network_actor_mlp_activations_0_Elu_output_0_output   (1,128) (5)        
+------ --------------------------------------------------------- ---- -------------- ------ ------- ------------------------------------------------------------------- ------------------ 
+5      _model_a2c_network_actor_mlp_Concat_output_0              9    concat         0      0       I: _model_a2c_network_actor_mlp_activations_0_Elu_output_0_output   (1,128) (5)        
+                                                                                                    I: _model_running_mean_std_Clip_output_0_output                     (1,3) (3)          
+                                                                                                    O: _model_a2c_network_actor_mlp_Concat_output_0_output              (1,131) (6)        
+------ --------------------------------------------------------- ---- -------------- ------ ------- ------------------------------------------------------------------- ------------------ 
+6      _model_a2c_network_actor_mlp_1_Gemm_output_0              10   dense          8448   33792   I: _model_a2c_network_actor_mlp_Concat_output_0_output              (1,131) (6)        
+                                                                                                    W: _model_a2c_network_actor_mlp_1_Gemm_output_0_weights             (131,64) (22)      
+                                                                                                    W: _model_a2c_network_actor_mlp_1_Gemm_output_0_bias                (64,) (23)         
+                                                                                                    O: _model_a2c_network_actor_mlp_1_Gemm_output_0_output              (1,64) (7)         
+------ --------------------------------------------------------- ---- -------------- ------ ------- ------------------------------------------------------------------- ------------------ 
+7      _model_a2c_network_actor_mlp_activations_1_Elu_output_0   11   nl             704    0       I: _model_a2c_network_actor_mlp_1_Gemm_output_0_output              (1,64) (7)         
+                                                                                                    O: _model_a2c_network_actor_mlp_activations_1_Elu_output_0_output   (1,64) (8)         
+------ --------------------------------------------------------- ---- -------------- ------ ------- ------------------------------------------------------------------- ------------------ 
+8      _model_a2c_network_actor_mlp_Concat_1_output_0            12   concat         0      0       I: _model_a2c_network_actor_mlp_activations_1_Elu_output_0_output   (1,64) (8)         
+                                                                                                    I: _model_running_mean_std_Clip_output_0_output                     (1,3) (3)          
+                                                                                                    O: _model_a2c_network_actor_mlp_Concat_1_output_0_output            (1,67) (9)         
+------ --------------------------------------------------------- ---- -------------- ------ ------- ------------------------------------------------------------------- ------------------ 
+9      _model_a2c_network_actor_mlp_2_Gemm_output_0              13   dense          2176   8704    I: _model_a2c_network_actor_mlp_Concat_1_output_0_output            (1,67) (9)         
+                                                                                                    W: _model_a2c_network_actor_mlp_2_Gemm_output_0_weights             (67,32) (24)       
+                                                                                                    W: _model_a2c_network_actor_mlp_2_Gemm_output_0_bias                (32,) (25)         
+                                                                                                    O: _model_a2c_network_actor_mlp_2_Gemm_output_0_output              (1,32) (10)        
+------ --------------------------------------------------------- ---- -------------- ------ ------- ------------------------------------------------------------------- ------------------ 
+10     _model_a2c_network_actor_mlp_activations_2_Elu_output_0   14   nl             352    0       I: _model_a2c_network_actor_mlp_2_Gemm_output_0_output              (1,32) (10)        
+                                                                                                    O: _model_a2c_network_actor_mlp_activations_2_Elu_output_0_output   (1,32) (11)        
+------ --------------------------------------------------------- ---- -------------- ------ ------- ------------------------------------------------------------------- ------------------ 
+11     value                                                     15   dense          33     132     I: _model_a2c_network_actor_mlp_activations_2_Elu_output_0_output   (1,32) (11)        
+                                                                                                    W: value_weights                                                    (32,1) (26)        
+                                                                                                    W: value_bias                                                       (1,) (27)          
+                                                                                                    O: value_output                                                     (1,1) (12)         
+------ --------------------------------------------------------- ---- -------------- ------ ------- ------------------------------------------------------------------- ------------------ 
+12     mu                                                        16   dense          33     132     I: _model_a2c_network_actor_mlp_activations_2_Elu_output_0_output   (1,32) (11)        
+                                                                                                    W: mu_weights                                                       (32,1) (28)        
+                                                                                                    W: mu_bias                                                          (1,) (29)          
+                                                                                                    O: mu_output                                                        (1,1) (13)         
+------ --------------------------------------------------------- ---- -------------- ------ ------- ------------------------------------------------------------------- ------------------ 
+13     _model_a2c_network_Mul_output_0                           18   eltwise/mul    1      4       I: mu_output                                                        (1,1) (13)         
+                                                                                                    I: _model_a2c_network_Constant_output_0                             (1,) (17)          
+                                                                                                    O: _model_a2c_network_Mul_output_0_output                           (1,1) (14)         
+------ --------------------------------------------------------- ---- -------------- ------ ------- ------------------------------------------------------------------- ------------------ 
+14     log_std                                                   19   eltwise/sum    1      4       I: _model_a2c_network_Mul_output_0_output                           (1,1) (14)         
+                                                                                                    I: model__model_a2c_network_sigma                                   (1,) (16)          
+                                                                                                    O: log_std_output                                                   (1,1) (15)         
+------ --------------------------------------------------------- ---- -------------- ------ ------- ------------------------------------------------------------------- ------------------ 
+
+
+
+Number of operations per c-layer
+------- ------ -------------------------------------------------------------- -------- -------------- -------- ---------- 
+c_id    m_id   name (type)                                                         #op           type   #param   sparsity 
+------- ------ -------------------------------------------------------------- -------- -------------- -------- ---------- 
+0       1      _model_running_mean_std_Sub_output_0 (eltwise/sub)                    3     op_f32_f32        3     0.0000 
+1       2      _model_running_mean_std_Div_output_0 (eltwise/div)                   15     op_f32_f32        3     0.0000 
+2       5      _model_running_mean_std_Clip_output_0 (nl)                            6     op_f32_f32          
+3       7      _model_a2c_network_actor_mlp_0_Gemm_output_0 (dense)                512   smul_f32_f32      512     0.0000 
+4       8      _model_a2c_network_actor_mlp_activations_0_Elu_output_0 (nl)      1,408     op_f32_f32          
+5       9      _model_a2c_network_actor_mlp_Concat_output_0 (concat)                 0     op_f32_f32          
+6       10     _model_a2c_network_actor_mlp_1_Gemm_output_0 (dense)              8,448   smul_f32_f32    8,448     0.0000 
+7       11     _model_a2c_network_actor_mlp_activations_1_Elu_output_0 (nl)        704     op_f32_f32          
+8       12     _model_a2c_network_actor_mlp_Concat_1_output_0 (concat)               0     op_f32_f32          
+9       13     _model_a2c_network_actor_mlp_2_Gemm_output_0 (dense)              2,176   smul_f32_f32    2,176     0.0000 
+10      14     _model_a2c_network_actor_mlp_activations_2_Elu_output_0 (nl)        352     op_f32_f32          
+11      15     value (dense)                                                        33   smul_f32_f32       33     0.0000 
+12      16     mu (dense)                                                           33   smul_f32_f32       33     0.0000 
+13      18     _model_a2c_network_Mul_output_0 (eltwise/mul)                         1     op_f32_f32        1     1.0000 
+14      19     log_std (eltwise/sum)                                                 1     op_f32_f32        1     0.0000 
+------- ------ -------------------------------------------------------------- -------- -------------- -------- ---------- 
+total                                                                           13,692                  11,210     0.0001 
+
+Number of operation types
+---------------- -------- ----------- 
+operation type          #           % 
+---------------- -------- ----------- 
+op_f32_f32          2,490       18.2% 
+smul_f32_f32       11,202       81.8% 
+
+Complexity report (model)
+------ --------------------------------------------------------- ------------------------- ------------------------- ------ 
+m_id   name                                                      c_macc                    c_rom                     c_id   
+------ --------------------------------------------------------- ------------------------- ------------------------- ------ 
+1      onnxSub_40                                                |                  0.0%   |                  0.0%   [0]    
+2      onnxDiv_43                                                |                  0.1%   |                  0.0%   [1]    
+7      model__model_a2c_network_actor_mlp_linears_0_weight       |                  3.7%   |                  4.6%   [3]    
+10     model__model_a2c_network_actor_mlp_linears_1_weight       ||||||||||||||||  61.7%   ||||||||||||||||  75.4%   [6]    
+13     model__model_a2c_network_actor_mlp_linears_2_weight       ||||              15.9%   ||||              19.4%   [9]    
+15     model__model_a2c_network_value_weight                     |                  0.2%   |                  0.3%   [11]   
+16     model__model_a2c_network_mu_weight                        |                  0.2%   |                  0.3%   [12]   
+18     _model_a2c_network_Constant_output_0                      |                  0.0%   |                  0.0%   [13]   
+19     model__model_a2c_network_sigma                            |                  0.0%   |                  0.0%   [14]   
+5      _model_running_mean_std_Clip_output_0                     |                  0.0%   |                  0.0%   [2]    
+8      _model_a2c_network_actor_mlp_activations_0_Elu_output_0   |||               10.3%   |                  0.0%   [4]    
+9      _model_a2c_network_actor_mlp_Concat_output_0              |                  0.0%   |                  0.0%   [5]    
+11     _model_a2c_network_actor_mlp_activations_1_Elu_output_0   ||                 5.1%   |                  0.0%   [7]    
+12     _model_a2c_network_actor_mlp_Concat_1_output_0            |                  0.0%   |                  0.0%   [8]    
+14     _model_a2c_network_actor_mlp_activations_2_Elu_output_0   |                  2.6%   |                  0.0%   [10]   
+------ --------------------------------------------------------- ------------------------- ------------------------- ------ 
+macc=13,692 weights=44,840 act=1,048 ram_io=0
+
+Generated files (7)
+------------------------------------------------------------------------ 
+C:\Users\tylerbarkin\.stm32cubemx\network_output\network_config.h        
+C:\Users\tylerbarkin\.stm32cubemx\network_output\network.h               
+C:\Users\tylerbarkin\.stm32cubemx\network_output\network.c               
+C:\Users\tylerbarkin\.stm32cubemx\network_output\network_data_params.h   
+C:\Users\tylerbarkin\.stm32cubemx\network_output\network_data_params.c   
+C:\Users\tylerbarkin\.stm32cubemx\network_output\network_data.h          
+C:\Users\tylerbarkin\.stm32cubemx\network_output\network_data.c          

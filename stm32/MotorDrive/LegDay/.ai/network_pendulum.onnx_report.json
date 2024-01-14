@@ -1,0 +1,764 @@
+{
+    "_allocate_inputs": 4,
+    "_allocate_outputs": 4,
+    "cli_parameters": "generate --name network -m E:/MyProjects/GuardDog/stm32/pendulum.onnx --type onnx --compression none --verbosity 1 --workspace C:\\Users\\TYLERB~1\\AppData\\Local\\Temp\\mxAI_workspace2353185828366004690601174179373361 --output C:\\Users\\tylerbarkin\\.stm32cubemx\\network_output --allocate-inputs --series stm32g4 --allocate-outputs",
+    "cli_version": {
+        "major": 1,
+        "micro": 0,
+        "minor": 7
+    },
+    "cli_version_str": "1.7.0",
+    "code_size": 0,
+    "compression": {
+        "factor": null,
+        "layers": {}
+    },
+    "date_time": "Fri Jan 12 15:45:10 2024",
+    "error": 0,
+    "error_str": [],
+    "exec_cmd": "generate",
+    "exec_duration": 0.0,
+    "hash": "f2c7b94f7e2c2f4a5fbcd95ed24b7d73",
+    "inputs": [
+        "obs"
+    ],
+    "layers": [
+        {
+            "c_id": [
+                0
+            ],
+            "extras": {
+                "n_macc": 0,
+                "n_params": 3,
+                "psize": 12,
+                "rom_size": 12
+            },
+            "id": 1,
+            "inputs": [],
+            "name": "onnxSub_40",
+            "original": "Sub",
+            "type": "Placeholder"
+        },
+        {
+            "c_id": [
+                1
+            ],
+            "extras": {
+                "n_macc": 0,
+                "n_params": 3,
+                "psize": 12,
+                "rom_size": 12
+            },
+            "id": 2,
+            "inputs": [],
+            "name": "onnxDiv_43",
+            "original": "Div",
+            "type": "Placeholder"
+        },
+        {
+            "c_id": [
+                3
+            ],
+            "extras": {
+                "n_macc": 0,
+                "n_params": 384,
+                "psize": 1536,
+                "rom_size": 2048
+            },
+            "id": 7,
+            "inputs": [],
+            "name": "model__model_a2c_network_actor_mlp_linears_0_weight",
+            "original": "Gemm",
+            "type": "Placeholder"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 0,
+                "n_params": 128,
+                "psize": 512,
+                "rom_size": 0
+            },
+            "id": 7,
+            "inputs": [],
+            "name": "model__model_a2c_network_actor_mlp_linears_0_bias",
+            "original": "Gemm",
+            "type": "Placeholder"
+        },
+        {
+            "c_id": [
+                6
+            ],
+            "extras": {
+                "n_macc": 0,
+                "n_params": 8384,
+                "psize": 33536,
+                "rom_size": 33792
+            },
+            "id": 10,
+            "inputs": [],
+            "name": "model__model_a2c_network_actor_mlp_linears_1_weight",
+            "original": "Gemm",
+            "type": "Placeholder"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 0,
+                "n_params": 64,
+                "psize": 256,
+                "rom_size": 0
+            },
+            "id": 10,
+            "inputs": [],
+            "name": "model__model_a2c_network_actor_mlp_linears_1_bias",
+            "original": "Gemm",
+            "type": "Placeholder"
+        },
+        {
+            "c_id": [
+                9
+            ],
+            "extras": {
+                "n_macc": 0,
+                "n_params": 2144,
+                "psize": 8576,
+                "rom_size": 8704
+            },
+            "id": 13,
+            "inputs": [],
+            "name": "model__model_a2c_network_actor_mlp_linears_2_weight",
+            "original": "Gemm",
+            "type": "Placeholder"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 0,
+                "n_params": 32,
+                "psize": 128,
+                "rom_size": 0
+            },
+            "id": 13,
+            "inputs": [],
+            "name": "model__model_a2c_network_actor_mlp_linears_2_bias",
+            "original": "Gemm",
+            "type": "Placeholder"
+        },
+        {
+            "c_id": [
+                11
+            ],
+            "extras": {
+                "n_macc": 0,
+                "n_params": 32,
+                "psize": 128,
+                "rom_size": 132
+            },
+            "id": 15,
+            "inputs": [],
+            "name": "model__model_a2c_network_value_weight",
+            "original": "Gemm",
+            "type": "Placeholder"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 0,
+                "n_params": 1,
+                "psize": 4,
+                "rom_size": 0
+            },
+            "id": 15,
+            "inputs": [],
+            "name": "model__model_a2c_network_value_bias",
+            "original": "Gemm",
+            "type": "Placeholder"
+        },
+        {
+            "c_id": [
+                12
+            ],
+            "extras": {
+                "n_macc": 0,
+                "n_params": 32,
+                "psize": 128,
+                "rom_size": 132
+            },
+            "id": 16,
+            "inputs": [],
+            "name": "model__model_a2c_network_mu_weight",
+            "original": "Gemm",
+            "type": "Placeholder"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 0,
+                "n_params": 1,
+                "psize": 4,
+                "rom_size": 0
+            },
+            "id": 16,
+            "inputs": [],
+            "name": "model__model_a2c_network_mu_bias",
+            "original": "Gemm",
+            "type": "Placeholder"
+        },
+        {
+            "c_id": [
+                13
+            ],
+            "extras": {
+                "n_macc": 0,
+                "n_params": 1,
+                "psize": 4,
+                "rom_size": 4
+            },
+            "id": 18,
+            "inputs": [],
+            "name": "_model_a2c_network_Constant_output_0",
+            "original": "Mul",
+            "type": "Placeholder"
+        },
+        {
+            "c_id": [
+                14
+            ],
+            "extras": {
+                "n_macc": 0,
+                "n_params": 1,
+                "psize": 4,
+                "rom_size": 4
+            },
+            "id": 19,
+            "inputs": [],
+            "name": "model__model_a2c_network_sigma",
+            "original": "Add",
+            "type": "Placeholder"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 0,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 12,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        3,
+                        1
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 0,
+            "inputs": [],
+            "name": "obs",
+            "original": "",
+            "type": "Input"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 3,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 12,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        3,
+                        1
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 1,
+            "inputs": [
+                "obs",
+                "onnxSub_40"
+            ],
+            "name": "_model_running_mean_std_Sub_output_0",
+            "original": "Sub",
+            "type": "Eltwise"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 15,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 12,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        3,
+                        1
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 2,
+            "inputs": [
+                "_model_running_mean_std_Sub_output_0",
+                "onnxDiv_43"
+            ],
+            "name": "_model_running_mean_std_Div_output_0",
+            "original": "Div",
+            "type": "Eltwise"
+        },
+        {
+            "c_id": [
+                2
+            ],
+            "extras": {
+                "n_macc": 6,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 12,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        3,
+                        1
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 5,
+            "inputs": [
+                "_model_running_mean_std_Div_output_0"
+            ],
+            "name": "_model_running_mean_std_Clip_output_0",
+            "original": "Clip",
+            "type": "Nonlinearity"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 0,
+                "n_params": 0,
+                "psize": 0,
+                "rom_size": 0
+            },
+            "id": 6,
+            "inputs": [
+                "_model_running_mean_std_Clip_output_0"
+            ],
+            "name": "_model_a2c_network_Flatten_output_0",
+            "original": "Flatten",
+            "type": "Reshape"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 512,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 512,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        128,
+                        1
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 7,
+            "inputs": [
+                "_model_a2c_network_Flatten_output_0",
+                "model__model_a2c_network_actor_mlp_linears_0_weight",
+                "model__model_a2c_network_actor_mlp_linears_0_bias"
+            ],
+            "name": "_model_a2c_network_actor_mlp_0_Gemm_output_0",
+            "original": "Gemm",
+            "type": "Gemm"
+        },
+        {
+            "c_id": [
+                4
+            ],
+            "extras": {
+                "n_macc": 1536,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 512,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        128,
+                        1
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 8,
+            "inputs": [
+                "_model_a2c_network_actor_mlp_0_Gemm_output_0"
+            ],
+            "name": "_model_a2c_network_actor_mlp_activations_0_Elu_output_0",
+            "original": "Elu",
+            "type": "Nonlinearity"
+        },
+        {
+            "c_id": [
+                5
+            ],
+            "extras": {
+                "n_macc": 0,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 524,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        131,
+                        1
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 9,
+            "inputs": [
+                "_model_a2c_network_actor_mlp_activations_0_Elu_output_0",
+                "_model_a2c_network_Flatten_output_0"
+            ],
+            "name": "_model_a2c_network_actor_mlp_Concat_output_0",
+            "original": "Concat",
+            "type": "Concat"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 8448,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 256,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        64,
+                        1
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 10,
+            "inputs": [
+                "_model_a2c_network_actor_mlp_Concat_output_0",
+                "model__model_a2c_network_actor_mlp_linears_1_weight",
+                "model__model_a2c_network_actor_mlp_linears_1_bias"
+            ],
+            "name": "_model_a2c_network_actor_mlp_1_Gemm_output_0",
+            "original": "Gemm",
+            "type": "Gemm"
+        },
+        {
+            "c_id": [
+                7
+            ],
+            "extras": {
+                "n_macc": 768,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 256,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        64,
+                        1
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 11,
+            "inputs": [
+                "_model_a2c_network_actor_mlp_1_Gemm_output_0"
+            ],
+            "name": "_model_a2c_network_actor_mlp_activations_1_Elu_output_0",
+            "original": "Elu",
+            "type": "Nonlinearity"
+        },
+        {
+            "c_id": [
+                8
+            ],
+            "extras": {
+                "n_macc": 0,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 268,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        67,
+                        1
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 12,
+            "inputs": [
+                "_model_a2c_network_actor_mlp_activations_1_Elu_output_0",
+                "_model_a2c_network_Flatten_output_0"
+            ],
+            "name": "_model_a2c_network_actor_mlp_Concat_1_output_0",
+            "original": "Concat",
+            "type": "Concat"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 2176,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 128,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        32,
+                        1
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 13,
+            "inputs": [
+                "_model_a2c_network_actor_mlp_Concat_1_output_0",
+                "model__model_a2c_network_actor_mlp_linears_2_weight",
+                "model__model_a2c_network_actor_mlp_linears_2_bias"
+            ],
+            "name": "_model_a2c_network_actor_mlp_2_Gemm_output_0",
+            "original": "Gemm",
+            "type": "Gemm"
+        },
+        {
+            "c_id": [
+                10
+            ],
+            "extras": {
+                "n_macc": 384,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 128,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        32,
+                        1
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 14,
+            "inputs": [
+                "_model_a2c_network_actor_mlp_2_Gemm_output_0"
+            ],
+            "name": "_model_a2c_network_actor_mlp_activations_2_Elu_output_0",
+            "original": "Elu",
+            "type": "Nonlinearity"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 33,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 4,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        1,
+                        1
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 15,
+            "inputs": [
+                "_model_a2c_network_actor_mlp_activations_2_Elu_output_0",
+                "model__model_a2c_network_value_weight",
+                "model__model_a2c_network_value_bias"
+            ],
+            "name": "value",
+            "original": "Gemm",
+            "type": "Gemm"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 33,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 4,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        1,
+                        1
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 16,
+            "inputs": [
+                "_model_a2c_network_actor_mlp_activations_2_Elu_output_0",
+                "model__model_a2c_network_mu_weight",
+                "model__model_a2c_network_mu_bias"
+            ],
+            "name": "mu",
+            "original": "Gemm",
+            "type": "Gemm"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 1,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 4,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        1,
+                        1
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 18,
+            "inputs": [
+                "mu",
+                "_model_a2c_network_Constant_output_0"
+            ],
+            "name": "_model_a2c_network_Mul_output_0",
+            "original": "Mul",
+            "type": "Eltwise"
+        },
+        {
+            "c_id": [],
+            "extras": {
+                "n_macc": 1,
+                "n_params": 0,
+                "psize": 0,
+                "rom_output": {
+                    "c_size": 4,
+                    "fmt": {
+                        "format": "float"
+                    },
+                    "shape": [
+                        1,
+                        1
+                    ]
+                },
+                "rom_size": 0
+            },
+            "id": 19,
+            "inputs": [
+                "_model_a2c_network_Mul_output_0",
+                "model__model_a2c_network_sigma"
+            ],
+            "name": "log_std",
+            "original": "Add",
+            "type": "Eltwise"
+        }
+    ],
+    "model_files": [
+        "E:\\MyProjects\\GuardDog\\stm32\\pendulum.onnx"
+    ],
+    "model_n_params": 11210,
+    "model_name": "pendulum",
+    "model_size": 44840,
+    "model_type": "onnx",
+    "name": "network",
+    "outputs": [
+        "mu",
+        "log_std",
+        "value"
+    ],
+    "ram_io_size": [
+        12,
+        12
+    ],
+    "ram_size": [
+        1048,
+        1048
+    ],
+    "report_version": 1.1,
+    "rom_cfact": 1.0,
+    "rom_heap_inspector": 2048,
+    "rom_inputs": [
+        {
+            "c_size": 12,
+            "c_type": "float",
+            "name": "obs"
+        }
+    ],
+    "rom_n_macc": 13692,
+    "rom_outputs": [
+        {
+            "c_size": 4,
+            "c_type": "float",
+            "name": "mu"
+        },
+        {
+            "c_size": 4,
+            "c_type": "float",
+            "name": "log_std"
+        },
+        {
+            "c_size": 4,
+            "c_type": "float",
+            "name": "value"
+        }
+    ],
+    "rom_size": 44840,
+    "strategy": "heap_overlay",
+    "tools_api_version": {
+        "major": 1,
+        "micro": 0,
+        "minor": 7
+    },
+    "tools_version": {
+        "extra": "19520",
+        "major": 8,
+        "micro": 0,
+        "minor": 1
+    },
+    "val_error": -1.0,
+    "val_error_desc": "None (None) #-1",
+    "val_metrics": []
+}
