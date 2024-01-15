@@ -30,7 +30,8 @@ import torch
 import onnx
 import onnxruntime as ort
 
-comm_obj = stm32_comms.MCU_Comms()
+comm_obj = stm32_comms.MCU_Comms(0)
+max_push_effort = 0.1
 
 def convert_angle(angle):
     # Apply sine and cosine functions
@@ -123,9 +124,9 @@ props = gym.get_actor_dof_properties(env0, cubebot0)
 props["driveMode"].fill(gymapi.DOF_MODE_EFFORT) 
 props["stiffness"].fill(0.0)
 props['damping'].fill(0.0)
-props['velocity'].fill(60.0)
+props['velocity'].fill(100.0)
 props['effort'].fill(0.0)
-props['friction'].fill(0.001)
+props['friction'].fill(0.01)
 
 
 gym.set_actor_dof_properties(env0, cubebot0, props)
@@ -196,23 +197,25 @@ while not gym.query_viewer_has_closed(viewer):
     # print('~~~~~~~~~~~~~~~~~~~')
     # print(pole_pos)
     # print(pole_vel)
-    if(1):
-        comm_obj.out_data = np.array([enc_sin, enc_cos, pole_vel, 0.0])
+    comm_obj.out_data = np.array([enc_sin, enc_cos, pole_vel, 0.0])
+    if(0):        
         comm_obj.write_data()
         comm_obj.read_data()
-        max_push_effort = 0.10    
+        
         action = comm_obj.in_data[0] * max_push_effort
     else:
         outputs = ort_model.run(
         None,
         {"obs": comm_obj.out_data[0:3].reshape(1,-1).astype(np.float32)},
         )
-        print(outputs[0])
+        # print(outputs[0])
         action=outputs[0]* max_push_effort
-    # print(comm_obj.in_data)
+    print(comm_obj.out_data)
+    # print(action)
     # gym.apply_dof_effort(env0, joint_idx, a[0]/20.0)
     if(a[0]):
         action = 0.0
+    action = a[0]* max_push_effort
     gym.apply_dof_effort(env0, joint_idx, action)
     
 

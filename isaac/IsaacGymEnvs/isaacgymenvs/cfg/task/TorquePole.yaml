@@ -8,7 +8,8 @@ env:
   numEnvs: ${resolve_default:512,${...num_envs}}
   envSpacing: 4.0
   resetDist: 3.0
-  maxEffort: 0.10
+  maxEffort: 0.1
+  maxEpisodeLen: 500
 
   clipObservations: 5.0
   clipActions: 1.0

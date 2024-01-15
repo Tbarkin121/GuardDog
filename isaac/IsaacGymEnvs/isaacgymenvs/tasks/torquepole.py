@@ -42,7 +42,7 @@ class TorquePole(VecTask):
         self.reset_dist = self.cfg["env"]["resetDist"]
 
         self.max_push_effort = self.cfg["env"]["maxEffort"]
-        self.max_episode_length = 500
+        self.max_episode_length = self.cfg["env"]["maxEpisodeLen"]
 
         self.cfg["env"]["numObservations"] = 3
         self.cfg["env"]["numActions"] = 1
@@ -109,13 +109,18 @@ class TorquePole(VecTask):
             )
             torquepole_handle = self.gym.create_actor(env_ptr, torquepole_asset, pose, "torquepole", i, 1, 0)
 
+            rand_color = torch.rand((3), device=self.device)
+            self.gym.set_rigid_body_color(env_ptr, torquepole_handle, 0, gymapi.MESH_VISUAL, gymapi.Vec3(rand_color[0],rand_color[1],rand_color[2]))
+            rand_color = torch.rand((3), device=self.device)
+            self.gym.set_rigid_body_color(env_ptr, torquepole_handle, 1, gymapi.MESH_VISUAL, gymapi.Vec3(rand_color[0],rand_color[1],rand_color[2]))
+            
             dof_props = self.gym.get_actor_dof_properties(env_ptr, torquepole_handle)
             dof_props['driveMode'][:] = gymapi.DOF_MODE_EFFORT
             dof_props['stiffness'][:] = 0.0
             dof_props['damping'][:] = 0.0
-            dof_props['velocity'].fill(30.0)
+            dof_props['velocity'].fill(100.0)
             dof_props['effort'].fill(0.0)
-            dof_props['friction'].fill(0.001)
+            dof_props['friction'].fill(0.01)
 
             self.gym.set_actor_dof_properties(env_ptr, torquepole_handle, dof_props)
 
@@ -145,9 +150,10 @@ class TorquePole(VecTask):
         #  Normalize angle to [-pi, pi]
         normalized_angle = torch.remainder(angle + np.pi, 2 * np.pi) - np.pi
         # Apply offset
-        normalized_angle += np.pi
+        # normalized_angle += np.pi
         # Normalize again if needed
-        normalized_angle = torch.remainder(normalized_angle + np.pi, 2 * np.pi) - np.pi
+        # normalized_angle = torch.remainder(normalized_angle + np.pi, 2 * np.pi) - np.pi
+
         #  Normalize angle to [-1, 1]
         normalized_angle /= torch.pi
 

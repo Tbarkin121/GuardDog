@@ -12,18 +12,19 @@ import numpy as np
 import platform
 
 class MCU_Comms():
-    def __init__(self):
-        self.in_data = np.zeros(4)
-        self.out_data = np.zeros(4)
+    def __init__(self, enabled=1):
+        if(enabled):
+            self.in_data = np.zeros(4)
+            self.out_data = np.zeros(4)
 
-        if platform.system() == 'Windows':
-            self.port = 'COM6'
-        else:
-            self.port = '/dev/ttyACM0'
-            
-        print('Using Port : {}'.format(self.port))
-        self.open_port()
-    
+            if platform.system() == 'Windows':
+                self.port = 'COM6'
+            else:
+                self.port = '/dev/ttyACM0'
+                
+            print('Using Port : {}'.format(self.port))
+            self.open_port()
+        
     def open_port(self):
         # Configure the serial connection
         self.ser = serial.Serial(
