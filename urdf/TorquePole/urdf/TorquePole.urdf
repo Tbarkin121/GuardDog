@@ -8,17 +8,17 @@
     name="base_link">
     <inertial>
       <origin
-        xyz="-0.014583 0.00028957 -0.19308"
+        xyz="0.0074761 -0.0057066 0.031484"
         rpy="0 0 0" />
       <mass
-        value="0.36224" />
+        value="0.18536" />
       <inertia
-        ixx="0.00046889"
-        ixy="1.9195E-10"
-        ixz="1.1612E-06"
-        iyy="0.0002774"
-        iyz="1.3223E-09"
-        izz="0.00038212" />
+        ixx="0.00015776"
+        ixy="-1.1929E-09"
+        ixz="-2.1711E-06"
+        iyy="0.00033622"
+        iyz="-6.8647E-06"
+        izz="0.0004492" />
     </inertial>
     <visual>
       <origin
@@ -45,20 +45,20 @@
     </collision>
   </link>
   <link
-    name="pendulum">
+    name="pendulum_link">
     <inertial>
       <origin
-        xyz="-0.0039392 -0.073535 -2.3638E-05"
+        xyz="9.7897E-11 0.39044 0.062361"
         rpy="0 0 0" />
       <mass
-        value="0.066367" />
+        value="0.098923" />
       <inertia
-        ixx="2.6897E-05"
-        ixy="-8.6352E-09"
-        ixz="-1.1815E-08"
-        iyy="1.5509E-05"
-        iyz="6.4928E-11"
-        izz="3.2672E-05" />
+        ixx="0.00015022"
+        ixy="-7.662E-09"
+        ixz="1.0427E-11"
+        iyy="3.4932E-05"
+        iyz="1.9833E-08"
+        izz="0.0001807" />
     </inertial>
     <visual>
       <origin
@@ -66,7 +66,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://TorquePole/meshes/pendulum.STL" />
+          filename="package://TorquePole/meshes/pendulum_link.STL" />
       </geometry>
       <material
         name="">
@@ -80,26 +80,24 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://TorquePole/meshes/pendulum.STL" />
+          filename="package://TorquePole/meshes/pendulum_link.STL" />
       </geometry>
     </collision>
   </link>
   <joint
-    name="PullyJoint"
-    type="revolute">
+    name="pendulum"
+    type="continuous">
     <origin
       xyz="0 0 0"
       rpy="0 0 0" />
     <parent
       link="base_link" />
     <child
-      link="pendulum" />
+      link="pendulum_link" />
     <axis
-      xyz="-1 0 0" />
+      xyz="0 0 -1" />
     <limit
-      lower="6.28"
-      upper="-1.57"
-      effort="3"
-      velocity="300" />
+      effort="0.5"
+      velocity="3000" />
   </joint>
 </robot>

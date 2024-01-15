@@ -1,1 +1,1 @@
-controller_joint_names: ['', 'PullyJoint', ]
+controller_joint_names: ['', 'pendulum', ]
