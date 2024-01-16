@@ -1,8 +1,0 @@
-E:/MyProjects/MotorDrive/MotorProfilerG4/Src/stm32g4xx_mc_it.c:82:6:ADC1_2_IRQHandler	1
-E:/MyProjects/MotorDrive/MotorProfilerG4/Src/stm32g4xx_mc_it.c:113:6:TIM1_UP_TIM16_IRQHandler	1
-E:/MyProjects/MotorDrive/MotorProfilerG4/Src/stm32g4xx_mc_it.c:126:6:TIM1_BRK_TIM15_IRQHandler	3
-E:/MyProjects/MotorDrive/MotorProfilerG4/Src/stm32g4xx_mc_it.c:164:6:DMA1_Channel1_IRQHandler	2
-E:/MyProjects/MotorDrive/MotorProfilerG4/Src/stm32g4xx_mc_it.c:192:6:USART2_IRQHandler	12
-E:/MyProjects/MotorDrive/MotorProfilerG4/Src/stm32g4xx_mc_it.c:268:6:HardFault_Handler	1
-E:/MyProjects/MotorDrive/MotorProfilerG4/Src/stm32g4xx_mc_it.c:286:6:SysTick_Handler	2
-E:/MyProjects/MotorDrive/MotorProfilerG4/Src/stm32g4xx_mc_it.c:314:6:EXTI15_10_IRQHandler	2

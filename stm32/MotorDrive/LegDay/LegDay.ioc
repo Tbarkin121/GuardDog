@@ -679,7 +679,7 @@ STMicroelectronics.X-CUBE-AI.8.1.0.MaximumNumberOfOutputLayer=3
 STMicroelectronics.X-CUBE-AI.8.1.0.MaximumSizeOfInputLayer=1
 STMicroelectronics.X-CUBE-AI.8.1.0.MaximumSizeOfOutputLayer=1,1,1
 STMicroelectronics.X-CUBE-AI.8.1.0.ModelActualCompression-098abfad738e50c5799519d2550cbfd076d351c164bf65d74cd62cbe9e5408c5=0.0
-STMicroelectronics.X-CUBE-AI.8.1.0.ModelCompression-098abfad738e50c5799519d2550cbfd076d351c164bf65d74cd62cbe9e5408c5=None
+STMicroelectronics.X-CUBE-AI.8.1.0.ModelCompression-098abfad738e50c5799519d2550cbfd076d351c164bf65d74cd62cbe9e5408c5=Lossless
 STMicroelectronics.X-CUBE-AI.8.1.0.ModelFlashOccupation-098abfad738e50c5799519d2550cbfd076d351c164bf65d74cd62cbe9e5408c5=60582
 STMicroelectronics.X-CUBE-AI.8.1.0.ModelHashList=098abfad738e50c5799519d2550cbfd076d351c164bf65d74cd62cbe9e5408c5
 STMicroelectronics.X-CUBE-AI.8.1.0.ModelKind-098abfad738e50c5799519d2550cbfd076d351c164bf65d74cd62cbe9e5408c5=ONNX
@@ -687,7 +687,7 @@ STMicroelectronics.X-CUBE-AI.8.1.0.ModelMacc-098abfad738e50c5799519d2550cbfd076d
 STMicroelectronics.X-CUBE-AI.8.1.0.ModelName-098abfad738e50c5799519d2550cbfd076d351c164bf65d74cd62cbe9e5408c5=network
 STMicroelectronics.X-CUBE-AI.8.1.0.ModelNameList=network
 STMicroelectronics.X-CUBE-AI.8.1.0.ModelRamOccupation-098abfad738e50c5799519d2550cbfd076d351c164bf65d74cd62cbe9e5408c5=5340
-STMicroelectronics.X-CUBE-AI.8.1.0.ModelStructureFile-098abfad738e50c5799519d2550cbfd076d351c164bf65d74cd62cbe9e5408c5=E\:\\MyProjects\\GuardDog\\isaac\\IsaacGymEnvs\\isaacgymenvs\\pendulum.onnx
+STMicroelectronics.X-CUBE-AI.8.1.0.ModelStructureFile-098abfad738e50c5799519d2550cbfd076d351c164bf65d74cd62cbe9e5408c5=E\:\\MyProjects\\GuardDog\\isaac\\IsaacGymEnvs\\isaacgymenvs\\pendulum-eff1p5.onnx
 STMicroelectronics.X-CUBE-AI.8.1.0.ModelType-098abfad738e50c5799519d2550cbfd076d351c164bf65d74cd62cbe9e5408c5=Saved model
 STMicroelectronics.X-CUBE-AI.8.1.0.ReadyForCodeGeneration=true
 STMicroelectronics.X-CUBE-AI.8.1.0.StackSize=0x800

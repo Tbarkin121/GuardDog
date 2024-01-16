@@ -1,7 +1,0 @@
-E:/MyProjects/MotorDrive/PosCtrl/Src/register_interface.c:32:9:RI_SetRegisterGlobal	15
-E:/MyProjects/MotorDrive/PosCtrl/Src/register_interface.c:166:9:RI_SetRegisterMotor1	73
-E:/MyProjects/MotorDrive/PosCtrl/Src/register_interface.c:575:9:RI_GetRegisterGlobal	20
-E:/MyProjects/MotorDrive/PosCtrl/Src/register_interface.c:720:11:RI_GetRegisterMotor1	100
-E:/MyProjects/MotorDrive/PosCtrl/Src/register_interface.c:1260:9:RI_MovString	4
-E:/MyProjects/MotorDrive/PosCtrl/Src/register_interface.c:1286:9:RI_GetIDSize	2
-E:/MyProjects/MotorDrive/PosCtrl/Src/register_interface.c:1321:16:RI_GetPtrReg	18

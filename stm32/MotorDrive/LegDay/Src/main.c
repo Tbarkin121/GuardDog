@@ -43,7 +43,7 @@
 /* USER CODE BEGIN PD */
 #define VEL_SCALE 20
 #define NUM_FLOATS 8
-#define MAX_EFFORT 0.1   //Nm
+#define MAX_EFFORT 0.175   //Nm
 #define TORQUE_K   0.0562 //Nm/A
 /* USER CODE END PD */
 

@@ -2,7 +2,7 @@
   ******************************************************************************
   * @file    network.h
   * @author  AST Embedded Analytics Research Platform
-  * @date    Tue Jan 16 03:07:20 2024
+  * @date    Tue Jan 16 16:02:48 2024
   * @brief   AI Tool Automatic Code Generator for Embedded NN computing
   ******************************************************************************
   * @attention
@@ -25,7 +25,7 @@
 
 /******************************************************************************/
 #define AI_NETWORK_MODEL_NAME          "network"
-#define AI_NETWORK_ORIGIN_MODEL_NAME   "pendulum"
+#define AI_NETWORK_ORIGIN_MODEL_NAME   "pendulumeff1p5"
 
 /******************************************************************************/
 #define AI_NETWORK_ACTIVATIONS_ALIGNMENT   (4)

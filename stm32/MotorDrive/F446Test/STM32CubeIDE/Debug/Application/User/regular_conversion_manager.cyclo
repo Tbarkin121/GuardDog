@@ -1,7 +1,0 @@
-E:/MyProjects/MotorDrive/F446Test/Src/regular_conversion_manager.c:179:6:RCM_RegisterRegConv	27
-E:/MyProjects/MotorDrive/F446Test/Src/regular_conversion_manager.c:144:6:RCM_RegisterRegConv_WithCB	2
-E:/MyProjects/MotorDrive/F446Test/Src/regular_conversion_manager.c:265:10:RCM_ExecRegularConv	3
-E:/MyProjects/MotorDrive/F446Test/Src/regular_conversion_manager.c:299:6:RCM_RequestUserConv	2
-E:/MyProjects/MotorDrive/F446Test/Src/regular_conversion_manager.c:324:10:RCM_GetUserConv	2
-E:/MyProjects/MotorDrive/F446Test/Src/regular_conversion_manager.c:346:6:RCM_ExecUserConv	4
-E:/MyProjects/MotorDrive/F446Test/Src/regular_conversion_manager.c:385:21:RCM_GetUserConvState	1

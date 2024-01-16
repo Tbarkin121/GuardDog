@@ -1,40 +1,40 @@
 Neural Network Tools for STM32 family v1.7.0 (stm.ai v8.1.0-19520)
-Created date          : 2024-01-16 03:07:21
-Parameters            : generate --name network -m E:/MyProjects/GuardDog/isaac/IsaacGymEnvs/isaacgymenvs/pendulum.onnx --type onnx --compression none --verbosity 1 --workspace C:\Users\TYLERB~1\AppData\Local\Temp\mxAI_workspace6254790162101003171459940217765818 --output C:\Users\tylerbarkin\.stm32cubemx\network_output --allocate-inputs --series stm32g4 --allocate-outputs
+Created date          : 2024-01-16 16:02:48
+Parameters            : generate --name network -m E:/MyProjects/GuardDog/isaac/IsaacGymEnvs/isaacgymenvs/pendulum-eff1p5.onnx --type onnx --compression lossless --verbosity 1 --workspace C:\Users\TYLERB~1\AppData\Local\Temp\mxAI_workspace69001046331810016441496607787432831 --output C:\Users\tylerbarkin\.stm32cubemx\network_output --allocate-inputs --series stm32g4 --allocate-outputs
 
 Exec/report summary (generate)
----------------------------------------------------------------------------------------------------------------
-model file         :   E:\MyProjects\GuardDog\isaac\IsaacGymEnvs\isaacgymenvs\pendulum.onnx                    
-type               :   onnx                                                                                    
-c_name             :   network                                                                                 
-compression        :   none                                                                                    
-options            :   allocate-inputs, allocate-outputs                                                       
-optimization       :   balanced                                                                                
-target/series      :   stm32g4                                                                                 
-workspace dir      :   C:\Users\TYLERB~1\AppData\Local\Temp\mxAI_workspace6254790162101003171459940217765818   
-output dir         :   C:\Users\tylerbarkin\.stm32cubemx\network_output                                        
-model_fmt          :   float                                                                                   
-model_name         :   pendulum                                                                                
-model_hash         :   91e2cee07460fb4a1206932e1fcff46a                                                        
-params #           :   11,210 items (43.79 KiB)                                                                
----------------------------------------------------------------------------------------------------------------
-input 1/1          :   'obs' (domain:activations/**default**)                                                  
-                   :   3 items, 12 B, ai_float, float, (1,3)                                                   
-output 1/3         :   'mu' (domain:activations/**default**)                                                   
-                   :   1 items, 4 B, ai_float, float, (1,1)                                                    
-output 2/3         :   'log_std' (domain:activations/**default**)                                              
-                   :   1 items, 4 B, ai_float, float, (1,1)                                                    
-output 3/3         :   'value' (domain:activations/**default**)                                                
-                   :   1 items, 4 B, ai_float, float, (1,1)                                                    
-outputs (total)    :   12 B                                                                                    
-macc               :   13,692                                                                                  
-weights (ro)       :   44,840 B (43.79 KiB) (1 segment)                                                        
-activations (rw)   :   1,048 B (1.02 KiB) (1 segment) *                                                        
-ram (total)        :   1,048 B (1.02 KiB) = 1,048 + 0 + 0                                                      
----------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------
+model file         :   E:\MyProjects\GuardDog\isaac\IsaacGymEnvs\isaacgymenvs\pendulum-eff1p5.onnx              
+type               :   onnx                                                                                     
+c_name             :   network                                                                                  
+compression        :   lossless                                                                                 
+options            :   allocate-inputs, allocate-outputs                                                        
+optimization       :   balanced                                                                                 
+target/series      :   stm32g4                                                                                  
+workspace dir      :   C:\Users\TYLERB~1\AppData\Local\Temp\mxAI_workspace69001046331810016441496607787432831   
+output dir         :   C:\Users\tylerbarkin\.stm32cubemx\network_output                                         
+model_fmt          :   float                                                                                    
+model_name         :   pendulumeff1p5                                                                           
+model_hash         :   be6727b6cb0b80bc5853d0f719fdd0a1                                                         
+params #           :   11,210 items (43.79 KiB)                                                                 
+----------------------------------------------------------------------------------------------------------------
+input 1/1          :   'obs' (domain:activations/**default**)                                                   
+                   :   3 items, 12 B, ai_float, float, (1,3)                                                    
+output 1/3         :   'mu' (domain:activations/**default**)                                                    
+                   :   1 items, 4 B, ai_float, float, (1,1)                                                     
+output 2/3         :   'log_std' (domain:activations/**default**)                                               
+                   :   1 items, 4 B, ai_float, float, (1,1)                                                     
+output 3/3         :   'value' (domain:activations/**default**)                                                 
+                   :   1 items, 4 B, ai_float, float, (1,1)                                                     
+outputs (total)    :   12 B                                                                                     
+macc               :   13,692                                                                                   
+weights (ro)       :   44,840 B (43.79 KiB) (1 segment)                                                         
+activations (rw)   :   1,048 B (1.02 KiB) (1 segment) *                                                         
+ram (total)        :   1,048 B (1.02 KiB) = 1,048 + 0 + 0                                                       
+----------------------------------------------------------------------------------------------------------------
 (*) 'input'/'output' buffers can be used from the activations buffer
 
-Model name - pendulum ['obs'] ['mu', 'log_std', 'value']
+Model name - pendulumeff1p5 ['obs'] ['mu', 'log_std', 'value']
 ------ ----------------------------------------------------------------------------- ------------------- -------------- ------- --------------------------------------------------------- --- --------------- ----------------- ------------------------- 
 m_id   layer (type,original)                                                         oshape              param/size        macc                                              connected to   | c_size          c_macc            c_type                    
 ------ ----------------------------------------------------------------------------- ------------------- -------------- ------- --------------------------------------------------------- --- --------------- ----------------- ------------------------- 
@@ -117,7 +117,7 @@ model/c-model: macc=13,916/13,692 -224(-1.6%) weights=44,840/44,840  activations
 
 Generated C-graph summary
 ------------------------------------------------------------------------------------------------------------------------
-model name            : pendulum
+model name            : pendulumeff1p5
 c-name                : network
 c-node #              : 15
 c-array #             : 30
