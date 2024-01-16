@@ -47,6 +47,11 @@ class TorquePole(VecTask):
         self.cfg["env"]["numObservations"] = 3
         self.cfg["env"]["numActions"] = 1
 
+        # randomization
+        self.randomization_params = self.cfg["task"]["randomization_params"]
+        self.randomize = self.cfg["task"]["randomize"]
+
+
         super().__init__(config=self.cfg, rl_device=rl_device, sim_device=sim_device, graphics_device_id=graphics_device_id, headless=headless, virtual_screen_capture=virtual_screen_capture, force_render=force_render)
 
         dof_state_tensor = self.gym.acquire_dof_state_tensor(self.sim)
@@ -55,6 +60,8 @@ class TorquePole(VecTask):
         self.dof_vel = self.dof_state.view(self.num_envs, self.num_dof, 2)[..., 1]
         self.keys = Keyboard()
 
+        
+
     def create_sim(self):
         # set the up axis to be z-up given that assets are y-up by default
         self.up_axis = self.cfg["sim"]["up_axis"]
@@ -62,6 +69,9 @@ class TorquePole(VecTask):
         self.sim = super().create_sim(self.device_id, self.graphics_device_id, self.physics_engine, self.sim_params)
         # self._create_ground_plane()
         self._create_envs(self.num_envs, self.cfg["env"]['envSpacing'], int(np.sqrt(self.num_envs)))
+
+        if self.randomize:
+            self.apply_randomizations(self.randomization_params)
 
     def _create_ground_plane(self):
         plane_params = gymapi.PlaneParams()
@@ -120,7 +130,7 @@ class TorquePole(VecTask):
             dof_props['damping'][:] = 0.0
             dof_props['velocity'].fill(100.0)
             dof_props['effort'].fill(0.0)
-            dof_props['friction'].fill(0.001)
+            dof_props['friction'].fill(0.01)
 
             self.gym.set_actor_dof_properties(env_ptr, torquepole_handle, dof_props)
 
@@ -171,6 +181,10 @@ class TorquePole(VecTask):
         return self.obs_buf
 
     def reset_idx(self, env_ids):
+        # Randomization can happen only at reset time, since it can reset actor positions on GPU
+        if self.randomize:
+            self.apply_randomizations(self.randomization_params)
+
         positions =  2*np.pi * (torch.rand((len(env_ids), self.num_dof), device=self.device) - 0.5)
         velocities = 10.0 * (torch.rand((len(env_ids), self.num_dof), device=self.device) - 0.5)
 
