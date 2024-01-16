@@ -130,7 +130,7 @@ class TorquePole(VecTask):
             dof_props['damping'][:] = 0.0
             dof_props['velocity'].fill(100.0)
             dof_props['effort'].fill(0.0)
-            dof_props['friction'].fill(0.01)
+            dof_props['friction'].fill(0.00)
 
             self.gym.set_actor_dof_properties(env_ptr, torquepole_handle, dof_props)
 
@@ -233,7 +233,7 @@ def compute_torquepole_reward(pole_angle, pole_vel,
     # type: (Tensor, Tensor, float, Tensor, Tensor, float) -> Tuple[Tensor, Tensor]
 
     # reward is combo of angle deviated from upright, velocity of cart, and velocity of pole moving
-    reward = (1.0 - (pole_angle * pole_angle)) - (pole_vel * pole_vel)
+    reward = (1.0 - (pole_angle * pole_angle)) - (pole_vel * pole_vel)*0.01
     # reward = 1.0 - pole_angle * pole_angle 
 
     # adjust reward for reset agents
