@@ -233,7 +233,7 @@ def compute_torquepole_reward(pole_angle, pole_vel,
     # type: (Tensor, Tensor, float, Tensor, Tensor, float) -> Tuple[Tensor, Tensor]
 
     # reward is combo of angle deviated from upright, velocity of cart, and velocity of pole moving
-    reward = (1.0 - (pole_angle * pole_angle)) - (pole_vel * pole_vel)*0.01
+    reward = (1.0 - (pole_angle * pole_angle)) - (pole_vel * pole_vel)*0.1
     # reward = 1.0 - pole_angle * pole_angle 
 
     # adjust reward for reset agents

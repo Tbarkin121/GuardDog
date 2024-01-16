@@ -8,12 +8,11 @@ env:
   numEnvs: ${resolve_default:512,${...num_envs}}
   envSpacing: 0.5
   resetDist: 3.0
-  maxEffort: 0.1
-  maxEpisodeLen: 500
+  maxEffort: 0.15
+  maxEpisodeLen: 1000
 
   clipObservations: 5.0
   clipActions: 1.0
-
   asset:
     assetRoot: "../../assets"
     assetFileName: "urdf/TorquePole/urdf/TorquePole.urdf"
@@ -42,6 +41,9 @@ sim:
     num_subscenes: ${....num_subscenes}
     contact_collection: 0 # 0: CC_NEVER (don't collect contact info), 1: CC_LAST_SUBSTEP (collect only contacts on last substep), 2: CC_ALL_SUBSTEPS (broken - do not use!)
 
+# None of this randomizer stuff seems to work
+# Like... It will color the stls if i turn it randomize to true and torquepole is in the actor_params
+# but if i set color: False it doesn't respect that, and friction values appear to not change ever... 
 task:
   randomize: False
   randomization_params:
