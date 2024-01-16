@@ -60,7 +60,7 @@ class TorquePole(VecTask):
         self.up_axis = self.cfg["sim"]["up_axis"]
 
         self.sim = super().create_sim(self.device_id, self.graphics_device_id, self.physics_engine, self.sim_params)
-        self._create_ground_plane()
+        # self._create_ground_plane()
         self._create_envs(self.num_envs, self.cfg["env"]['envSpacing'], int(np.sqrt(self.num_envs)))
 
     def _create_ground_plane(self):
@@ -71,8 +71,8 @@ class TorquePole(VecTask):
 
     def _create_envs(self, num_envs, spacing, num_per_row):
         # define plane on which environments are initialized
-        lower = gymapi.Vec3(0.5 * -spacing, -spacing, 0.0) if self.up_axis == 'z' else gymapi.Vec3(0.5 * -spacing, 0.0, -spacing)
-        upper = gymapi.Vec3(0.5 * spacing, spacing, spacing)
+        lower = gymapi.Vec3(-spacing, -spacing, 0.0) if self.up_axis == 'z' else gymapi.Vec3(0.5 * -spacing, 0.0, -spacing)
+        upper = gymapi.Vec3(spacing, spacing, spacing)
 
         asset_root = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../../assets")
         asset_file = "urdf/TorquePole/urdf/TorquePole.urdf"
@@ -120,7 +120,7 @@ class TorquePole(VecTask):
             dof_props['damping'][:] = 0.0
             dof_props['velocity'].fill(100.0)
             dof_props['effort'].fill(0.0)
-            dof_props['friction'].fill(0.01)
+            dof_props['friction'].fill(0.001)
 
             self.gym.set_actor_dof_properties(env_ptr, torquepole_handle, dof_props)
 
@@ -131,7 +131,7 @@ class TorquePole(VecTask):
         # retrieve environment observations from buffer
         pole_angle = self.pole_angle
         pole_vel = self.obs_buf[:, 2]
-
+        
         self.rew_buf[:], self.reset_buf[:] = compute_torquepole_reward(
             pole_angle, pole_vel,
             self.reset_dist, self.reset_buf, self.progress_buf, self.max_episode_length
@@ -167,11 +167,12 @@ class TorquePole(VecTask):
 
         self.obs_buf[env_ids, 0], self.obs_buf[env_ids, 1], self.pole_angle = self.convert_angle(self.dof_pos[env_ids, 0].squeeze())
         self.obs_buf[env_ids, 2] = self.dof_vel[env_ids, 0].squeeze()/20.0
+        # print(self.obs_buf[0,...])
         return self.obs_buf
 
     def reset_idx(self, env_ids):
-        positions =  6.0 * (torch.rand((len(env_ids), self.num_dof), device=self.device) - 0.5) - np.pi
-        velocities = 2.0 * (torch.rand((len(env_ids), self.num_dof), device=self.device) - 0.5)
+        positions =  2*np.pi * (torch.rand((len(env_ids), self.num_dof), device=self.device) - 0.5)
+        velocities = 10.0 * (torch.rand((len(env_ids), self.num_dof), device=self.device) - 0.5)
 
         self.dof_pos[env_ids, :] = positions[:]
         self.dof_vel[env_ids, :] = velocities[:]
@@ -218,11 +219,11 @@ def compute_torquepole_reward(pole_angle, pole_vel,
     # type: (Tensor, Tensor, float, Tensor, Tensor, float) -> Tuple[Tensor, Tensor]
 
     # reward is combo of angle deviated from upright, velocity of cart, and velocity of pole moving
-    reward = (1.0 - pole_angle * pole_angle) - (1.0 * torch.abs(pole_vel))
+    reward = (1.0 - (pole_angle * pole_angle)) - (pole_vel * pole_vel)
     # reward = 1.0 - pole_angle * pole_angle 
 
     # adjust reward for reset agents
-    reward = torch.where(torch.abs(pole_angle) > 0.5, torch.ones_like(reward) * -2.0, reward)
+    # reward = torch.where(torch.abs(pole_angle) > 0.5, torch.ones_like(reward) * -2.0, reward)
 
     # reset = torch.where(torch.abs(pole_angle) > np.pi*1.9, torch.ones_like(reset_buf), reset_buf)
     reset = torch.where(progress_buf >= max_episode_length - 1, torch.ones_like(reset_buf), reset_buf)
