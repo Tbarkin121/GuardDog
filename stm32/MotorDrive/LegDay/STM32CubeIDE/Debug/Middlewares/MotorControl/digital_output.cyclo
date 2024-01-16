@@ -1,2 +1,2 @@
-E:/MyProjects/MotorDrive/LegDay/MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Src/digital_output.c:45:13:DOUT_SetOutputState	4
-E:/MyProjects/MotorDrive/LegDay/MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Src/digital_output.c:85:23:DOUT_GetOutputState	1
+E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Src/digital_output.c:45:13:DOUT_SetOutputState	4
+E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Src/digital_output.c:85:23:DOUT_GetOutputState	1

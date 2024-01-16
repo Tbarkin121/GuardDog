@@ -682,7 +682,8 @@ __weak void R3_1_GetPhaseCurrents(PWMC_Handle_t *pHdl, ab_t *Iab)
       default:
         break;
     }
-
+    Iab->a = -Iab->a;
+    Iab->b = -Iab->b;
     pHandle->_Super.Ia = Iab->a;
     pHandle->_Super.Ib = Iab->b;
     pHandle->_Super.Ic = -Iab->a - Iab->b;
@@ -1018,7 +1019,8 @@ __weak void R3_1_GetPhaseCurrents_OVM(PWMC_Handle_t *pHdl, ab_t *Iab)
       default:
         break;
     }
-
+    Iab->a = -Iab->a;
+    Iab->b = -Iab->b;
     pHandle->_Super.Ia = Iab->a;
     pHandle->_Super.Ib = Iab->b;
     pHandle->_Super.Ic = -Iab->a - Iab->b;
@@ -1914,7 +1916,7 @@ static void R3_1_RLGetPhaseCurrents(PWMC_Handle_t *pHdl, ab_t *pStator_Currents)
     {
       wAux = -INT16_MAX;
     }
-
+    wAux = -wAux;
     pStator_Currents->a = (int16_t)wAux;
     pStator_Currents->b = (int16_t)wAux;
 #ifdef NULL_PTR_CHECK_R3_1_PWM_CURR_FDB

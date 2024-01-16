@@ -43,7 +43,8 @@
 /* USER CODE BEGIN PD */
 #define VEL_SCALE 20
 #define NUM_FLOATS 8
-#define MAX_EFFORT 0.25
+#define MAX_EFFORT 0.1   //Nm
+#define TORQUE_K   0.0562 //Nm/A
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -77,6 +78,7 @@ static void MX_NVIC_Init(void);
 /* USER CODE BEGIN PFP */
 void convert_angle(float angle, float *sin_component, float *cos_component);
 float scale_vel(float rpm);
+float clip(float value, float min, float max);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -151,7 +153,7 @@ int main(void)
       in_data1[1] = cos_encode; // Cosine Encoding
       in_data1[2] = vel_scaled; // Velocity
       MX_X_CUBE_AI_Process();
-      action = -out_data1[0] * MAX_EFFORT;
+      action = clip(out_data1[0], -1.0, 1.0) * MAX_EFFORT/TORQUE_K; //Result is in Amps
       MC_ProgramTorqueRampMotor1_F(action, 0);
       HAL_TIM_Base_Stop(&htim3);
       data.floatValue[0] = out_data1[0]; // Value
@@ -176,7 +178,6 @@ int main(void)
   }
     /* USER CODE END WHILE */
 
-  MX_X_CUBE_AI_Process();
     /* USER CODE BEGIN 3 */
   /* USER CODE END 3 */
 }
@@ -262,13 +263,23 @@ static void MX_NVIC_Init(void)
 /* USER CODE BEGIN 4 */
 void convert_angle(float angle, float *sin_component, float *cos_component) {
     // Apply sine and cosine functions
-    *sin_component = sinf(angle);
-    *cos_component = cosf(angle);
+    float offset_angle = angle + M_PI;
+    *sin_component = sinf(offset_angle);
+    *cos_component = cosf(offset_angle);
 
 }
 
 float scale_vel(float rpm) {
     return rpm * (2 * M_PI / 60) / VEL_SCALE;
+}
+float clip(float value, float min, float max) {
+    if (value < min) {
+        return min;
+    } else if (value > max) {
+        return max;
+    } else {
+        return value;
+    }
 }
 /* USER CODE END 4 */
 

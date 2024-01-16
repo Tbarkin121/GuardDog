@@ -62,8 +62,8 @@ all: main-build
 main-build: LegDay.elf secondary-outputs
 
 # Tool invocations
-LegDay.elf LegDay.map: $(OBJS) $(USER_OBJS) E:\MyProjects\MotorDrive\LegDay\STM32CubeIDE\STM32G474RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "LegDay.elf" @"objects.list" $(USER_OBJS) -Wl,--start-group $(LIBS) -Wl,--end-group -mcpu=cortex-m4 -T"E:\MyProjects\MotorDrive\LegDay\STM32CubeIDE\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LegDay.map" -Wl,--gc-sections -static -L../../MCSDK_v6.2.0-Full/MotorControl/libMP -L../../Middlewares/ST/AI/Lib --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+LegDay.elf LegDay.map: $(OBJS) $(USER_OBJS) E:\MyProjects\GuardDog\stm32\MotorDrive\LegDay\STM32CubeIDE\STM32G474RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "LegDay.elf" @"objects.list" $(USER_OBJS) -Wl,--start-group $(LIBS) -Wl,--end-group -mcpu=cortex-m4 -T"E:\MyProjects\GuardDog\stm32\MotorDrive\LegDay\STM32CubeIDE\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LegDay.map" -Wl,--gc-sections -static -L../../MCSDK_v6.2.0-Full/MotorControl/libMP -L../../Middlewares/ST/AI/Lib --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

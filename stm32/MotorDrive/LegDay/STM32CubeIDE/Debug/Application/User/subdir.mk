@@ -5,39 +5,39 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-E:/MyProjects/MotorDrive/LegDay/Src/adc.c \
-E:/MyProjects/MotorDrive/LegDay/Src/app_x-cube-ai.c \
-E:/MyProjects/MotorDrive/LegDay/Src/aspep.c \
-E:/MyProjects/MotorDrive/LegDay/Src/cordic.c \
-E:/MyProjects/MotorDrive/LegDay/Src/crc.c \
-E:/MyProjects/MotorDrive/LegDay/Src/dma.c \
-E:/MyProjects/MotorDrive/LegDay/Src/gpio.c \
-E:/MyProjects/MotorDrive/LegDay/Src/main.c \
-E:/MyProjects/MotorDrive/LegDay/Src/mc_api.c \
-E:/MyProjects/MotorDrive/LegDay/Src/mc_app_hooks.c \
-E:/MyProjects/MotorDrive/LegDay/Src/mc_config.c \
-E:/MyProjects/MotorDrive/LegDay/Src/mc_configuration_registers.c \
-E:/MyProjects/MotorDrive/LegDay/Src/mc_interface.c \
-E:/MyProjects/MotorDrive/LegDay/Src/mc_math.c \
-E:/MyProjects/MotorDrive/LegDay/Src/mc_parameters.c \
-E:/MyProjects/MotorDrive/LegDay/Src/mc_perf.c \
-E:/MyProjects/MotorDrive/LegDay/Src/mc_tasks.c \
-E:/MyProjects/MotorDrive/LegDay/Src/mcp.c \
-E:/MyProjects/MotorDrive/LegDay/Src/mcp_config.c \
-E:/MyProjects/MotorDrive/LegDay/Src/motorcontrol.c \
-E:/MyProjects/MotorDrive/LegDay/Src/network.c \
-E:/MyProjects/MotorDrive/LegDay/Src/network_data.c \
-E:/MyProjects/MotorDrive/LegDay/Src/network_data_params.c \
-E:/MyProjects/MotorDrive/LegDay/Src/pwm_curr_fdbk.c \
-E:/MyProjects/MotorDrive/LegDay/Src/register_interface.c \
-E:/MyProjects/MotorDrive/LegDay/Src/regular_conversion_manager.c \
-E:/MyProjects/MotorDrive/LegDay/Src/stm32g4xx_hal_msp.c \
-E:/MyProjects/MotorDrive/LegDay/Src/stm32g4xx_it.c \
-E:/MyProjects/MotorDrive/LegDay/Src/stm32g4xx_mc_it.c \
+E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/adc.c \
+E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/app_x-cube-ai.c \
+E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/aspep.c \
+E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/cordic.c \
+E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/crc.c \
+E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/dma.c \
+E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/gpio.c \
+E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/main.c \
+E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/mc_api.c \
+E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/mc_app_hooks.c \
+E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/mc_config.c \
+E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/mc_configuration_registers.c \
+E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/mc_interface.c \
+E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/mc_math.c \
+E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/mc_parameters.c \
+E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/mc_perf.c \
+E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/mc_tasks.c \
+E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/mcp.c \
+E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/mcp_config.c \
+E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/motorcontrol.c \
+E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/network.c \
+E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/network_data.c \
+E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/network_data_params.c \
+E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/pwm_curr_fdbk.c \
+E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/register_interface.c \
+E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/regular_conversion_manager.c \
+E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/stm32g4xx_hal_msp.c \
+E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/stm32g4xx_it.c \
+E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/stm32g4xx_mc_it.c \
 ../Application/User/sysmem.c \
-E:/MyProjects/MotorDrive/LegDay/Src/tim.c \
-E:/MyProjects/MotorDrive/LegDay/Src/usart.c \
-E:/MyProjects/MotorDrive/LegDay/Src/usart_aspep_driver.c 
+E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/tim.c \
+E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/usart.c \
+E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/usart_aspep_driver.c 
 
 OBJS += \
 ./Application/User/adc.o \
@@ -111,71 +111,71 @@ C_DEPS += \
 
 
 # Each subdirectory must supply rules for building sources it contributes
-Application/User/adc.o: E:/MyProjects/MotorDrive/LegDay/Src/adc.c Application/User/subdir.mk
+Application/User/adc.o: E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/adc.c Application/User/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DARM_MATH_CM4 -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../../Drivers/STM32G4xx_HAL_Driver/Inc -I../../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Inc -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/G4xx/Inc -I../../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../../Drivers/CMSIS/Include -I../../Drivers/CMSIS/DSP/Include -I../../Inc -I../../Middlewares/ST/AI/Inc -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Application/User/app_x-cube-ai.o: E:/MyProjects/MotorDrive/LegDay/Src/app_x-cube-ai.c Application/User/subdir.mk
+Application/User/app_x-cube-ai.o: E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/app_x-cube-ai.c Application/User/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DARM_MATH_CM4 -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../../Drivers/STM32G4xx_HAL_Driver/Inc -I../../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Inc -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/G4xx/Inc -I../../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../../Drivers/CMSIS/Include -I../../Drivers/CMSIS/DSP/Include -I../../Inc -I../../Middlewares/ST/AI/Inc -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Application/User/aspep.o: E:/MyProjects/MotorDrive/LegDay/Src/aspep.c Application/User/subdir.mk
+Application/User/aspep.o: E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/aspep.c Application/User/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DARM_MATH_CM4 -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../../Drivers/STM32G4xx_HAL_Driver/Inc -I../../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Inc -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/G4xx/Inc -I../../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../../Drivers/CMSIS/Include -I../../Drivers/CMSIS/DSP/Include -I../../Inc -I../../Middlewares/ST/AI/Inc -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Application/User/cordic.o: E:/MyProjects/MotorDrive/LegDay/Src/cordic.c Application/User/subdir.mk
+Application/User/cordic.o: E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/cordic.c Application/User/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DARM_MATH_CM4 -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../../Drivers/STM32G4xx_HAL_Driver/Inc -I../../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Inc -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/G4xx/Inc -I../../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../../Drivers/CMSIS/Include -I../../Drivers/CMSIS/DSP/Include -I../../Inc -I../../Middlewares/ST/AI/Inc -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Application/User/crc.o: E:/MyProjects/MotorDrive/LegDay/Src/crc.c Application/User/subdir.mk
+Application/User/crc.o: E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/crc.c Application/User/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DARM_MATH_CM4 -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../../Drivers/STM32G4xx_HAL_Driver/Inc -I../../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Inc -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/G4xx/Inc -I../../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../../Drivers/CMSIS/Include -I../../Drivers/CMSIS/DSP/Include -I../../Inc -I../../Middlewares/ST/AI/Inc -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Application/User/dma.o: E:/MyProjects/MotorDrive/LegDay/Src/dma.c Application/User/subdir.mk
+Application/User/dma.o: E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/dma.c Application/User/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DARM_MATH_CM4 -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../../Drivers/STM32G4xx_HAL_Driver/Inc -I../../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Inc -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/G4xx/Inc -I../../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../../Drivers/CMSIS/Include -I../../Drivers/CMSIS/DSP/Include -I../../Inc -I../../Middlewares/ST/AI/Inc -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Application/User/gpio.o: E:/MyProjects/MotorDrive/LegDay/Src/gpio.c Application/User/subdir.mk
+Application/User/gpio.o: E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/gpio.c Application/User/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DARM_MATH_CM4 -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../../Drivers/STM32G4xx_HAL_Driver/Inc -I../../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Inc -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/G4xx/Inc -I../../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../../Drivers/CMSIS/Include -I../../Drivers/CMSIS/DSP/Include -I../../Inc -I../../Middlewares/ST/AI/Inc -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Application/User/main.o: E:/MyProjects/MotorDrive/LegDay/Src/main.c Application/User/subdir.mk
+Application/User/main.o: E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/main.c Application/User/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DARM_MATH_CM4 -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../../Drivers/STM32G4xx_HAL_Driver/Inc -I../../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Inc -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/G4xx/Inc -I../../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../../Drivers/CMSIS/Include -I../../Drivers/CMSIS/DSP/Include -I../../Inc -I../../Middlewares/ST/AI/Inc -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Application/User/mc_api.o: E:/MyProjects/MotorDrive/LegDay/Src/mc_api.c Application/User/subdir.mk
+Application/User/mc_api.o: E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/mc_api.c Application/User/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DARM_MATH_CM4 -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../../Drivers/STM32G4xx_HAL_Driver/Inc -I../../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Inc -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/G4xx/Inc -I../../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../../Drivers/CMSIS/Include -I../../Drivers/CMSIS/DSP/Include -I../../Inc -I../../Middlewares/ST/AI/Inc -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Application/User/mc_app_hooks.o: E:/MyProjects/MotorDrive/LegDay/Src/mc_app_hooks.c Application/User/subdir.mk
+Application/User/mc_app_hooks.o: E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/mc_app_hooks.c Application/User/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DARM_MATH_CM4 -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../../Drivers/STM32G4xx_HAL_Driver/Inc -I../../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Inc -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/G4xx/Inc -I../../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../../Drivers/CMSIS/Include -I../../Drivers/CMSIS/DSP/Include -I../../Inc -I../../Middlewares/ST/AI/Inc -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Application/User/mc_config.o: E:/MyProjects/MotorDrive/LegDay/Src/mc_config.c Application/User/subdir.mk
+Application/User/mc_config.o: E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/mc_config.c Application/User/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DARM_MATH_CM4 -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../../Drivers/STM32G4xx_HAL_Driver/Inc -I../../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Inc -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/G4xx/Inc -I../../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../../Drivers/CMSIS/Include -I../../Drivers/CMSIS/DSP/Include -I../../Inc -I../../Middlewares/ST/AI/Inc -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Application/User/mc_configuration_registers.o: E:/MyProjects/MotorDrive/LegDay/Src/mc_configuration_registers.c Application/User/subdir.mk
+Application/User/mc_configuration_registers.o: E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/mc_configuration_registers.c Application/User/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DARM_MATH_CM4 -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../../Drivers/STM32G4xx_HAL_Driver/Inc -I../../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Inc -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/G4xx/Inc -I../../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../../Drivers/CMSIS/Include -I../../Drivers/CMSIS/DSP/Include -I../../Inc -I../../Middlewares/ST/AI/Inc -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Application/User/mc_interface.o: E:/MyProjects/MotorDrive/LegDay/Src/mc_interface.c Application/User/subdir.mk
+Application/User/mc_interface.o: E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/mc_interface.c Application/User/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DARM_MATH_CM4 -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../../Drivers/STM32G4xx_HAL_Driver/Inc -I../../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Inc -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/G4xx/Inc -I../../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../../Drivers/CMSIS/Include -I../../Drivers/CMSIS/DSP/Include -I../../Inc -I../../Middlewares/ST/AI/Inc -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Application/User/mc_math.o: E:/MyProjects/MotorDrive/LegDay/Src/mc_math.c Application/User/subdir.mk
+Application/User/mc_math.o: E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/mc_math.c Application/User/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DARM_MATH_CM4 -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../../Drivers/STM32G4xx_HAL_Driver/Inc -I../../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Inc -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/G4xx/Inc -I../../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../../Drivers/CMSIS/Include -I../../Drivers/CMSIS/DSP/Include -I../../Inc -I../../Middlewares/ST/AI/Inc -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Application/User/mc_parameters.o: E:/MyProjects/MotorDrive/LegDay/Src/mc_parameters.c Application/User/subdir.mk
+Application/User/mc_parameters.o: E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/mc_parameters.c Application/User/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DARM_MATH_CM4 -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../../Drivers/STM32G4xx_HAL_Driver/Inc -I../../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Inc -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/G4xx/Inc -I../../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../../Drivers/CMSIS/Include -I../../Drivers/CMSIS/DSP/Include -I../../Inc -I../../Middlewares/ST/AI/Inc -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Application/User/mc_perf.o: E:/MyProjects/MotorDrive/LegDay/Src/mc_perf.c Application/User/subdir.mk
+Application/User/mc_perf.o: E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/mc_perf.c Application/User/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DARM_MATH_CM4 -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../../Drivers/STM32G4xx_HAL_Driver/Inc -I../../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Inc -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/G4xx/Inc -I../../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../../Drivers/CMSIS/Include -I../../Drivers/CMSIS/DSP/Include -I../../Inc -I../../Middlewares/ST/AI/Inc -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Application/User/mc_tasks.o: E:/MyProjects/MotorDrive/LegDay/Src/mc_tasks.c Application/User/subdir.mk
+Application/User/mc_tasks.o: E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/mc_tasks.c Application/User/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DARM_MATH_CM4 -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../../Drivers/STM32G4xx_HAL_Driver/Inc -I../../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Inc -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/G4xx/Inc -I../../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../../Drivers/CMSIS/Include -I../../Drivers/CMSIS/DSP/Include -I../../Inc -I../../Middlewares/ST/AI/Inc -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Application/User/mcp.o: E:/MyProjects/MotorDrive/LegDay/Src/mcp.c Application/User/subdir.mk
+Application/User/mcp.o: E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/mcp.c Application/User/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DARM_MATH_CM4 -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../../Drivers/STM32G4xx_HAL_Driver/Inc -I../../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Inc -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/G4xx/Inc -I../../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../../Drivers/CMSIS/Include -I../../Drivers/CMSIS/DSP/Include -I../../Inc -I../../Middlewares/ST/AI/Inc -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Application/User/mcp_config.o: E:/MyProjects/MotorDrive/LegDay/Src/mcp_config.c Application/User/subdir.mk
+Application/User/mcp_config.o: E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/mcp_config.c Application/User/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DARM_MATH_CM4 -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../../Drivers/STM32G4xx_HAL_Driver/Inc -I../../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Inc -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/G4xx/Inc -I../../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../../Drivers/CMSIS/Include -I../../Drivers/CMSIS/DSP/Include -I../../Inc -I../../Middlewares/ST/AI/Inc -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Application/User/motorcontrol.o: E:/MyProjects/MotorDrive/LegDay/Src/motorcontrol.c Application/User/subdir.mk
+Application/User/motorcontrol.o: E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/motorcontrol.c Application/User/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DARM_MATH_CM4 -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../../Drivers/STM32G4xx_HAL_Driver/Inc -I../../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Inc -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/G4xx/Inc -I../../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../../Drivers/CMSIS/Include -I../../Drivers/CMSIS/DSP/Include -I../../Inc -I../../Middlewares/ST/AI/Inc -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Application/User/network.o: E:/MyProjects/MotorDrive/LegDay/Src/network.c Application/User/subdir.mk
+Application/User/network.o: E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/network.c Application/User/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DARM_MATH_CM4 -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../../Drivers/STM32G4xx_HAL_Driver/Inc -I../../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Inc -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/G4xx/Inc -I../../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../../Drivers/CMSIS/Include -I../../Drivers/CMSIS/DSP/Include -I../../Inc -I../../Middlewares/ST/AI/Inc -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Application/User/network_data.o: E:/MyProjects/MotorDrive/LegDay/Src/network_data.c Application/User/subdir.mk
+Application/User/network_data.o: E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/network_data.c Application/User/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DARM_MATH_CM4 -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../../Drivers/STM32G4xx_HAL_Driver/Inc -I../../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Inc -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/G4xx/Inc -I../../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../../Drivers/CMSIS/Include -I../../Drivers/CMSIS/DSP/Include -I../../Inc -I../../Middlewares/ST/AI/Inc -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Application/User/network_data_params.o: E:/MyProjects/MotorDrive/LegDay/Src/network_data_params.c Application/User/subdir.mk
+Application/User/network_data_params.o: E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/network_data_params.c Application/User/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DARM_MATH_CM4 -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../../Drivers/STM32G4xx_HAL_Driver/Inc -I../../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Inc -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/G4xx/Inc -I../../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../../Drivers/CMSIS/Include -I../../Drivers/CMSIS/DSP/Include -I../../Inc -I../../Middlewares/ST/AI/Inc -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Application/User/pwm_curr_fdbk.o: E:/MyProjects/MotorDrive/LegDay/Src/pwm_curr_fdbk.c Application/User/subdir.mk
+Application/User/pwm_curr_fdbk.o: E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/pwm_curr_fdbk.c Application/User/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DARM_MATH_CM4 -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../../Drivers/STM32G4xx_HAL_Driver/Inc -I../../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Inc -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/G4xx/Inc -I../../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../../Drivers/CMSIS/Include -I../../Drivers/CMSIS/DSP/Include -I../../Inc -I../../Middlewares/ST/AI/Inc -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Application/User/register_interface.o: E:/MyProjects/MotorDrive/LegDay/Src/register_interface.c Application/User/subdir.mk
+Application/User/register_interface.o: E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/register_interface.c Application/User/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DARM_MATH_CM4 -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../../Drivers/STM32G4xx_HAL_Driver/Inc -I../../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Inc -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/G4xx/Inc -I../../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../../Drivers/CMSIS/Include -I../../Drivers/CMSIS/DSP/Include -I../../Inc -I../../Middlewares/ST/AI/Inc -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Application/User/regular_conversion_manager.o: E:/MyProjects/MotorDrive/LegDay/Src/regular_conversion_manager.c Application/User/subdir.mk
+Application/User/regular_conversion_manager.o: E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/regular_conversion_manager.c Application/User/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DARM_MATH_CM4 -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../../Drivers/STM32G4xx_HAL_Driver/Inc -I../../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Inc -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/G4xx/Inc -I../../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../../Drivers/CMSIS/Include -I../../Drivers/CMSIS/DSP/Include -I../../Inc -I../../Middlewares/ST/AI/Inc -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Application/User/stm32g4xx_hal_msp.o: E:/MyProjects/MotorDrive/LegDay/Src/stm32g4xx_hal_msp.c Application/User/subdir.mk
+Application/User/stm32g4xx_hal_msp.o: E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/stm32g4xx_hal_msp.c Application/User/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DARM_MATH_CM4 -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../../Drivers/STM32G4xx_HAL_Driver/Inc -I../../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Inc -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/G4xx/Inc -I../../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../../Drivers/CMSIS/Include -I../../Drivers/CMSIS/DSP/Include -I../../Inc -I../../Middlewares/ST/AI/Inc -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Application/User/stm32g4xx_it.o: E:/MyProjects/MotorDrive/LegDay/Src/stm32g4xx_it.c Application/User/subdir.mk
+Application/User/stm32g4xx_it.o: E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/stm32g4xx_it.c Application/User/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DARM_MATH_CM4 -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../../Drivers/STM32G4xx_HAL_Driver/Inc -I../../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Inc -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/G4xx/Inc -I../../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../../Drivers/CMSIS/Include -I../../Drivers/CMSIS/DSP/Include -I../../Inc -I../../Middlewares/ST/AI/Inc -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Application/User/stm32g4xx_mc_it.o: E:/MyProjects/MotorDrive/LegDay/Src/stm32g4xx_mc_it.c Application/User/subdir.mk
+Application/User/stm32g4xx_mc_it.o: E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/stm32g4xx_mc_it.c Application/User/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DARM_MATH_CM4 -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../../Drivers/STM32G4xx_HAL_Driver/Inc -I../../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Inc -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/G4xx/Inc -I../../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../../Drivers/CMSIS/Include -I../../Drivers/CMSIS/DSP/Include -I../../Inc -I../../Middlewares/ST/AI/Inc -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
 Application/User/%.o Application/User/%.su Application/User/%.cyclo: ../Application/User/%.c Application/User/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DARM_MATH_CM4 -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../../Drivers/STM32G4xx_HAL_Driver/Inc -I../../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Inc -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/G4xx/Inc -I../../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../../Drivers/CMSIS/Include -I../../Drivers/CMSIS/DSP/Include -I../../Inc -I../../Middlewares/ST/AI/Inc -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Application/User/tim.o: E:/MyProjects/MotorDrive/LegDay/Src/tim.c Application/User/subdir.mk
+Application/User/tim.o: E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/tim.c Application/User/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DARM_MATH_CM4 -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../../Drivers/STM32G4xx_HAL_Driver/Inc -I../../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Inc -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/G4xx/Inc -I../../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../../Drivers/CMSIS/Include -I../../Drivers/CMSIS/DSP/Include -I../../Inc -I../../Middlewares/ST/AI/Inc -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Application/User/usart.o: E:/MyProjects/MotorDrive/LegDay/Src/usart.c Application/User/subdir.mk
+Application/User/usart.o: E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/usart.c Application/User/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DARM_MATH_CM4 -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../../Drivers/STM32G4xx_HAL_Driver/Inc -I../../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Inc -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/G4xx/Inc -I../../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../../Drivers/CMSIS/Include -I../../Drivers/CMSIS/DSP/Include -I../../Inc -I../../Middlewares/ST/AI/Inc -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
-Application/User/usart_aspep_driver.o: E:/MyProjects/MotorDrive/LegDay/Src/usart_aspep_driver.c Application/User/subdir.mk
+Application/User/usart_aspep_driver.o: E:/MyProjects/GuardDog/stm32/MotorDrive/LegDay/Src/usart_aspep_driver.c Application/User/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DARM_MATH_CM4 -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../../Drivers/STM32G4xx_HAL_Driver/Inc -I../../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Inc -I../../MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/G4xx/Inc -I../../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../../Drivers/CMSIS/Include -I../../Drivers/CMSIS/DSP/Include -I../../Inc -I../../Middlewares/ST/AI/Inc -Ofast -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
 
 clean: clean-Application-2f-User

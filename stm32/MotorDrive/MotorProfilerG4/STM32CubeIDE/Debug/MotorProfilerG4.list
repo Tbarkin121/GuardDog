@@ -33,35 +33,35 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY
  14 .iar_vfe_header 0000000c  00000000  00000000  000335f8  2**2
                   CONTENTS, READONLY
- 15 .debug_line   0005282b  00000000  00000000  00033604  2**0
+ 15 .debug_line   000527f2  00000000  00000000  00033604  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_line_str 0000006b  00000000  00000000  00085e2f  2**0
+ 16 .debug_line_str 0000006b  00000000  00000000  00085df6  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_info   00060292  00000000  00000000  00085e9a  2**0
+ 17 .debug_info   00060292  00000000  00000000  00085e61  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_abbrev 00009aa8  00000000  00000000  000e612c  2**0
+ 18 .debug_abbrev 00009aa8  00000000  00000000  000e60f3  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_aranges 000028c8  00000000  00000000  000efbd8  2**3
+ 19 .debug_aranges 000028c8  00000000  00000000  000efba0  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .debug_str    0014b286  00000000  00000000  000f24a0  2**0
+ 20 .debug_str    0014b286  00000000  00000000  000f2468  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_rnglists 000036d6  00000000  00000000  0023d726  2**0
+ 21 .debug_rnglists 000036d2  00000000  00000000  0023d6ee  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 22 .debug_loclists 0001e425  00000000  00000000  00240dfc  2**0
+ 22 .debug_loclists 0001e3c6  00000000  00000000  00240dc0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 23 .debug_macro  00037a3d  00000000  00000000  0025f221  2**0
+ 23 .debug_macro  00037a3d  00000000  00000000  0025f186  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 24 .debug_frame  00006ccc  00000000  00000000  00296c60  2**2
+ 24 .debug_frame  00006cc8  00000000  00000000  00296bc4  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 25 .debug_types  00000820  00000000  00000000  0029d92c  2**0
+ 25 .debug_types  00000820  00000000  00000000  0029d88c  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 26 .debug_macinfo 000004e7  00000000  00000000  0029e14c  2**0
+ 26 .debug_macinfo 000004e7  00000000  00000000  0029e0ac  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 27 .debug_loc    00002b73  00000000  00000000  0029e633  2**0
+ 27 .debug_loc    00002b73  00000000  00000000  0029e593  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 28 .debug_ranges 000004a0  00000000  00000000  002a11a6  2**0
+ 28 .debug_ranges 000004a0  00000000  00000000  002a1106  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 29 .debug_pubnames 00000c8c  00000000  00000000  002a1646  2**0
+ 29 .debug_pubnames 00000c8c  00000000  00000000  002a15a6  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -10112,7 +10112,7 @@ __weak bool TSK_StopPermanencyTimeHasElapsedM1(void)
               R3_1_SwitchOffPWM(pwmcHandle[M1]);
  800564a:	4d63      	ldr	r5, [pc, #396]	; (80057d8 <TSK_MediumFrequencyTaskM1+0x314>)
  800564c:	6828      	ldr	r0, [r5, #0]
- 800564e:	f006 fdc9 	bl	800c1e4 <R3_1_SwitchOffPWM>
+ 800564e:	f006 fdc7 	bl	800c1e0 <R3_1_SwitchOffPWM>
               STC_SetSpeedSensor( pSTC[M1], &VirtualSpeedSensorM1._Super );
  8005652:	4a5e      	ldr	r2, [pc, #376]	; (80057cc <TSK_MediumFrequencyTaskM1+0x308>)
               FOCVars[M1].bDriveInput = EXTERNAL;
@@ -10285,7 +10285,7 @@ __weak bool TSK_StopPermanencyTimeHasElapsedM1(void)
     R3_1_SwitchOffPWM(pwmcHandle[motor]);
  800578c:	4b12      	ldr	r3, [pc, #72]	; (80057d8 <TSK_MediumFrequencyTaskM1+0x314>)
  800578e:	6818      	ldr	r0, [r3, #0]
- 8005790:	f006 fd28 	bl	800c1e4 <R3_1_SwitchOffPWM>
+ 8005790:	f006 fd26 	bl	800c1e0 <R3_1_SwitchOffPWM>
   SCC_Stop(&SCC);
  8005794:	480c      	ldr	r0, [pc, #48]	; (80057c8 <TSK_MediumFrequencyTaskM1+0x304>)
  8005796:	f7fb fb2f 	bl	8000df8 <SCC_Stop>
@@ -10679,7 +10679,7 @@ __weak void TSK_HardwareFaultTask(void)
   R3_1_SwitchOffPWM(pwmcHandle[M1]);
  8005a2e:	4b07      	ldr	r3, [pc, #28]	; (8005a4c <TSK_HardwareFaultTask+0x2c>)
  8005a30:	6818      	ldr	r0, [r3, #0]
- 8005a32:	f006 fbd7 	bl	800c1e4 <R3_1_SwitchOffPWM>
+ 8005a32:	f006 fbd5 	bl	800c1e0 <R3_1_SwitchOffPWM>
   MCI_FaultProcessing(&Mci[M1], MC_SW_ERROR, 0);
 
   /* USER CODE BEGIN TSK_HardwareFaultTask 1 */
@@ -27191,10 +27191,10 @@ __weak void R3_1_GetPhaseCurrents(PWMC_Handle_t *pHdl, ab_t *Iab)
 
     switch (Sector)
  800bf1c:	2a05      	cmp	r2, #5
- 800bf1e:	f200 809e 	bhi.w	800c05e <R3_1_GetPhaseCurrents+0x166>
+ 800bf1e:	f200 809b 	bhi.w	800c058 <R3_1_GetPhaseCurrents+0x160>
  800bf22:	e8df f002 	tbb	[pc, r2]
- 800bf26:	1f11      	.short	0x1f11
- 800bf28:	1104041f 	.word	0x1104041f
+ 800bf26:	3729      	.short	0x3729
+ 800bf28:	29040437 	.word	0x29040437
  800bf2c:	4770      	bx	lr
       case SECTOR_4:
       case SECTOR_5:
@@ -27202,708 +27202,710 @@ __weak void R3_1_GetPhaseCurrents(PWMC_Handle_t *pHdl, ab_t *Iab)
         /* Current on Phase C is not accessible     */
         /* Ia = PhaseAOffset - ADC converted value) */
         Aux = (int32_t)(pHandle->PhaseAOffset) - (int32_t)(ADCDataReg1);
- 800bf2e:	f8d0 3088 	ldr.w	r3, [r0, #136]	; 0x88
+ 800bf2e:	f8d0 2088 	ldr.w	r2, [r0, #136]	; 0x88
 
         /* Saturation of Ia */
         if (Aux < -INT16_MAX)
- 800bf32:	4a4e      	ldr	r2, [pc, #312]	; (800c06c <R3_1_GetPhaseCurrents+0x174>)
+ 800bf32:	4b4d      	ldr	r3, [pc, #308]	; (800c068 <R3_1_GetPhaseCurrents+0x170>)
         Aux = (int32_t)(pHandle->PhaseAOffset) - (int32_t)(ADCDataReg1);
- 800bf34:	1b5b      	subs	r3, r3, r5
+ 800bf34:	1b52      	subs	r2, r2, r5
         if (Aux < -INT16_MAX)
- 800bf36:	4293      	cmp	r3, r2
- 800bf38:	db22      	blt.n	800bf80 <R3_1_GetPhaseCurrents+0x88>
+ 800bf36:	429a      	cmp	r2, r3
+ 800bf38:	db05      	blt.n	800bf46 <R3_1_GetPhaseCurrents+0x4e>
         {
           Iab->a = -INT16_MAX;
         }
         else  if (Aux > INT16_MAX)
- 800bf3a:	f5b3 4f00 	cmp.w	r3, #32768	; 0x8000
- 800bf3e:	f2c0 808b 	blt.w	800c058 <R3_1_GetPhaseCurrents+0x160>
- 800bf42:	f647 7cff 	movw	ip, #32767	; 0x7fff
- 800bf46:	e01c      	b.n	800bf82 <R3_1_GetPhaseCurrents+0x8a>
-      case SECTOR_6:
-      case SECTOR_1:
-      {
-        /* Current on Phase A is not accessible     */
+ 800bf3a:	f5b2 4f00 	cmp.w	r2, #32768	; 0x8000
+        {
+          Iab->a = INT16_MAX;
+        }
+        else
+        {
+          Iab->a = (int16_t)Aux;
+ 800bf3e:	bfb4      	ite	lt
+ 800bf40:	b213      	sxthlt	r3, r2
+ 800bf42:	f647 73ff 	movwge	r3, #32767	; 0x7fff
+        }
+
         /* Ib = PhaseBOffset - ADC converted value) */
-        Aux = (int32_t)(pHandle->PhaseBOffset) - (int32_t)(ADCDataReg1);
- 800bf48:	f8d0 408c 	ldr.w	r4, [r0, #140]	; 0x8c
+        Aux = (int32_t)(pHandle->PhaseBOffset) - (int32_t)(ADCDataReg2);
+ 800bf46:	f8d0 508c 	ldr.w	r5, [r0, #140]	; 0x8c
 
         /* Saturation of Ib */
         if (Aux < -INT16_MAX)
- 800bf4c:	4b47      	ldr	r3, [pc, #284]	; (800c06c <R3_1_GetPhaseCurrents+0x174>)
-        Aux = (int32_t)(pHandle->PhaseBOffset) - (int32_t)(ADCDataReg1);
- 800bf4e:	1b64      	subs	r4, r4, r5
+ 800bf4a:	4a47      	ldr	r2, [pc, #284]	; (800c068 <R3_1_GetPhaseCurrents+0x170>)
+          Iab->a = -INT16_MAX;
+ 800bf4c:	800b      	strh	r3, [r1, #0]
+        Aux = (int32_t)(pHandle->PhaseBOffset) - (int32_t)(ADCDataReg2);
+ 800bf4e:	1bad      	subs	r5, r5, r6
         if (Aux < -INT16_MAX)
- 800bf50:	429c      	cmp	r4, r3
- 800bf52:	db2d      	blt.n	800bfb0 <R3_1_GetPhaseCurrents+0xb8>
-        {
-          Iab->b = -INT16_MAX;
-        }
-        else  if (Aux > INT16_MAX)
- 800bf54:	f5b4 4f00 	cmp.w	r4, #32768	; 0x8000
- 800bf58:	db7b      	blt.n	800c052 <R3_1_GetPhaseCurrents+0x15a>
- 800bf5a:	f647 72ff 	movw	r2, #32767	; 0x7fff
- 800bf5e:	4614      	mov	r4, r2
- 800bf60:	4615      	mov	r5, r2
- 800bf62:	e029      	b.n	800bfb8 <R3_1_GetPhaseCurrents+0xc0>
-      case SECTOR_2:
-      case SECTOR_3:
-      {
-        /* Current on Phase B is not accessible     */
-        /* Ia = PhaseAOffset - ADC converted value) */
-        Aux = (int32_t)(pHandle->PhaseAOffset) - (int32_t)(ADCDataReg1);
- 800bf64:	f8d0 4088 	ldr.w	r4, [r0, #136]	; 0x88
+ 800bf50:	4295      	cmp	r5, r2
+      }
 
-        /* Saturation of Ia */
-        if (Aux < -INT16_MAX)
- 800bf68:	4b40      	ldr	r3, [pc, #256]	; (800c06c <R3_1_GetPhaseCurrents+0x174>)
-        Aux = (int32_t)(pHandle->PhaseAOffset) - (int32_t)(ADCDataReg1);
- 800bf6a:	1b64      	subs	r4, r4, r5
-        if (Aux < -INT16_MAX)
- 800bf6c:	429c      	cmp	r4, r3
- 800bf6e:	db30      	blt.n	800bfd2 <R3_1_GetPhaseCurrents+0xda>
-        {
-          Iab->a = -INT16_MAX;
-        }
-        else  if (Aux > INT16_MAX)
- 800bf70:	f5b4 4f00 	cmp.w	r4, #32768	; 0x8000
- 800bf74:	db69      	blt.n	800c04a <R3_1_GetPhaseCurrents+0x152>
- 800bf76:	f647 73ff 	movw	r3, #32767	; 0x7fff
- 800bf7a:	461c      	mov	r4, r3
- 800bf7c:	469c      	mov	ip, r3
- 800bf7e:	e02c      	b.n	800bfda <R3_1_GetPhaseCurrents+0xe2>
- 800bf80:	4694      	mov	ip, r2
-        Aux = (int32_t)(pHandle->PhaseBOffset) - (int32_t)(ADCDataReg2);
- 800bf82:	f8d0 208c 	ldr.w	r2, [r0, #140]	; 0x8c
-        if (Aux < -INT16_MAX)
- 800bf86:	4d39      	ldr	r5, [pc, #228]	; (800c06c <R3_1_GetPhaseCurrents+0x174>)
-          Iab->a = -INT16_MAX;
- 800bf88:	f8a1 c000 	strh.w	ip, [r1]
-        Aux = (int32_t)(pHandle->PhaseBOffset) - (int32_t)(ADCDataReg2);
- 800bf8c:	1b92      	subs	r2, r2, r6
-        if (Aux < -INT16_MAX)
- 800bf8e:	42aa      	cmp	r2, r5
- 800bf90:	da31      	bge.n	800bff6 <R3_1_GetPhaseCurrents+0xfe>
-          Iab->b = -INT16_MAX;
- 800bf92:	804d      	strh	r5, [r1, #2]
+      default:
         break;
     }
-
+    Iab->a = -Iab->a;
+ 800bf52:	b29b      	uxth	r3, r3
+        if (Aux < -INT16_MAX)
+ 800bf54:	da2c      	bge.n	800bfb0 <R3_1_GetPhaseCurrents+0xb8>
+    Iab->a = -Iab->a;
+ 800bf56:	425c      	negs	r4, r3
+ 800bf58:	b224      	sxth	r4, r4
+ 800bf5a:	f647 72ff 	movw	r2, #32767	; 0x7fff
+ 800bf5e:	f248 0501 	movw	r5, #32769	; 0x8001
+    Iab->b = -Iab->b;
     pHandle->_Super.Ia = Iab->a;
     pHandle->_Super.Ib = Iab->b;
     pHandle->_Super.Ic = -Iab->a - Iab->b;
- 800bf94:	fa1f f38c 	uxth.w	r3, ip
- 800bf98:	f248 0201 	movw	r2, #32769	; 0x8001
- 800bf9c:	4413      	add	r3, r2
- 800bf9e:	425b      	negs	r3, r3
-    pHandle->_Super.Ib = Iab->b;
- 800bfa0:	f8a0 5064 	strh.w	r5, [r0, #100]	; 0x64
+ 800bf62:	442b      	add	r3, r5
+    Iab->a = -Iab->a;
+ 800bf64:	800c      	strh	r4, [r1, #0]
+    Iab->b = -Iab->b;
+ 800bf66:	804a      	strh	r2, [r1, #2]
     pHandle->_Super.Ia = Iab->a;
- 800bfa4:	f8a0 c062 	strh.w	ip, [r0, #98]	; 0x62
+ 800bf68:	f8a0 4062 	strh.w	r4, [r0, #98]	; 0x62
+    pHandle->_Super.Ib = Iab->b;
+ 800bf6c:	f8a0 2064 	strh.w	r2, [r0, #100]	; 0x64
   }
 }
- 800bfa8:	bc70      	pop	{r4, r5, r6}
+ 800bf70:	bc70      	pop	{r4, r5, r6}
     pHandle->_Super.Ic = -Iab->a - Iab->b;
- 800bfaa:	f8a0 3066 	strh.w	r3, [r0, #102]	; 0x66
+ 800bf72:	f8a0 3066 	strh.w	r3, [r0, #102]	; 0x66
 }
- 800bfae:	4770      	bx	lr
- 800bfb0:	461c      	mov	r4, r3
- 800bfb2:	f248 0201 	movw	r2, #32769	; 0x8001
- 800bfb6:	461d      	mov	r5, r3
-        Aux = (int32_t)(ADCDataReg2) - (int32_t)(pHandle->PhaseCOffset); /* -Ic */
- 800bfb8:	f8d0 3090 	ldr.w	r3, [r0, #144]	; 0x90
-          Iab->b = -INT16_MAX;
- 800bfbc:	804d      	strh	r5, [r1, #2]
-        Aux = (int32_t)(ADCDataReg2) - (int32_t)(pHandle->PhaseCOffset); /* -Ic */
- 800bfbe:	1af3      	subs	r3, r6, r3
-        Aux -= (int32_t)Iab->b;             /* Ia  */
- 800bfc0:	1b1b      	subs	r3, r3, r4
-        if (Aux > INT16_MAX)
- 800bfc2:	f5b3 4f00 	cmp.w	r3, #32768	; 0x8000
- 800bfc6:	db21      	blt.n	800c00c <R3_1_GetPhaseCurrents+0x114>
-          Iab->a = INT16_MAX;
- 800bfc8:	f647 73ff 	movw	r3, #32767	; 0x7fff
- 800bfcc:	800b      	strh	r3, [r1, #0]
- 800bfce:	469c      	mov	ip, r3
- 800bfd0:	e7e4      	b.n	800bf9c <R3_1_GetPhaseCurrents+0xa4>
- 800bfd2:	461c      	mov	r4, r3
- 800bfd4:	46a4      	mov	ip, r4
- 800bfd6:	f248 0301 	movw	r3, #32769	; 0x8001
-        Aux = (int32_t)(ADCDataReg2) - (int32_t)(pHandle->PhaseCOffset); /* -Ic */
- 800bfda:	f8d0 2090 	ldr.w	r2, [r0, #144]	; 0x90
-          Iab->a = -INT16_MAX;
- 800bfde:	f8a1 c000 	strh.w	ip, [r1]
-        Aux = (int32_t)(ADCDataReg2) - (int32_t)(pHandle->PhaseCOffset); /* -Ic */
- 800bfe2:	1ab2      	subs	r2, r6, r2
-        Aux -= (int32_t)Iab->a;             /* Ib */
- 800bfe4:	1b12      	subs	r2, r2, r4
-        if (Aux > INT16_MAX)
- 800bfe6:	f5b2 4f00 	cmp.w	r2, #32768	; 0x8000
- 800bfea:	db17      	blt.n	800c01c <R3_1_GetPhaseCurrents+0x124>
-          Iab->b = INT16_MAX;
- 800bfec:	f647 72ff 	movw	r2, #32767	; 0x7fff
- 800bff0:	804a      	strh	r2, [r1, #2]
- 800bff2:	4615      	mov	r5, r2
- 800bff4:	e7d2      	b.n	800bf9c <R3_1_GetPhaseCurrents+0xa4>
+ 800bf76:	4770      	bx	lr
+        Aux = (int32_t)(pHandle->PhaseBOffset) - (int32_t)(ADCDataReg1);
+ 800bf78:	f8d0 408c 	ldr.w	r4, [r0, #140]	; 0x8c
+        if (Aux < -INT16_MAX)
+ 800bf7c:	4a3a      	ldr	r2, [pc, #232]	; (800c068 <R3_1_GetPhaseCurrents+0x170>)
+        Aux = (int32_t)(pHandle->PhaseBOffset) - (int32_t)(ADCDataReg1);
+ 800bf7e:	1b64      	subs	r4, r4, r5
+        if (Aux < -INT16_MAX)
+ 800bf80:	4294      	cmp	r4, r2
+ 800bf82:	db1d      	blt.n	800bfc0 <R3_1_GetPhaseCurrents+0xc8>
         else  if (Aux > INT16_MAX)
- 800bff6:	f5b2 4f00 	cmp.w	r2, #32768	; 0x8000
- 800bffa:	db20      	blt.n	800c03e <R3_1_GetPhaseCurrents+0x146>
-          Iab->b = INT16_MAX;
- 800bffc:	f647 73ff 	movw	r3, #32767	; 0x7fff
- 800c000:	461a      	mov	r2, r3
- 800c002:	804b      	strh	r3, [r1, #2]
- 800c004:	4615      	mov	r5, r2
-    pHandle->_Super.Ic = -Iab->a - Iab->b;
- 800c006:	fa1f f38c 	uxth.w	r3, ip
- 800c00a:	e7c7      	b.n	800bf9c <R3_1_GetPhaseCurrents+0xa4>
-        else  if (Aux < -INT16_MAX)
- 800c00c:	4c17      	ldr	r4, [pc, #92]	; (800c06c <R3_1_GetPhaseCurrents+0x174>)
- 800c00e:	42a3      	cmp	r3, r4
- 800c010:	da0f      	bge.n	800c032 <R3_1_GetPhaseCurrents+0x13a>
-          Iab->a = -INT16_MAX;
- 800c012:	800c      	strh	r4, [r1, #0]
- 800c014:	f248 0301 	movw	r3, #32769	; 0x8001
- 800c018:	46a4      	mov	ip, r4
- 800c01a:	e7bf      	b.n	800bf9c <R3_1_GetPhaseCurrents+0xa4>
-        else  if (Aux < -INT16_MAX)
- 800c01c:	4d13      	ldr	r5, [pc, #76]	; (800c06c <R3_1_GetPhaseCurrents+0x174>)
- 800c01e:	42aa      	cmp	r2, r5
- 800c020:	da03      	bge.n	800c02a <R3_1_GetPhaseCurrents+0x132>
+ 800bf84:	f5b4 4f00 	cmp.w	r4, #32768	; 0x8000
+ 800bf88:	db61      	blt.n	800c04e <R3_1_GetPhaseCurrents+0x156>
+ 800bf8a:	f647 73ff 	movw	r3, #32767	; 0x7fff
+ 800bf8e:	461d      	mov	r5, r3
+ 800bf90:	461c      	mov	r4, r3
+ 800bf92:	e01b      	b.n	800bfcc <R3_1_GetPhaseCurrents+0xd4>
+        Aux = (int32_t)(pHandle->PhaseAOffset) - (int32_t)(ADCDataReg1);
+ 800bf94:	f8d0 3088 	ldr.w	r3, [r0, #136]	; 0x88
+        if (Aux < -INT16_MAX)
+ 800bf98:	4c33      	ldr	r4, [pc, #204]	; (800c068 <R3_1_GetPhaseCurrents+0x170>)
+        Aux = (int32_t)(pHandle->PhaseAOffset) - (int32_t)(ADCDataReg1);
+ 800bf9a:	1b5d      	subs	r5, r3, r5
+        if (Aux < -INT16_MAX)
+ 800bf9c:	42a5      	cmp	r5, r4
+ 800bf9e:	db25      	blt.n	800bfec <R3_1_GetPhaseCurrents+0xf4>
+        else  if (Aux > INT16_MAX)
+ 800bfa0:	f5b5 4f00 	cmp.w	r5, #32768	; 0x8000
+ 800bfa4:	db4e      	blt.n	800c044 <R3_1_GetPhaseCurrents+0x14c>
+ 800bfa6:	f647 72ff 	movw	r2, #32767	; 0x7fff
+ 800bfaa:	4613      	mov	r3, r2
+ 800bfac:	4615      	mov	r5, r2
+ 800bfae:	e023      	b.n	800bff8 <R3_1_GetPhaseCurrents+0x100>
+        else  if (Aux > INT16_MAX)
+ 800bfb0:	f5b5 4f00 	cmp.w	r5, #32768	; 0x8000
+ 800bfb4:	db40      	blt.n	800c038 <R3_1_GetPhaseCurrents+0x140>
+    Iab->a = -Iab->a;
+ 800bfb6:	425c      	negs	r4, r3
+ 800bfb8:	b224      	sxth	r4, r4
+ 800bfba:	f647 75ff 	movw	r5, #32767	; 0x7fff
+ 800bfbe:	e7d0      	b.n	800bf62 <R3_1_GetPhaseCurrents+0x6a>
+ 800bfc0:	4613      	mov	r3, r2
+ 800bfc2:	f248 0501 	movw	r5, #32769	; 0x8001
+ 800bfc6:	f647 72ff 	movw	r2, #32767	; 0x7fff
+ 800bfca:	461c      	mov	r4, r3
           Iab->b = -INT16_MAX;
- 800c022:	804d      	strh	r5, [r1, #2]
- 800c024:	f248 0201 	movw	r2, #32769	; 0x8001
- 800c028:	e7b8      	b.n	800bf9c <R3_1_GetPhaseCurrents+0xa4>
-          Iab->b = (int16_t)Aux;
- 800c02a:	b215      	sxth	r5, r2
- 800c02c:	804d      	strh	r5, [r1, #2]
-    pHandle->_Super.Ic = -Iab->a - Iab->b;
- 800c02e:	b292      	uxth	r2, r2
- 800c030:	e7b4      	b.n	800bf9c <R3_1_GetPhaseCurrents+0xa4>
+ 800bfcc:	804b      	strh	r3, [r1, #2]
+        Aux = (int32_t)(ADCDataReg2) - (int32_t)(pHandle->PhaseCOffset); /* -Ic */
+ 800bfce:	f8d0 3090 	ldr.w	r3, [r0, #144]	; 0x90
+ 800bfd2:	1af3      	subs	r3, r6, r3
+        Aux -= (int32_t)Iab->b;             /* Ia  */
+ 800bfd4:	1b1b      	subs	r3, r3, r4
+        if (Aux > INT16_MAX)
+ 800bfd6:	f5b3 4f00 	cmp.w	r3, #32768	; 0x8000
+ 800bfda:	da1d      	bge.n	800c018 <R3_1_GetPhaseCurrents+0x120>
+        else  if (Aux < -INT16_MAX)
+ 800bfdc:	f513 4f00 	cmn.w	r3, #32768	; 0x8000
+ 800bfe0:	dc26      	bgt.n	800c030 <R3_1_GetPhaseCurrents+0x138>
+ 800bfe2:	f647 74ff 	movw	r4, #32767	; 0x7fff
+ 800bfe6:	f248 0301 	movw	r3, #32769	; 0x8001
+ 800bfea:	e7ba      	b.n	800bf62 <R3_1_GetPhaseCurrents+0x6a>
+ 800bfec:	4622      	mov	r2, r4
+ 800bfee:	f248 0301 	movw	r3, #32769	; 0x8001
+ 800bff2:	f647 74ff 	movw	r4, #32767	; 0x7fff
+ 800bff6:	4615      	mov	r5, r2
+          Iab->a = -INT16_MAX;
+ 800bff8:	800a      	strh	r2, [r1, #0]
+        Aux = (int32_t)(ADCDataReg2) - (int32_t)(pHandle->PhaseCOffset); /* -Ic */
+ 800bffa:	f8d0 2090 	ldr.w	r2, [r0, #144]	; 0x90
+ 800bffe:	1ab2      	subs	r2, r6, r2
+        Aux -= (int32_t)Iab->a;             /* Ib */
+ 800c000:	1b52      	subs	r2, r2, r5
+        if (Aux > INT16_MAX)
+ 800c002:	f5b2 4f00 	cmp.w	r2, #32768	; 0x8000
+ 800c006:	da0b      	bge.n	800c020 <R3_1_GetPhaseCurrents+0x128>
+        else  if (Aux < -INT16_MAX)
+ 800c008:	f512 4f00 	cmn.w	r2, #32768	; 0x8000
+ 800c00c:	dc0c      	bgt.n	800c028 <R3_1_GetPhaseCurrents+0x130>
+ 800c00e:	f647 72ff 	movw	r2, #32767	; 0x7fff
+ 800c012:	f248 0501 	movw	r5, #32769	; 0x8001
+ 800c016:	e7a4      	b.n	800bf62 <R3_1_GetPhaseCurrents+0x6a>
+ 800c018:	4c13      	ldr	r4, [pc, #76]	; (800c068 <R3_1_GetPhaseCurrents+0x170>)
+ 800c01a:	f647 73ff 	movw	r3, #32767	; 0x7fff
+ 800c01e:	e7a0      	b.n	800bf62 <R3_1_GetPhaseCurrents+0x6a>
+ 800c020:	4a11      	ldr	r2, [pc, #68]	; (800c068 <R3_1_GetPhaseCurrents+0x170>)
+ 800c022:	f647 75ff 	movw	r5, #32767	; 0x7fff
+ 800c026:	e79c      	b.n	800bf62 <R3_1_GetPhaseCurrents+0x6a>
+    Iab->b = -Iab->b;
+ 800c028:	b295      	uxth	r5, r2
+ 800c02a:	426a      	negs	r2, r5
+ 800c02c:	b212      	sxth	r2, r2
+ 800c02e:	e798      	b.n	800bf62 <R3_1_GetPhaseCurrents+0x6a>
+    Iab->a = -Iab->a;
+ 800c030:	b29b      	uxth	r3, r3
+ 800c032:	425c      	negs	r4, r3
+ 800c034:	b224      	sxth	r4, r4
+ 800c036:	e794      	b.n	800bf62 <R3_1_GetPhaseCurrents+0x6a>
+    Iab->b = -Iab->b;
+ 800c038:	b2ad      	uxth	r5, r5
+    Iab->a = -Iab->a;
+ 800c03a:	425c      	negs	r4, r3
+    Iab->b = -Iab->b;
+ 800c03c:	426a      	negs	r2, r5
+    Iab->a = -Iab->a;
+ 800c03e:	b224      	sxth	r4, r4
+    Iab->b = -Iab->b;
+ 800c040:	b212      	sxth	r2, r2
+ 800c042:	e78e      	b.n	800bf62 <R3_1_GetPhaseCurrents+0x6a>
+    Iab->a = -Iab->a;
+ 800c044:	b2ab      	uxth	r3, r5
+ 800c046:	425c      	negs	r4, r3
           Iab->a = (int16_t)Aux;
- 800c032:	fa0f fc83 	sxth.w	ip, r3
- 800c036:	f8a1 c000 	strh.w	ip, [r1]
-    pHandle->_Super.Ic = -Iab->a - Iab->b;
- 800c03a:	b29b      	uxth	r3, r3
- 800c03c:	e7ae      	b.n	800bf9c <R3_1_GetPhaseCurrents+0xa4>
+ 800c048:	b22a      	sxth	r2, r5
+    Iab->a = -Iab->a;
+ 800c04a:	b224      	sxth	r4, r4
+ 800c04c:	e7d4      	b.n	800bff8 <R3_1_GetPhaseCurrents+0x100>
+    Iab->b = -Iab->b;
+ 800c04e:	b2a5      	uxth	r5, r4
+ 800c050:	426a      	negs	r2, r5
           Iab->b = (int16_t)Aux;
- 800c03e:	b215      	sxth	r5, r2
- 800c040:	804d      	strh	r5, [r1, #2]
-    pHandle->_Super.Ic = -Iab->a - Iab->b;
- 800c042:	fa1f f38c 	uxth.w	r3, ip
- 800c046:	b292      	uxth	r2, r2
- 800c048:	e7a8      	b.n	800bf9c <R3_1_GetPhaseCurrents+0xa4>
-          Iab->a = (int16_t)Aux;
- 800c04a:	fa0f fc84 	sxth.w	ip, r4
-    pHandle->_Super.Ic = -Iab->a - Iab->b;
- 800c04e:	b2a3      	uxth	r3, r4
- 800c050:	e7c3      	b.n	800bfda <R3_1_GetPhaseCurrents+0xe2>
-          Iab->b = (int16_t)Aux;
- 800c052:	b225      	sxth	r5, r4
-    pHandle->_Super.Ic = -Iab->a - Iab->b;
- 800c054:	b2a2      	uxth	r2, r4
- 800c056:	e7af      	b.n	800bfb8 <R3_1_GetPhaseCurrents+0xc0>
-          Iab->a = (int16_t)Aux;
- 800c058:	fa0f fc83 	sxth.w	ip, r3
- 800c05c:	e791      	b.n	800bf82 <R3_1_GetPhaseCurrents+0x8a>
-    pHandle->_Super.Ia = Iab->a;
- 800c05e:	f9b1 c000 	ldrsh.w	ip, [r1]
-    pHandle->_Super.Ib = Iab->b;
- 800c062:	f9b1 5002 	ldrsh.w	r5, [r1, #2]
-    pHandle->_Super.Ic = -Iab->a - Iab->b;
- 800c066:	880b      	ldrh	r3, [r1, #0]
- 800c068:	884a      	ldrh	r2, [r1, #2]
- 800c06a:	e797      	b.n	800bf9c <R3_1_GetPhaseCurrents+0xa4>
- 800c06c:	ffff8001 	.word	0xffff8001
+ 800c052:	b223      	sxth	r3, r4
+    Iab->b = -Iab->b;
+ 800c054:	b212      	sxth	r2, r2
+ 800c056:	e7b9      	b.n	800bfcc <R3_1_GetPhaseCurrents+0xd4>
+    Iab->a = -Iab->a;
+ 800c058:	880b      	ldrh	r3, [r1, #0]
+    Iab->b = -Iab->b;
+ 800c05a:	884d      	ldrh	r5, [r1, #2]
+    Iab->a = -Iab->a;
+ 800c05c:	425c      	negs	r4, r3
+    Iab->b = -Iab->b;
+ 800c05e:	426a      	negs	r2, r5
+    Iab->a = -Iab->a;
+ 800c060:	b224      	sxth	r4, r4
+    Iab->b = -Iab->b;
+ 800c062:	b212      	sxth	r2, r2
+ 800c064:	e77d      	b.n	800bf62 <R3_1_GetPhaseCurrents+0x6a>
+ 800c066:	bf00      	nop
+ 800c068:	ffff8001 	.word	0xffff8001
 
-0800c070 <R3_1_SetADCSampPointPolarization>:
+0800c06c <R3_1_SetADCSampPointPolarization>:
   *
   * @param  pHdl: Handler of the current instance of the PWM component.
   * @retval uint16_t Returns the return value of R3_1_WriteTIMRegisters.
   */
 uint16_t R3_1_SetADCSampPointPolarization(PWMC_Handle_t *pHdl)
 {
- 800c070:	b410      	push	{r4}
+ 800c06c:	b410      	push	{r4}
 #endif /* __ICCARM__ */
   PWMC_R3_1_Handle_t *pHandle = (PWMC_R3_1_Handle_t *)pHdl; //cstat !MISRAC2012-Rule-11.3
 #if defined (__ICCARM__)
   #pragma cstat_restore = "MISRAC2012-Rule-11.3"
 #endif /* __ICCARM__ */
   TIM_TypeDef *TIMx = pHandle->pParams_str->TIMx;
- 800c072:	f8d0 309c 	ldr.w	r3, [r0, #156]	; 0x9c
+ 800c06e:	f8d0 309c 	ldr.w	r3, [r0, #156]	; 0x9c
   pHandle->_Super.Sector = pHandle->PolarizationSector;
- 800c076:	f890 4099 	ldrb.w	r4, [r0, #153]	; 0x99
- 800c07a:	f880 407c 	strb.w	r4, [r0, #124]	; 0x7c
+ 800c072:	f890 4099 	ldrb.w	r4, [r0, #153]	; 0x99
+ 800c076:	f880 407c 	strb.w	r4, [r0, #124]	; 0x7c
   return R3_1_WriteTIMRegisters(&pHandle->_Super, (pHandle->Half_PWMPeriod - (uint16_t)1));
- 800c07e:	f8b0 2094 	ldrh.w	r2, [r0, #148]	; 0x94
+ 800c07a:	f8b0 2094 	ldrh.w	r2, [r0, #148]	; 0x94
   TIM_TypeDef *TIMx = pHandle->pParams_str->TIMx;
- 800c082:	685b      	ldr	r3, [r3, #4]
+ 800c07e:	685b      	ldr	r3, [r3, #4]
   uint16_t Aux;
 
 
   LL_TIM_OC_SetCompareCH1(TIMx, (uint32_t) pHandle->_Super.CntPhA);
- 800c084:	f8b0 4050 	ldrh.w	r4, [r0, #80]	; 0x50
+ 800c080:	f8b0 4050 	ldrh.w	r4, [r0, #80]	; 0x50
   WRITE_REG(TIMx->CCR1, CompareValue);
- 800c088:	635c      	str	r4, [r3, #52]	; 0x34
+ 800c084:	635c      	str	r4, [r3, #52]	; 0x34
   return R3_1_WriteTIMRegisters(&pHandle->_Super, (pHandle->Half_PWMPeriod - (uint16_t)1));
- 800c08a:	3a01      	subs	r2, #1
+ 800c086:	3a01      	subs	r2, #1
   LL_TIM_OC_SetCompareCH2(TIMx, (uint32_t) pHandle->_Super.CntPhB);
- 800c08c:	f8b0 4052 	ldrh.w	r4, [r0, #82]	; 0x52
+ 800c088:	f8b0 4052 	ldrh.w	r4, [r0, #82]	; 0x52
   LL_TIM_OC_SetCompareCH3(TIMx, (uint32_t) pHandle->_Super.CntPhC);
- 800c090:	f8b0 0054 	ldrh.w	r0, [r0, #84]	; 0x54
+ 800c08c:	f8b0 0054 	ldrh.w	r0, [r0, #84]	; 0x54
   WRITE_REG(TIMx->CCR2, CompareValue);
- 800c094:	639c      	str	r4, [r3, #56]	; 0x38
+ 800c090:	639c      	str	r4, [r3, #56]	; 0x38
   return R3_1_WriteTIMRegisters(&pHandle->_Super, (pHandle->Half_PWMPeriod - (uint16_t)1));
- 800c096:	b292      	uxth	r2, r2
+ 800c092:	b292      	uxth	r2, r2
   WRITE_REG(TIMx->CCR3, CompareValue);
- 800c098:	63d8      	str	r0, [r3, #60]	; 0x3c
+ 800c094:	63d8      	str	r0, [r3, #60]	; 0x3c
   WRITE_REG(TIMx->CCR4, CompareValue);
- 800c09a:	641a      	str	r2, [r3, #64]	; 0x40
+ 800c096:	641a      	str	r2, [r3, #64]	; 0x40
   LL_TIM_OC_SetCompareCH4(TIMx, (uint32_t) SamplingPoint);
 
   /* Limit for update event */
 
 //  if ( LL_TIM_CC_IsEnabledChannel(TIMx, LL_TIM_CHANNEL_CH4) == 1u )
   if (((TIMx->CR2) & TIM_CR2_MMS_Msk) != LL_TIM_TRGO_RESET)
- 800c09c:	4904      	ldr	r1, [pc, #16]	; (800c0b0 <R3_1_SetADCSampPointPolarization+0x40>)
- 800c09e:	685b      	ldr	r3, [r3, #4]
+ 800c098:	4904      	ldr	r1, [pc, #16]	; (800c0ac <R3_1_SetADCSampPointPolarization+0x40>)
+ 800c09a:	685b      	ldr	r3, [r3, #4]
 }
- 800c0a0:	f85d 4b04 	ldr.w	r4, [sp], #4
+ 800c09c:	f85d 4b04 	ldr.w	r4, [sp], #4
   if (((TIMx->CR2) & TIM_CR2_MMS_Msk) != LL_TIM_TRGO_RESET)
- 800c0a4:	420b      	tst	r3, r1
+ 800c0a0:	420b      	tst	r3, r1
 }
- 800c0a6:	bf14      	ite	ne
- 800c0a8:	2001      	movne	r0, #1
- 800c0aa:	2000      	moveq	r0, #0
- 800c0ac:	4770      	bx	lr
- 800c0ae:	bf00      	nop
- 800c0b0:	02000070 	.word	0x02000070
+ 800c0a2:	bf14      	ite	ne
+ 800c0a4:	2001      	movne	r0, #1
+ 800c0a6:	2000      	moveq	r0, #0
+ 800c0a8:	4770      	bx	lr
+ 800c0aa:	bf00      	nop
+ 800c0ac:	02000070 	.word	0x02000070
 
-0800c0b4 <R3_1_HFCurrentsPolarizationAB>:
+0800c0b0 <R3_1_HFCurrentsPolarizationAB>:
   * @param  Iab: Pointer to the structure that will receive motor current
   *         of phase A and B in ab_t format.
   */
 static void R3_1_HFCurrentsPolarizationAB(PWMC_Handle_t *pHdl, ab_t *Iab)
 {
   if (MC_NULL == Iab)
- 800c0b4:	b321      	cbz	r1, 800c100 <R3_1_HFCurrentsPolarizationAB+0x4c>
+ 800c0b0:	b321      	cbz	r1, 800c0fc <R3_1_HFCurrentsPolarizationAB+0x4c>
 #endif /* __ICCARM__ */
     PWMC_R3_1_Handle_t *pHandle = (PWMC_R3_1_Handle_t *)pHdl; //cstat !MISRAC2012-Rule-11.3
 #if defined (__ICCARM__)
   #pragma cstat_restore = "MISRAC2012-Rule-11.3"
 #endif /* __ICCARM__ */
     TIM_TypeDef *TIMx = pHandle->pParams_str->TIMx;
- 800c0b6:	f8d0 209c 	ldr.w	r2, [r0, #156]	; 0x9c
- 800c0ba:	e9d2 3200 	ldrd	r3, r2, [r2]
+ 800c0b2:	f8d0 209c 	ldr.w	r2, [r0, #156]	; 0x9c
+ 800c0b6:	e9d2 3200 	ldrd	r3, r2, [r2]
 {
- 800c0be:	b430      	push	{r4, r5}
+ 800c0ba:	b430      	push	{r4, r5}
     ADC_TypeDef * ADCx = pHandle->pParams_str->ADCx;
     uint32_t ADCDataReg1 = ADCx->JDR1;
- 800c0c0:	f8d3 4080 	ldr.w	r4, [r3, #128]	; 0x80
+ 800c0bc:	f8d3 4080 	ldr.w	r4, [r3, #128]	; 0x80
     uint32_t ADCDataReg2 = ADCx->JDR2;
- 800c0c4:	f8d3 5084 	ldr.w	r5, [r3, #132]	; 0x84
+ 800c0c0:	f8d3 5084 	ldr.w	r5, [r3, #132]	; 0x84
   MODIFY_REG(TIMx->CR2, TIM_CR2_MMS, TimerSynchronization);
- 800c0c8:	6853      	ldr	r3, [r2, #4]
- 800c0ca:	f023 7300 	bic.w	r3, r3, #33554432	; 0x2000000
- 800c0ce:	f023 0370 	bic.w	r3, r3, #112	; 0x70
- 800c0d2:	6053      	str	r3, [r2, #4]
+ 800c0c4:	6853      	ldr	r3, [r2, #4]
+ 800c0c6:	f023 7300 	bic.w	r3, r3, #33554432	; 0x2000000
+ 800c0ca:	f023 0370 	bic.w	r3, r3, #112	; 0x70
+ 800c0ce:	6053      	str	r3, [r2, #4]
 
     /* disable ADC trigger source */
     /* LL_TIM_CC_DisableChannel(TIMx, LL_TIM_CHANNEL_CH4) */
     LL_TIM_SetTriggerOutput(TIMx, LL_TIM_TRGO_RESET);
 
     if (pHandle->PolarizationCounter < NB_CONVERSIONS)
- 800c0d4:	f890 3098 	ldrb.w	r3, [r0, #152]	; 0x98
- 800c0d8:	2b0f      	cmp	r3, #15
- 800c0da:	d80d      	bhi.n	800c0f8 <R3_1_HFCurrentsPolarizationAB+0x44>
+ 800c0d0:	f890 3098 	ldrb.w	r3, [r0, #152]	; 0x98
+ 800c0d4:	2b0f      	cmp	r3, #15
+ 800c0d6:	d80d      	bhi.n	800c0f4 <R3_1_HFCurrentsPolarizationAB+0x44>
     {
       pHandle-> PhaseAOffset += ADCDataReg1;
- 800c0dc:	f8d0 3088 	ldr.w	r3, [r0, #136]	; 0x88
+ 800c0d8:	f8d0 3088 	ldr.w	r3, [r0, #136]	; 0x88
       pHandle-> PhaseBOffset += ADCDataReg2;
- 800c0e0:	f8d0 208c 	ldr.w	r2, [r0, #140]	; 0x8c
+ 800c0dc:	f8d0 208c 	ldr.w	r2, [r0, #140]	; 0x8c
       pHandle-> PhaseAOffset += ADCDataReg1;
- 800c0e4:	441c      	add	r4, r3
+ 800c0e0:	441c      	add	r4, r3
       pHandle->PolarizationCounter++;
- 800c0e6:	f890 3098 	ldrb.w	r3, [r0, #152]	; 0x98
+ 800c0e2:	f890 3098 	ldrb.w	r3, [r0, #152]	; 0x98
       pHandle-> PhaseBOffset += ADCDataReg2;
- 800c0ea:	442a      	add	r2, r5
+ 800c0e6:	442a      	add	r2, r5
       pHandle->PolarizationCounter++;
- 800c0ec:	3301      	adds	r3, #1
+ 800c0e8:	3301      	adds	r3, #1
       pHandle-> PhaseBOffset += ADCDataReg2;
- 800c0ee:	e9c0 4222 	strd	r4, r2, [r0, #136]	; 0x88
+ 800c0ea:	e9c0 4222 	strd	r4, r2, [r0, #136]	; 0x88
       pHandle->PolarizationCounter++;
- 800c0f2:	b2db      	uxtb	r3, r3
- 800c0f4:	f880 3098 	strb.w	r3, [r0, #152]	; 0x98
+ 800c0ee:	b2db      	uxtb	r3, r3
+ 800c0f0:	f880 3098 	strb.w	r3, [r0, #152]	; 0x98
     {
       /* Nothing to do */
     }
 
     /* during offset calibration no current is flowing in the phases */
     Iab->a = 0;
- 800c0f8:	2300      	movs	r3, #0
+ 800c0f4:	2300      	movs	r3, #0
     Iab->b = 0;
   }
 }
- 800c0fa:	bc30      	pop	{r4, r5}
+ 800c0f6:	bc30      	pop	{r4, r5}
     Iab->a = 0;
- 800c0fc:	600b      	str	r3, [r1, #0]
+ 800c0f8:	600b      	str	r3, [r1, #0]
 }
- 800c0fe:	4770      	bx	lr
- 800c100:	4770      	bx	lr
- 800c102:	bf00      	nop
+ 800c0fa:	4770      	bx	lr
+ 800c0fc:	4770      	bx	lr
+ 800c0fe:	bf00      	nop
 
-0800c104 <R3_1_HFCurrentsPolarizationC>:
+0800c100 <R3_1_HFCurrentsPolarizationC>:
   *                Min value: 0 (low sides ON)
   *                Max value: PWM_PERIOD_CYCLES/2 (low sides OFF)
   */
 static void R3_1_HFCurrentsPolarizationC(PWMC_Handle_t *pHdl, ab_t *Iab)
 {
   if (MC_NULL == Iab)
- 800c104:	b301      	cbz	r1, 800c148 <R3_1_HFCurrentsPolarizationC+0x44>
+ 800c100:	b301      	cbz	r1, 800c144 <R3_1_HFCurrentsPolarizationC+0x44>
 #endif /* __ICCARM__ */
     PWMC_R3_1_Handle_t *pHandle = (PWMC_R3_1_Handle_t *)pHdl; //cstat !MISRAC2012-Rule-11.3
 #if defined (__ICCARM__)
   #pragma cstat_restore = "MISRAC2012-Rule-11.3"
 #endif /* __ICCARM__ */
     TIM_TypeDef *TIMx = pHandle->pParams_str->TIMx;
- 800c106:	f8d0 309c 	ldr.w	r3, [r0, #156]	; 0x9c
+ 800c102:	f8d0 309c 	ldr.w	r3, [r0, #156]	; 0x9c
     ADC_TypeDef * ADCx = pHandle->pParams_str->ADCx;
- 800c10a:	e9d3 3200 	ldrd	r3, r2, [r3]
+ 800c106:	e9d3 3200 	ldrd	r3, r2, [r3]
 {
- 800c10e:	b410      	push	{r4}
+ 800c10a:	b410      	push	{r4}
     uint32_t ADCDataReg2 = ADCx->JDR2;
- 800c110:	f8d3 4084 	ldr.w	r4, [r3, #132]	; 0x84
- 800c114:	6853      	ldr	r3, [r2, #4]
- 800c116:	f023 7300 	bic.w	r3, r3, #33554432	; 0x2000000
- 800c11a:	f023 0370 	bic.w	r3, r3, #112	; 0x70
- 800c11e:	6053      	str	r3, [r2, #4]
+ 800c10c:	f8d3 4084 	ldr.w	r4, [r3, #132]	; 0x84
+ 800c110:	6853      	ldr	r3, [r2, #4]
+ 800c112:	f023 7300 	bic.w	r3, r3, #33554432	; 0x2000000
+ 800c116:	f023 0370 	bic.w	r3, r3, #112	; 0x70
+ 800c11a:	6053      	str	r3, [r2, #4]
 
     /* disable ADC trigger source */
     /* LL_TIM_CC_DisableChannel(TIMx, LL_TIM_CHANNEL_CH4) */
     LL_TIM_SetTriggerOutput(TIMx, LL_TIM_TRGO_RESET);
 
     if (pHandle->PolarizationCounter < NB_CONVERSIONS)
- 800c120:	f890 3098 	ldrb.w	r3, [r0, #152]	; 0x98
- 800c124:	2b0f      	cmp	r3, #15
- 800c126:	d80a      	bhi.n	800c13e <R3_1_HFCurrentsPolarizationC+0x3a>
+ 800c11c:	f890 3098 	ldrb.w	r3, [r0, #152]	; 0x98
+ 800c120:	2b0f      	cmp	r3, #15
+ 800c122:	d80a      	bhi.n	800c13a <R3_1_HFCurrentsPolarizationC+0x3a>
     {
       /* Phase C is read from SECTOR_1, second value */
       pHandle-> PhaseCOffset += ADCDataReg2;
       pHandle->PolarizationCounter++;
- 800c128:	f890 3098 	ldrb.w	r3, [r0, #152]	; 0x98
+ 800c124:	f890 3098 	ldrb.w	r3, [r0, #152]	; 0x98
       pHandle-> PhaseCOffset += ADCDataReg2;
- 800c12c:	f8d0 2090 	ldr.w	r2, [r0, #144]	; 0x90
+ 800c128:	f8d0 2090 	ldr.w	r2, [r0, #144]	; 0x90
       pHandle->PolarizationCounter++;
- 800c130:	3301      	adds	r3, #1
+ 800c12c:	3301      	adds	r3, #1
       pHandle-> PhaseCOffset += ADCDataReg2;
- 800c132:	4422      	add	r2, r4
+ 800c12e:	4422      	add	r2, r4
       pHandle->PolarizationCounter++;
- 800c134:	b2db      	uxtb	r3, r3
+ 800c130:	b2db      	uxtb	r3, r3
       pHandle-> PhaseCOffset += ADCDataReg2;
- 800c136:	f8c0 2090 	str.w	r2, [r0, #144]	; 0x90
+ 800c132:	f8c0 2090 	str.w	r2, [r0, #144]	; 0x90
       pHandle->PolarizationCounter++;
- 800c13a:	f880 3098 	strb.w	r3, [r0, #152]	; 0x98
+ 800c136:	f880 3098 	strb.w	r3, [r0, #152]	; 0x98
     {
       /* Nothing to do */
     }
 
     /* during offset calibration no current is flowing in the phases */
     Iab->a = 0;
- 800c13e:	2300      	movs	r3, #0
+ 800c13a:	2300      	movs	r3, #0
     Iab->b = 0;
   }
 }
- 800c140:	f85d 4b04 	ldr.w	r4, [sp], #4
+ 800c13c:	f85d 4b04 	ldr.w	r4, [sp], #4
     Iab->a = 0;
- 800c144:	600b      	str	r3, [r1, #0]
+ 800c140:	600b      	str	r3, [r1, #0]
 }
- 800c146:	4770      	bx	lr
- 800c148:	4770      	bx	lr
- 800c14a:	bf00      	nop
+ 800c142:	4770      	bx	lr
+ 800c144:	4770      	bx	lr
+ 800c146:	bf00      	nop
 
-0800c14c <R3_1_SwitchOnPWM>:
+0800c148 <R3_1_SwitchOnPWM>:
 #endif /* __ICCARM__ */
   PWMC_R3_1_Handle_t *pHandle = (PWMC_R3_1_Handle_t *)pHdl; //cstat !MISRAC2012-Rule-11.3
 #if defined (__ICCARM__)
   #pragma cstat_restore = "MISRAC2012-Rule-11.3"
 #endif /* __ICCARM__ */
   TIM_TypeDef *TIMx = pHandle->pParams_str->TIMx;
- 800c14c:	f8d0 309c 	ldr.w	r3, [r0, #156]	; 0x9c
+ 800c148:	f8d0 309c 	ldr.w	r3, [r0, #156]	; 0x9c
   pHandle->ADCRegularLocked = true;
 
   pHandle->_Super.TurnOnLowSidesAction = false;
 
   /* Set all duty to 50% */
   LL_TIM_OC_SetCompareCH1(TIMx, ((uint32_t)pHandle->Half_PWMPeriod / (uint32_t)2));
- 800c150:	f8b0 2094 	ldrh.w	r2, [r0, #148]	; 0x94
+ 800c14c:	f8b0 2094 	ldrh.w	r2, [r0, #148]	; 0x94
   TIM_TypeDef *TIMx = pHandle->pParams_str->TIMx;
- 800c154:	685b      	ldr	r3, [r3, #4]
+ 800c150:	685b      	ldr	r3, [r3, #4]
   pHandle->ADCRegularLocked = true;
- 800c156:	f04f 0c01 	mov.w	ip, #1
+ 800c152:	f04f 0c01 	mov.w	ip, #1
 {
- 800c15a:	b530      	push	{r4, r5, lr}
+ 800c156:	b530      	push	{r4, r5, lr}
   LL_TIM_OC_SetCompareCH1(TIMx, ((uint32_t)pHandle->Half_PWMPeriod / (uint32_t)2));
- 800c15c:	fa22 f10c 	lsr.w	r1, r2, ip
+ 800c158:	fa22 f10c 	lsr.w	r1, r2, ip
   pHandle->_Super.TurnOnLowSidesAction = false;
- 800c160:	f04f 0e00 	mov.w	lr, #0
- 800c164:	f880 e07e 	strb.w	lr, [r0, #126]	; 0x7e
+ 800c15c:	f04f 0e00 	mov.w	lr, #0
+ 800c160:	f880 e07e 	strb.w	lr, [r0, #126]	; 0x7e
   pHandle->ADCRegularLocked = true;
- 800c168:	f880 c0a0 	strb.w	ip, [r0, #160]	; 0xa0
+ 800c164:	f880 c0a0 	strb.w	ip, [r0, #160]	; 0xa0
   LL_TIM_OC_SetCompareCH2(TIMx, ((uint32_t)pHandle->Half_PWMPeriod / (uint32_t)2));
   LL_TIM_OC_SetCompareCH3(TIMx, ((uint32_t)pHandle->Half_PWMPeriod / (uint32_t)2));
   LL_TIM_OC_SetCompareCH4(TIMx, ((uint32_t)pHandle->Half_PWMPeriod - (uint32_t)5));
- 800c16c:	3a05      	subs	r2, #5
+ 800c168:	3a05      	subs	r2, #5
   WRITE_REG(TIMx->CCR1, CompareValue);
- 800c16e:	6359      	str	r1, [r3, #52]	; 0x34
+ 800c16a:	6359      	str	r1, [r3, #52]	; 0x34
   WRITE_REG(TIMx->CCR2, CompareValue);
- 800c170:	6399      	str	r1, [r3, #56]	; 0x38
+ 800c16c:	6399      	str	r1, [r3, #56]	; 0x38
   WRITE_REG(TIMx->CCR3, CompareValue);
- 800c172:	63d9      	str	r1, [r3, #60]	; 0x3c
+ 800c16e:	63d9      	str	r1, [r3, #60]	; 0x3c
   WRITE_REG(TIMx->SR, ~(TIM_SR_UIF));
- 800c174:	f06f 0101 	mvn.w	r1, #1
+ 800c170:	f06f 0101 	mvn.w	r1, #1
   WRITE_REG(TIMx->CCR4, CompareValue);
- 800c178:	641a      	str	r2, [r3, #64]	; 0x40
+ 800c174:	641a      	str	r2, [r3, #64]	; 0x40
   WRITE_REG(TIMx->SR, ~(TIM_SR_UIF));
- 800c17a:	6119      	str	r1, [r3, #16]
+ 800c176:	6119      	str	r1, [r3, #16]
   return ((READ_BIT(TIMx->SR, TIM_SR_UIF) == (TIM_SR_UIF)) ? 1UL : 0UL);
- 800c17c:	691a      	ldr	r2, [r3, #16]
- 800c17e:	07d2      	lsls	r2, r2, #31
- 800c180:	d5fc      	bpl.n	800c17c <R3_1_SwitchOnPWM+0x30>
+ 800c178:	691a      	ldr	r2, [r3, #16]
+ 800c17a:	07d2      	lsls	r2, r2, #31
+ 800c17c:	d5fc      	bpl.n	800c178 <R3_1_SwitchOnPWM+0x30>
   WRITE_REG(TIMx->SR, ~(TIM_SR_UIF));
- 800c182:	f06f 0201 	mvn.w	r2, #1
- 800c186:	611a      	str	r2, [r3, #16]
+ 800c17e:	f06f 0201 	mvn.w	r2, #1
+ 800c182:	611a      	str	r2, [r3, #16]
     /* Nothing to do */
   }
   LL_TIM_ClearFlag_UPDATE(TIMx);
 
   /* Main PWM Output Enable */
   TIMx->BDTR |= LL_TIM_OSSI_ENABLE;
- 800c188:	6c5a      	ldr	r2, [r3, #68]	; 0x44
- 800c18a:	f442 6280 	orr.w	r2, r2, #1024	; 0x400
- 800c18e:	645a      	str	r2, [r3, #68]	; 0x44
+ 800c184:	6c5a      	ldr	r2, [r3, #68]	; 0x44
+ 800c186:	f442 6280 	orr.w	r2, r2, #1024	; 0x400
+ 800c18a:	645a      	str	r2, [r3, #68]	; 0x44
   SET_BIT(TIMx->BDTR, TIM_BDTR_MOE);
- 800c190:	6c5a      	ldr	r2, [r3, #68]	; 0x44
- 800c192:	f442 4200 	orr.w	r2, r2, #32768	; 0x8000
- 800c196:	645a      	str	r2, [r3, #68]	; 0x44
+ 800c18c:	6c5a      	ldr	r2, [r3, #68]	; 0x44
+ 800c18e:	f442 4200 	orr.w	r2, r2, #32768	; 0x8000
+ 800c192:	645a      	str	r2, [r3, #68]	; 0x44
   LL_TIM_EnableAllOutputs(TIMx);
 
   if ((ES_GPIO == pHandle->_Super.LowSideOutputs))
- 800c198:	f890 207d 	ldrb.w	r2, [r0, #125]	; 0x7d
- 800c19c:	2a02      	cmp	r2, #2
- 800c19e:	d007      	beq.n	800c1b0 <R3_1_SwitchOnPWM+0x64>
+ 800c194:	f890 207d 	ldrb.w	r2, [r0, #125]	; 0x7d
+ 800c198:	2a02      	cmp	r2, #2
+ 800c19a:	d007      	beq.n	800c1ac <R3_1_SwitchOnPWM+0x64>
   WRITE_REG(TIMx->SR, ~(TIM_SR_UIF));
- 800c1a0:	f06f 0201 	mvn.w	r2, #1
- 800c1a4:	611a      	str	r2, [r3, #16]
+ 800c19c:	f06f 0201 	mvn.w	r2, #1
+ 800c1a0:	611a      	str	r2, [r3, #16]
   SET_BIT(TIMx->DIER, TIM_DIER_UIE);
- 800c1a6:	68da      	ldr	r2, [r3, #12]
- 800c1a8:	f042 0201 	orr.w	r2, r2, #1
- 800c1ac:	60da      	str	r2, [r3, #12]
+ 800c1a2:	68da      	ldr	r2, [r3, #12]
+ 800c1a4:	f042 0201 	orr.w	r2, r2, #1
+ 800c1a8:	60da      	str	r2, [r3, #12]
   }
   /* Clear Update Flag */
   LL_TIM_ClearFlag_UPDATE(TIMx);
   /* Enable Update IRQ */
   LL_TIM_EnableIT_UPDATE(TIMx);
 }
- 800c1ae:	bd30      	pop	{r4, r5, pc}
+ 800c1aa:	bd30      	pop	{r4, r5, pc}
     if ((TIMx->CCER & TIMxCCER_MASK_CH123) != 0U)
- 800c1b0:	6a19      	ldr	r1, [r3, #32]
+ 800c1ac:	6a19      	ldr	r1, [r3, #32]
       LL_GPIO_SetOutputPin(pHandle->_Super.pwm_en_u_port, pHandle->_Super.pwm_en_u_pin);
- 800c1b2:	f8b0 5048 	ldrh.w	r5, [r0, #72]	; 0x48
+ 800c1ae:	f8b0 5048 	ldrh.w	r5, [r0, #72]	; 0x48
     if ((TIMx->CCER & TIMxCCER_MASK_CH123) != 0U)
- 800c1b6:	f240 5255 	movw	r2, #1365	; 0x555
- 800c1ba:	4211      	tst	r1, r2
+ 800c1b2:	f240 5255 	movw	r2, #1365	; 0x555
+ 800c1b6:	4211      	tst	r1, r2
       LL_GPIO_SetOutputPin(pHandle->_Super.pwm_en_v_port, pHandle->_Super.pwm_en_v_pin);
- 800c1bc:	e9d0 140f 	ldrd	r1, r4, [r0, #60]	; 0x3c
+ 800c1b8:	e9d0 140f 	ldrd	r1, r4, [r0, #60]	; 0x3c
       LL_GPIO_SetOutputPin(pHandle->_Super.pwm_en_w_port, pHandle->_Super.pwm_en_w_pin);
- 800c1c0:	6c42      	ldr	r2, [r0, #68]	; 0x44
+ 800c1bc:	6c42      	ldr	r2, [r0, #68]	; 0x44
     if ((TIMx->CCER & TIMxCCER_MASK_CH123) != 0U)
- 800c1c2:	d007      	beq.n	800c1d4 <R3_1_SwitchOnPWM+0x88>
+ 800c1be:	d007      	beq.n	800c1d0 <R3_1_SwitchOnPWM+0x88>
   *         @arg @ref LL_GPIO_PIN_ALL
   * @retval None
   */
 __STATIC_INLINE void LL_GPIO_SetOutputPin(GPIO_TypeDef *GPIOx, uint32_t PinMask)
 {
   WRITE_REG(GPIOx->BSRR, PinMask);
- 800c1c4:	618d      	str	r5, [r1, #24]
+ 800c1c0:	618d      	str	r5, [r1, #24]
       LL_GPIO_SetOutputPin(pHandle->_Super.pwm_en_v_port, pHandle->_Super.pwm_en_v_pin);
- 800c1c6:	f8b0 504a 	ldrh.w	r5, [r0, #74]	; 0x4a
+ 800c1c2:	f8b0 504a 	ldrh.w	r5, [r0, #74]	; 0x4a
       LL_GPIO_SetOutputPin(pHandle->_Super.pwm_en_w_port, pHandle->_Super.pwm_en_w_pin);
- 800c1ca:	f8b0 104c 	ldrh.w	r1, [r0, #76]	; 0x4c
- 800c1ce:	61a5      	str	r5, [r4, #24]
- 800c1d0:	6191      	str	r1, [r2, #24]
+ 800c1c6:	f8b0 104c 	ldrh.w	r1, [r0, #76]	; 0x4c
+ 800c1ca:	61a5      	str	r5, [r4, #24]
+ 800c1cc:	6191      	str	r1, [r2, #24]
 }
- 800c1d2:	e7e5      	b.n	800c1a0 <R3_1_SwitchOnPWM+0x54>
+ 800c1ce:	e7e5      	b.n	800c19c <R3_1_SwitchOnPWM+0x54>
   *         @arg @ref LL_GPIO_PIN_ALL
   * @retval None
   */
 __STATIC_INLINE void LL_GPIO_ResetOutputPin(GPIO_TypeDef *GPIOx, uint32_t PinMask)
 {
   WRITE_REG(GPIOx->BRR, PinMask);
- 800c1d4:	628d      	str	r5, [r1, #40]	; 0x28
+ 800c1d0:	628d      	str	r5, [r1, #40]	; 0x28
       LL_GPIO_ResetOutputPin(pHandle->_Super.pwm_en_v_port, pHandle->_Super.pwm_en_v_pin);
- 800c1d6:	f8b0 504a 	ldrh.w	r5, [r0, #74]	; 0x4a
+ 800c1d2:	f8b0 504a 	ldrh.w	r5, [r0, #74]	; 0x4a
       LL_GPIO_ResetOutputPin(pHandle->_Super.pwm_en_w_port, pHandle->_Super.pwm_en_w_pin);
- 800c1da:	f8b0 104c 	ldrh.w	r1, [r0, #76]	; 0x4c
- 800c1de:	62a5      	str	r5, [r4, #40]	; 0x28
- 800c1e0:	6291      	str	r1, [r2, #40]	; 0x28
+ 800c1d6:	f8b0 104c 	ldrh.w	r1, [r0, #76]	; 0x4c
+ 800c1da:	62a5      	str	r5, [r4, #40]	; 0x28
+ 800c1dc:	6291      	str	r1, [r2, #40]	; 0x28
 }
- 800c1e2:	e7dd      	b.n	800c1a0 <R3_1_SwitchOnPWM+0x54>
+ 800c1de:	e7dd      	b.n	800c19c <R3_1_SwitchOnPWM+0x54>
 
-0800c1e4 <R3_1_SwitchOffPWM>:
+0800c1e0 <R3_1_SwitchOffPWM>:
 #endif /* __ICCARM__ */
   PWMC_R3_1_Handle_t *pHandle = (PWMC_R3_1_Handle_t *)pHdl; //cstat !MISRAC2012-Rule-11.3
 #if defined (__ICCARM__)
   #pragma cstat_restore = "MISRAC2012-Rule-11.3"
 #endif /* __ICCARM__ */
   TIM_TypeDef *TIMx = pHandle->pParams_str->TIMx;
- 800c1e4:	f8d0 309c 	ldr.w	r3, [r0, #156]	; 0x9c
+ 800c1e0:	f8d0 309c 	ldr.w	r3, [r0, #156]	; 0x9c
 
   pHandle->_Super.TurnOnLowSidesAction = false;
 
   /* Main PWM Output Disable */
   LL_TIM_DisableAllOutputs(TIMx);
   if (true == pHandle->_Super.BrakeActionLock)
- 800c1e8:	f890 1085 	ldrb.w	r1, [r0, #133]	; 0x85
+ 800c1e4:	f890 1085 	ldrb.w	r1, [r0, #133]	; 0x85
   TIM_TypeDef *TIMx = pHandle->pParams_str->TIMx;
- 800c1ec:	685b      	ldr	r3, [r3, #4]
+ 800c1e8:	685b      	ldr	r3, [r3, #4]
   CLEAR_BIT(TIMx->DIER, TIM_DIER_UIE);
- 800c1ee:	68da      	ldr	r2, [r3, #12]
- 800c1f0:	f022 0201 	bic.w	r2, r2, #1
- 800c1f4:	60da      	str	r2, [r3, #12]
+ 800c1ea:	68da      	ldr	r2, [r3, #12]
+ 800c1ec:	f022 0201 	bic.w	r2, r2, #1
+ 800c1f0:	60da      	str	r2, [r3, #12]
   CLEAR_BIT(TIMx->BDTR, TIM_BDTR_MOE);
- 800c1f6:	6c5a      	ldr	r2, [r3, #68]	; 0x44
+ 800c1f2:	6c5a      	ldr	r2, [r3, #68]	; 0x44
   pHandle->_Super.TurnOnLowSidesAction = false;
- 800c1f8:	f04f 0c00 	mov.w	ip, #0
- 800c1fc:	f422 4200 	bic.w	r2, r2, #32768	; 0x8000
- 800c200:	f880 c07e 	strb.w	ip, [r0, #126]	; 0x7e
- 800c204:	645a      	str	r2, [r3, #68]	; 0x44
+ 800c1f4:	f04f 0c00 	mov.w	ip, #0
+ 800c1f8:	f422 4200 	bic.w	r2, r2, #32768	; 0x8000
+ 800c1fc:	f880 c07e 	strb.w	ip, [r0, #126]	; 0x7e
+ 800c200:	645a      	str	r2, [r3, #68]	; 0x44
   if (true == pHandle->_Super.BrakeActionLock)
- 800c206:	b919      	cbnz	r1, 800c210 <R3_1_SwitchOffPWM+0x2c>
+ 800c202:	b919      	cbnz	r1, 800c20c <R3_1_SwitchOffPWM+0x2c>
   {
     /* Nothing to do */
   }
   else
   {
     if (ES_GPIO == pHandle->_Super.LowSideOutputs)
- 800c208:	f890 207d 	ldrb.w	r2, [r0, #125]	; 0x7d
- 800c20c:	2a02      	cmp	r2, #2
- 800c20e:	d00c      	beq.n	800c22a <R3_1_SwitchOffPWM+0x46>
+ 800c204:	f890 207d 	ldrb.w	r2, [r0, #125]	; 0x7d
+ 800c208:	2a02      	cmp	r2, #2
+ 800c20a:	d00c      	beq.n	800c226 <R3_1_SwitchOffPWM+0x46>
   WRITE_REG(TIMx->SR, ~(TIM_SR_UIF));
- 800c210:	f06f 0201 	mvn.w	r2, #1
- 800c214:	611a      	str	r2, [r3, #16]
+ 800c20c:	f06f 0201 	mvn.w	r2, #1
+ 800c210:	611a      	str	r2, [r3, #16]
   return ((READ_BIT(TIMx->SR, TIM_SR_UIF) == (TIM_SR_UIF)) ? 1UL : 0UL);
- 800c216:	691a      	ldr	r2, [r3, #16]
- 800c218:	07d2      	lsls	r2, r2, #31
- 800c21a:	d5fc      	bpl.n	800c216 <R3_1_SwitchOffPWM+0x32>
+ 800c212:	691a      	ldr	r2, [r3, #16]
+ 800c214:	07d2      	lsls	r2, r2, #31
+ 800c216:	d5fc      	bpl.n	800c212 <R3_1_SwitchOffPWM+0x32>
   WRITE_REG(TIMx->SR, ~(TIM_SR_UIF));
- 800c21c:	f06f 0101 	mvn.w	r1, #1
+ 800c218:	f06f 0101 	mvn.w	r1, #1
     /* Nothing to do */
   }
   LL_TIM_ClearFlag_UPDATE(TIMx);
 
   /* We allow ADC usage for regular conversion on Systick*/
   pHandle->ADCRegularLocked = false;
- 800c220:	2200      	movs	r2, #0
- 800c222:	6119      	str	r1, [r3, #16]
- 800c224:	f880 20a0 	strb.w	r2, [r0, #160]	; 0xa0
- 800c228:	4770      	bx	lr
+ 800c21c:	2200      	movs	r2, #0
+ 800c21e:	6119      	str	r1, [r3, #16]
+ 800c220:	f880 20a0 	strb.w	r2, [r0, #160]	; 0xa0
+ 800c224:	4770      	bx	lr
 {
- 800c22a:	b430      	push	{r4, r5}
+ 800c226:	b430      	push	{r4, r5}
       LL_GPIO_ResetOutputPin(pHandle->_Super.pwm_en_v_port, pHandle->_Super.pwm_en_v_pin);
- 800c22c:	e9d0 410f 	ldrd	r4, r1, [r0, #60]	; 0x3c
+ 800c228:	e9d0 410f 	ldrd	r4, r1, [r0, #60]	; 0x3c
       LL_GPIO_ResetOutputPin(pHandle->_Super.pwm_en_u_port, pHandle->_Super.pwm_en_u_pin);
- 800c230:	f8b0 5048 	ldrh.w	r5, [r0, #72]	; 0x48
+ 800c22c:	f8b0 5048 	ldrh.w	r5, [r0, #72]	; 0x48
       LL_GPIO_ResetOutputPin(pHandle->_Super.pwm_en_w_port, pHandle->_Super.pwm_en_w_pin);
- 800c234:	6c42      	ldr	r2, [r0, #68]	; 0x44
+ 800c230:	6c42      	ldr	r2, [r0, #68]	; 0x44
   WRITE_REG(GPIOx->BRR, PinMask);
- 800c236:	62a5      	str	r5, [r4, #40]	; 0x28
+ 800c232:	62a5      	str	r5, [r4, #40]	; 0x28
       LL_GPIO_ResetOutputPin(pHandle->_Super.pwm_en_v_port, pHandle->_Super.pwm_en_v_pin);
- 800c238:	f8b0 404a 	ldrh.w	r4, [r0, #74]	; 0x4a
- 800c23c:	628c      	str	r4, [r1, #40]	; 0x28
+ 800c234:	f8b0 404a 	ldrh.w	r4, [r0, #74]	; 0x4a
+ 800c238:	628c      	str	r4, [r1, #40]	; 0x28
       LL_GPIO_ResetOutputPin(pHandle->_Super.pwm_en_w_port, pHandle->_Super.pwm_en_w_pin);
- 800c23e:	f8b0 104c 	ldrh.w	r1, [r0, #76]	; 0x4c
- 800c242:	6291      	str	r1, [r2, #40]	; 0x28
- 800c244:	f06f 0201 	mvn.w	r2, #1
- 800c248:	611a      	str	r2, [r3, #16]
+ 800c23a:	f8b0 104c 	ldrh.w	r1, [r0, #76]	; 0x4c
+ 800c23e:	6291      	str	r1, [r2, #40]	; 0x28
+ 800c240:	f06f 0201 	mvn.w	r2, #1
+ 800c244:	611a      	str	r2, [r3, #16]
   return ((READ_BIT(TIMx->SR, TIM_SR_UIF) == (TIM_SR_UIF)) ? 1UL : 0UL);
- 800c24a:	691a      	ldr	r2, [r3, #16]
- 800c24c:	07d1      	lsls	r1, r2, #31
- 800c24e:	d5fc      	bpl.n	800c24a <R3_1_SwitchOffPWM+0x66>
+ 800c246:	691a      	ldr	r2, [r3, #16]
+ 800c248:	07d1      	lsls	r1, r2, #31
+ 800c24a:	d5fc      	bpl.n	800c246 <R3_1_SwitchOffPWM+0x66>
   WRITE_REG(TIMx->SR, ~(TIM_SR_UIF));
- 800c250:	f06f 0101 	mvn.w	r1, #1
+ 800c24c:	f06f 0101 	mvn.w	r1, #1
   pHandle->ADCRegularLocked = false;
- 800c254:	2200      	movs	r2, #0
- 800c256:	6119      	str	r1, [r3, #16]
+ 800c250:	2200      	movs	r2, #0
+ 800c252:	6119      	str	r1, [r3, #16]
 }
- 800c258:	bc30      	pop	{r4, r5}
+ 800c254:	bc30      	pop	{r4, r5}
   pHandle->ADCRegularLocked = false;
- 800c25a:	f880 20a0 	strb.w	r2, [r0, #160]	; 0xa0
+ 800c256:	f880 20a0 	strb.w	r2, [r0, #160]	; 0xa0
 }
- 800c25e:	4770      	bx	lr
+ 800c25a:	4770      	bx	lr
 
-0800c260 <R3_1_RLGetPhaseCurrents>:
+0800c25c <R3_1_RLGetPhaseCurrents>:
   }
   else
   {
 #endif
     PWMC_R3_1_Handle_t *pHandle = (PWMC_R3_1_Handle_t *)pHdl; //cstat !MISRAC2012-Rule-11.3
     TIM_TypeDef *TIMx = pHandle->pParams_str->TIMx;
- 800c260:	f8d0 209c 	ldr.w	r2, [r0, #156]	; 0x9c
+ 800c25c:	f8d0 309c 	ldr.w	r3, [r0, #156]	; 0x9c
     int32_t wAux;
 
     /* Disable ADC trigger source */
     LL_TIM_SetTriggerOutput(TIMx, LL_TIM_TRGO_RESET);
 
     wAux = ((int32_t)pHandle->PhaseBOffset)
- 800c264:	f8d0 308c 	ldr.w	r3, [r0, #140]	; 0x8c
+ 800c260:	f8d0 008c 	ldr.w	r0, [r0, #140]	; 0x8c
 {
- 800c268:	b410      	push	{r4}
+ 800c264:	b410      	push	{r4}
     ADC_TypeDef *ADCx = pHandle->pParams_str->ADCx;
- 800c26a:	e9d2 4000 	ldrd	r4, r0, [r2]
+ 800c266:	e9d3 4200 	ldrd	r4, r2, [r3]
   MODIFY_REG(TIMx->CR2, TIM_CR2_MMS, TimerSynchronization);
- 800c26e:	6842      	ldr	r2, [r0, #4]
- 800c270:	f022 7200 	bic.w	r2, r2, #33554432	; 0x2000000
- 800c274:	f022 0270 	bic.w	r2, r2, #112	; 0x70
- 800c278:	6042      	str	r2, [r0, #4]
+ 800c26a:	6853      	ldr	r3, [r2, #4]
+ 800c26c:	f023 7300 	bic.w	r3, r3, #33554432	; 0x2000000
+ 800c270:	f023 0370 	bic.w	r3, r3, #112	; 0x70
+ 800c274:	6053      	str	r3, [r2, #4]
          - (int32_t)ADCx->JDR2;
- 800c27a:	f8d4 0084 	ldr.w	r0, [r4, #132]	; 0x84
+ 800c276:	f8d4 3084 	ldr.w	r3, [r4, #132]	; 0x84
 
     /* Check saturation */
     if (wAux > -INT16_MAX)
- 800c27e:	4a0b      	ldr	r2, [pc, #44]	; (800c2ac <R3_1_RLGetPhaseCurrents+0x4c>)
+ 800c27a:	4c0c      	ldr	r4, [pc, #48]	; (800c2ac <R3_1_RLGetPhaseCurrents+0x50>)
     wAux = ((int32_t)pHandle->PhaseBOffset)
- 800c280:	1a1b      	subs	r3, r3, r0
+ 800c27c:	1ac2      	subs	r2, r0, r3
     if (wAux > -INT16_MAX)
- 800c282:	4293      	cmp	r3, r2
- 800c284:	db05      	blt.n	800c292 <R3_1_RLGetPhaseCurrents+0x32>
+ 800c27e:	42a2      	cmp	r2, r4
+ 800c280:	db06      	blt.n	800c290 <R3_1_RLGetPhaseCurrents+0x34>
     {
       if (wAux < INT16_MAX)
- 800c286:	f647 72fe 	movw	r2, #32766	; 0x7ffe
- 800c28a:	4293      	cmp	r3, r2
- 800c28c:	dc0b      	bgt.n	800c2a6 <R3_1_RLGetPhaseCurrents+0x46>
+ 800c282:	f647 74fe 	movw	r4, #32766	; 0x7ffe
+ 800c286:	42a2      	cmp	r2, r4
+ 800c288:	dc0d      	bgt.n	800c2a6 <R3_1_RLGetPhaseCurrents+0x4a>
+    }
     else
     {
       wAux = -INT16_MAX;
     }
-
+    wAux = -wAux;
+ 800c28a:	1a1b      	subs	r3, r3, r0
     pStator_Currents->a = (int16_t)wAux;
- 800c28e:	b21b      	sxth	r3, r3
- 800c290:	e000      	b.n	800c294 <R3_1_RLGetPhaseCurrents+0x34>
- 800c292:	4b07      	ldr	r3, [pc, #28]	; (800c2b0 <R3_1_RLGetPhaseCurrents+0x50>)
+ 800c28c:	b21b      	sxth	r3, r3
+ 800c28e:	e001      	b.n	800c294 <R3_1_RLGetPhaseCurrents+0x38>
+ 800c290:	f647 73ff 	movw	r3, #32767	; 0x7fff
+ 800c294:	2200      	movs	r2, #0
+ 800c296:	f363 020f 	bfi	r2, r3, #0, #16
+ 800c29a:	f363 421f 	bfi	r2, r3, #16, #16
     pStator_Currents->b = (int16_t)wAux;
 #ifdef NULL_PTR_CHECK_R3_1_PWM_CURR_FDB
   }
 #endif
 }
- 800c294:	f85d 4b04 	ldr.w	r4, [sp], #4
+ 800c29e:	f85d 4b04 	ldr.w	r4, [sp], #4
     pStator_Currents->a = (int16_t)wAux;
- 800c298:	2200      	movs	r2, #0
- 800c29a:	f363 020f 	bfi	r2, r3, #0, #16
- 800c29e:	f363 421f 	bfi	r2, r3, #16, #16
  800c2a2:	600a      	str	r2, [r1, #0]
 }
  800c2a4:	4770      	bx	lr
- 800c2a6:	f647 73ff 	movw	r3, #32767	; 0x7fff
- 800c2aa:	e7f3      	b.n	800c294 <R3_1_RLGetPhaseCurrents+0x34>
+ 800c2a6:	4b02      	ldr	r3, [pc, #8]	; (800c2b0 <R3_1_RLGetPhaseCurrents+0x54>)
+ 800c2a8:	e7f4      	b.n	800c294 <R3_1_RLGetPhaseCurrents+0x38>
+ 800c2aa:	bf00      	nop
  800c2ac:	ffff8002 	.word	0xffff8002
  800c2b0:	ffff8001 	.word	0xffff8001
 
@@ -28711,7 +28713,7 @@ __STATIC_INLINE void LL_COMP_Lock(COMP_TypeDef *COMPx)
   pHandle->_Super.Sector = SECTOR_5;   
  800c83a:	f880 307c 	strb.w	r3, [r0, #124]	; 0x7c
     R3_1_SwitchOnPWM(&pHandle->_Super);
- 800c83e:	f7ff fc85 	bl	800c14c <R3_1_SwitchOnPWM>
+ 800c83e:	f7ff fc83 	bl	800c148 <R3_1_SwitchOnPWM>
     while (((TIMx->CR2) & TIM_CR2_MMS_Msk) != LL_TIM_TRGO_OC4REF)
  800c842:	4a39      	ldr	r2, [pc, #228]	; (800c928 <R3_1_CurrentReadingPolarization+0x15c>)
  800c844:	686b      	ldr	r3, [r5, #4]
@@ -28734,7 +28736,7 @@ __STATIC_INLINE void LL_COMP_Lock(COMP_TypeDef *COMPx)
  800c872:	f7ff fb23 	bl	800bebc <waitForPolarizationEnd>
     R3_1_SwitchOffPWM(&pHandle->_Super);
  800c876:	4620      	mov	r0, r4
- 800c878:	f7ff fcb4 	bl	800c1e4 <R3_1_SwitchOffPWM>
+ 800c878:	f7ff fcb2 	bl	800c1e0 <R3_1_SwitchOffPWM>
     pHandle->PolarizationCounter = 0U;
  800c87c:	2200      	movs	r2, #0
  800c87e:	f884 2098 	strb.w	r2, [r4, #152]	; 0x98
@@ -28747,7 +28749,7 @@ __STATIC_INLINE void LL_COMP_Lock(COMP_TypeDef *COMPx)
  800c88c:	6022      	str	r2, [r4, #0]
     R3_1_SwitchOnPWM(&pHandle->_Super);
  800c88e:	4620      	mov	r0, r4
- 800c890:	f7ff fc5c 	bl	800c14c <R3_1_SwitchOnPWM>
+ 800c890:	f7ff fc5a 	bl	800c148 <R3_1_SwitchOnPWM>
                            pHandle->pParams_str->RepetitionCounter,
  800c894:	f8d4 209c 	ldr.w	r2, [r4, #156]	; 0x9c
     waitForPolarizationEnd(TIMx,
@@ -28758,7 +28760,7 @@ __STATIC_INLINE void LL_COMP_Lock(COMP_TypeDef *COMPx)
  800c8a2:	f7ff fb0b 	bl	800bebc <waitForPolarizationEnd>
     R3_1_SwitchOffPWM(&pHandle->_Super);
  800c8a6:	4620      	mov	r0, r4
- 800c8a8:	f7ff fc9c 	bl	800c1e4 <R3_1_SwitchOffPWM>
+ 800c8a8:	f7ff fc9a 	bl	800c1e0 <R3_1_SwitchOffPWM>
     pHandle->PhaseBOffset /= NB_CONVERSIONS;
  800c8ac:	e9d4 1222 	ldrd	r1, r2, [r4, #136]	; 0x88
     pHandle->PhaseCOffset /= NB_CONVERSIONS;
@@ -28822,10 +28824,10 @@ __STATIC_INLINE void LL_COMP_Lock(COMP_TypeDef *COMPx)
 }
  800c91c:	e76b      	b.n	800c7f6 <R3_1_CurrentReadingPolarization+0x2a>
  800c91e:	bf00      	nop
- 800c920:	0800c0b5 	.word	0x0800c0b5
- 800c924:	0800c071 	.word	0x0800c071
+ 800c920:	0800c0b1 	.word	0x0800c0b1
+ 800c924:	0800c06d 	.word	0x0800c06d
  800c928:	02000070 	.word	0x02000070
- 800c92c:	0800c105 	.word	0x0800c105
+ 800c92c:	0800c101 	.word	0x0800c101
 
 0800c930 <R3_1_SetADCSampPointSectX>:
   if (MC_NULL == pHdl)
@@ -29085,8 +29087,8 @@ __STATIC_INLINE void LL_COMP_Lock(COMP_TypeDef *COMPx)
  800cb02:	e7cc      	b.n	800ca9e <R3_1_RLDetectionModeEnable+0x62>
  800cb04:	0800c445 	.word	0x0800c445
  800cb08:	0800c2b5 	.word	0x0800c2b5
- 800cb0c:	0800c1e5 	.word	0x0800c1e5
- 800cb10:	0800c261 	.word	0x0800c261
+ 800cb0c:	0800c1e1 	.word	0x0800c1e1
+ 800cb10:	0800c25d 	.word	0x0800c25d
 
 0800cb14 <R3_1_RLDetectionModeDisable>:
   if (true ==  pHandle->_Super.RLDetectionMode)
@@ -29244,8 +29246,8 @@ __STATIC_INLINE void LL_COMP_Lock(COMP_TypeDef *COMPx)
  800cc32:	e7a1      	b.n	800cb78 <R3_1_RLDetectionModeDisable+0x64>
  800cc34:	fffeff8c 	.word	0xfffeff8c
  800cc38:	0800bef9 	.word	0x0800bef9
- 800cc3c:	0800c1e5 	.word	0x0800c1e5
- 800cc40:	0800c14d 	.word	0x0800c14d
+ 800cc3c:	0800c1e1 	.word	0x0800c1e1
+ 800cc40:	0800c149 	.word	0x0800c149
  800cc44:	0800c359 	.word	0x0800c359
 
 0800cc48 <R3_1_RLDetectionModeSetDuty>:

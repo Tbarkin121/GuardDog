@@ -1,21 +1,21 @@
 Neural Network Tools for STM32 family v1.7.0 (stm.ai v8.1.0-19520)
-Created date          : 2024-01-14 16:23:07
-Parameters            : generate --name network -m E:/MyProjects/GuardDog/stm32/pendulum.onnx --type onnx --compression none --verbosity 1 --workspace C:\Users\TYLERB~1\AppData\Local\Temp\mxAI_workspace4103561692047005427076863545341703 --output C:\Users\tylerbarkin\.stm32cubemx\network_output --allocate-inputs --series stm32g4 --allocate-outputs
+Created date          : 2024-01-16 03:07:21
+Parameters            : generate --name network -m E:/MyProjects/GuardDog/isaac/IsaacGymEnvs/isaacgymenvs/pendulum.onnx --type onnx --compression none --verbosity 1 --workspace C:\Users\TYLERB~1\AppData\Local\Temp\mxAI_workspace6254790162101003171459940217765818 --output C:\Users\tylerbarkin\.stm32cubemx\network_output --allocate-inputs --series stm32g4 --allocate-outputs
 
 Exec/report summary (generate)
 ---------------------------------------------------------------------------------------------------------------
-model file         :   E:\MyProjects\GuardDog\stm32\pendulum.onnx                                              
+model file         :   E:\MyProjects\GuardDog\isaac\IsaacGymEnvs\isaacgymenvs\pendulum.onnx                    
 type               :   onnx                                                                                    
 c_name             :   network                                                                                 
 compression        :   none                                                                                    
 options            :   allocate-inputs, allocate-outputs                                                       
 optimization       :   balanced                                                                                
 target/series      :   stm32g4                                                                                 
-workspace dir      :   C:\Users\TYLERB~1\AppData\Local\Temp\mxAI_workspace4103561692047005427076863545341703   
+workspace dir      :   C:\Users\TYLERB~1\AppData\Local\Temp\mxAI_workspace6254790162101003171459940217765818   
 output dir         :   C:\Users\tylerbarkin\.stm32cubemx\network_output                                        
 model_fmt          :   float                                                                                   
 model_name         :   pendulum                                                                                
-model_hash         :   f2c7b94f7e2c2f4a5fbcd95ed24b7d73                                                        
+model_hash         :   91e2cee07460fb4a1206932e1fcff46a                                                        
 params #           :   11,210 items (43.79 KiB)                                                                
 ---------------------------------------------------------------------------------------------------------------
 input 1/1          :   'obs' (domain:activations/**default**)                                                  

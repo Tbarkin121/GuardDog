@@ -124,10 +124,10 @@
 #define PID_SPEED_KD_DEFAULT          0/(SPEED_UNIT/10) /* Workbench compute the gain for 01Hz unit*/
 /* Speed PID parameter dividers */
 #define SP_KPDIV                      256
-#define SP_KIDIV                      16384
+#define SP_KIDIV                      32768
 #define SP_KDDIV                      16
 #define SP_KPDIV_LOG                  LOG2((256))
-#define SP_KIDIV_LOG                  LOG2((16384))
+#define SP_KIDIV_LOG                  LOG2((32768))
 #define SP_KDDIV_LOG                  LOG2((16))
 /* USER CODE BEGIN PID_SPEED_INTEGRAL_INIT_DIV */
 #define PID_SPEED_INTEGRAL_INIT_DIV 1 /*  */
