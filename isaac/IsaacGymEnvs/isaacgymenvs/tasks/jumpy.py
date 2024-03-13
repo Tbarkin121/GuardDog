@@ -155,6 +155,8 @@ class Jumpy(VecTask):
         # retrieve environment observations from buffer
         height = self.obs_buf[:, 6]        
         self.max_height_reached = torch.max(self.max_height_reached, height)
+        self.max_height_reached = torch.where((torch.norm(self.contact_forces[:, 3, :], dim=1) > 0.1), torch.zeros_like(self.max_height_reached), self.max_height_reached)
+        # print(self.max_height_reached[0:2])
         self.rew_buf[:], self.reset_buf[:] = compute_torquepole_reward(height,
                                                                        self.max_height_reached,
                                                                         self.contact_forces,
@@ -162,7 +164,7 @@ class Jumpy(VecTask):
                                                                         self.reset_buf, 
                                                                         self.progress_buf, 
                                                                         self.max_episode_length)
-        # print(self.rew_buf[:])
+        # print(self.rew_buf[0])
 
     def convert_angle(self, angle):
         # Apply sine and cosine functions
@@ -197,7 +199,7 @@ class Jumpy(VecTask):
         self.obs_buf[env_ids, 4] = cos_encode[env_ids, 1]                   # Motor 1, Cos Component
         self.obs_buf[env_ids, 5] = self.dof_vel[env_ids, 2]/20.0            # Motor 1, Velocity
 
-        self.obs_buf[env_ids, 6] = self.dof_pos[env_ids, 0] + 0.5                # Height
+        self.obs_buf[env_ids, 6] = self.dof_pos[env_ids, 0]                 # Height
 
         self.obs_buf[env_ids, 7:9] = self.actions_tensor[env_ids, 1:3]
 
@@ -211,6 +213,8 @@ class Jumpy(VecTask):
         positions =  2*np.pi*(torch.rand((len(env_ids), self.num_dof), device=self.device))
         velocities = 5.0 * (torch.rand((len(env_ids), self.num_dof), device=self.device) - 0.5)
         positions[:,0] = 0.0
+        velocities[:,0] = 0.0
+        positions[:,1] = 0.0
 
         self.dof_pos[env_ids, :] = positions[:]
         self.dof_vel[env_ids, :] = velocities[:]
@@ -260,6 +264,8 @@ def compute_torquepole_reward(height, max_height_reached, contact_forces, reset_
 
     # reward = height**3
     reward = max_height_reached**3
+    # reward = torch.where((torch.norm(contact_forces[:, 3, :], dim=1) > 0.1), torch.zeros_like(reward), reward)
+
     reset = torch.where(progress_buf >= max_episode_length - 1, torch.ones_like(reset_buf), reset_buf)
     reset = reset | (torch.norm(contact_forces[:, 1, :], dim=1) > 1.)
     reset = reset | (torch.norm(contact_forces[:, 2, :], dim=1) > 1.)
