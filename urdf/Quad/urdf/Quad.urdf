@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="Quad">
+  <link
+    name="Body">
+    <inertial>
+      <origin
+        xyz="-0.0003431 0.05 -0.00055463"
+        rpy="0 0 0" />
+      <mass
+        value="7.9384" />
+      <inertia
+        ixx="0.062091"
+        ixy="7.9501E-19"
+        ixz="1.3376E-18"
+        iyy="0.097291"
+        iyz="4.9579E-16"
+        izz="0.046743" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Quad/meshes/Body.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.28627 0.66275 0.32941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Quad/meshes/Body.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="FR_Hip">
+    <inertial>
+      <origin
+        xyz="-0.11924 0.05 0.23532"
+        rpy="0 0 0" />
+      <mass
+        value="0.24499" />
+      <inertia
+        ixx="0.00023971"
+        ixy="5.4613E-12"
+        ixz="-3.2972E-12"
+        iyy="0.00016193"
+        iyz="2.2508E-10"
+        izz="0.00022957" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Quad/meshes/FR_Hip.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.0078431 0.23922 0.82353 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Quad/meshes/FR_Hip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FR_J1"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="Body" />
+    <child
+      link="FR_Hip" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="FR_Thigh">
+    <inertial>
+      <origin
+        xyz="-0.148695424334487 0.0500005183688921 0.364079281294028"
+        rpy="0 0 0" />
+      <mass
+        value="0.248973034603068" />
+      <inertia
+        ixx="0.000362587337502919"
+        ixy="-1.17555629129558E-10"
+        ixz="-2.90184454491023E-06"
+        iyy="0.000199472018852034"
+        iyz="-1.98376638240292E-08"
+        izz="0.00019359900881669" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Quad/meshes/FR_Thigh.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.00784313725490196 0.23921568627451 0.823529411764706 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Quad/meshes/FR_Thigh.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FR_J2"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="FR_Hip" />
+    <child
+      link="FR_Thigh" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="FR_Shin">
+    <inertial>
+      <origin
+        xyz="-0.160587000227504 0.0500165527585013 0.680403796187953"
+        rpy="0 0 0" />
+      <mass
+        value="0.0687228409087856" />
+      <inertia
+        ixx="6.42198625809037E-05"
+        ixy="8.56742150772796E-09"
+        ixz="1.18644635684177E-08"
+        iyy="6.99945188679625E-05"
+        iyz="6.46876985470636E-11"
+        izz="1.55422946691621E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Quad/meshes/FR_Shin.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Quad/meshes/FR_Shin.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FR_J3"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="FR_Thigh" />
+    <child
+      link="FR_Shin" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="FL_Hip">
+    <inertial>
+      <origin
+        xyz="0.119237866203661 0.05000001781441 0.235315900984016"
+        rpy="0 0 0" />
+      <mass
+        value="0.244991783639187" />
+      <inertia
+        ixx="0.000239714320228986"
+        ixy="5.4613341673078E-12"
+        ixz="3.29715838165708E-12"
+        iyy="0.000161925907771085"
+        iyz="-2.25080068065828E-10"
+        izz="0.000229565612565136" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Quad/meshes/FL_Hip.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.00784313725490196 0.23921568627451 0.823529411764706 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Quad/meshes/FL_Hip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FL_J1"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="Body" />
+    <child
+      link="FL_Hip" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="FL_Thigh">
+    <inertial>
+      <origin
+        xyz="0.14813334231225 0.0499993433976452 0.395060567963931"
+        rpy="0 0 0" />
+      <mass
+        value="0.179307876346527" />
+      <inertia
+        ixx="0.000261542342004721"
+        ixy="-1.2328616922634E-10"
+        ixz="2.17188845277569E-06"
+        iyy="0.000148769435505943"
+        iyz="1.9486071851457E-08"
+        izz="0.000138988786643352" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Quad/meshes/FL_Thigh.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Quad/meshes/FL_Thigh.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FL_J2"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="FL_Hip" />
+    <child
+      link="FL_Thigh" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="FL_Shin">
+    <inertial>
+      <origin
+        xyz="0.160587000227504 0.0499834472414987 0.680403796187953"
+        rpy="0 0 0" />
+      <mass
+        value="0.0687228409087855" />
+      <inertia
+        ixx="6.42198625809037E-05"
+        ixy="8.5674215077258E-09"
+        ixz="-1.18644635684158E-08"
+        iyy="6.99945188679625E-05"
+        iyz="-6.46876985457075E-11"
+        izz="1.55422946691621E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Quad/meshes/FL_Shin.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Quad/meshes/FL_Shin.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FL_J3"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="FL_Thigh" />
+    <child
+      link="FL_Shin" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="BR_Hip">
+    <inertial>
+      <origin
+        xyz="-0.119237866203662 0.05000001781441 -0.235315900984016"
+        rpy="0 0 0" />
+      <mass
+        value="0.244991783639187" />
+      <inertia
+        ixx="0.000239714320228986"
+        ixy="-5.46133414778257E-12"
+        ixz="3.29715837670549E-12"
+        iyy="0.000161925907771085"
+        iyz="2.25080068062348E-10"
+        izz="0.000229565612565136" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Quad/meshes/BR_Hip.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.00784313725490196 0.23921568627451 0.823529411764706 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Quad/meshes/BR_Hip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BR_J1"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="Body" />
+    <child
+      link="BR_Hip" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="BR_Thigh">
+    <inertial>
+      <origin
+        xyz="-0.14813334231225 0.0499993433976453 -0.395060567963931"
+        rpy="0 0 0" />
+      <mass
+        value="0.179307876346527" />
+      <inertia
+        ixx="0.000261542342004721"
+        ixy="1.23286169287392E-10"
+        ixz="2.17188845277568E-06"
+        iyy="0.000148769435505943"
+        iyz="-1.94860718513944E-08"
+        izz="0.000138988786643352" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Quad/meshes/BR_Thigh.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Quad/meshes/BR_Thigh.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BR_J2"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="BR_Hip" />
+    <child
+      link="BR_Thigh" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="BR_Shin">
+    <inertial>
+      <origin
+        xyz="-0.160587000227504 0.0499834472414987 -0.680403796187953"
+        rpy="0 0 0" />
+      <mass
+        value="0.0687228409087856" />
+      <inertia
+        ixx="6.42198625809038E-05"
+        ixy="-8.56742150772781E-09"
+        ixz="-1.18644635684184E-08"
+        iyy="6.99945188679626E-05"
+        iyz="6.46876985470855E-11"
+        izz="1.55422946691621E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Quad/meshes/BR_Shin.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Quad/meshes/BR_Shin.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BR_J3"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="BR_Thigh" />
+    <child
+      link="BR_Shin" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="BL_Hip">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Quad/meshes/BL_Hip.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Quad/meshes/BL_Hip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BL_J1"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="Body" />
+    <child
+      link="BL_Hip" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="BL_Thigh">
+    <inertial>
+      <origin
+        xyz="0.148695424334487 0.050000518368892 -0.364079281294028"
+        rpy="0 0 0" />
+      <mass
+        value="0.248973034603069" />
+      <inertia
+        ixx="0.00036258733750292"
+        ixy="1.17555629150693E-10"
+        ixz="-2.90184454491026E-06"
+        iyy="0.000199472018852034"
+        iyz="1.98376638237403E-08"
+        izz="0.000193599008816691" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Quad/meshes/BL_Thigh.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.00784313725490196 0.23921568627451 0.823529411764706 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Quad/meshes/BL_Thigh.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BL_J2"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="BL_Hip" />
+    <child
+      link="BL_Thigh" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="BL_Shin">
+    <inertial>
+      <origin
+        xyz="0.160587000227504 0.0500165527585013 -0.680403796187953"
+        rpy="0 0 0" />
+      <mass
+        value="0.0687228409087855" />
+      <inertia
+        ixx="6.42198625809038E-05"
+        ixy="-8.56742150772904E-09"
+        ixz="1.18644635684168E-08"
+        iyy="6.99945188679626E-05"
+        iyz="-6.46876985468575E-11"
+        izz="1.55422946691621E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Quad/meshes/BL_Shin.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.286274509803922 0.662745098039216 0.329411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Quad/meshes/BL_Shin.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="BL_J3"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="BL_Thigh" />
+    <child
+      link="BL_Shin" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+</robot>
