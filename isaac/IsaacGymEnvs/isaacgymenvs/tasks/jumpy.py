@@ -224,6 +224,8 @@ class Jumpy(VecTask):
                                               gymtorch.unwrap_tensor(self.dof_state),
                                               gymtorch.unwrap_tensor(env_ids_int32), len(env_ids_int32))
 
+        self.glider_states[env_ids, ...] = modified_initial_state[env_ids, ...]
+
         self.reset_buf[env_ids] = 0
         self.progress_buf[env_ids] = 0
         self.max_height_reached[env_ids] = 0

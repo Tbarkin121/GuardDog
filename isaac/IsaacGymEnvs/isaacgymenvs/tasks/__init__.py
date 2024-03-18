@@ -48,6 +48,7 @@ from .dextreme.allegro_hand_dextreme import AllegroHandDextremeManualDR, Allegro
 from .trifinger import Trifinger
 from .torquepole import TorquePole
 from .jumpy import Jumpy
+from .quadjumpy import QuadJumpy
 
 from .allegro_kuka.allegro_kuka_reorientation import AllegroKukaReorientation
 from .allegro_kuka.allegro_kuka_regrasping import AllegroKukaRegrasping
@@ -117,4 +118,5 @@ isaacgym_task_map = {
     "Trifinger": Trifinger,
     "TorquePole": TorquePole,
     "Jumpy": Jumpy,
+    "QuadJumpy":QuadJumpy,
 }
