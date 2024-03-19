@@ -72,6 +72,7 @@ class QuadJumpy(VecTask):
 
         self.keys = Keyboard(3)
         self.max_height_reached = torch.zeros((self.num_envs), device=self.device)
+        self.air_time = torch.zeros((self.num_envs), device=self.device)
 
         cam_pos = gymapi.Vec3(10.0, 9.95, 0.5)
         cam_target = gymapi.Vec3(10.0, -20.0, 0.5)
@@ -141,7 +142,6 @@ class QuadJumpy(VecTask):
         self.thigh_indices = torch.zeros(len(thigh_names), dtype=torch.long, device=self.device, requires_grad=False)
         self.shin_indices = torch.zeros(len(shin_names), dtype=torch.long, device=self.device, requires_grad=False)
         self.foot_indices = torch.zeros(len(foot_names), dtype=torch.long, device=self.device, requires_grad=False)
-        
 
         pose = gymapi.Transform()
         if self.up_axis == 'z':
@@ -160,7 +160,7 @@ class QuadJumpy(VecTask):
             env_ptr = self.gym.create_env(
                 self.sim, lower, upper, num_per_row
             )
-            torquepole_handle = self.gym.create_actor(env_ptr, torquepole_asset, pose, "torquepole", i, 0, 0)
+            torquepole_handle = self.gym.create_actor(env_ptr, torquepole_asset, pose, "torquepole", i, 1, 0)
             
             rand_color = torch.rand((3), device=self.device)
             self.gym.set_rigid_body_color(env_ptr, torquepole_handle, 0, gymapi.MESH_VISUAL, gymapi.Vec3(rand_color[0],rand_color[1],rand_color[2]))
@@ -186,9 +186,12 @@ class QuadJumpy(VecTask):
             self.thigh_indices[i] = self.gym.find_actor_rigid_body_handle(self.envs[0], self.torquepole_handles[0], thigh_names[i])
         for i in range(len(shin_names)):
             self.shin_indices[i] = self.gym.find_actor_rigid_body_handle(self.envs[0], self.torquepole_handles[0], shin_names[i])
+        for i in range(len(foot_names)):
+            self.foot_indices[i] = self.gym.find_actor_rigid_body_handle(self.envs[0], self.torquepole_handles[0], foot_names[i])
         print(self.hip_indices)
         print(self.thigh_indices)
         print(self.shin_indices)
+        print(self.foot_indices)
 
 
 
@@ -197,10 +200,13 @@ class QuadJumpy(VecTask):
         height = self.obs_buf[:, 4*self.num_dof]        
         self.max_height_reached = torch.max(self.max_height_reached, height)
         self.max_height_reached = torch.where((torch.any(torch.norm(self.contact_forces[:, self.foot_indices, :], dim=1) > 0.1, dim=1)), torch.zeros_like(self.max_height_reached), self.max_height_reached)
-        # print(self.max_height_reached[0:2])
-        # print(height)
 
-        # print(self.contact_forces[0, 0, :].shape)
+        self.air_time += 1
+        self.air_time = torch.where((torch.any(torch.norm(self.contact_forces[:, self.foot_indices, :], dim=1) > 0.1, dim=1)), torch.zeros_like(self.air_time), self.air_time)
+
+        # print(self.max_height_reached)
+
+        # print(self.contact_forces.shape)
         # print(self.contact_forces[0, :, :])
 
         # print(torch.norm(self.contact_forces[0:3, 0, :], dim=1) > 1.)
@@ -209,6 +215,7 @@ class QuadJumpy(VecTask):
         
         self.rew_buf[:], self.reset_buf[:] = compute_torquepole_reward(height,
                                                                         self.max_height_reached,
+                                                                        self.air_time,
                                                                         self.contact_forces,
                                                                         self.hip_indices,
                                                                         self.thigh_indices,
@@ -254,7 +261,10 @@ class QuadJumpy(VecTask):
         self.obs_buf[env_ids, 3*self.num_dof:4*self.num_dof] = self.actions_tensor[env_ids, :]          # Actions
         self.obs_buf[env_ids, 4*self.num_dof] = self.root_states[env_ids, 2]                                # Height
 
-
+        # print('!!!')
+        # print(self.obs_buf[0,...])
+        # print(self.obs_buf[0, 2*self.num_dof:3*self.num_dof])
+        # print(self.obs_buf[0, 3*self.num_dof:4*self.num_dof])
         return self.obs_buf
 
     def reset_idx(self, env_ids):
@@ -263,6 +273,15 @@ class QuadJumpy(VecTask):
         if self.randomize:
             self.apply_randomizations(self.randomization_params)
         positions =  torch.ones((len(env_ids), self.num_dof), device=self.device)*0.0
+
+        positions[:, 1] = 0.5
+        positions[:, 4] = -0.5
+        positions[:, 7] = -0.5
+        positions[:, 10] = 0.5
+        positions[:, 2] = -2.0
+        positions[:, 5] = 2.0
+        positions[:, 8] = 2.0
+        positions[:, 11] = -2.0
         velocities = torch.zeros((len(env_ids), self.num_dof), device=self.device)
 
         self.dof_pos[env_ids, :] = positions[:]
@@ -281,6 +300,7 @@ class QuadJumpy(VecTask):
         self.reset_buf[env_ids] = 0
         self.progress_buf[env_ids] = 0
         self.max_height_reached[env_ids] = 0
+        self.air_time[env_ids] = 0
 
     def pre_physics_step(self, actions):
         self.actions_tensor = torch.zeros( [self.num_envs, self.num_dof], device=self.device, dtype=torch.float)
@@ -311,18 +331,20 @@ class QuadJumpy(VecTask):
 
 
 @torch.jit.script
-def compute_torquepole_reward(height, max_height_reached, contact_forces, hip_idx, thigh_idx, shin_idx, reset_dist, reset_buf, progress_buf, max_episode_length):
-    # type: (Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, float, Tensor, Tensor, float) -> Tuple[Tensor, Tensor]
+def compute_torquepole_reward(height, max_height_reached, air_time, contact_forces, hip_idx, thigh_idx, shin_idx, reset_dist, reset_buf, progress_buf, max_episode_length):
+    # type: (Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, float, Tensor, Tensor, float) -> Tuple[Tensor, Tensor]
 
-    reward = height**3
+    # reward = height**3
     # reward = max_height_reached**3
+    reward = air_time/1000.0
+    reward += 0.01
     # reward = torch.where((torch.norm(contact_forces[:, 3, :], dim=1) > 0.1), torch.zeros_like(reward), reward)
 
     reset = torch.where(progress_buf >= max_episode_length - 1, torch.ones_like(reset_buf), reset_buf)
     reset = reset | (torch.norm(contact_forces[:, 0, :], dim=1) > 1.)
     reset = reset | (torch.any(torch.norm(contact_forces[:, hip_idx, :], dim=1) > 1., dim=1))
     reset = reset | (torch.any(torch.norm(contact_forces[:, thigh_idx, :], dim=1) > 1., dim=1))
-    reset = reset | (torch.any(torch.norm(contact_forces[:, shin_idx, :], dim=1) > 1., dim=1))
+    # reset = reset | (torch.any(torch.norm(contact_forces[:, shin_idx, :], dim=1) > 1., dim=1))
 
     
     
