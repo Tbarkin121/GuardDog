@@ -96,7 +96,7 @@ env_upper = gymapi.Vec3(spacing, 0.0, spacing)
 
 # add cartpole urdf asset
 asset_root = "../../IsaacGymEnvs/assets"
-asset_file = "urdf/Quad_LimitHip/urdf/Quad_LimitHip.urdf"
+asset_file = "urdf/Quad_Foot/urdf/Quad_Foot.urdf"
 # asset_file = "urdf/WalkBot_3DOF_330/urdf/WalkBot_3DOF.urdf"
 
 # Load asset with default control type of position for all joints
@@ -213,6 +213,15 @@ while not gym.query_viewer_has_closed(viewer):
     gym.apply_dof_effort(env0, 0, action[0])
     gym.apply_dof_effort(env0, 1, action[1])
     gym.apply_dof_effort(env0, 2, action[2])
+    gym.apply_dof_effort(env0, 3, action[0])
+    gym.apply_dof_effort(env0, 4, action[1])
+    gym.apply_dof_effort(env0, 5, action[2])
+    gym.apply_dof_effort(env0, 6, action[0])
+    gym.apply_dof_effort(env0, 7, action[1])
+    gym.apply_dof_effort(env0, 8, action[2])
+    gym.apply_dof_effort(env0, 9, action[0])
+    gym.apply_dof_effort(env0, 10, action[1])
+    gym.apply_dof_effort(env0, 11, action[2])
     
 
  

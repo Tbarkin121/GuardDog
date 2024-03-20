@@ -54,21 +54,26 @@ class QuadJumpy(VecTask):
 
         super().__init__(config=self.cfg, rl_device=rl_device, sim_device=sim_device, graphics_device_id=graphics_device_id, headless=headless, virtual_screen_capture=virtual_screen_capture, force_render=force_render)
 
+        # get gym state tensors
         dof_state_tensor = self.gym.acquire_dof_state_tensor(self.sim)
+        actor_root_state = self.gym.acquire_actor_root_state_tensor(self.sim)
+        net_contact_forces = self.gym.acquire_net_contact_force_tensor(self.sim)
+        torques = self.gym.acquire_dof_force_tensor(self.sim)
+        
+        self.gym.refresh_dof_state_tensor(self.sim)
+        self.gym.refresh_actor_root_state_tensor(self.sim)
+        self.gym.refresh_net_contact_force_tensor(self.sim)
+        self.gym.refresh_dof_force_tensor(self.sim)
+
+        # create some wrapper tensors for different slices
         self.dof_state = gymtorch.wrap_tensor(dof_state_tensor)
         self.dof_pos = self.dof_state.view(self.num_envs, self.num_dof, 2)[..., 0]
         self.dof_vel = self.dof_state.view(self.num_envs, self.num_dof, 2)[..., 1]
-
-        net_contact_forces = self.gym.acquire_net_contact_force_tensor(self.sim)
-        self.contact_forces = gymtorch.wrap_tensor(net_contact_forces).view(self.num_envs, -1, 3)  # shape: num_envs, num_bodies, xyz axis
-
-        # get gym state tensors
-        actor_root_state = self.gym.acquire_actor_root_state_tensor(self.sim)
-        self.gym.refresh_actor_root_state_tensor(self.sim)
-        # create some wrapper tensors for different slices
         self.root_states = gymtorch.wrap_tensor(actor_root_state)
         self.initial_root_states = self.root_states.clone()
-        
+        self.contact_forces = gymtorch.wrap_tensor(net_contact_forces).view(self.num_envs, -1, 3)  # shape: num_envs, num_bodies, xyz axis
+        self.torques = gymtorch.wrap_tensor(torques).view(self.num_envs, self.num_dof)
+
 
         self.keys = Keyboard(3)
         self.max_height_reached = torch.zeros((self.num_envs), device=self.device)
@@ -248,10 +253,11 @@ class QuadJumpy(VecTask):
         if env_ids is None:
             env_ids = np.arange(self.num_envs)
 
-        self.gym.refresh_dof_state_tensor(self.sim)
+        self.gym.refresh_dof_state_tensor(self.sim)  # done in step
         self.gym.refresh_actor_root_state_tensor(self.sim)
         self.gym.refresh_net_contact_force_tensor(self.sim)
-
+        self.gym.refresh_dof_force_tensor(self.sim)
+        
         sin_encode, cos_encode, motor_angle = self.convert_angle(self.dof_pos[env_ids, 0:self.num_dof].squeeze())
         self.obs_buf[env_ids, 0:self.num_dof] = sin_encode
         self.obs_buf[env_ids, self.num_dof:2*self.num_dof] = cos_encode
@@ -269,7 +275,6 @@ class QuadJumpy(VecTask):
 
     def reset_idx(self, env_ids):
         # Randomization can happen only at reset time, since it can reset actor positions on GPU
-        # print('reset_idx')
         if self.randomize:
             self.apply_randomizations(self.randomization_params)
         positions =  torch.ones((len(env_ids), self.num_dof), device=self.device)*0.0
@@ -335,16 +340,21 @@ def compute_torquepole_reward(height, max_height_reached, air_time, contact_forc
     # type: (Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, float, Tensor, Tensor, float) -> Tuple[Tensor, Tensor]
 
     # reward = height**3
-    # reward = max_height_reached**3
-    reward = air_time/1000.0
-    reward += 0.01
+    # reward = max_height_reached**2
+    reward = height*0.1 + max_height_reached*0.05
+    reward += air_time/100.0
     # reward = torch.where((torch.norm(contact_forces[:, 3, :], dim=1) > 0.1), torch.zeros_like(reward), reward)
 
     reset = torch.where(progress_buf >= max_episode_length - 1, torch.ones_like(reset_buf), reset_buf)
-    reset = reset | (torch.norm(contact_forces[:, 0, :], dim=1) > 1.)
-    reset = reset | (torch.any(torch.norm(contact_forces[:, hip_idx, :], dim=1) > 1., dim=1))
-    reset = reset | (torch.any(torch.norm(contact_forces[:, thigh_idx, :], dim=1) > 1., dim=1))
-    # reset = reset | (torch.any(torch.norm(contact_forces[:, shin_idx, :], dim=1) > 1., dim=1))
+
+    # This is a hacky fix, the contact forces sometimes don't update when an environment resets causing a double reset. 
+    # This waits 10 environment steps before factoring in contact forces
+    check_forces = torch.where(progress_buf >= 10, torch.ones_like(reset_buf), reset_buf)
+
+    reset = reset | ((torch.norm(contact_forces[:, 0, :], dim=1) > 1.) & check_forces)
+    reset = reset | ((torch.any(torch.norm(contact_forces[:, hip_idx, :], dim=2) > 1., dim=1)) & check_forces)
+    reset = reset | ((torch.any(torch.norm(contact_forces[:, thigh_idx, :], dim=2) > 1., dim=1)) & check_forces)
+    # reset = reset | (torch.any(torch.norm(contact_forces[:, shin_idx, :], dim=2) > 1., dim=1))
 
     
     

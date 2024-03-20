@@ -74,7 +74,7 @@
           rgba="0.00784313725490196 0.23921568627451 0.823529411764706 1" />
       </material>
     </visual>
-    <collision>
+    <!-- <collision>
       <origin
         xyz="0 0 0"
         rpy="0 0 0" />
@@ -82,7 +82,7 @@
         <mesh
           filename="../meshes/FR_Hip.STL" />
       </geometry>
-    </collision>
+    </collision> -->
   </link>
   <joint
     name="FR_J1"
@@ -144,7 +144,7 @@
   </link>
   <joint
     name="FR_J2"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="-0.0700000000000002 0 0.045979703345944"
       rpy="0 0 0" />
@@ -154,6 +154,9 @@
       link="FR_Thigh" />
     <axis
       xyz="1 0 0" />
+    <limit
+      lower="-2.5"
+      upper="2.5"/> 
   </joint>
   <link
     name="FR_Shin">
@@ -197,7 +200,7 @@
   </link>
   <joint
     name="FR_J3"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0 0 0.318"
       rpy="0 0 0" />
@@ -207,6 +210,10 @@
       link="FR_Shin" />
     <axis
       xyz="-1 0 0" />
+    <limit
+      lower="-3"
+      upper="3"/>
+
   </joint>
   <link
     name="FR_Foot">
@@ -291,7 +298,7 @@
           rgba="0.00784313725490196 0.23921568627451 0.823529411764706 1" />
       </material>
     </visual>
-    <collision>
+    <!-- <collision>
       <origin
         xyz="0 0 0"
         rpy="0 0 0" />
@@ -299,7 +306,7 @@
         <mesh
           filename="../meshes/FL_Hip.STL" />
       </geometry>
-    </collision>
+    </collision> -->
   </link>
   <joint
     name="FL_J1"
@@ -361,7 +368,7 @@
   </link>
   <joint
     name="FL_J2"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0.0700000000000002 0 0.045979703345944"
       rpy="0 0 0" />
@@ -371,6 +378,10 @@
       link="FL_Thigh" />
     <axis
       xyz="-1 0 0" />
+    <limit
+      lower="-2.5"
+      upper="2.5"/>
+
   </joint>
   <link
     name="FL_Shin">
@@ -414,7 +425,7 @@
   </link>
   <joint
     name="FL_J3"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0 0 0.318"
       rpy="0 0 0" />
@@ -424,6 +435,10 @@
       link="FL_Shin" />
     <axis
       xyz="1 0 0" />
+    <limit
+      lower="-3"
+      upper="3"/>
+
   </joint>
   <link
     name="FL_Foot">
@@ -508,7 +523,7 @@
           rgba="0.00784313725490196 0.23921568627451 0.823529411764706 1" />
       </material>
     </visual>
-    <collision>
+    <!-- <collision>
       <origin
         xyz="0 0 0"
         rpy="0 0 0" />
@@ -516,7 +531,7 @@
         <mesh
           filename="../meshes/BR_Hip.STL" />
       </geometry>
-    </collision>
+    </collision> -->
   </link>
   <joint
     name="BR_J1"
@@ -578,7 +593,7 @@
   </link>
   <joint
     name="BR_J2"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="-0.0700000000000003 0 -0.045979703345944"
       rpy="0 0 0" />
@@ -588,6 +603,10 @@
       link="BR_Thigh" />
     <axis
       xyz="1 0 0" />
+    <limit
+      lower="-2.5"
+      upper="2.5"/>
+
   </joint>
   <link
     name="BR_Shin">
@@ -631,7 +650,7 @@
   </link>
   <joint
     name="BR_J3"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0 0 -0.318"
       rpy="0 0 0" />
@@ -641,6 +660,10 @@
       link="BR_Shin" />
     <axis
       xyz="-1 0 0" />
+    <limit
+      lower="-3"
+      upper="3"/>
+
   </joint>
   <link
     name="BR_Foot">
@@ -725,7 +748,7 @@
           rgba="0.00784313725490196 0.23921568627451 0.823529411764706 1" />
       </material>
     </visual>
-    <collision>
+    <!-- <collision>
       <origin
         xyz="0 0 0"
         rpy="0 0 0" />
@@ -733,7 +756,7 @@
         <mesh
           filename="../meshes/BL_Hip.STL" />
       </geometry>
-    </collision>
+    </collision> -->
   </link>
   <joint
     name="BL_J1"
@@ -795,7 +818,7 @@
   </link>
   <joint
     name="BL_J2"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0.0700000000000002 0 -0.045979703345944"
       rpy="0 0 0" />
@@ -805,6 +828,10 @@
       link="BL_Thigh" />
     <axis
       xyz="-1 0 0" />
+    <limit
+      lower="-2.5"
+      upper="2.5"/>
+
   </joint>
   <link
     name="BL_Shin">
@@ -848,7 +875,7 @@
   </link>
   <joint
     name="BL_J3"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0 0 -0.318"
       rpy="0 0 0" />
@@ -858,6 +885,10 @@
       link="BL_Shin" />
     <axis
       xyz="1 0 0" />
+    <limit
+      lower="-3"
+      upper="3"/>
+
   </joint>
   <link
     name="BL_Foot">

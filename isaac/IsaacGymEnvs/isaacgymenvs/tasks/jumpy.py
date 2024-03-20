@@ -206,6 +206,7 @@ class Jumpy(VecTask):
         return self.obs_buf
 
     def reset_idx(self, env_ids):
+        print('reset_idx')
         # Randomization can happen only at reset time, since it can reset actor positions on GPU
         if self.randomize:
             self.apply_randomizations(self.randomization_params)
