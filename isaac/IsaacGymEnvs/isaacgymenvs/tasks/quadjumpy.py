@@ -34,6 +34,8 @@ from isaacgym import gymutil, gymtorch, gymapi
 from .base.vec_task import VecTask
 from .keyboard import Keyboard
 
+from isaacgymenvs.utils.torch_jit_utils import to_torch, get_axis_params, torch_rand_float, quat_rotate, quat_rotate_inverse
+
 class QuadJumpy(VecTask):
 
     def __init__(self, cfg, rl_device, sim_device, graphics_device_id, headless, virtual_screen_capture, force_render):
@@ -44,7 +46,7 @@ class QuadJumpy(VecTask):
         self.max_push_effort = self.cfg["env"]["maxEffort"]
         self.max_episode_length = self.cfg["env"]["maxEpisodeLen"]
 
-        self.cfg["env"]["numObservations"] = 49
+        self.cfg["env"]["numObservations"] = 58
         self.cfg["env"]["numActions"] = 12
 
         # randomization
@@ -73,6 +75,9 @@ class QuadJumpy(VecTask):
         self.initial_root_states = self.root_states.clone()
         self.contact_forces = gymtorch.wrap_tensor(net_contact_forces).view(self.num_envs, -1, 3)  # shape: num_envs, num_bodies, xyz axis
         self.torques = gymtorch.wrap_tensor(torques).view(self.num_envs, self.num_dof)
+
+        self.up_axis_idx = 1 # index of up axis: Y=1, Z=2
+        self.gravity_vec = to_torch(get_axis_params(-1., self.up_axis_idx), device=self.device).repeat((self.num_envs, 1))
 
 
         self.keys = Keyboard(3)
@@ -202,7 +207,8 @@ class QuadJumpy(VecTask):
 
     def compute_reward(self):
         # retrieve environment observations from buffer
-        height = self.obs_buf[:, 4*self.num_dof]        
+        height = self.obs_buf[:, 4*self.num_dof]  
+        # print(height)     
         self.max_height_reached = torch.max(self.max_height_reached, height)
         self.max_height_reached = torch.where((torch.any(torch.norm(self.contact_forces[:, self.foot_indices, :], dim=1) > 0.1, dim=1)), torch.zeros_like(self.max_height_reached), self.max_height_reached)
 
@@ -267,10 +273,25 @@ class QuadJumpy(VecTask):
         self.obs_buf[env_ids, 3*self.num_dof:4*self.num_dof] = self.actions_tensor[env_ids, :]          # Actions
         self.obs_buf[env_ids, 4*self.num_dof] = self.root_states[env_ids, 2]                                # Height
 
+        lin_vel_scale = 0.01
+        ang_vel_scale = 0.01
+        base_quat = self.root_states[:, 3:7]
+        base_lin_vel = quat_rotate_inverse(base_quat, self.root_states[:, 7:10]) * lin_vel_scale
+        base_ang_vel = quat_rotate_inverse(base_quat, self.root_states[:, 10:13]) * ang_vel_scale
+        projected_gravity = quat_rotate(base_quat, self.gravity_vec)
+
+        self.obs_buf[env_ids, 4*self.num_dof+1:4*self.num_dof+4] = base_lin_vel
+        self.obs_buf[env_ids, 4*self.num_dof+4:4*self.num_dof+7] = base_ang_vel
+        self.obs_buf[env_ids, 4*self.num_dof+7:4*self.num_dof+10] = projected_gravity
+        
         # print('!!!')
         # print(self.obs_buf[0,...])
         # print(self.obs_buf[0, 2*self.num_dof:3*self.num_dof])
         # print(self.obs_buf[0, 3*self.num_dof:4*self.num_dof])
+        # print(self.obs_buf[0, 4*self.num_dof:4*self.num_dof+3])
+        # print(self.obs_buf[0, 4*self.num_dof+3:4*self.num_dof+6])
+        # print(self.obs_buf[0, 4*self.num_dof+6:4*self.num_dof+9])
+        # print(base_quat[0,...])
         return self.obs_buf
 
     def reset_idx(self, env_ids):
@@ -339,9 +360,8 @@ class QuadJumpy(VecTask):
 def compute_torquepole_reward(height, max_height_reached, air_time, contact_forces, hip_idx, thigh_idx, shin_idx, reset_dist, reset_buf, progress_buf, max_episode_length):
     # type: (Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, float, Tensor, Tensor, float) -> Tuple[Tensor, Tensor]
 
-    # reward = height**3
+    reward = height/10.0
     # reward = max_height_reached**2
-    reward = height*0.1 + max_height_reached*0.05
     reward += air_time/100.0
     # reward = torch.where((torch.norm(contact_forces[:, 3, :], dim=1) > 0.1), torch.zeros_like(reward), reward)
 
