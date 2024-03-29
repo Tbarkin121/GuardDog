@@ -13,7 +13,8 @@ import platform
 
 class MCU_Comms():
     def __init__(self, enabled=1):
-        if(enabled):
+        self.enabled = enabled
+        if(self.enabled):
             self.act_data = np.zeros(12)
             self.obs_data = np.zeros(48)
 
@@ -29,51 +30,60 @@ class MCU_Comms():
     
     def open_port(self):
         # Configure the serial connection
-        self.ser = serial.Serial(
-                        port=self.port,                      # Serial port
-                        baudrate=460800,                     # Baud rate, should match STM32 setting
-                        parity=serial.PARITY_NONE,
-                        stopbits=serial.STOPBITS_ONE,
-                        bytesize=serial.EIGHTBITS,
-                        timeout=1                            # Read timeout in seconds
-                    )
-    
+        if(self.enabled):
+            try:
+                self.ser = serial.Serial(
+                                port=self.port,                      # Serial port
+                                baudrate=460800,                     # Baud rate, should match STM32 setting
+                                parity=serial.PARITY_NONE,
+                                stopbits=serial.STOPBITS_ONE,
+                                bytesize=serial.EIGHTBITS,
+                                timeout=1                            # Read timeout in seconds
+                            )
+            except:
+                print("No Comms Object Found")
+
     def close_port(self):
-        if self.ser.is_open:
-            self.ser.close()
-            print("Serial port closed")
+        if(self.enabled):
+            if self.ser.is_open:
+                self.ser.close()
+                print("Serial port closed")
     
         
     def read_data(self):
-        try:
-            # Read 16 bytes from the serial port (size of 4 floats)
-            data = self.ser.read(12 * 4)
-            
-            # Check if we received 48 bytes
-            if len(data) == 48:
-                # Unpack the bytes to four floats
-                float_values = struct.unpack('12f', data)
-                self.act_data = np.array(float_values)
-                # print(f"Received floats: {float_values}")
-            else:
-                print("Incomplete data received")
+        if(self.enabled):
+            try:
+                # Read 16 bytes from the serial port (size of 4 floats)
+                data = self.ser.read(12 * 4)
+                
+                # Check if we received 48 bytes
+                if len(data) == 48:
+                    # Unpack the bytes to four floats
+                    float_values = struct.unpack('12f', data)
+                    self.act_data = np.array(float_values)
+                    # print(f"Received floats: {float_values}")
+                else:
+                    print("Incomplete data received")
         
-        except KeyboardInterrupt:
-            print("Exiting...")
+            except KeyboardInterrupt:
+                print("Exiting...")
+        else:
+            self.act_data = np.zeros(12)
     
 
             
     def write_data(self):
-        # Pack the floats into bytes
-        data_to_send = struct.pack('48f', *self.obs_data)
-        
-        try:
-            # Send the packed bytes over the serial connection
-            self.ser.write(data_to_send)
-            # print("Data sent")
-        
-        except Exception as e:
-            print(f"Error: {e}")
+        if(self.enabled):
+            # Pack the floats into bytes
+            data_to_send = struct.pack('48f', *self.obs_data)
+            
+            try:
+                # Send the packed bytes over the serial connection
+                self.ser.write(data_to_send)
+                # print("Data sent")
+            
+            except Exception as e:
+                print(f"Error: {e}")
         
     def __del__(self):
         # Destructor: close the serial port
