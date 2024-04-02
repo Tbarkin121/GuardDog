@@ -134,8 +134,8 @@ class QuadWalker(VecTask):
         self.gravity_vec = to_torch(get_axis_params(-1., self.up_axis_idx), device=self.device).repeat((self.num_envs, 1))
 
         self.commands = torch.zeros(self.num_envs, 3, dtype=torch.float, device=self.device, requires_grad=False)
-        self.commands_y = self.commands.view(self.num_envs, 3)[..., 1]
         self.commands_x = self.commands.view(self.num_envs, 3)[..., 0]
+        self.commands_y = self.commands.view(self.num_envs, 3)[..., 1]
         self.commands_yaw = self.commands.view(self.num_envs, 3)[..., 2]
         self.default_dof_pos = torch.zeros_like(self.dof_pos, dtype=torch.float, device=self.device, requires_grad=False)
 
@@ -183,7 +183,7 @@ class QuadWalker(VecTask):
         upper = gymapi.Vec3(spacing, spacing, spacing)
 
         asset_root = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../../assets")
-        asset_file = "urdf/Quad_Foot/urdf/Quad_Foot.urdf"
+        asset_file = "urdf/QuadCoordFix/urdf/QuadCoordFix.urdf"
 
         if "asset" in self.cfg["env"]:
             asset_root = os.path.join(os.path.dirname(os.path.abspath(__file__)), self.cfg["env"]["asset"].get("assetRoot", asset_root))
@@ -281,8 +281,9 @@ class QuadWalker(VecTask):
         base_ang_vel = quat_rotate_inverse(base_quat, self.root_states[:, 10:13])
 
         # velocity tracking reward
-        lin_vel_error = torch.sum(torch.square(self.commands[:, :2] - base_lin_vel[:, [0,2]]), dim=1)
-        ang_vel_error = torch.square(self.commands[:, 2] - base_ang_vel[:, 1])
+        # lin_vel_error = torch.sum(torch.square(self.commands[:, :2] - base_lin_vel[:, :2]), dim=1)
+        # ang_vel_error = torch.square(self.commands[:, 2] - base_ang_vel[:, 2])
+        # print(base_lin_vel[0, :2])
         # print('!!!')
         # print(self.commands[0, :2])
         # print(base_lin_vel[0, [0,2]])
@@ -291,6 +292,7 @@ class QuadWalker(VecTask):
         self.rew_buf[:], self.reset_buf[:] = compute_quadwalker_reward(self.root_states,
                                                                         self.commands,
                                                                         self.torques,
+                                                                        self.dof_vel,
                                                                         self.contact_forces,
                                                                         self.reset_buf, 
                                                                         self.progress_buf, 
@@ -313,7 +315,7 @@ class QuadWalker(VecTask):
         self.gym.refresh_actor_root_state_tensor(self.sim)
         self.gym.refresh_net_contact_force_tensor(self.sim)
         self.gym.refresh_dof_force_tensor(self.sim)
-        
+
         self.obs_buf[:] = compute_quadwalker_observations(  # tensors
                                                         self.root_states,
                                                         self.commands,
@@ -341,6 +343,7 @@ class QuadWalker(VecTask):
 
 
         return self.obs_buf
+    
 
     def reset_idx(self, env_ids):
         # Randomization can happen only at reset time, since it can reset actor positions on GPU
@@ -364,12 +367,15 @@ class QuadWalker(VecTask):
                                             gymtorch.unwrap_tensor(self.dof_state),
                                             gymtorch.unwrap_tensor(env_ids_int32), len(env_ids_int32))
         
-        self.commands_x[env_ids] = torch_rand_float(self.command_x_range[0], self.command_x_range[1], (len(env_ids), 1), device=self.device).squeeze()
-        self.commands_y[env_ids] = torch_rand_float(self.command_y_range[0], self.command_y_range[1], (len(env_ids), 1), device=self.device).squeeze()
-        self.commands_yaw[env_ids] = torch_rand_float(self.command_yaw_range[0], self.command_yaw_range[1], (len(env_ids), 1), device=self.device).squeeze()
+        self.reset_commands(env_ids)
 
         self.progress_buf[env_ids] = 0
         self.reset_buf[env_ids] = 0
+
+    def reset_commands(self, env_ids):
+        self.commands_x[env_ids] = torch_rand_float(self.command_x_range[0], self.command_x_range[1], (len(env_ids), 1), device=self.device).squeeze()
+        self.commands_y[env_ids] = torch_rand_float(self.command_y_range[0], self.command_y_range[1], (len(env_ids), 1), device=self.device).squeeze()
+        self.commands_yaw[env_ids] = torch_rand_float(self.command_yaw_range[0], self.command_yaw_range[1], (len(env_ids), 1), device=self.device).squeeze()
         
 
 
@@ -395,9 +401,14 @@ class QuadWalker(VecTask):
         if len(env_ids) > 0:
             self.reset_idx(env_ids)
 
+        env_ids = torch.where(self.progress_buf % 100 == 0)
+
+        if len(env_ids) > 0:
+            self.reset_commands(env_ids)
+
         self.compute_observations()
         a = self.keys.get_keys()
-        scale = torch.tensor([1, 4, 0.25])
+        scale = torch.tensor([3., 2., 1.])
         self.obs_buf[0, 45:48] = a*scale
         # print(self.obs_buf[0,43:60])
         self.compute_reward()
@@ -431,6 +442,7 @@ def compute_quadwalker_reward(
                             root_states, 
                             commands,
                             torques,  
+                            dof_vel,
                             contact_forces, 
                             reset_buf, 
                             progress_buf, 
@@ -442,7 +454,7 @@ def compute_quadwalker_reward(
                             # other
                             reset_dist,
                             max_episode_length):
-    # type: (Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, Dict[str, float], float, float) -> Tuple[Tensor, Tensor]
+    # type: (Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, Dict[str, float], float, float) -> Tuple[Tensor, Tensor]
 
     # prepare quantities (TODO: return from obs ?)
     base_quat = root_states[:, 3:7]
@@ -450,14 +462,16 @@ def compute_quadwalker_reward(
     base_ang_vel = quat_rotate_inverse(base_quat, root_states[:, 10:13])
 
     # velocity tracking reward
-    lin_vel_error = torch.sum(torch.square(commands[:, :2] - base_lin_vel[:, [0,2]]), dim=1)
-    ang_vel_error = torch.square(commands[:, 2] - base_ang_vel[:, 1])
+    lin_vel_error = torch.sum(torch.square(commands[:, :2] - base_lin_vel[:, :2]), dim=1)
+    ang_vel_error = torch.square(commands[:, 2] - base_ang_vel[:, 2])
     rew_lin_vel_xy = torch.exp(-lin_vel_error/0.25) * rew_scales["lin_vel_xy"]
     rew_ang_vel_z = torch.exp(-ang_vel_error/0.25) * rew_scales["ang_vel_z"]
 
 
     # torque penalty
     rew_torque = torch.sum(torch.square(torques), dim=1)  * rew_scales["torque"]
+    # joint speed penalty
+    # rew_joint_speed = torch.sum(torch.square(dof_vel), dim=1)  * rew_scales["torque"]/12
 
     total_reward = rew_lin_vel_xy + rew_ang_vel_z + rew_torque
     total_reward = torch.clip(total_reward, 0., None)

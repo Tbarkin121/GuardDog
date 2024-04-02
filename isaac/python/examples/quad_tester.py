@@ -96,7 +96,7 @@ env_upper = gymapi.Vec3(spacing, 0.0, spacing)
 
 # add cartpole urdf asset
 asset_root = "../../IsaacGymEnvs/assets"
-asset_file = "urdf/Quad_Foot/urdf/Quad_Foot.urdf"
+asset_file = "urdf/QuadCoordFix/urdf/QuadCoordFix.urdf"
 # asset_file = "urdf/WalkBot_3DOF_330/urdf/WalkBot_3DOF.urdf"
 
 # Load asset with default control type of position for all joints
@@ -112,7 +112,7 @@ num_dof = gym.get_asset_dof_count(cubebot_asset)
 # initial root pose for cartpole actors
 initial_pose = gymapi.Transform()
 initial_pose.p = gymapi.Vec3(0.0, 0.0, 2.0)
-initial_pose.r = gymapi.Quat.from_euler_zyx(1.5708, 0.0, 0.0)
+initial_pose.r = gymapi.Quat.from_euler_zyx(0.0, 0.0, 0.0)
 
 # Create environment 0
 # Cart held steady using position target mode.

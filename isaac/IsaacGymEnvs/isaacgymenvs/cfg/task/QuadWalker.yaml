@@ -20,27 +20,27 @@ env:
 
   baseInitState:
     pos: [0.0, 0.0, 0.5] # x,y,z [m]
-    rot: [0.7071081, 0.0, 0.0, 0.7071055] # x,y,z,w [quat]
+    rot: [0.0, 0.0, 0.0, 1.0] # x,y,z,w [quat]
     vLinear: [0.0, 0.0, 0.0]  # x,y,z [m/s]
     vAngular: [0.0, 0.0, 0.0]  # x,y,z [rad/s]
 
   asset:
     assetRoot: "../../assets"
-    assetFileName: "urdf/Quad_Foot/urdf/Quad_Foot.urdf"
+    assetFileName: "urdf/QuadCoordFix/urdf/QuadCoordFix.urdf"
 
   # set to True if you use camera sensors in the environment
   enableCameraSensors: False
 
   randomCommandVelocityRanges:
-    linear_x: [-1., 1.] # min max [m/s]
-    linear_y: [-4., 4.]   # min max [m/s]
-    yaw: [-1., 1.]          # min max [rad/s]
+    linear_x: [-3., 3.]   # min max [m/s]
+    linear_y: [-1., 1.] # min max [m/s]
+    yaw: [-0.5, 0.5]          # min max [rad/s]
 
   control:
     # PD Drive parameters:
     stiffness: 0.0  # [N*m/rad]
     damping: 0.0     # [N*m*s/rad]
-    maxEffort: 2.0 # [N*m]
+    maxEffort: 3.0 # [N*m]
     maxVelocity: 25.0 #[rad/s]
     friction: 0.01
     controlFrequencyInv: 1 # 60 Hz
