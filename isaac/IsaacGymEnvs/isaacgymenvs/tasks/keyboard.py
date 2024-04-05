@@ -24,9 +24,9 @@ class Keyboard():
             a[0] = 1.0
         if keys[pygame.K_DOWN]:
             a[0] = -1.0
-        if keys[pygame.K_w]:
+        if keys[pygame.K_LEFT]:
             a[1] = 1.0
-        if keys[pygame.K_s]:
+        if keys[pygame.K_RIGHT]:
             a[1] = -1.0
         if keys[pygame.K_a]:
             a[2] = 1.0

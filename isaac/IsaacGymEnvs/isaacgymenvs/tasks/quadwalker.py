@@ -401,16 +401,16 @@ class QuadWalker(VecTask):
         if len(env_ids) > 0:
             self.reset_idx(env_ids)
 
-        env_ids = torch.where(self.progress_buf % 100 == 0)
-
+        env_ids = torch.where(self.progress_buf % 100 == 0,  torch.ones_like(self.progress_buf),  torch.zeros_like(self.progress_buf)).nonzero(as_tuple=False).squeeze(-1)
+       
         if len(env_ids) > 0:
             self.reset_commands(env_ids)
 
         self.compute_observations()
         a = self.keys.get_keys()
-        scale = torch.tensor([3., 2., 1.])
+        scale = torch.tensor([5., 1., 0.5])
         self.obs_buf[0, 45:48] = a*scale
-        # print(self.obs_buf[0,43:60])
+        # print(self.obs_buf[0,45:48])
         self.compute_reward()
 
 #####################################################################
