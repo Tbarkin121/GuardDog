@@ -30,8 +30,46 @@ import torch
 import onnx
 import onnxruntime as ort
 
-comm_obj = stm32_comms.MCU_Comms(0)
+from torch_jit_utils import to_torch, get_axis_params, torch_rand_float, quat_rotate, quat_rotate_inverse
+
+# comm_obj = stm32_comms.MCU_Comms(0)
 max_push_effort = 2.0
+
+
+def compute_quadwalker_observations(root_states,
+                                commands,
+                                dof_pos,
+                                dof_vel,
+                                gravity_vec,
+                                actions,
+                                lin_vel_scale,
+                                ang_vel_scale,
+                                dof_vel_scale
+                                ):
+
+    # type: (Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, float, float, float) -> Tensor
+    base_quat = root_states[:, 3:7]
+    base_lin_vel = quat_rotate_inverse(base_quat, root_states[:, 7:10]) 
+    base_ang_vel = quat_rotate_inverse(base_quat, root_states[:, 10:13])
+    projected_gravity = quat_rotate(base_quat, gravity_vec)
+    
+
+    commands_scaled = commands*torch.tensor([lin_vel_scale, lin_vel_scale, ang_vel_scale], requires_grad=False)
+
+
+    sin_encode, cos_encode, motor_angle = convert_angle(dof_pos.squeeze())
+    obs = torch.cat((sin_encode.reshape([1,-1]), #12 (0:12)
+                     cos_encode.reshape([1,-1]), #12 (12:24)
+                     dof_vel * dof_vel_scale, #12 (24:36)
+                     base_lin_vel * lin_vel_scale, #3 (36:39)
+                     base_ang_vel * ang_vel_scale, #3 (39:42)
+                     projected_gravity, #3 (42:45)
+                     commands_scaled.reshape([1,-1]), #3 (45:48)
+                     actions.reshape([1,-1]) #12 (48:60)
+                     ), dim=-1)
+
+    return obs
+
 
 def convert_angle(angle):
     # Apply sine and cosine functions
@@ -58,7 +96,7 @@ args = gymutil.parse_arguments(description="Joint control Methods Example")
 # create a simulator
 sim_params = gymapi.SimParams()
 sim_params.substeps = 2
-sim_params.dt = 1.0 / 100.0
+sim_params.dt = 1.0 / 1000.0
 
 
 sim_params.physx.solver_type = 1
@@ -101,7 +139,7 @@ asset_file = "urdf/QuadCoordFix/urdf/QuadCoordFix.urdf"
 
 # Load asset with default control type of position for all joints
 asset_options = gymapi.AssetOptions()
-asset_options.fix_base_link = True
+asset_options.fix_base_link = False
 asset_options.angular_damping = 0.0
 asset_options.max_angular_velocity = 10000
 asset_options.default_dof_drive_mode = gymapi.DOF_MODE_EFFORT
@@ -109,7 +147,7 @@ print("Loading asset '%s' from '%s'" % (asset_file, asset_root))
 cubebot_asset = gym.load_asset(sim, asset_root, asset_file, asset_options)
 num_dof = gym.get_asset_dof_count(cubebot_asset)
 
-# initial root pose for cartpole actors
+# initial root pose for cartpole actorsto_torch
 initial_pose = gymapi.Transform()
 initial_pose.p = gymapi.Vec3(0.0, 0.0, 2.0)
 initial_pose.r = gymapi.Quat.from_euler_zyx(0.0, 0.0, 0.0)
@@ -172,10 +210,6 @@ positions =  torch.zeros((1,num_dof))
 
 # velocities = 2.0 * (torch.rand((1)) - 0.5)
 dof_pos[0, :] = positions[:]
-print(positions)
-print(positions.shape)
-print(dof_pos)
-print(dof_pos.shape)
 # dof_vel[0, :] = velocities[:]
 
 env_ids = torch.tensor([0])
@@ -184,8 +218,18 @@ gym.set_dof_state_tensor_indexed(sim,
                                 gymtorch.unwrap_tensor(dof_state),
                                 gymtorch.unwrap_tensor(env_ids_int32), len(env_ids_int32))
 
+onnx_model = onnx.load("QuadWalker.onnx")
+ort_model = ort.InferenceSession("QuadWalker.onnx")
+actions = torch.zeros([12], dtype=torch.float32)
+gravity_vec = to_torch(get_axis_params(-1., 1), device='cpu').reshape(1,-1)
+lin_vel_scale = 2.0
+ang_vel_scale = 0.25
+dof_vel_scale = 0.05
 while not gym.query_viewer_has_closed(viewer):
     gym.refresh_actor_root_state_tensor(sim)
+    gym.refresh_dof_state_tensor(sim)
+    gym.refresh_dof_force_tensor(sim)
+
     # print(root_states)
 
     # step the physics
@@ -198,30 +242,40 @@ while not gym.query_viewer_has_closed(viewer):
 
     # a = joy.get_axis()
     a = key.get_keys()
-    enc_sin, enc_cos, pole_pos = convert_angle(dof_pos)
-    pole_vel = dof_vel/20.0
-    # print('~~~~~~~~~~~~~~~~~~~')
-    # print(pole_pos)
-    # print(pole_vel)
-    # comm_obj.out_data = np.array([enc_sin, enc_cos, pole_vel, 0.0])
+    scale = torch.tensor([3., 2., 1.])
+    commands = a*scale
+    
+    obs = compute_quadwalker_observations(root_states,
+                                commands,
+                                dof_pos,
+                                dof_vel,
+                                gravity_vec,
+                                actions,
+                                lin_vel_scale,
+                                ang_vel_scale,
+                                dof_vel_scale
+                                )
 
-    # print(action)
-    # gym.apply_dof_effort(env0, joint_idx, a[0]/20.0)
+    output = ort_model.run(
+        None,
+        {"obs": obs.reshape([1,-1]).numpy().astype(np.float32)},
+        )
+        # print(outputs[0])
+    actions[:] = torch.tensor(output[0])*max_push_effort
 
-    scale = torch.tensor([10, max_push_effort, max_push_effort])
-    action = a * scale
-    gym.apply_dof_effort(env0, 0, action[0])
-    gym.apply_dof_effort(env0, 1, action[1])
-    gym.apply_dof_effort(env0, 2, action[2])
-    gym.apply_dof_effort(env0, 3, action[0])
-    gym.apply_dof_effort(env0, 4, action[1])
-    gym.apply_dof_effort(env0, 5, action[2])
-    gym.apply_dof_effort(env0, 6, action[0])
-    gym.apply_dof_effort(env0, 7, action[1])
-    gym.apply_dof_effort(env0, 8, action[2])
-    gym.apply_dof_effort(env0, 9, action[0])
-    gym.apply_dof_effort(env0, 10, action[1])
-    gym.apply_dof_effort(env0, 11, action[2])
+
+    gym.apply_dof_effort(env0, 0, actions[0])
+    gym.apply_dof_effort(env0, 1, actions[1])
+    gym.apply_dof_effort(env0, 2, actions[2])
+    gym.apply_dof_effort(env0, 3, actions[3])
+    gym.apply_dof_effort(env0, 4, actions[4])
+    gym.apply_dof_effort(env0, 5, actions[5])
+    gym.apply_dof_effort(env0, 6, actions[6])
+    gym.apply_dof_effort(env0, 7, actions[7])
+    gym.apply_dof_effort(env0, 8, actions[8])
+    gym.apply_dof_effort(env0, 9, actions[9])
+    gym.apply_dof_effort(env0, 10, actions[10])
+    gym.apply_dof_effort(env0, 11, actions[11])
     
 
  
@@ -233,5 +287,4 @@ print('Done')
 
 gym.destroy_viewer(viewer)
 gym.destroy_sim(sim)
-
 

@@ -39,6 +39,7 @@ from typing import Tuple, Dict
 from isaacgymenvs.utils.torch_jit_utils import to_torch, get_axis_params, torch_rand_float, normalize, quat_apply, quat_rotate_inverse
 from isaacgymenvs.tasks.base.vec_task import VecTask
 
+import onnxruntime as ort
 
 class AnymalTerrain(VecTask):
 
@@ -49,6 +50,8 @@ class AnymalTerrain(VecTask):
         self.custom_origins = False
         self.debug_viz = self.cfg["env"]["enableDebugVis"]
         self.init_done = False
+
+        self.ort_model = ort.InferenceSession("AnymalTerrain2.onnx")
 
         # normalization
         self.lin_vel_scale = self.cfg["env"]["learn"]["linearVelocityScale"]
@@ -440,6 +443,15 @@ class AnymalTerrain(VecTask):
 
     def pre_physics_step(self, actions):
         self.actions = actions.clone().to(self.device)
+
+        # Replace Env0 Actions with the ort model actions
+        output = self.ort_model.run(
+        None,
+        {"obs": self.obs_buf[0, ...].reshape([1,-1]).detach().cpu().numpy().astype(np.float32)},
+        )
+        # print(outputs[0])
+        self.actions[0, :] = torch.tensor(output[0], device=self.device)
+
         for i in range(self.decimation):
             torques = torch.clip(self.Kp*(self.action_scale*self.actions + self.default_dof_pos - self.dof_pos) - self.Kd*self.dof_vel,
                                  -80., 80.)
@@ -449,6 +461,8 @@ class AnymalTerrain(VecTask):
             if self.device == 'cpu':
                 self.gym.fetch_results(self.sim, True)
             self.gym.refresh_dof_state_tensor(self.sim)
+
+
 
     def post_physics_step(self):
         # self.gym.refresh_dof_state_tensor(self.sim) # done in step
