@@ -32,6 +32,7 @@ import math
 import numpy as np
 import torch
 from omni.isaac.core.utils.prims import get_prim_at_path
+from omni.isaac.core.utils.stage import get_current_stage
 from omni.isaac.core.utils.torch.rotations import *
 from omniisaacgymenvs.tasks.base.rl_task import RLTask
 from omniisaacgymenvs.robots.articulations.guarddog import Guarddog
@@ -104,10 +105,13 @@ class GuarddogTask(RLTask):
         self._env_spacing = self._task_cfg["env"]["envSpacing"]
 
     def set_up_scene(self, scene) -> None: 
+        self._stage = get_current_stage()
         self.get_guarddog()
         super().set_up_scene(scene)
         self._guarddogs = GuarddogView(
-            prim_paths_expr="/World/envs/.*/Guarddog/Body", name="guarddog_view"
+                prim_paths_expr="/World/envs/.*/Guarddog/Body", 
+                name="guarddog_view",
+                track_contact_forces=True
         )
         scene.add(self._guarddogs)
         return
@@ -117,7 +121,9 @@ class GuarddogTask(RLTask):
         if scene.object_exists("guarddog_view"):
             scene.remove_object("guarddog_view", registry_only=True)
         self._guarddogs = GuarddogView(
-            prim_paths_expr="/World/envs/.*/Guarddog/Body", name="guarddog_view"
+            prim_paths_expr="/World/envs/.*/Guarddog/Body", 
+            name="guarddog_view",
+            track_contact_forces=True
         )
         scene.add(self._guarddogs)
 
@@ -128,7 +134,8 @@ class GuarddogTask(RLTask):
         self._sim_config.apply_articulation_settings(
             "Guarddog", get_prim_at_path(guarddog.prim_path), self._sim_config.parse_actor_config("Guarddog")
         )
-        print(guarddog.prim_path)
+        # guarddog.set_guarddog_properties(self._stage, guarddog.prim)
+        # guarddog.prepare_contacts(self._stage, guarddog.prim)
         # Configure joint properties
         joint_paths = []
         for quadrant in ["FL", "BL", "FR", "BL"]:
@@ -172,6 +179,8 @@ class GuarddogTask(RLTask):
             dim=-1,
         )
         self.obs_buf[:] = obs
+        # print(self.obs_buf)
+        # print(commands_scaled[0,...])
 
         observations = {self._guarddogs.name: {"obs_buf": self.obs_buf}}
         return observations
@@ -236,9 +245,6 @@ class GuarddogTask(RLTask):
         dof_names = self._guarddogs.dof_names
         for i in range(self.num_actions):
             name = dof_names[i]
-            print('!!!')
-            print(self.named_default_joint_angles)
-            print(name)
             angle = self.named_default_joint_angles[name]
             self.default_dof_pos[:, i] = angle
 
@@ -274,7 +280,6 @@ class GuarddogTask(RLTask):
         self.reset_idx(indices)
 
     def calculate_metrics(self) -> None:
-        pass
         torso_position, torso_rotation = self._guarddogs.get_world_poses(clone=False)
         root_velocities = self._guarddogs.get_velocities(clone=False)
         dof_pos = self._guarddogs.get_joint_positions(clone=False)
@@ -301,7 +306,8 @@ class GuarddogTask(RLTask):
             torch.sum(torch.abs(dof_pos[:, 0:4] - self.default_dof_pos[:, 0:4]), dim=1) * self.rew_scales["cosmetic"]
         )
 
-        total_reward = rew_lin_vel_xy + rew_ang_vel_z + rew_joint_acc + rew_action_rate + rew_cosmetic + rew_lin_vel_z
+        # total_reward = rew_lin_vel_xy + rew_ang_vel_z + rew_joint_acc + rew_action_rate + rew_cosmetic + rew_lin_vel_z
+        total_reward = rew_lin_vel_xy + rew_ang_vel_z
         total_reward = torch.clip(total_reward, 0.0, None)
 
         self.last_actions[:] = self.actions[:]
@@ -315,3 +321,16 @@ class GuarddogTask(RLTask):
         # reset agents
         time_out = self.progress_buf >= self.max_episode_length - 1
         self.reset_buf[:] = time_out | self.fallen_over
+
+        # print(self._guarddogs._base.get_net_contact_forces(clone=False))
+        # print(self._guarddogs._knees.get_net_contact_forces(clone=False))
+        # knee_contact = (
+        #     torch.norm(self._guarddogs._knees.get_net_contact_forces(clone=False).view(self._num_envs, 4, 3), dim=-1)
+        #     > 1.0
+        # )
+        # self.has_fallen = (torch.norm(self._guarddogs._base.get_net_contact_forces(clone=False), dim=1) > 1.0) | (
+        #     torch.sum(knee_contact, dim=-1) > 1.0
+        # )
+
+        # self.reset_buf[:] = time_out | self.fallen_over | knee_contact
+        

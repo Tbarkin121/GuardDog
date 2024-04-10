@@ -20,8 +20,8 @@ env:
 
   randomCommandVelocityRanges:
     linear_x: [-2., 2.] # min max [m/s]
-    linear_y: [-1., 1.]   # min max [m/s]
-    yaw: [-1., 1.]          # min max [rad/s]
+    linear_y: [-1.0, 1.0]   # min max [m/s]
+    yaw: [-0.5, 0.5]          # min max [rad/s]
 
   control:
     # PD Drive parameters:
@@ -35,15 +35,15 @@ env:
     BR_J1: 0.0   # [rad]
     BL_J1: 0.0   # [rad]
 
-    FR_J2: 0.5     # [rad]
-    FL_J2: -0.5    # [rad]
-    BR_J2: -0.5     # [rad]
-    BL_J2: 0.5    # [rad]
+    FR_J2: 1.5     # [rad]
+    FL_J2: -1.5    # [rad]
+    BR_J2: -1.5     # [rad]
+    BL_J2: 1.5    # [rad]
 
-    FR_J3: -2.0    # [rad]
-    FL_J3: 2.0     # [rad]
-    BR_J3: 2.0    # [rad]
-    BL_J3: -2.0     # [rad]
+    FR_J3: -0.0    # [rad]
+    FL_J3: 0.0     # [rad]
+    BR_J3: 0.0    # [rad]
+    BL_J3: -0.0     # [rad]
 
   learn:
     # rewards
