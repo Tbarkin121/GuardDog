@@ -50,6 +50,7 @@ from .torquepole import TorquePole
 from .jumpy import Jumpy
 from .quadjumpy import QuadJumpy
 from .quadwalker import QuadWalker
+from .bipedwalker import BipedWalker
 
 from .allegro_kuka.allegro_kuka_reorientation import AllegroKukaReorientation
 from .allegro_kuka.allegro_kuka_regrasping import AllegroKukaRegrasping
@@ -119,6 +120,7 @@ isaacgym_task_map = {
     "Trifinger": Trifinger,
     "TorquePole": TorquePole,
     "Jumpy": Jumpy,
-    "QuadJumpy":QuadJumpy,
-    "QuadWalker":QuadWalker,
+    "QuadJumpy": QuadJumpy,
+    "QuadWalker": QuadWalker,
+    "BipedWalker": BipedWalker,
 }

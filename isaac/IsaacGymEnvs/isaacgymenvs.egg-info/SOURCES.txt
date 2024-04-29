@@ -51,6 +51,7 @@ isaacgymenvs/tasks/ant.py
 isaacgymenvs/tasks/anymal.py
 isaacgymenvs/tasks/anymal_terrain.py
 isaacgymenvs/tasks/ball_balance.py
+isaacgymenvs/tasks/bipedwalker.py
 isaacgymenvs/tasks/cartpole.py
 isaacgymenvs/tasks/franka_cabinet.py
 isaacgymenvs/tasks/franka_cube_stack.py
@@ -61,6 +62,7 @@ isaacgymenvs/tasks/jumpy.py
 isaacgymenvs/tasks/keyboard.py
 isaacgymenvs/tasks/quadcopter.py
 isaacgymenvs/tasks/quadjumpy.py
+isaacgymenvs/tasks/quadwalker.py
 isaacgymenvs/tasks/shadow_hand.py
 isaacgymenvs/tasks/stm32_comms.py
 isaacgymenvs/tasks/torquepole.py
