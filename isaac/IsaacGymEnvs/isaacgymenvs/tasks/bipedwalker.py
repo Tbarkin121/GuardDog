@@ -52,9 +52,19 @@ class BipedWalker(VecTask):
         self.rew_scales = {}
         self.rew_scales["lin_vel_xy"] = self.cfg["env"]["learn"]["linearVelocityXYRewardScale"]
         self.rew_scales["ang_vel_z"] = self.cfg["env"]["learn"]["angularVelocityZRewardScale"]
+        self.rew_scales["lin_vel_z"] = self.cfg["env"]["learn"]["linearVelocityXYRewardScale"]
+        self.rew_scales["ang_vel_xy"] = self.cfg["env"]["learn"]["angularVelocityZRewardScale"]
+
+
+
         self.rew_scales["torque"] = self.cfg["env"]["learn"]["torqueRewardScale"]
         self.rew_scales["toe_force"] = self.cfg["env"]["learn"]["toeForceRewardScale"]
         self.rew_scales["joints_speed"] = self.cfg["env"]["learn"]["jointSpeedRewardScale"]
+        self.rew_scales["orient"] = self.cfg["env"]["learn"]["orientationRewardScale"]
+        self.rew_scales["joint_acc"] = self.cfg["env"]["learn"]["jointAccRewardScale"]
+        self.rew_scales["action_rate"] = self.cfg["env"]["learn"]["actionRateRewardScale"]
+        self.rew_scales["collision"] = self.cfg["env"]["learn"]["kneeCollisionRewardScale"]
+
         self.reset_dist = self.cfg["env"]["resetDist"]
         
         # randomization
@@ -141,6 +151,9 @@ class BipedWalker(VecTask):
         self.commands_yaw = self.commands.view(self.num_envs, 3)[..., 2]
         self.default_dof_pos = torch.zeros_like(self.dof_pos, dtype=torch.float, device=self.device, requires_grad=False)
 
+        self.last_actions = torch.zeros(self.num_envs, self.num_actions, dtype=torch.float, device=self.device, requires_grad=False)
+        self.last_dof_vel = torch.zeros_like(self.dof_vel)
+
         for i in range(self.cfg["env"]["numActions"]):
             name = self.dof_names[i]
             angle = self.named_default_joint_angles[name]
@@ -185,7 +198,7 @@ class BipedWalker(VecTask):
         upper = gymapi.Vec3(spacing, spacing, spacing)
 
         asset_root = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../../assets")
-        asset_file = "urdf/Biped/urdf/Biped.urdf"
+        asset_file = "urdf/Biped_SphereFoot/urdf/Biped_SphereFoot.urdf"
 
         if "asset" in self.cfg["env"]:
             asset_root = os.path.join(os.path.dirname(os.path.abspath(__file__)), self.cfg["env"]["asset"].get("assetRoot", asset_root))
@@ -298,15 +311,21 @@ class BipedWalker(VecTask):
                                                                         self.commands,
                                                                         self.torques,
                                                                         self.dof_vel,
+                                                                        self.last_dof_vel,
                                                                         self.contact_forces,
                                                                         self.reset_buf, 
                                                                         self.progress_buf, 
                                                                         self.hip_indices,
                                                                         self.thigh_indices,
                                                                         self.shin_indices,
+                                                                        self.obs_buf[:,26:29],
+                                                                        self.actions,
+                                                                        self.last_actions,
                                                                         self.rew_scales,
                                                                         self.reset_dist,
                                                                         self.max_episode_length)
+        self.last_actions[:] = self.actions[:]
+        self.last_dof_vel[:] = self.dof_vel[:]
         # print(self.rew_buf[0])
         # print(self.reset_buf)
         # print(torch.norm(torch.norm(self.contact_forces[:,[3,6]],dim=1),dim=1))
@@ -314,6 +333,15 @@ class BipedWalker(VecTask):
         rew_toe_force = torch.where(toe_force>1.0, toe_force, torch.zeros_like(toe_force))
         # print(toe_force)
         # print(rew_toe_force)
+
+         # joint acc penalty
+        rew_joint_acc = torch.sum(torch.square(self.last_dof_vel - self.dof_vel), dim=1) * self.rew_scales["joint_acc"]
+        
+        # collision penalty
+        knee_contact = torch.norm(self.contact_forces[:, self.thigh_indices, :], dim=2) > 1.
+        rew_collision = torch.sum(knee_contact, dim=1) * self.rew_scales["collision"] # sum vs any ?
+
+        print(rew_collision)
     
         
     def compute_observations(self, env_ids=None):
@@ -355,7 +383,6 @@ class BipedWalker(VecTask):
 
         return self.obs_buf
     
-
     def reset_idx(self, env_ids):
         # Randomization can happen only at reset time, since it can reset actor positions on GPU
         if self.randomize:
@@ -373,15 +400,18 @@ class BipedWalker(VecTask):
         self.gym.set_actor_root_state_tensor_indexed(self.sim,
                                                     gymtorch.unwrap_tensor(self.initial_root_states),
                                                     gymtorch.unwrap_tensor(env_ids_int32), len(env_ids_int32))
-        
         self.gym.set_dof_state_tensor_indexed(self.sim,
                                             gymtorch.unwrap_tensor(self.dof_state),
                                             gymtorch.unwrap_tensor(env_ids_int32), len(env_ids_int32))
+        
+                
         
         self.reset_commands(env_ids)
 
         self.progress_buf[env_ids] = 0
         self.reset_buf[env_ids] = 0
+        self.last_actions[env_ids] = 0.
+        self.last_dof_vel[env_ids] = 0.
 
     def reset_commands(self, env_ids):
         self.commands_x[env_ids] = torch_rand_float(self.command_x_range[0], self.command_x_range[1], (len(env_ids), 1), device=self.device).squeeze()
@@ -419,7 +449,7 @@ class BipedWalker(VecTask):
 
         self.compute_observations()
         a = self.keys.get_keys()
-        scale = torch.tensor([5., 1., 0.5])
+        scale = torch.tensor([1., 0.5, 0.25])
         self.obs_buf[0, 29:32] = a*scale
         # print(self.obs_buf[0,29:32])
         self.compute_reward()
@@ -454,18 +484,22 @@ def compute_bipedwalker_reward(
                             commands,
                             torques,  
                             dof_vel,
+                            last_dof_vel,
                             contact_forces, 
                             reset_buf, 
                             progress_buf, 
                             hip_idx, 
                             thigh_idx, 
                             shin_idx, 
+                            projected_gravity,
+                            actions,
+                            last_actions,
                             # Dict
                             rew_scales,
                             # other
                             reset_dist,
                             max_episode_length):
-    # type: (Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, Dict[str, float], float, float) -> Tuple[Tensor, Tensor]
+    # type: (Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, Dict[str, float], float, float) -> Tuple[Tensor, Tensor]
 
     # prepare quantities (TODO: return from obs ?)
     height = root_states[:,2]
@@ -479,19 +513,45 @@ def compute_bipedwalker_reward(
     rew_lin_vel_xy = torch.exp(-lin_vel_error/0.25) * rew_scales["lin_vel_xy"]
     rew_ang_vel_z = torch.exp(-ang_vel_error/0.25) * rew_scales["ang_vel_z"]
 
+    # other base velocity penalties
+    rew_lin_vel_z = torch.square(base_lin_vel[:, 2]) * rew_scales["lin_vel_z"]
+    rew_ang_vel_xy = torch.sum(torch.square(base_ang_vel[:, :2]), dim=1) * rew_scales["ang_vel_xy"]
+    
+    # orientation penalty
+    rew_orient = torch.sum(torch.square(projected_gravity[:, :2]), dim=1) * rew_scales["orient"]
 
     # torque penalty
     rew_torque = torch.sum(torch.square(torques), dim=1)  * rew_scales["torque"]
     # joint speed penalty
     rew_joint_speed = torch.sum(torch.square(dof_vel[:, 0:6]), dim=1)  * rew_scales["joints_speed"]
+    # joint acc penalty
+    rew_joint_acc = torch.sum(torch.square(last_dof_vel - dof_vel), dim=1) * rew_scales["joint_acc"]
+    
+    # collision penalty
+    knee_contact = torch.norm(contact_forces[:, thigh_idx, :], dim=2) > 1.
+    rew_collision = torch.sum(knee_contact, dim=1) * rew_scales["collision"] # sum vs any ?
+
+    # action rate penalty
+    rew_action_rate = torch.sum(torch.square(last_actions - actions), dim=1) * rew_scales["action_rate"]
+    
+    # air time reward
+    # # contact = torch.norm(contact_forces[:, feet_indices, :], dim=2) > 1.
+    # contact = self.contact_forces[:, self.feet_indices, 2] > 1.
+    # first_contact = (self.feet_air_time > 0.) * contact
+    # self.feet_air_time += self.dt
+    # rew_airTime = torch.sum((self.feet_air_time - 0.5) * first_contact, dim=1) * self.rew_scales["air_time"] # reward only on first contact with the ground
+    # rew_airTime *= torch.norm(self.commands[:, :2], dim=1) > 0.1 #no reward for zero command
+    # self.feet_air_time *= ~contact
+
+    # cosmetic penalty for hip motion
+    # rew_hip = torch.sum(torch.abs(self.dof_pos[:, [0, 3, 6, 9]] - self.default_dof_pos[:, [0, 3, 6, 9]]), dim=1)* self.rew_scales["hip"]
     
     # stubbed toes penalty 
     toe_force = torch.norm(torch.norm(contact_forces[:,[3,6]],dim=1),dim=1)
-    rew_toe_force = torch.where(toe_force>5.0, toe_force * rew_scales["toe_force"], torch.zeros_like(toe_force))
+    rew_toe_force = torch.where(toe_force>10.0, toe_force * rew_scales["toe_force"], torch.zeros_like(toe_force))
                                 
 
-
-    total_reward = rew_lin_vel_xy + rew_ang_vel_z + rew_torque + rew_toe_force + rew_joint_speed
+    total_reward = rew_lin_vel_xy + rew_ang_vel_z + rew_torque + rew_toe_force + rew_joint_speed + rew_joint_acc + rew_collision
     total_reward = torch.clip(total_reward, 0., None)
 
     reset = torch.where(progress_buf >= max_episode_length - 1, torch.ones_like(reset_buf), reset_buf)

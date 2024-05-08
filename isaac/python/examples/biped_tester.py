@@ -134,7 +134,7 @@ env_upper = gymapi.Vec3(spacing, 0.0, spacing)
 
 # add cartpole urdf asset
 asset_root = "../../IsaacGymEnvs/assets"
-asset_file = "urdf/Biped/urdf/Biped.urdf"
+asset_file = "urdf/Biped_SphereFoot/urdf/Biped_SphereFoot.urdf"
 # asset_file = "urdf/WalkBot_3DOF_330/urdf/WalkBot_3DOF.urdf"
 
 # Load asset with default control type of position for all joints
