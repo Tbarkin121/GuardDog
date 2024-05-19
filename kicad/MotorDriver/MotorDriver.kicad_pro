@@ -139,7 +139,7 @@
           "td_onpadsmd": true,
           "td_onroundshapesonly": false,
           "td_ontrackend": false,
-          "td_onviapad": true
+          "td_onviapad": false
         }
       ],
       "teardrop_parameters": [
