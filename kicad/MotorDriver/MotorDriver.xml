@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>C:\Users\Plutonium\MyProjects\GuardDog\kicad\MotorDriver\MotorDriver.kicad_sch</source>
-    <date>12/12/2023 4:55:50 PM</date>
+    <date>5/20/2024 12:24:52 PM</date>
     <tool>Eeschema 7.0.9</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -341,44 +341,27 @@
       <sheetpath names="/Microcontroller/" tstamps="/a6e3eacb-7b2e-4ad7-94d2-e19606b91cfd/"/>
       <tstamps>cbcf36df-985b-456e-8a32-520b8f9a386b</tstamps>
     </comp>
-    <comp ref="Y2">
-      <value>ABL-8.000MHZ-B1U-T</value>
-      <footprint>TylerLib:XTAL_ABL-8.000MHZ-B1U-T</footprint>
-      <datasheet>https://www.digikey.com/en/products/detail/abracon-llc/ABL-8-000MHZ-B1U-T/4866038</datasheet>
+    <comp ref="Y1">
+      <value>406I35D08M00000</value>
+      <footprint>TylerLib:XTAL_406I35D08M00000</footprint>
       <fields>
-        <field name="Check_prices">https://www.snapeda.com/parts/ABL-8.000MHZ-B1U-T/Abracon/view-part/?ref=eda</field>
-        <field name="Description">
-Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
-</field>
-        <field name="DigiKey_Part_Number">535-ABL-8.000MHZ-B1U-TTR-ND</field>
-        <field name="MANUFACTURER">Abracon</field>
-        <field name="MF">Abracon Corporation</field>
-        <field name="MP">ABL-8.000MHZ-B1U-T</field>
-        <field name="PARTREV">03.27.2018</field>
-        <field name="Package">None</field>
-        <field name="Purchase-URL">https://www.snapeda.com/api/url_track_click_mouser/?unipart_id=11089379&amp;manufacturer=Abracon Corporation&amp;part_name=ABL-8.000MHZ-B1U-T&amp;search_term=None</field>
-        <field name="STANDARD">IPC-7351B</field>
-        <field name="SnapEDA_Link">https://www.snapeda.com/parts/ABL-8.000MHZ-B1U-T/Abracon/view-part/?ref=snap</field>
+        <field name="MANUFACTURER">CTS-FREQUENCY CONTROLS</field>
+        <field name="MAXIMUM_PACKAGE_HEIGHT">1.2 mm</field>
+        <field name="PARTREV">N/A</field>
+        <field name="STANDARD">Manufacturer Recommendations</field>
       </fields>
-      <libsource lib="TylerLib" part="ABL-8.000MHZ-B1U-T" description=""/>
-      <property name="DigiKey_Part_Number" value="535-ABL-8.000MHZ-B1U-TTR-ND"/>
-      <property name="MF" value="Abracon Corporation"/>
-      <property name="Purchase-URL" value="https://www.snapeda.com/api/url_track_click_mouser/?unipart_id=11089379&amp;manufacturer=Abracon Corporation&amp;part_name=ABL-8.000MHZ-B1U-T&amp;search_term=None"/>
-      <property name="Package" value="None"/>
-      <property name="Check_prices" value="https://www.snapeda.com/parts/ABL-8.000MHZ-B1U-T/Abracon/view-part/?ref=eda"/>
-      <property name="STANDARD" value="IPC-7351B"/>
-      <property name="PARTREV" value="03.27.2018"/>
-      <property name="SnapEDA_Link" value="https://www.snapeda.com/parts/ABL-8.000MHZ-B1U-T/Abracon/view-part/?ref=snap"/>
-      <property name="MP" value="ABL-8.000MHZ-B1U-T"/>
-      <property name="Description" value="&#xA;Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T&#xA;"/>
-      <property name="MANUFACTURER" value="Abracon"/>
+      <libsource lib="TylerLib" part="406I35D08M00000" description=""/>
+      <property name="PARTREV" value="N/A"/>
+      <property name="STANDARD" value="Manufacturer Recommendations"/>
+      <property name="MAXIMUM_PACKAGE_HEIGHT" value="1.2 mm"/>
+      <property name="MANUFACTURER" value="CTS-FREQUENCY CONTROLS"/>
       <property name="Sheetname" value="Microcontroller"/>
       <property name="Sheetfile" value="stm32f446.kicad_sch"/>
       <sheetpath names="/Microcontroller/" tstamps="/a6e3eacb-7b2e-4ad7-94d2-e19606b91cfd/"/>
-      <tstamps>dbf91b25-a1a2-46da-9dfb-5f77e3e5e59f</tstamps>
+      <tstamps>92b71aeb-4590-416b-9a54-411764389ff4</tstamps>
     </comp>
     <comp ref="C10">
-      <value>.1uF</value>
+      <value>0.1uF</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
       <datasheet>https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL10B104KB8NNWC/3887593</datasheet>
       <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
@@ -388,6 +371,83 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
       <property name="ki_keywords" value="cap capacitor"/>
       <sheetpath names="/Encoder/" tstamps="/bb03fcb5-c814-4162-9fb3-5a1cbb252e46/"/>
       <tstamps>77b06d28-d690-4e5f-a8cd-9c847631cbad</tstamps>
+    </comp>
+    <comp ref="TP1">
+      <value>TestPoint</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <property name="Sheetname" value="Encoder"/>
+      <property name="Sheetfile" value="AS5147U.kicad_sch"/>
+      <property name="ki_description" value="test point"/>
+      <property name="ki_keywords" value="test point tp"/>
+      <sheetpath names="/Encoder/" tstamps="/bb03fcb5-c814-4162-9fb3-5a1cbb252e46/"/>
+      <tstamps>46ddf022-5607-4513-a60b-52e4f3e2c1ba</tstamps>
+    </comp>
+    <comp ref="TP2">
+      <value>TestPoint</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <property name="Sheetname" value="Encoder"/>
+      <property name="Sheetfile" value="AS5147U.kicad_sch"/>
+      <property name="ki_description" value="test point"/>
+      <property name="ki_keywords" value="test point tp"/>
+      <sheetpath names="/Encoder/" tstamps="/bb03fcb5-c814-4162-9fb3-5a1cbb252e46/"/>
+      <tstamps>f36932ae-f4da-4410-916a-f0b35bb27ae4</tstamps>
+    </comp>
+    <comp ref="TP3">
+      <value>TestPoint</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <property name="Sheetname" value="Encoder"/>
+      <property name="Sheetfile" value="AS5147U.kicad_sch"/>
+      <property name="ki_description" value="test point"/>
+      <property name="ki_keywords" value="test point tp"/>
+      <sheetpath names="/Encoder/" tstamps="/bb03fcb5-c814-4162-9fb3-5a1cbb252e46/"/>
+      <tstamps>8d9a40f3-ffa2-4a18-8a05-4d5bc118557b</tstamps>
+    </comp>
+    <comp ref="TP4">
+      <value>TestPoint</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <property name="Sheetname" value="Encoder"/>
+      <property name="Sheetfile" value="AS5147U.kicad_sch"/>
+      <property name="ki_description" value="test point"/>
+      <property name="ki_keywords" value="test point tp"/>
+      <sheetpath names="/Encoder/" tstamps="/bb03fcb5-c814-4162-9fb3-5a1cbb252e46/"/>
+      <tstamps>c71930aa-cac9-418a-89cc-8f75f716ac11</tstamps>
+    </comp>
+    <comp ref="TP7">
+      <value>TestPoint</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <property name="Sheetname" value="Encoder"/>
+      <property name="Sheetfile" value="AS5147U.kicad_sch"/>
+      <property name="ki_description" value="test point"/>
+      <property name="ki_keywords" value="test point tp"/>
+      <sheetpath names="/Encoder/" tstamps="/bb03fcb5-c814-4162-9fb3-5a1cbb252e46/"/>
+      <tstamps>b1b7e841-5dee-47cb-9d9f-ebb3bdd60f14</tstamps>
+    </comp>
+    <comp ref="TP10">
+      <value>TestPoint</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <property name="Sheetname" value="Encoder"/>
+      <property name="Sheetfile" value="AS5147U.kicad_sch"/>
+      <property name="ki_description" value="test point"/>
+      <property name="ki_keywords" value="test point tp"/>
+      <sheetpath names="/Encoder/" tstamps="/bb03fcb5-c814-4162-9fb3-5a1cbb252e46/"/>
+      <tstamps>bbf19f95-1a1f-44ce-8249-1c86b6729269</tstamps>
+    </comp>
+    <comp ref="TP13">
+      <value>TestPoint</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <property name="Sheetname" value="Encoder"/>
+      <property name="Sheetfile" value="AS5147U.kicad_sch"/>
+      <property name="ki_description" value="test point"/>
+      <property name="ki_keywords" value="test point tp"/>
+      <sheetpath names="/Encoder/" tstamps="/bb03fcb5-c814-4162-9fb3-5a1cbb252e46/"/>
+      <tstamps>ce32a1a5-95e7-45ef-bdd0-30c347824e49</tstamps>
     </comp>
     <comp ref="U3">
       <value>AS5147U</value>
@@ -1000,7 +1060,7 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
     </comp>
     <comp ref="TP5">
       <value>TestPoint</value>
-      <footprint>TestPoint:TestPoint_Pad_D2.5mm</footprint>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
       <libsource lib="Connector" part="TestPoint" description="test point"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -1011,7 +1071,7 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
     </comp>
     <comp ref="TP6">
       <value>TestPoint</value>
-      <footprint>TestPoint:TestPoint_Pad_D2.5mm</footprint>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
       <libsource lib="Connector" part="TestPoint" description="test point"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -1022,7 +1082,7 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
     </comp>
     <comp ref="TP8">
       <value>TestPoint</value>
-      <footprint>TestPoint:TestPoint_Pad_D2.5mm</footprint>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
       <libsource lib="Connector" part="TestPoint" description="test point"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -1033,7 +1093,7 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
     </comp>
     <comp ref="TP9">
       <value>TestPoint</value>
-      <footprint>TestPoint:TestPoint_Pad_D2.5mm</footprint>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
       <libsource lib="Connector" part="TestPoint" description="test point"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -1044,7 +1104,7 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
     </comp>
     <comp ref="TP11">
       <value>TestPoint</value>
-      <footprint>TestPoint:TestPoint_Pad_D2.5mm</footprint>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
       <libsource lib="Connector" part="TestPoint" description="test point"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -1055,7 +1115,7 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
     </comp>
     <comp ref="TP12">
       <value>TestPoint</value>
-      <footprint>TestPoint:TestPoint_Pad_D2.5mm</footprint>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
       <libsource lib="Connector" part="TestPoint" description="test point"/>
       <property name="Sheetname" value="MotorController"/>
       <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
@@ -1063,6 +1123,72 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
       <property name="ki_keywords" value="test point tp"/>
       <sheetpath names="/MotorController/" tstamps="/c363089b-1b0b-4509-af19-a6f84e71682e/"/>
       <tstamps>859b153e-e52d-4d48-a973-44d83de06afa</tstamps>
+    </comp>
+    <comp ref="TP14">
+      <value>TestPoint</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <property name="Sheetname" value="MotorController"/>
+      <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
+      <property name="ki_description" value="test point"/>
+      <property name="ki_keywords" value="test point tp"/>
+      <sheetpath names="/MotorController/" tstamps="/c363089b-1b0b-4509-af19-a6f84e71682e/"/>
+      <tstamps>5a43cc43-c517-45a5-b922-0e257851c2fc</tstamps>
+    </comp>
+    <comp ref="TP15">
+      <value>TestPoint</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <property name="Sheetname" value="MotorController"/>
+      <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
+      <property name="ki_description" value="test point"/>
+      <property name="ki_keywords" value="test point tp"/>
+      <sheetpath names="/MotorController/" tstamps="/c363089b-1b0b-4509-af19-a6f84e71682e/"/>
+      <tstamps>276242ae-eed8-4466-a68e-dce90b3a31bc</tstamps>
+    </comp>
+    <comp ref="TP16">
+      <value>TestPoint</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <property name="Sheetname" value="MotorController"/>
+      <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
+      <property name="ki_description" value="test point"/>
+      <property name="ki_keywords" value="test point tp"/>
+      <sheetpath names="/MotorController/" tstamps="/c363089b-1b0b-4509-af19-a6f84e71682e/"/>
+      <tstamps>6b17f15e-c295-4652-be25-2c967ca0379c</tstamps>
+    </comp>
+    <comp ref="TP17">
+      <value>TestPoint</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <property name="Sheetname" value="MotorController"/>
+      <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
+      <property name="ki_description" value="test point"/>
+      <property name="ki_keywords" value="test point tp"/>
+      <sheetpath names="/MotorController/" tstamps="/c363089b-1b0b-4509-af19-a6f84e71682e/"/>
+      <tstamps>f19aea6e-9bae-4c5c-9c41-191fc46f8ae1</tstamps>
+    </comp>
+    <comp ref="TP18">
+      <value>TestPoint</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <property name="Sheetname" value="MotorController"/>
+      <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
+      <property name="ki_description" value="test point"/>
+      <property name="ki_keywords" value="test point tp"/>
+      <sheetpath names="/MotorController/" tstamps="/c363089b-1b0b-4509-af19-a6f84e71682e/"/>
+      <tstamps>4a06fc38-9d15-44fe-88e9-6c589eccdc1d</tstamps>
+    </comp>
+    <comp ref="TP19">
+      <value>TestPoint</value>
+      <footprint>TestPoint:TestPoint_Pad_D1.0mm</footprint>
+      <libsource lib="Connector" part="TestPoint" description="test point"/>
+      <property name="Sheetname" value="MotorController"/>
+      <property name="Sheetfile" value="DRV8323RS.kicad_sch"/>
+      <property name="ki_description" value="test point"/>
+      <property name="ki_keywords" value="test point tp"/>
+      <sheetpath names="/MotorController/" tstamps="/c363089b-1b0b-4509-af19-a6f84e71682e/"/>
+      <tstamps>3f19f093-9a7a-4c81-9272-db3edb555919</tstamps>
     </comp>
     <comp ref="U4">
       <value>DRV8323RSRGZR</value>
@@ -1527,28 +1653,21 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
         <pin num="4" name="4" type="unspecified"/>
       </pins>
     </libpart>
-    <libpart lib="TylerLib" part="ABL-8.000MHZ-B1U-T">
+    <libpart lib="TylerLib" part="406I35D08M00000">
       <fields>
         <field name="Reference">Y</field>
-        <field name="Value">ABL-8.000MHZ-B1U-T</field>
-        <field name="Footprint">TylerLib:XTAL_ABL-8.000MHZ-B1U-T</field>
-        <field name="DigiKey_Part_Number">535-ABL-8.000MHZ-B1U-TTR-ND</field>
-        <field name="MF">Abracon Corporation</field>
-        <field name="Purchase-URL">https://www.snapeda.com/api/url_track_click_mouser/?unipart_id=11089379&amp;manufacturer=Abracon Corporation&amp;part_name=ABL-8.000MHZ-B1U-T&amp;search_term=None</field>
-        <field name="Package">None</field>
-        <field name="Check_prices">https://www.snapeda.com/parts/ABL-8.000MHZ-B1U-T/Abracon/view-part/?ref=eda</field>
-        <field name="STANDARD">IPC-7351B</field>
-        <field name="PARTREV">03.27.2018</field>
-        <field name="SnapEDA_Link">https://www.snapeda.com/parts/ABL-8.000MHZ-B1U-T/Abracon/view-part/?ref=snap</field>
-        <field name="MP">ABL-8.000MHZ-B1U-T</field>
-        <field name="Description">
-Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
-</field>
-        <field name="MANUFACTURER">Abracon</field>
+        <field name="Value">406I35D08M00000</field>
+        <field name="Footprint">TylerLib:XTAL_406I35D08M00000</field>
+        <field name="PARTREV">N/A</field>
+        <field name="STANDARD">Manufacturer Recommendations</field>
+        <field name="MAXIMUM_PACKAGE_HEIGHT">1.2 mm</field>
+        <field name="MANUFACTURER">CTS-FREQUENCY CONTROLS</field>
       </fields>
       <pins>
         <pin num="1" name="" type="passive"/>
-        <pin num="2" name="" type="passive"/>
+        <pin num="2" name="GND" type="power_in"/>
+        <pin num="3" name="" type="passive"/>
+        <pin num="4" name="GND__1" type="power_in"/>
       </pins>
     </libpart>
     <libpart lib="TylerLib" part="AS5147U-HTSM">
@@ -1825,30 +1944,37 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
       <node ref="U9" pin="4" pinfunction="4" pintype="unspecified"/>
     </net>
     <net code="2" name="/Encoder/M1_ENC.A">
+      <node ref="TP10" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U1" pin="61" pinfunction="PB8" pintype="bidirectional"/>
       <node ref="U3" pin="7" pinfunction="A" pintype="input"/>
     </net>
     <net code="3" name="/Encoder/M1_ENC.B">
+      <node ref="TP7" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U1" pin="62" pinfunction="PB9" pintype="bidirectional"/>
       <node ref="U3" pin="6" pinfunction="B" pintype="input"/>
     </net>
     <net code="4" name="/Encoder/M1_ENC.I">
+      <node ref="TP13" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U1" pin="59" pinfunction="PB7" pintype="bidirectional"/>
       <node ref="U3" pin="14" pinfunction="I/PWM" pintype="input"/>
     </net>
     <net code="6" name="/Encoder/SPI3.CS">
+      <node ref="TP1" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U1" pin="50" pinfunction="PA15" pintype="bidirectional"/>
       <node ref="U3" pin="1" pinfunction="CSn" pintype="input"/>
     </net>
     <net code="7" name="/Encoder/SPI3.MISO">
+      <node ref="TP3" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U1" pin="52" pinfunction="PC11" pintype="bidirectional"/>
       <node ref="U3" pin="3" pinfunction="MISO" pintype="input"/>
     </net>
     <net code="8" name="/Encoder/SPI3.MOSI">
+      <node ref="TP4" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U1" pin="53" pinfunction="PC12" pintype="bidirectional"/>
       <node ref="U3" pin="4" pinfunction="MOSI" pintype="input"/>
     </net>
     <net code="9" name="/Encoder/SPI3.SCK">
+      <node ref="TP2" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U1" pin="51" pinfunction="PC10" pintype="bidirectional"/>
       <node ref="U3" pin="2" pinfunction="CLK" pintype="input"/>
     </net>
@@ -1876,38 +2002,44 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
     <net code="17" name="/Microcontroller/CLK_N">
       <node ref="C2" pin="2" pintype="passive"/>
       <node ref="U1" pin="6" pinfunction="PH1" pintype="bidirectional"/>
-      <node ref="Y2" pin="1" pintype="passive"/>
+      <node ref="Y1" pin="3" pintype="passive"/>
     </net>
     <net code="18" name="/Microcontroller/CLK_P">
       <node ref="C1" pin="2" pintype="passive"/>
       <node ref="U1" pin="5" pinfunction="PH0" pintype="bidirectional"/>
-      <node ref="Y2" pin="2" pintype="passive"/>
+      <node ref="Y1" pin="1" pintype="passive"/>
     </net>
     <net code="19" name="/Microcontroller/DRV.ENABLE">
       <node ref="U1" pin="3" pinfunction="PC14" pintype="bidirectional"/>
       <node ref="U4" pin="33" pinfunction="ENABLE" pintype="input"/>
     </net>
     <net code="20" name="/Microcontroller/DRV.INHA">
+      <node ref="TP19" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U1" pin="41" pinfunction="PA8" pintype="bidirectional"/>
       <node ref="U4" pin="37" pinfunction="INHA" pintype="input"/>
     </net>
     <net code="21" name="/Microcontroller/DRV.INHB">
+      <node ref="TP17" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U1" pin="42" pinfunction="PA9" pintype="bidirectional"/>
       <node ref="U4" pin="39" pinfunction="INHB" pintype="input"/>
     </net>
     <net code="22" name="/Microcontroller/DRV.INHC">
+      <node ref="TP15" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U1" pin="43" pinfunction="PA10" pintype="bidirectional"/>
       <node ref="U4" pin="41" pinfunction="INHC" pintype="input"/>
     </net>
     <net code="23" name="/Microcontroller/DRV.INLA">
+      <node ref="TP18" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U1" pin="34" pinfunction="PB13" pintype="bidirectional"/>
       <node ref="U4" pin="38" pinfunction="INLA" pintype="input"/>
     </net>
     <net code="24" name="/Microcontroller/DRV.INLB">
+      <node ref="TP16" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U1" pin="35" pinfunction="PB14" pintype="bidirectional"/>
       <node ref="U4" pin="40" pinfunction="INLB" pintype="input"/>
     </net>
     <net code="25" name="/Microcontroller/DRV.INLC">
+      <node ref="TP14" pin="1" pinfunction="1" pintype="passive"/>
       <node ref="U1" pin="36" pinfunction="PB15" pintype="bidirectional"/>
       <node ref="U4" pin="42" pinfunction="INLC" pintype="input"/>
     </net>
@@ -2213,6 +2345,8 @@ Abracon Frequency Control - ABL-8.000MHz-B1U-T | Abracon ABL-8.000MHZ-B1U-T
       <node ref="U4" pin="43" pinfunction="BGND" pintype="power_in"/>
       <node ref="U4" pin="49" pinfunction="EP" pintype="power_in"/>
       <node ref="U7" pin="2" pinfunction="GND" pintype="input"/>
+      <node ref="Y1" pin="2" pinfunction="GND" pintype="power_in"/>
+      <node ref="Y1" pin="4" pinfunction="GND__1" pintype="power_in"/>
     </net>
     <net code="75" name="Net-(D4-K)">
       <node ref="D4" pin="1" pinfunction="K" pintype="passive"/>

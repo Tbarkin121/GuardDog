@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="Biped_10B">
+  <link
+    name="Body">
+    <inertial>
+      <origin
+        xyz="0.014983 -0.00021533 0.049075"
+        rpy="0 0 0" />
+      <mass
+        value="0.5" />
+      <inertia
+        ixx="0.010469"
+        ixy="-4.1568E-12"
+        ixz="-4.0344E-05"
+        iyy="0.011872"
+        iyz="-3.7322E-12"
+        izz="0.017918" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Biped_10B/meshes/Body.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.28627 0.66275 0.32941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Biped_10B/meshes/Body.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="L_Hip">
+    <inertial>
+      <origin
+        xyz="-0.029296 -0.00051085 -8.2243E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.27482" />
+      <inertia
+        ixx="0.00027039"
+        ixy="4.8868E-09"
+        ixz="2.2508E-10"
+        iyy="0.00024525"
+        iyz="4.0466E-10"
+        izz="0.00018461" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Biped_10B/meshes/L_Hip.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.0078431 0.23922 0.82353 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Biped_10B/meshes/L_Hip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="L_J1"
+    type="revolute">
+    <origin
+      xyz="0.034433 0.14 0.05"
+      rpy="0 0 0" />
+    <parent
+      link="Body" />
+    <child
+      link="L_Hip" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="L_Thigh">
+    <inertial>
+      <origin
+        xyz="-0.11433 0.02051 -9.2909E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.24953" />
+      <inertia
+        ixx="0.00020096"
+        ixy="2.912E-06"
+        ixz="-2.0598E-08"
+        iyy="0.00033209"
+        iyz="4.3352E-10"
+        izz="0.00016282" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Biped_10B/meshes/L_Thigh.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.0078431 0.23922 0.82353 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Biped_10B/meshes/L_Thigh.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="L_J2"
+    type="revolute">
+    <origin
+      xyz="-0.052 -0.0223 -0.00013419"
+      rpy="0 0 0" />
+    <parent
+      link="L_Hip" />
+    <child
+      link="L_Thigh" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="L_Shin">
+    <inertial>
+      <origin
+        xyz="-0.1416 0.0067351 -1.1056E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.06737" />
+      <inertia
+        ixx="9.9237E-06"
+        ixy="3.9964E-09"
+        ixz="-1.3799E-11"
+        iyy="6.1692E-05"
+        iyz="-7.9996E-09"
+        izz="6.2515E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Biped_10B/meshes/L_Shin.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Biped_10B/meshes/L_Shin.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="L_J3"
+    type="revolute">
+    <origin
+      xyz="-0.217999999999995 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="L_Thigh" />
+    <child
+      link="L_Shin" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="R_Hip">
+    <inertial>
+      <origin
+        xyz="-0.029296 0.00051085 8.2243E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.27482" />
+      <inertia
+        ixx="0.00027039"
+        ixy="-4.8868E-09"
+        ixz="-2.2508E-10"
+        iyy="0.00024525"
+        iyz="4.0466E-10"
+        izz="0.00018461" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Biped_10B/meshes/R_Hip.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.0078431 0.23922 0.82353 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Biped_10B/meshes/R_Hip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R_J1"
+    type="revolute">
+    <origin
+      xyz="0.034433 -0.14 0.05"
+      rpy="0 0 0" />
+    <parent
+      link="Body" />
+    <child
+      link="R_Hip" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="R_Thigh">
+    <inertial>
+      <origin
+        xyz="-0.11433 -0.02051 9.2909E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.24953" />
+      <inertia
+        ixx="0.00020096"
+        ixy="-2.912E-06"
+        ixz="2.0598E-08"
+        iyy="0.00033209"
+        iyz="4.3352E-10"
+        izz="0.00016282" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Biped_10B/meshes/R_Thigh.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Biped_10B/meshes/R_Thigh.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R_J2"
+    type="revolute">
+    <origin
+      xyz="-0.052 0.0223 0.000134185903652079"
+      rpy="0 0 0" />
+    <parent
+      link="R_Hip" />
+    <child
+      link="R_Thigh" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="R_Shin">
+    <inertial>
+      <origin
+        xyz="-0.1416 -0.0067351 1.1056E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.06737" />
+      <inertia
+        ixx="9.9237E-06"
+        ixy="-3.9964E-09"
+        ixz="1.3799E-11"
+        iyy="6.1692E-05"
+        iyz="-7.9996E-09"
+        izz="6.2515E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Biped_10B/meshes/R_Shin.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Biped_10B/meshes/R_Shin.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R_J3"
+    type="revolute">
+    <origin
+      xyz="-0.217999999999994 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="R_Thigh" />
+    <child
+      link="R_Shin" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="ReactWheelX">
+    <inertial>
+      <origin
+        xyz="0 2.7756E-17 1.3878E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.097845" />
+      <inertia
+        ixx="0.00023479"
+        ixy="-3.0975E-21"
+        ixz="3.9219E-23"
+        iyy="0.0001185"
+        iyz="1.8521E-20"
+        izz="0.0001185" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Biped_10B/meshes/ReactWheelX.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Biped_10B/meshes/ReactWheelX.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Wheel_X"
+    type="continuous">
+    <origin
+      xyz="-0.07 0 0.05"
+      rpy="0 0 0" />
+    <parent
+      link="Body" />
+    <child
+      link="ReactWheelX" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="ReactWheelY">
+    <inertial>
+      <origin
+        xyz="0 2.7756E-17 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.097845" />
+      <inertia
+        ixx="0.0001185"
+        ixy="-4.9598E-21"
+        ixz="-3.4243E-20"
+        iyy="0.00023479"
+        iyz="1.5862E-21"
+        izz="0.0001185" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Biped_10B/meshes/ReactWheelY.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Biped_10B/meshes/ReactWheelY.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Wheel_Y"
+    type="continuous">
+    <origin
+      xyz="0.020147 0 0.05"
+      rpy="0 0 0" />
+    <parent
+      link="Body" />
+    <child
+      link="ReactWheelY" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+</robot>
