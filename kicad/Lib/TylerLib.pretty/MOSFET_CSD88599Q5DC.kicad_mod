@@ -192,7 +192,7 @@
     (solder_mask_margin 0.102) (tstamp a6ac9e75-e107-4fd6-9b08-9de548bc3509))
   (pad "26" smd roundrect (at 2.115 -3.013) (size 0.43 0.375) (layers "F.Cu" "F.Paste" "F.Mask") (roundrect_rratio 0.03)
     (solder_mask_margin 0.102) (tstamp 69f54c29-0a68-4d1d-9827-befce9e8cabc))
-  (pad "27" smd roundrect (at 0 0) (size 3.3 5.4) (layers "F.Cu" "F.Mask") (roundrect_rratio 0.14)
+  (pad "27" smd roundrect (at 0 0) (size 3 5.4) (layers "F.Cu" "F.Mask" "Eco1.User") (roundrect_rratio 0.14)
     (solder_mask_margin 0.102) (tstamp 5fa01188-9c27-4fd8-8de3-425b77c07339))
   (model "C:/Users/Plutonium/MyProjects/GuardDog/kicad/CSD88599Q5DC/CSD88599Q5DC.step"
     (offset (xyz 0 0 0))

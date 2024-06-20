@@ -429,3 +429,92 @@ java.lang.Exception: The project description file (.project) for 'LegDay' is mis
 
 !ENTRY org.eclipse.cdt.core 1 0 2024-05-15 01:53:26.573
 !MESSAGE Indexed 'LegDay' (76 sources, 198 headers) in 4.53 sec: 21,011 declarations; 110,239 references; 0 unresolved inclusions; 1 syntax errors; 0 unresolved names (0%)
+!SESSION 2024-06-20 10:47:00.687 -----------------------------------------------
+eclipse.buildId=Version 1.15.1
+java.version=17.0.8.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-06-20 10:47:55.440
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-06-20 10:47:55.446
+!MESSAGE Log4j2 initialized with config file C:\Users\Plutonium\MyProjects\GuardDog\stm32\cube_workspace\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-06-20 10:48:06.625
+!MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2024-06-20 12:40:44.895 -----------------------------------------------
+eclipse.buildId=Version 1.15.1
+java.version=17.0.8.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  C:\Users\Plutonium\MyProjects\GuardDog\stm32\MotorDrive\F4_Smoketest\STM32CubeIDE\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Users\Plutonium\MyProjects\GuardDog\stm32\MotorDrive\F4_Smoketest\STM32CubeIDE\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-06-20 12:40:53.994
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-06-20 12:40:53.995
+!MESSAGE Log4j2 initialized with config file C:\Users\Plutonium\MyProjects\GuardDog\stm32\cube_workspace\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-06-20 12:41:03.675
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.core.jobs 2 2 2024-06-20 12:41:14.756
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.ui.internal.Workbench$39
+!SESSION 2024-06-20 12:41:19.235 -----------------------------------------------
+eclipse.buildId=Version 1.15.1
+java.version=17.0.8.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-06-20 12:41:25.390
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-06-20 12:41:25.391
+!MESSAGE Log4j2 initialized with config file C:\Users\Plutonium\MyProjects\GuardDog\stm32\cube_workspace\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-06-20 12:41:34.926
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-06-20 12:41:52.893
+!MESSAGE Indexed 'F4_Smoketest' (61 sources, 167 headers) in 6.27 sec: 13,756 declarations; 71,803 references; 8 unresolved inclusions; 1,158 syntax errors; 4,982 unresolved names (5.5%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-06-20 12:41:59.359
+!MESSAGE Indexed 'LegDay' (76 sources, 198 headers) in 5.05 sec: 21,011 declarations; 110,240 references; 0 unresolved inclusions; 1 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-06-20 12:42:01.396
+!MESSAGE Indexed 'AnymalNet' (28 sources, 164 headers) in 2.02 sec: 19,269 declarations; 85,486 references; 3 unresolved inclusions; 46 syntax errors; 169 unresolved names (0.16%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-06-20 12:42:03.897
+!MESSAGE Indexed 'TorquePoleNet' (32 sources, 168 headers) in 2.49 sec: 19,348 declarations; 85,689 references; 3 unresolved inclusions; 46 syntax errors; 169 unresolved names (0.16%)
+!SESSION 2024-06-20 12:42:11.043 -----------------------------------------------
+eclipse.buildId=Version 1.15.1
+java.version=17.0.8.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  C:\Users\Plutonium\MyProjects\GuardDog\stm32\MotorDrive\F4_Smoketest\STM32CubeIDE\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Users\Plutonium\MyProjects\GuardDog\stm32\MotorDrive\F4_Smoketest\STM32CubeIDE\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-06-20 12:42:16.977
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-06-20 12:42:16.978
+!MESSAGE Log4j2 initialized with config file C:\Users\Plutonium\MyProjects\GuardDog\stm32\cube_workspace\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-06-20 12:42:26.108
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-06-20 12:42:45.166
+!MESSAGE Indexed 'F4_Smoketest' (61 sources, 167 headers) in 4.46 sec: 13,756 declarations; 71,803 references; 8 unresolved inclusions; 1,158 syntax errors; 4,982 unresolved names (5.5%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-06-20 12:42:50.788
+!MESSAGE Indexed 'LegDay' (76 sources, 198 headers) in 3.2 sec: 21,011 declarations; 110,242 references; 0 unresolved inclusions; 1 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-06-20 12:42:52.731
+!MESSAGE Indexed 'AnymalNet' (28 sources, 167 headers) in 1.93 sec: 18,770 declarations; 84,489 references; 3 unresolved inclusions; 42 syntax errors; 169 unresolved names (0.16%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-06-20 12:42:54.445
+!MESSAGE Indexed 'TorquePoleNet' (32 sources, 168 headers) in 1.7 sec: 19,348 declarations; 85,689 references; 3 unresolved inclusions; 46 syntax errors; 169 unresolved names (0.16%)

@@ -1,0 +1,7 @@
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_Smoketest/Src/register_interface.c:34:9:RI_SetRegisterGlobal	17
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_Smoketest/Src/register_interface.c:168:9:RI_SetRegisterMotor1	129
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_Smoketest/Src/register_interface.c:765:9:RI_GetRegisterGlobal	20
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_Smoketest/Src/register_interface.c:910:11:RI_GetRegisterMotor1	149
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_Smoketest/Src/register_interface.c:1732:9:RI_MovString	4
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_Smoketest/Src/register_interface.c:1758:9:RI_GetIDSize	2
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_Smoketest/Src/register_interface.c:1793:16:RI_GetPtrReg	25
