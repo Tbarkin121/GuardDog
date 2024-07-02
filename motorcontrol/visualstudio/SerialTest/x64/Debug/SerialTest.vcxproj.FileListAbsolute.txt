@@ -1,0 +1,2 @@
+C:\Users\Plutonium\MyProjects\GuardDog\visualstudio\SerialTest\x64\Debug\SerialTest.exe
+C:\Users\Plutonium\MyProjects\GuardDog\motorcontrol\visualstudio\SerialTest\x64\Debug\SerialTest.exe
