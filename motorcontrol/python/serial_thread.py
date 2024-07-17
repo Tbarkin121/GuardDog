@@ -19,12 +19,16 @@ def read_from_port(ser, lock, stop_event, shared_data):
     buffer = bytearray()
     
     while not stop_event.is_set():
+        
         if ser.in_waiting > 0:
+            # data = ser.read(ser.in_waiting)
             data = ser.read(ser.in_waiting)
             buffer.extend(data)
 
+            
             # Parse complete messages from the buffer
             buffer, messages = parse_messages(buffer)
+
             
             if(DEBUG_PRINT):
                 print(f"Message Count : {len(messages)}")
@@ -33,6 +37,8 @@ def read_from_port(ser, lock, stop_event, shared_data):
                 
             # Below here should just be used when updating the shared variables
             if(len(messages) > 0):
+                
+                
                 with lock:
                     for message in messages:
                         if(DEBUG_PRINT):
@@ -41,7 +47,8 @@ def read_from_port(ser, lock, stop_event, shared_data):
                         if (type(message) == MotorStateUnion):
                             shared_data['timestamp'] = message.bits.Timestamp
                             shared_data['motor_speed'] = message.bits.Vel
-                            shared_data['motor_position'] = message.bits.Mech_Ang
+                            shared_data['motor_position'] = message.bits.Mech_Ang/RADTOS16
+                            shared_data['datalog_flag'] = 1
                             
                         elif (type(message) == BeaconHeaderUnion):
                             shared_data['beacon_flag'] = 1
@@ -51,12 +58,12 @@ def read_from_port(ser, lock, stop_event, shared_data):
                             shared_data['ping_flag'] = 1
                             shared_data['ping_data'] = message
                             
-        time.sleep(0.01)  # Small delay to prevent high CPU usage
+
+                            
+        time.sleep(0.001)  # Small delay to prevent high CPU usage (Up to 1000 Hz ignoring the time other stuff takes)
 
 
 def parse_messages(buffer):
-    # header = HeaderUnion()
-    # motorstate = MotorStateUnion()
     messages = []
 
     while len(buffer) >= 4: # Need at least 4 bytes to compose the header
@@ -93,6 +100,7 @@ def parse_messages(buffer):
                         print(f"Electric Angle: {motorstate.bits.Elec_Ang}")
                         print(f"Mechanical Angle: {motorstate.bits.Mech_Ang/RADTOS16}")
                         print(f"Velocity: {motorstate.bits.Vel}")
+
                     buffer = buffer[4+asyncheader.bits.payload_length:] #Remove processed Data from Buffer
                     messages.append(motorstate)
                     

@@ -335,6 +335,11 @@ void MCP_ReceivedPacket(MCP_Handle_t *pHandle)
       case FAULT_ACK:
       {
         (void)MCI_FaultAcknowledged(pMCI);
+        HAL_GPIO_WritePin(GPIOC, GPIO_PIN_14, GPIO_PIN_RESET);   // DRV Disable
+        HAL_Delay(500);
+        HAL_GPIO_WritePin(GPIOC, GPIO_PIN_14, GPIO_PIN_SET);   // DRV Enable
+        HAL_Delay(500);
+
         MCPResponse = MCP_CMD_OK;
         break;
       }

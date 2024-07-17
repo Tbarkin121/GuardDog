@@ -1,0 +1,17 @@
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_TorqueMode/MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Src/sto_cordic_speed_pos_fdbk.c:144:16:STO_CR_CalcElAngle	35
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_TorqueMode/MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Src/sto_cordic_speed_pos_fdbk.c:461:13:STO_CR_CalcAvrgMecSpeedUnit	14
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_TorqueMode/MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Src/sto_cordic_speed_pos_fdbk.c:624:13:STO_CR_Clear	2
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_TorqueMode/MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Src/sto_cordic_speed_pos_fdbk.c:87:13:STO_CR_Init	3
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_TorqueMode/MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Src/sto_cordic_speed_pos_fdbk.c:725:13:STO_CR_IsObserverConverged	13
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_TorqueMode/MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Src/sto_cordic_speed_pos_fdbk.c:846:20:STO_CR_GetEstimatedBemf	1
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_TorqueMode/MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Src/sto_cordic_speed_pos_fdbk.c:873:20:STO_CR_GetEstimatedCurrent	1
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_TorqueMode/MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Src/sto_cordic_speed_pos_fdbk.c:912:13:STO_CR_GetObserverGains	1
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_TorqueMode/MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Src/sto_cordic_speed_pos_fdbk.c:936:13:STO_CR_SetObserverGains	1
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_TorqueMode/MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Src/sto_cordic_speed_pos_fdbk.c:970:13:STO_CR_CalcAvrgElSpeedDpp	3
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_TorqueMode/MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Src/sto_cordic_speed_pos_fdbk.c:1049:16:STO_CR_GetEstimatedBemfLevel	1
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_TorqueMode/MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Src/sto_cordic_speed_pos_fdbk.c:1063:16:STO_CR_GetObservedBemfLevel	1
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_TorqueMode/MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Src/sto_cordic_speed_pos_fdbk.c:1077:13:STO_CR_BemfConsistencyCheckSwitch	1
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_TorqueMode/MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Src/sto_cordic_speed_pos_fdbk.c:1098:13:STO_CR_IsBemfConsistent	1
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_TorqueMode/MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Src/sto_cordic_speed_pos_fdbk.c:1115:13:STO_CR_IsSpeedReliable	1
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_TorqueMode/MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Src/sto_cordic_speed_pos_fdbk.c:1137:13:STO_CR_ForceConvergency1	1
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_TorqueMode/MCSDK_v6.2.0-Full/MotorControl/MCSDK/MCLib/Any/Src/sto_cordic_speed_pos_fdbk.c:1158:13:STO_CR_ForceConvergency2	1

@@ -37,40 +37,11 @@
 #define M1_SS_MEAS_ERRORS_BEFORE_FAULTS 3 /*!< Number of speed
                                                              measurement errors before
                                                              main sensor goes in fault */
-/****** State Observer + PLL ****/
-#define VARIANCE_THRESHOLD             0.25 /*!<Maximum accepted
-                                                            variance on speed
-                                                            estimates (percentage) */
-/* State observer scaling factors F1 */
-#define F1                               4096
-#define F2                               16384
-#define F1_LOG                           LOG2((4096))
-#define F2_LOG                           LOG2((16384))
+/*** Encoder **********************/
 
-/* State observer constants */
-#define GAIN1                            -3529
-#define GAIN2                            6085
-/*Only in case PLL is used, PLL gains */
-#define PLL_KP_GAIN                      765
-#define PLL_KI_GAIN                      34
-#define PLL_KPDIV     16384
-#define PLL_KPDIV_LOG LOG2((PLL_KPDIV))
-#define PLL_KIDIV     65535
-#define PLL_KIDIV_LOG LOG2((PLL_KIDIV))
-
-#define STO_FIFO_DEPTH_DPP               64  /*!< Depth of the FIFO used
-                                                            to average mechanical speed
-                                                            in dpp format */
-#define STO_FIFO_DEPTH_DPP_LOG           LOG2((64))
-
-#define STO_FIFO_DEPTH_UNIT              64  /*!< Depth of the FIFO used
-                                                            to average mechanical speed
-                                                            in the unit defined by #SPEED_UNIT */
-#define M1_BEMF_CONSISTENCY_TOL             64   /* Parameter for B-emf
-                                                            amplitude-speed consistency */
-#define M1_BEMF_CONSISTENCY_GAIN            64   /* Parameter for B-emf
-                                                           amplitude-speed consistency */
-
+#define ENC_AVERAGING_FIFO_DEPTH        16 /*!< depth of the FIFO used to
+                                                              average mechanical speed in
+                                                              0.1Hz resolution */
 /****** State Observer + CORDIC ***/
 #define CORD_VARIANCE_THRESHOLD          25 /*!<Maxiumum accepted
                                                             variance on speed
@@ -161,7 +132,7 @@
 #define IQMAX_A                          10
 
 /* Default settings */
-#define DEFAULT_CONTROL_MODE           MCM_SPEED_MODE
+#define DEFAULT_CONTROL_MODE           MCM_TORQUE_MODE
 #define DEFAULT_TARGET_SPEED_RPM       592
 #define DEFAULT_TARGET_SPEED_UNIT      (DEFAULT_TARGET_SPEED_RPM*SPEED_UNIT/U_RPM)
 #define DEFAULT_TORQUE_COMPONENT_A       0
@@ -195,33 +166,16 @@
 #define OVP_SELECTION2                  COMP_Selection_COMP1
 
 /******************************   START-UP PARAMETERS   **********************/
+/* Encoder alignment */
+#define M1_ALIGNMENT_DURATION              700 /*!< milliseconds */
+#define M1_ALIGNMENT_ANGLE_DEG             90 /*!< degrees [0...359] */
+#define FINAL_I_ALIGNMENT_A               10 /*!< s16A */
+// With ALIGNMENT_ANGLE_DEG equal to 90 degrees final alignment
+// phase current = (FINAL_I_ALIGNMENT * 1.65/ Av)/(32767 * Rshunt)
+// being Av the voltage gain between Rshunt and A/D input
 
-/* Phase 1 */
-#define PHASE1_DURATION                1000 /*milliseconds */
-#define PHASE1_FINAL_SPEED_UNIT         (0*SPEED_UNIT/U_RPM)
-#define PHASE1_FINAL_CURRENT_A           10
-/* Phase 2 */
-#define PHASE2_DURATION                1316 /*milliseconds */
-#define PHASE2_FINAL_SPEED_UNIT         (658*SPEED_UNIT/U_RPM)
-#define PHASE2_FINAL_CURRENT_A           10
-/* Phase 3 */
-#define PHASE3_DURATION                0 /*milliseconds */
-#define PHASE3_FINAL_SPEED_UNIT         (658*SPEED_UNIT/U_RPM)
-#define PHASE3_FINAL_CURRENT_A           10
-/* Phase 4 */
-#define PHASE4_DURATION                0 /*milliseconds */
-#define PHASE4_FINAL_SPEED_UNIT         (658*SPEED_UNIT/U_RPM)
-#define PHASE4_FINAL_CURRENT_A           10
-/* Phase 5 */
-#define PHASE5_DURATION                0 /* milliseconds */
-#define PHASE5_FINAL_SPEED_UNIT         (658*SPEED_UNIT/U_RPM)
-#define PHASE5_FINAL_CURRENT_A           10
-
-#define ENABLE_SL_ALGO_FROM_PHASE      2
-/* Sensor-less rev-up sequence */
-#define STARTING_ANGLE_DEG             0  /*!< degrees [0...359] */
 /* Observer start-up output conditions  */
-#define OBS_MINIMUM_SPEED_RPM          592
+#define OBS_MINIMUM_SPEED_RPM          1000
 
 #define NB_CONSECUTIVE_TESTS           2 /* corresponding to
                                                          former NB_CONSECUTIVE_TESTS/

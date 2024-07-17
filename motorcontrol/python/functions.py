@@ -217,7 +217,7 @@ def setREG(regs, values, motorID = 1, dataraw_format=''):
         elif reg[1] == TYPE_DATA_STRING:
             regRequest = np.append(regRequest, np.array(values[ind], np.uint8))
 
-        elif reg[1] == TYPE_DATA_RAW:                 
+        elif reg[1] == TYPE_DATA_RAW:
             byte_array, array_size = data_raw_formatter(values[ind], dataraw_format)
             regRequest = np.append(regRequest, array_size)
             regRequest = np.append(regRequest, byte_array)

@@ -27,8 +27,6 @@
 #include "mcp.h"
 #include "mcp_config.h"
 #include "mcpa.h"
-#include "mp_one_touch_tuning.h"
-#include "mp_self_com_ctrl.h"
 #include "mc_configuration_registers.h"
 
 uint8_t RI_SetRegisterGlobal(uint16_t regID, uint8_t typeID, uint8_t *data, uint16_t *size, int16_t dataAvailable)
@@ -207,39 +205,6 @@ uint8_t RI_SetRegisterMotor1(uint16_t regID, uint8_t typeID, uint8_t *data, uint
           break;
         }
 
-        case MC_REG_RUC_STAGE_NBR:
-        {
-          retVal = MCP_ERROR_RO_REG;
-          break;
-        }
-        case MC_REG_SC_PP:
-        {
-          uint8_t regdataU8 = *(uint8_t *)data;
-          SPD_SetElToMecRatio(&STO_PLL_M1._Super, regdataU8);
-          SPD_SetElToMecRatio(&STO_CR_M1._Super, regdataU8);
-          SPD_SetElToMecRatio(&VirtualSpeedSensorM1._Super, regdataU8);
-          SCC_SetPolesPairs(&SCC, regdataU8);
-          OTT_SetPolesPairs(&OTT, regdataU8);
-          break;
-        }
-
-        case MC_REG_SC_CHECK:
-        case MC_REG_SC_STATE:
-        case MC_REG_SC_STEPS:
-        case MC_REG_SC_FOC_REP_RATE:
-        case MC_REG_SC_COMPLETED:
-        {
-          retVal = MCP_ERROR_RO_REG;
-          break;
-        }
-
-          case MC_REG_PB_CHARACTERIZATION:
-        {
-          uint8_t regdataU8 = *(uint8_t *)data;
-          SCC_SetPBCharacterization(&SCC,regdataU8);
-          break;
-        }
-
         default:
         {
           retVal = MCP_ERROR_UNKNOWN_REG;
@@ -351,47 +316,8 @@ uint8_t RI_SetRegisterMotor1(uint16_t regID, uint8_t typeID, uint8_t *data, uint
         case MC_REG_V_D:
         case MC_REG_V_ALPHA:
         case MC_REG_V_BETA:
-        {
-          retVal = MCP_ERROR_RO_REG;
-          break;
-        }
-
-        case MC_REG_STOPLL_C1:
-        {
-          int16_t hC1;
-          int16_t hC2;
-          STO_PLL_GetObserverGains(&STO_PLL_M1, &hC1, &hC2);
-          STO_PLL_SetObserverGains(&STO_PLL_M1, (int16_t)regdata16, hC2);
-          break;
-        }
-
-        case MC_REG_STOPLL_C2:
-        {
-          int16_t hC1;
-          int16_t hC2;
-          STO_PLL_GetObserverGains(&STO_PLL_M1, &hC1, &hC2);
-          STO_PLL_SetObserverGains(&STO_PLL_M1, hC1, (int16_t)regdata16);
-          break;
-        }
-
-        case MC_REG_STOPLL_KI:
-        {
-          PID_SetKI (&(&STO_PLL_M1)->PIRegulator, (int16_t)regdata16);
-          break;
-        }
-
-        case MC_REG_STOPLL_KP:
-        {
-          PID_SetKP (&(&STO_PLL_M1)->PIRegulator, (int16_t)regdata16);
-          break;
-        }
-
-        case MC_REG_STOPLL_EL_ANGLE:
-        case MC_REG_STOPLL_ROT_SPEED:
-        case MC_REG_STOPLL_I_ALPHA:
-        case MC_REG_STOPLL_I_BETA:
-        case MC_REG_STOPLL_BEMF_ALPHA:
-        case MC_REG_STOPLL_BEMF_BETA:
+        case MC_REG_ENCODER_EL_ANGLE:
+        case MC_REG_ENCODER_SPEED:
         {
           retVal = MCP_ERROR_RO_REG;
           break;
@@ -427,24 +353,6 @@ uint8_t RI_SetRegisterMotor1(uint16_t regID, uint8_t typeID, uint8_t *data, uint
         case MC_REG_DAC_USER1:
         case MC_REG_DAC_USER2:
           break;
-
-        case MC_REG_OVERVOLTAGETHRESHOLD:
-        {
-          SCC_SetOverVoltageThreshold(&SCC,regdata16);
-          break;
-        }
-
-        case MC_REG_UNDERVOLTAGETHRESHOLD:
-        {
-          SCC_SetUnderVoltageThreshold(&SCC,regdata16);
-          break;
-        }
-
-        case MC_REG_SC_PWM_FREQUENCY:
-        {
-          retVal = MCP_ERROR_RO_REG;
-          break;
-        }
 
         case MC_REG_SPEED_KP_DIV:
         {
@@ -500,28 +408,6 @@ uint8_t RI_SetRegisterMotor1(uint16_t regID, uint8_t typeID, uint8_t *data, uint
           break;
         }
 
-        case MC_REG_STOPLL_KI_DIV:
-        {
-          PID_SetKIDivisorPOW2 (&(&STO_PLL_M1)->PIRegulator,regdata16);
-          break;
-        }
-
-        case MC_REG_STOPLL_KP_DIV:
-        {
-          PID_SetKPDivisorPOW2 (&(&STO_PLL_M1)->PIRegulator,regdata16);
-          break;
-        }
-
-        case MC_REG_PULSE_VALUE:
-        case MC_REG_BEMF_ZCR:
-        case MC_REG_BEMF_U:
-        case MC_REG_BEMF_V:
-        case MC_REG_BEMF_W:
-        {
-          retVal = MCP_ERROR_RO_REG;
-          break;
-        }
-
         default:
         {
           retVal = MCP_ERROR_UNKNOWN_REG;
@@ -551,80 +437,8 @@ uint8_t RI_SetRegisterMotor1(uint16_t regID, uint8_t typeID, uint8_t *data, uint
           break;
         }
 
-        case MC_REG_STOPLL_EST_BEMF:
-        case MC_REG_STOPLL_OBS_BEMF:
-        {
-          retVal = MCP_ERROR_RO_REG;
-          break;
-        }
-
         case MC_REG_STOCORDIC_EST_BEMF:
         case MC_REG_STOCORDIC_OBS_BEMF:
-        {
-          retVal = MCP_ERROR_RO_REG;
-          break;
-        }
-
-        case MC_REG_SC_RS:
-        case MC_REG_SC_LS:
-        case MC_REG_SC_KE:
-        case MC_REG_SC_VBUS:
-        case MC_REG_SC_MEAS_NOMINALSPEED:
-        {
-          retVal = MCP_ERROR_RO_REG;
-          break;
-        }
-
-        case MC_REG_SC_CURRENT:
-        { /* Profiler is supported only by series supporting unaligned access */
-          if(SCC.sm_state==SCC_IDLE || SCC_CALIBRATION_END==SCC.sm_state)
-          {
-            float fregdata = *(float*)data; //cstat !MISRAC2012-Rule-11.3
-            SCC_SetNominalCurrent(&SCC, fregdata);
-          }
-          else{
-              retVal = MCP_ERROR_RO_REG;
-          }
-          break;
-        }
-
-        case MC_REG_SC_SPDBANDWIDTH:
-        {
-          float fregdata = *(float*)data; //cstat !MISRAC2012-Rule-11.3
-          OTT_SetSpeedRegulatorBandwidth(&OTT, fregdata);
-          break;
-        }
-
-        case MC_REG_SC_LDLQRATIO:
-        {
-          float fregdata = *(float*)data; //cstat !MISRAC2012-Rule-11.3
-          SCC_SetLdLqRatio(&SCC, fregdata);
-          break;
-        }
-
-        case MC_REG_SC_NOMINAL_SPEED:
-        {
-          SCC_SetNominalSpeed (&SCC, (int32_t) regdata32);
-          break;
-        }
-
-        case MC_REG_SC_CURRBANDWIDTH:
-        {
-          float fregdata = *(float*)data; //cstat !MISRAC2012-Rule-11.3
-          SCC_SetCurrentBandwidth(&SCC, fregdata);
-          break;
-        }
-        case MC_REG_RESISTOR_OFFSET:
-        {
-          float fregdata = *(float*)data;
-          SCC_SetResistorOffset(&SCC,fregdata);
-          break;
-        }
-        case MC_REG_SC_J:
-        case MC_REG_SC_F:
-        case MC_REG_SC_MAX_CURRENT:
-        case MC_REG_SC_STARTUP_SPEED:
-        case MC_REG_SC_STARTUP_ACC:
         {
           retVal = MCP_ERROR_RO_REG;
           break;
@@ -699,31 +513,6 @@ uint8_t RI_SetRegisterMotor1(uint16_t regID, uint8_t typeID, uint8_t *data, uint
             torque = *(uint32_t *)rawData; //cstat !MISRAC2012-Rule-11.3
             duration = *(uint16_t *)&rawData[4]; //cstat !MISRAC2012-Rule-11.3
             MCI_ExecTorqueRamp(pMCIN, (int16_t)torque, duration);
-            break;
-          }
-
-          case MC_REG_REVUP_DATA:
-          {
-            int32_t rpm;
-            RevUpCtrl_PhaseParams_t revUpPhase;
-            uint8_t i;
-            uint8_t nbrOfPhase = (((uint8_t)rawSize) / 8U);
-
-            if (((0U != ((rawSize) % 8U))) || ((nbrOfPhase > RUC_MAX_PHASE_NUMBER) != 0))
-            {
-              retVal = MCP_ERROR_BAD_RAW_FORMAT;
-            }
-            else
-            {
-              for (i = 0; i <nbrOfPhase; i++)
-              {
-              rpm = *(int32_t *) &rawData[i * 8U]; //cstat !MISRAC2012-Rule-11.3
-              revUpPhase.hFinalMecSpeedUnit = (((int16_t)rpm) * ((int16_t)SPEED_UNIT)) / ((int16_t)U_RPM);
-              revUpPhase.hFinalTorque = *((int16_t *) &rawData[4U + (i * 8U)]); //cstat !MISRAC2012-Rule-11.3
-              revUpPhase.hDurationms  = *((uint16_t *) &rawData[6U +(i * 8U)]); //cstat !MISRAC2012-Rule-11.3
-              (void)RUC_SetPhase(&RevUpControlM1, i, &revUpPhase);
-              }
-            }
             break;
           }
 
@@ -932,54 +721,6 @@ uint8_t RI_GetRegisterGlobal(uint16_t regID,uint8_t typeID,uint8_t * data,uint16
               break;
             }
 
-            case MC_REG_RUC_STAGE_NBR:
-            {
-              *data = (uint8_t)RUC_GetNumberOfPhases(&RevUpControlM1);
-              break;
-            }
-
-            case MC_REG_SC_CHECK:
-            {
-              *data = (uint8_t) 1u;
-              break;
-            }
-
-            case MC_REG_SC_STATE:
-            {
-              uint8_t state ;
-              state = SCC_GetState(&SCC);
-              state += OTT_GetState (&OTT);
-              *data = state;
-              break;
-            }
-
-            case MC_REG_SC_STEPS:
-            {
-              uint8_t steps ;
-              steps = SCC_GetSteps(&SCC);
-              steps += OTT_GetSteps (&OTT);
-              *data = steps-1u;
-              break;
-            }
-
-            case MC_REG_SC_PP:
-            {
-              *data = SPD_GetElToMecRatio(&STO_PLL_M1._Super);
-              break;
-            }
-
-            case MC_REG_SC_FOC_REP_RATE:
-            {
-              *data = SCC_GetFOCRepRate(&SCC);
-              break;
-            }
-
-            case MC_REG_SC_COMPLETED:
-            {
-              *data = OTT_IsMotorAlreadyProfiled(&OTT);
-              break;
-             }
-
             default:
             {
               retVal = MCP_ERROR_UNKNOWN_REG;
@@ -1142,71 +883,15 @@ uint8_t RI_GetRegisterGlobal(uint16_t regID,uint8_t typeID,uint8_t * data,uint16
               break;
             }
 
-            case MC_REG_STOPLL_EL_ANGLE:
+            case MC_REG_ENCODER_EL_ANGLE:
             {
-              //cstat !MISRAC2012-Rule-11.3
-              *regdata16 = SPD_GetElAngle((SpeednPosFdbk_Handle_t *)&STO_PLL_M1);
+              *regdata16 = SPD_GetElAngle ((SpeednPosFdbk_Handle_t*) &ENCODER_M1); //cstat !MISRAC2012-Rule-11.3
               break;
             }
 
-            case MC_REG_STOPLL_ROT_SPEED:
+            case MC_REG_ENCODER_SPEED:
             {
-              //cstat !MISRAC2012-Rule-11.3
-              *regdata16 = SPD_GetS16Speed((SpeednPosFdbk_Handle_t *)&STO_PLL_M1);
-              break;
-            }
-
-            case MC_REG_STOPLL_I_ALPHA:
-            {
-              *regdata16 = STO_PLL_GetEstimatedCurrent(&STO_PLL_M1).alpha;
-              break;
-            }
-
-            case MC_REG_STOPLL_I_BETA:
-            {
-              *regdata16 = STO_PLL_GetEstimatedCurrent(&STO_PLL_M1).beta;
-              break;
-            }
-
-            case MC_REG_STOPLL_BEMF_ALPHA:
-            {
-              *regdata16 = STO_PLL_GetEstimatedBemf(&STO_PLL_M1).alpha;
-              break;
-            }
-
-            case MC_REG_STOPLL_BEMF_BETA:
-            {
-              *regdata16 = STO_PLL_GetEstimatedBemf(&STO_PLL_M1).beta;
-              break;
-            }
-
-            case MC_REG_STOPLL_C1:
-            {
-              int16_t hC1;
-              int16_t hC2;
-              STO_PLL_GetObserverGains(&STO_PLL_M1, &hC1, &hC2);
-              *regdata16 = hC1;
-              break;
-            }
-
-            case MC_REG_STOPLL_C2:
-            {
-              int16_t hC1;
-              int16_t hC2;
-              STO_PLL_GetObserverGains(&STO_PLL_M1, &hC1, &hC2);
-              *regdata16 = hC2;
-              break;
-            }
-
-            case MC_REG_STOPLL_KI:
-            {
-              *regdata16 = PID_GetKI (&(&STO_PLL_M1)->PIRegulator);
-              break;
-            }
-
-            case MC_REG_STOPLL_KP:
-            {
-              *regdata16 = PID_GetKP (&(&STO_PLL_M1)->PIRegulator);
+              *regdata16 = SPD_GetS16Speed ((SpeednPosFdbk_Handle_t*) &ENCODER_M1); //cstat !MISRAC2012-Rule-11.3
               break;
             }
 
@@ -1270,21 +955,6 @@ uint8_t RI_GetRegisterGlobal(uint16_t regID,uint8_t typeID,uint8_t * data,uint16
             case MC_REG_DAC_USER2:
               break;
 
-            case MC_REG_SC_PWM_FREQUENCY:
-              *regdataU16 = SCC_GetPWMFrequencyHz(&SCC);
-              break;
-            case MC_REG_OVERVOLTAGETHRESHOLD:
-            {
-              *regdataU16 = SCC_GetOverVoltageThreshold(&SCC);
-              break;
-            }
-
-            case MC_REG_UNDERVOLTAGETHRESHOLD:
-              {
-                *regdata16 = SCC_GetUnderVoltageThreshold(&SCC);
-              break;
-            }
-
             case MC_REG_SPEED_KP_DIV:
             {
               *regdataU16 = (uint16_t)PID_GetKPDivisorPOW2(&PIDSpeedHandle_M1);
@@ -1338,18 +1008,6 @@ uint8_t RI_GetRegisterGlobal(uint16_t regID,uint8_t typeID,uint8_t * data,uint16
               break;
             }
 
-            case MC_REG_STOPLL_KI_DIV:
-            {
-              *regdataU16 = PID_GetKIDivisorPOW2(&(&STO_PLL_M1)->PIRegulator);
-              break;
-            }
-
-            case MC_REG_STOPLL_KP_DIV:
-            {
-              *regdataU16 = PID_GetKPDivisorPOW2(&(&STO_PLL_M1)->PIRegulator);
-              break;
-            }
-
             default:
             {
               retVal = MCP_ERROR_UNKNOWN_REG;
@@ -1391,18 +1049,6 @@ uint8_t RI_GetRegisterGlobal(uint16_t regID,uint8_t typeID,uint8_t * data,uint16
               break;
             }
 
-            case MC_REG_STOPLL_EST_BEMF:
-            {
-              *regdata32 = STO_PLL_GetEstimatedBemfLevel(&STO_PLL_M1);
-              break;
-            }
-
-            case MC_REG_STOPLL_OBS_BEMF:
-            {
-              *regdata32 = STO_PLL_GetObservedBemfLevel(&STO_PLL_M1);
-              break;
-            }
-
             case MC_REG_STOCORDIC_EST_BEMF:
             {
               *regdata32 = STO_CR_GetEstimatedBemfLevel(&STO_CR_M1);
@@ -1420,117 +1066,6 @@ uint8_t RI_GetRegisterGlobal(uint16_t regID,uint8_t typeID,uint8_t * data,uint16
               FloatToU32 ReadVal; //cstat !MISRAC2012-Rule-19.2
               ReadVal.Float_Val = PQD_GetAvrgElMotorPowerW(pMPM[M1]);
               *regdataU32 = ReadVal.U32_Val; //cstat !UNION-type-punning
-              break;
-            }
-
-            case MC_REG_SC_RS:
-            {
-              *regdataU32 = SCC_GetRs(&SCC);
-              break;
-            }
-
-            case MC_REG_SC_LS:
-            {
-              *regdataU32 = SCC_GetLs(&SCC);
-              break;
-            }
-
-            case MC_REG_SC_KE:
-            {
-              *regdataU32 = SCC_GetKe(&SCC);
-              break;
-            }
-
-            case MC_REG_SC_VBUS:
-            {
-              *regdataU32 = SCC_GetVbus(&SCC);
-              break;
-            }
-
-            case MC_REG_SC_MEAS_NOMINALSPEED:
-            {
-              *regdataU32 = OTT_GetNominalSpeed(&OTT);
-              break;
-            }
-
-            case MC_REG_SC_CURRENT:
-            {
-              FloatToU32 ReadVal;
-              ReadVal.Float_Val = SCC_GetNominalCurrent(&SCC);
-              *regdataU32 = ReadVal.U32_Val;
-              break;
-            }
-
-            case MC_REG_SC_SPDBANDWIDTH:
-            {
-              FloatToU32 ReadVal;
-              ReadVal.Float_Val = OTT_GetSpeedRegulatorBandwidth(&OTT);
-              *regdataU32 = ReadVal.U32_Val;
-              break;
-            }
-
-            case MC_REG_SC_LDLQRATIO:
-            {
-              FloatToU32 ReadVal;
-              ReadVal.Float_Val = SCC_GetLdLqRatio(&SCC);
-              *regdataU32 = ReadVal.U32_Val;
-              break;
-            }
-
-            case MC_REG_SC_NOMINAL_SPEED:
-            {
-              *regdata32 = SCC_GetNominalSpeed(&SCC);
-              break;
-            }
-
-            case MC_REG_SC_CURRBANDWIDTH:
-            {
-              FloatToU32 ReadVal;
-              ReadVal.Float_Val = SCC_GetCurrentBandwidth(&SCC);
-              *regdataU32 = ReadVal.U32_Val;
-              break;
-            }
-
-            case MC_REG_SC_J:
-            {
-              FloatToU32 ReadVal;
-              ReadVal.Float_Val = OTT_GetJ(&OTT);
-              *regdataU32 = ReadVal.U32_Val;
-              break;
-            }
-
-            case MC_REG_SC_F:
-            {
-              FloatToU32 ReadVal;
-              ReadVal.Float_Val = OTT_GetF(&OTT);
-              *regdataU32 = ReadVal.U32_Val;
-              break;
-            }
-
-            case MC_REG_SC_MAX_CURRENT:
-            {
-              FloatToU32 ReadVal;
-              ReadVal.Float_Val = SCC_GetStartupCurrentAmp(&SCC);
-              *regdataU32 = ReadVal.U32_Val;
-              break;
-            }
-
-            case MC_REG_SC_STARTUP_SPEED:
-            {
-              *regdata32 = SCC_GetEstMaxOLSpeed(&SCC);
-              break;
-            }
-
-            case MC_REG_SC_STARTUP_ACC:
-            {
-              *regdata32 = SCC_GetEstMaxAcceleration(&SCC);
-              break;
-            }
-            case MC_REG_RESISTOR_OFFSET:
-            {
-              FloatToU32 ReadVal;
-              ReadVal.Float_Val=SCC_GetResistorOffset(&SCC);
-              *regdata32 =ReadVal.U32_Val;
               break;
             }
 
@@ -1665,35 +1200,6 @@ uint8_t RI_GetRegisterGlobal(uint16_t regID,uint8_t typeID,uint8_t * data,uint16
             break;
           }
 
-          case MC_REG_REVUP_DATA:
-          {
-            int32_t *rpm;
-            uint16_t *finalTorque;
-            uint16_t *durationms;
-            RevUpCtrl_PhaseParams_t revUpPhase;
-            uint8_t i;
-
-            *rawSize = (uint16_t)RUC_MAX_PHASE_NUMBER*8U;
-            if (((*rawSize) + 2U) > (uint16_t)freeSpace)
-            {
-              retVal = MCP_ERROR_NO_TXSYNC_SPACE;
-            }
-            else
-            {
-              for (i = 0; i <RUC_MAX_PHASE_NUMBER; i++)
-              {
-                (void)RUC_GetPhase( &RevUpControlM1 ,i, &revUpPhase);
-                rpm = (int32_t *)&data[2U + (i * 8U)];  //cstat !MISRAC2012-Rule-11.3
-                *rpm = (((int32_t)revUpPhase.hFinalMecSpeedUnit) * U_RPM) / SPEED_UNIT; //cstat !MISRAC2012-Rule-11.3
-                finalTorque = (uint16_t *)&data[6U + (i * 8U)]; //cstat !MISRAC2012-Rule-11.3
-                *finalTorque = (uint16_t)revUpPhase.hFinalTorque; //cstat !MISRAC2012-Rule-11.3
-                durationms  = (uint16_t *)&data[8U + (i * 8U)]; //cstat !MISRAC2012-Rule-11.3
-                *durationms  = revUpPhase.hDurationms;
-              }
-            }
-            break;
-          }
-
           case MC_REG_CURRENT_REF:
           {
             uint16_t *iqref = (uint16_t *)rawData; //cstat !MISRAC2012-Rule-11.3
@@ -1811,6 +1317,24 @@ __weak uint8_t RI_GetPtrReg(uint16_t dataID, void **dataPtr)
 
     switch (typeID)
     {
+      case TYPE_DATA_32BIT:
+      {
+        switch (regID)
+        {
+          case MC_REG_CURRENT_POSITION:
+          {
+			*dataPtr = *dataPtr = &((&ENCODER_M1)->_Super.wMecAngle);
+			 break;
+          }
+		  default:
+		  {
+			*dataPtr = &nullData16;
+			retVal = MCP_ERROR_UNKNOWN_REG;
+			break;
+		  }
+		}
+		break;
+	  }
       case TYPE_DATA_16BIT:
       {
         switch (regID)
@@ -1887,33 +1411,15 @@ __weak uint8_t RI_GetPtrReg(uint16_t dataID, void **dataPtr)
             break;
           }
 
-          case MC_REG_STOPLL_ROT_SPEED:
+          case MC_REG_ENCODER_SPEED:
           {
-            *dataPtr = &((&STO_PLL_M1)->_Super.hAvrMecSpeedUnit);
+            *dataPtr = &((&ENCODER_M1)->_Super.hAvrMecSpeedUnit);
             break;
           }
 
-          case MC_REG_STOPLL_EL_ANGLE:
+          case MC_REG_ENCODER_EL_ANGLE:
           {
-            *dataPtr = &((&STO_PLL_M1)->_Super.hElAngle);
-            break;
-          }
-
-#ifdef NOT_IMPLEMENTED /* Not yet implemented */
-          case MC_REG_STOPLL_I_ALPHA:
-          case MC_REG_STOPLL_I_BETA:
-            break;
-#endif
-
-          case MC_REG_STOPLL_BEMF_ALPHA:
-          {
-            *dataPtr = &((&STO_PLL_M1)->hBemf_alfa_est);
-            break;
-          }
-
-          case MC_REG_STOPLL_BEMF_BETA:
-          {
-            *dataPtr = &((&STO_PLL_M1)->hBemf_beta_est);
+            *dataPtr = &((&ENCODER_M1)->_Super.hElAngle);
             break;
           }
 

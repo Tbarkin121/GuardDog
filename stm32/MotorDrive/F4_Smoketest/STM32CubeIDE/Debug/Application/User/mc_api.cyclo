@@ -46,4 +46,4 @@ C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_Smoketest/Src/mc_api.
 C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_Smoketest/Src/mc_api.c:704:6:MC_GetPolarizationOffsetsMotor1	1
 C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_Smoketest/Src/mc_api.c:724:6:MC_StartPolarizationOffsetsMeasurementMotor1	1
 C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_Smoketest/Src/mc_api.c:735:16:MC_GetAveragePowerMotor1_F	1
-C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_Smoketest/Src/mc_api.c:750:16:MC_ProfilerCommand	1
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_Smoketest/Src/mc_api.c:743:16:MC_ProfilerCommand	1

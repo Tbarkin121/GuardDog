@@ -1,8 +1,10 @@
 C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_Smoketest/Src/stm32f4xx_hal_msp.c:68:6:HAL_MspInit	1
-C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_Smoketest/Src/stm32f4xx_hal_msp.c:92:6:HAL_ADC_MspInit	2
-C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_Smoketest/Src/stm32f4xx_hal_msp.c:134:6:HAL_ADC_MspDeInit	2
-C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_Smoketest/Src/stm32f4xx_hal_msp.c:169:6:HAL_TIM_Base_MspInit	2
-C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_Smoketest/Src/stm32f4xx_hal_msp.c:185:6:HAL_TIM_MspPostInit	2
-C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_Smoketest/Src/stm32f4xx_hal_msp.c:230:6:HAL_TIM_Base_MspDeInit	2
-C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_Smoketest/Src/stm32f4xx_hal_msp.c:256:6:HAL_UART_MspInit	4
-C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_Smoketest/Src/stm32f4xx_hal_msp.c:329:6:HAL_UART_MspDeInit	2
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_Smoketest/Src/stm32f4xx_hal_msp.c:93:6:HAL_ADC_MspInit	2
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_Smoketest/Src/stm32f4xx_hal_msp.c:135:6:HAL_ADC_MspDeInit	2
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_Smoketest/Src/stm32f4xx_hal_msp.c:170:6:HAL_TIM_Base_MspInit	2
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_Smoketest/Src/stm32f4xx_hal_msp.c:192:6:HAL_TIM_Encoder_MspInit	2
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_Smoketest/Src/stm32f4xx_hal_msp.c:222:6:HAL_TIM_MspPostInit	2
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_Smoketest/Src/stm32f4xx_hal_msp.c:267:6:HAL_TIM_Base_MspDeInit	2
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_Smoketest/Src/stm32f4xx_hal_msp.c:293:6:HAL_TIM_Encoder_MspDeInit	2
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_Smoketest/Src/stm32f4xx_hal_msp.c:324:6:HAL_UART_MspInit	4
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_Smoketest/Src/stm32f4xx_hal_msp.c:397:6:HAL_UART_MspDeInit	2

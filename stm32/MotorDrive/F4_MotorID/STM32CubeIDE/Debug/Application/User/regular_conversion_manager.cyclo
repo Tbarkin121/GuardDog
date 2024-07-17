@@ -1,0 +1,7 @@
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_MotorID/Src/regular_conversion_manager.c:179:6:RCM_RegisterRegConv	29
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_MotorID/Src/regular_conversion_manager.c:144:6:RCM_RegisterRegConv_WithCB	2
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_MotorID/Src/regular_conversion_manager.c:265:10:RCM_ExecRegularConv	4
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_MotorID/Src/regular_conversion_manager.c:299:6:RCM_RequestUserConv	2
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_MotorID/Src/regular_conversion_manager.c:324:10:RCM_GetUserConv	2
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_MotorID/Src/regular_conversion_manager.c:346:6:RCM_ExecUserConv	4
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_MotorID/Src/regular_conversion_manager.c:385:21:RCM_GetUserConvState	1

@@ -1653,7 +1653,7 @@
           "sensorsDisplacement": "Number.NaN",
           "placementElectricalAngle": "Number.NaN"
         },
-        "hasQuadratureEncoder": false,
+        "hasQuadratureEncoder": true,
         "quadratureEncoder": {
           "pulsesPerMechanicalRevolution": 1024,
           "hasIndexPin": true
@@ -1663,7 +1663,7 @@
       },
       "speedSensingSel_0": {
         "mainSensorParams": {
-          "speedSensorMode": "pll"
+          "speedSensorMode": "encoder"
         }
       },
       "speedSensing_0": {
@@ -1671,29 +1671,15 @@
           "speedSensorMode": "",
           "maxAllowedErrors": "Number.NaN",
           "sensorParams": {
-            "_tag": "pll",
-            "sensorlessSpeedFeedback": true,
-            "varianceThreshold": "Number.NaN",
-            "loopAverageSpeedDepth": "Number.NaN",
-            "observerAverageSpeedDepth": "Number.NaN",
-            "autoCalculate": true,
-            "g1Observer": "Number.NaN",
-            "g2Observer": "Number.NaN",
-            "bemfTolerance": "Number.NaN",
-            "bemfGain": "Number.NaN",
-            "F1": "Number.NaN",
-            "F2": "Number.NaN",
-            "pll": {
-              "KpKi": {
-                "P": {
-                  "num": "Number.NaN",
-                  "den": "Number.NaN"
-                },
-                "I": {
-                  "num": "Number.NaN",
-                  "den": "Number.NaN"
-                }
-              }
+            "_tag": "encoder",
+            "speedFIFODepth": "Number.NaN",
+            "inputFilterDuration": "Number.NaN",
+            "reverseCountDirection": false,
+            "encoderModeAbsolute": false,
+            "startUpParam": {
+              "duration": "Number.NaN",
+              "electricalAlignAngle": "Number.NaN",
+              "finalCurrent": "Number.NaN"
             }
           }
         },
@@ -1816,8 +1802,98 @@
           "enabled": false
         },
         "lowMemoryFootprintReg": false,
-        "motorProfiler": true,
+        "motorProfiler": false,
         "dbgMcuLoadMeasure": false
+      },
+      "driveManagement_0": {
+        "currentReg": {
+          "controlMode": "torque",
+          "autoPI": true,
+          "KpKi": {
+            "P": "Number.NaN",
+            "I": "Number.NaN"
+          },
+          "cutOffFrequency": "Number.NaN",
+          "useMTPA": false,
+          "feedForward": false,
+          "MTPATarget": "Number.NaN"
+        },
+        "speedReg": {
+          "executionRate": "Number.NaN",
+          "targetSpeed": "Number.NaN",
+          "KpKi": {
+            "P": {
+              "num": "Number.NaN",
+              "den": "Number.NaN"
+            },
+            "I": {
+              "num": "Number.NaN",
+              "den": "Number.NaN"
+            }
+          },
+          "autoPI": true
+        },
+        "torqueReg": {
+          "target": "Number.NaN",
+          "KpKi": {
+            "P": {
+              "num": "Number.NaN",
+              "den": "Number.NaN"
+            },
+            "I": {
+              "num": "Number.NaN",
+              "den": "Number.NaN"
+            }
+          }
+        },
+        "fluxReg": {
+          "target": "Number.NaN",
+          "KpKi": {
+            "P": {
+              "num": "Number.NaN",
+              "den": "Number.NaN"
+            },
+            "I": {
+              "num": "Number.NaN",
+              "den": "Number.NaN"
+            }
+          }
+        },
+        "fluxWeak": {
+          "enabled": false,
+          "voltageLimit": "Number.NaN",
+          "KpKi": {
+            "P": {
+              "num": "Number.NaN",
+              "den": "Number.NaN"
+            },
+            "I": {
+              "num": "Number.NaN",
+              "den": "Number.NaN"
+            }
+          }
+        },
+        "posReg": {
+          "executionRate": "Number.NaN",
+          "KpKiKd": {
+            "P": {
+              "num": 10000,
+              "den": 1024
+            },
+            "D": {
+              "num": 1000,
+              "den": 16
+            },
+            "I": {
+              "num": 1000,
+              "den": 32768
+            }
+          }
+        },
+        "modulationFlags": {
+          "overModulation": false,
+          "discontinuousPWM": false
+        }
       }
     }
   }

@@ -1,0 +1,6 @@
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_SpeedMode/Src/usart_aspep_driver.c:43:6:UASPEP_INIT	5
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_SpeedMode/Src/usart_aspep_driver.c:55:6:UASPEP_DAMCONFIG_TX	3
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_SpeedMode/Src/usart_aspep_driver.c:91:6:UASPEP_DAMCONFIG_RX	3
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_SpeedMode/Src/usart_aspep_driver.c:127:6:UASPEP_SEND_PACKET	5
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_SpeedMode/Src/usart_aspep_driver.c:154:6:UASPEP_RECEIVE_BUFFER	1
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_SpeedMode/Src/usart_aspep_driver.c:169:6:UASPEP_IDLE_ENABLE	2

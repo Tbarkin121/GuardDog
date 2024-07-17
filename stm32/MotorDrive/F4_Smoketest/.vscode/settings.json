@@ -1,0 +1,21 @@
+{
+    "files.associations": {
+        "mcp.h": "c",
+        "mcpa.h": "c",
+        "mcp_config.h": "c",
+        "mc_type.h": "c",
+        "register_interface.h": "c",
+        "mcptl.h": "c",
+        "mc_parameters.h": "c",
+        "mc_interface.h": "c",
+        "mc_config.h": "c",
+        "mc_api.h": "c",
+        "parameters_conversion.h": "c",
+        "aspep.h": "c",
+        "usart_aspep_driver.h": "c",
+        "mc_math.h": "c",
+        "parameters_conversion_f4xx.h": "c",
+        "mp_one_touch_tuning.h": "c",
+        "mp_self_com_ctrl.h": "c"
+    }
+}

@@ -1,0 +1,8 @@
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_MotorID/Src/stm32f4xx_hal_msp.c:68:6:HAL_MspInit	1
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_MotorID/Src/stm32f4xx_hal_msp.c:93:6:HAL_ADC_MspInit	2
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_MotorID/Src/stm32f4xx_hal_msp.c:135:6:HAL_ADC_MspDeInit	2
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_MotorID/Src/stm32f4xx_hal_msp.c:170:6:HAL_TIM_Base_MspInit	2
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_MotorID/Src/stm32f4xx_hal_msp.c:186:6:HAL_TIM_MspPostInit	2
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_MotorID/Src/stm32f4xx_hal_msp.c:231:6:HAL_TIM_Base_MspDeInit	2
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_MotorID/Src/stm32f4xx_hal_msp.c:257:6:HAL_UART_MspInit	4
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/F4_MotorID/Src/stm32f4xx_hal_msp.c:330:6:HAL_UART_MspDeInit	2

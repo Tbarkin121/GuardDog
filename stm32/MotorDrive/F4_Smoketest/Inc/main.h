@@ -87,6 +87,10 @@ void Error_Handler(void);
 #define M1_PWM_VH_GPIO_Port GPIOA
 #define M1_PWM_WH_Pin GPIO_PIN_10
 #define M1_PWM_WH_GPIO_Port GPIOA
+#define M1_ENCODER_A_Pin GPIO_PIN_8
+#define M1_ENCODER_A_GPIO_Port GPIOB
+#define M1_ENCODER_B_Pin GPIO_PIN_9
+#define M1_ENCODER_B_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 

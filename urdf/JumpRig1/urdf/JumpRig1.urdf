@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="JumpRig1">
+  <link
+    name="Base">
+    <inertial>
+      <origin
+        xyz="7.0859E-17 -2.7756E-17 0.46758"
+        rpy="0 0 0" />
+      <mass
+        value="1.1645" />
+      <inertia
+        ixx="0.062189"
+        ixy="2.5769E-11"
+        ixz="1.0462E-17"
+        iyy="0.062463"
+        iyz="2.7781E-19"
+        izz="0.00053529" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://JumpRig1/meshes/Base.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://JumpRig1/meshes/Base.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Carrage">
+    <inertial>
+      <origin
+        xyz="0.021343 -8.8073E-05 4.2273E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.43811" />
+      <inertia
+        ixx="0.00031257"
+        ixy="-4.6117E-08"
+        ixz="1.671E-08"
+        iyy="0.00029769"
+        iyz="1.4435E-08"
+        izz="0.00022037" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://JumpRig1/meshes/Carrage.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://JumpRig1/meshes/Carrage.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Prismatic1"
+    type="prismatic">
+    <origin
+      xyz="0 0 0.344"
+      rpy="0 0 0" />
+    <parent
+      link="Base" />
+    <child
+      link="Carrage" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="10"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Hip">
+    <inertial>
+      <origin
+        xyz="0.094879 -0.0080336 -1.0441E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.22793" />
+      <inertia
+        ixx="0.00019389"
+        ixy="2.9646E-06"
+        ixz="8.7067E-10"
+        iyy="0.00031963"
+        iyz="2.9154E-10"
+        izz="0.00015709" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://JumpRig1/meshes/Hip.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.0078431 0.23922 0.82353 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://JumpRig1/meshes/Hip.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Revolute1"
+    type="revolute">
+    <origin
+      xyz="0.061 0.0118 0"
+      rpy="0 0 0" />
+    <parent
+      link="Carrage" />
+    <child
+      link="Hip" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="3"
+      velocity="50" />
+  </joint>
+  <link
+    name="Knee">
+    <inertial>
+      <origin
+        xyz="0.14161 0.0037649 1.1056E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.06737" />
+      <inertia
+        ixx="9.9237E-06"
+        ixy="-3.9964E-09"
+        ixz="1.3799E-11"
+        iyy="6.1692E-05"
+        iyz="-8.0018E-09"
+        izz="6.2515E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://JumpRig1/meshes/Knee.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.28627 0.66275 0.32941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://JumpRig1/meshes/Knee.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Revolute2"
+    type="revolute">
+    <origin
+      xyz="0.218 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="Hip" />
+    <child
+      link="Knee" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="3"
+      velocity="50" />
+  </joint>
+</robot>
