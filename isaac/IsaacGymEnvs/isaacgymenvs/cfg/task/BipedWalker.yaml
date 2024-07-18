@@ -14,19 +14,19 @@ env:
   clipActions: 1.0
 
   plane:
-    staticFriction: 1.0  # [-]
-    dynamicFriction: 1.0  # [-]
+    staticFriction: 0.6  # [-]
+    dynamicFriction: 0.6  # [-]
     restitution: 0.        # [-]
 
   baseInitState:
-    pos: [0.0, 0.0, 0.4] # x,y,z [m]
+    pos: [0.0, 0.0, 0.5] # x,y,z [m]
     rot: [0.0, 0.0, 0.0, 1.0] # x,y,z,w [quat]
     vLinear: [0.0, 0.0, 0.0]  # x,y,z [m/s]
     vAngular: [0.0, 0.0, 0.0]  # x,y,z [rad/s]
 
   asset:
     assetRoot: "../../assets"
-    assetFileName: "urdf/Biped_SphereFoot/urdf/Biped_SphereFoot.urdf"
+    assetFileName: "urdf/Biped_10B/urdf/Biped_10B.urdf"
 
   # set to True if you use camera sensors in the environment
   enableCameraSensors: False
@@ -41,15 +41,15 @@ env:
     stiffness: 0.0  # [N*m/rad]
     damping: 0.0     # [N*m*s/rad]
     maxEffort: 3.0 # [N*m]
-    maxVelocity: 50.0 #[rad/s]
+    maxVelocity: 40.0 #[rad/s]
     friction: 0.03
     controlFrequencyInv: 1 # 60 Hz
 
   defaultJointAngles:  # = target angles when action = 0.0
     R_J1: 0.0    # [rad]
     L_J1: 0.0    # [rad]
-    R_J2: -1.0     # [rad]
-    L_J2: 1.0    # [rad]
+    R_J2: 1.0     # [rad]
+    L_J2: -1.0    # [rad]
     R_J3: 1.5    # [rad]
     L_J3: -1.5     # [rad] 
     WheelX: 0.0
@@ -61,13 +61,14 @@ env:
     linearVelocityZRewardScale: -4.0
     angularVelocityXYRewardScale: -0.05
     angularVelocityZRewardScale: 0.5
-    orientationRewardScale: -0. #-1.
+    orientationRewardScale: -0.1 #-1.
     torqueRewardScale: -0.000025 
-    jointAccRewardScale: -0.0005 # -0.0025
+    jointAccRewardScale: -0.00001 # -0.0025
     toeForceRewardScale: -0.0
     jointSpeedRewardScale: -0.001
     actionRateRewardScale: -0.01
     kneeCollisionRewardScale: -0.25 
+    baseHeightRewardScale: 0.1
 
     # normalization
     linearVelocityScale: 2.0

@@ -134,7 +134,7 @@ env_upper = gymapi.Vec3(spacing, 0.0, spacing)
 
 # add cartpole urdf asset
 asset_root = "../../IsaacGymEnvs/assets"
-asset_file = "urdf/Biped_SphereFoot/urdf/Biped_SphereFoot.urdf"
+asset_file = "urdf/Biped_10B/urdf/Biped_10B.urdf"
 # asset_file = "urdf/WalkBot_3DOF_330/urdf/WalkBot_3DOF.urdf"
 
 # Load asset with default control type of position for all joints
@@ -156,7 +156,11 @@ initial_pose.r = gymapi.Quat.from_euler_zyx(0.0, 0.0, 0.0)
 # Cart held steady using position target mode.
 # Pole held at a 45 degree angle using position target mode.
 env0 = gym.create_env(sim, env_lower, env_upper, 2)
-cubebot0 = gym.create_actor(env0, cubebot_asset, initial_pose, 'CubeBot', 0, 1)
+self_collision=False
+if(self_collision):
+    cubebot0 = gym.create_actor(env0, cubebot_asset, initial_pose, 'CubeBot', 0, 0)
+else:
+    cubebot0 = gym.create_actor(env0, cubebot_asset, initial_pose, 'CubeBot', 0, 1)
 # Configure DOF properties
 props = gym.get_actor_dof_properties(env0, cubebot0)
 props["driveMode"].fill(gymapi.DOF_MODE_EFFORT) 

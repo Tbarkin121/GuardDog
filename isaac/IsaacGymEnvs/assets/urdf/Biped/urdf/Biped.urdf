@@ -424,7 +424,7 @@
     </visual>
   </link>
   <joint
-    name="WheelX"
+    name="Wheel_X"
     type="continuous">
     <origin
       xyz="-0.0699999999999999 0 0.05"
@@ -468,7 +468,7 @@
     </visual>
   </link>
   <joint
-    name="WheelY"
+    name="Wheel_Y"
     type="continuous">
     <origin
       xyz="0.020147207668468 0 0.05"
