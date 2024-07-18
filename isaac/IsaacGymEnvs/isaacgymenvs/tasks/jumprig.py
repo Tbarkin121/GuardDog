@@ -164,8 +164,9 @@ class JumpRig(VecTask):
                                                                         self.reset_buf, 
                                                                         self.progress_buf, 
                                                                         self.max_episode_length)
-        # print(self.rew_buf[0])
-        print(self.obs_buf[0, 0:3])
+        # print(self.rew_buf[0])s
+        # print(self.obs_buf[0, 0:3])
+        # print(self.contact_forces[0,...])
 
     def convert_angle(self, angle):
         # Apply sine and cosine functions
@@ -214,10 +215,13 @@ class JumpRig(VecTask):
 
         positions =  2*np.pi*(torch.rand((len(env_ids), self.num_dof), device=self.device))
         velocities = 5.0 * (torch.rand((len(env_ids), self.num_dof), device=self.device) - 0.5)
-        positions[:,0] = 0.0
+        positions[:,0] = 0.25
         velocities[:,0] = 0.0
         positions[:,1] = 0.0
-
+        velocities[:,1] = 0.0
+        positions[:,2] = 0.0
+        velocities[:,2] = 0.0
+ 
         self.dof_pos[env_ids, :] = positions[:]
         self.dof_vel[env_ids, :] = velocities[:]
 
@@ -240,6 +244,20 @@ class JumpRig(VecTask):
         
         scale = torch.tensor([10, self.max_push_effort, self.max_push_effort])
         self.actions_tensor[0,:] = a*scale
+
+        # Need to check of the joints are near the joint limits... There is some weird physics when you try to drive a torque at the joint limit... 
+        # print(torch.where(torch.abs(self.dof_pos[:,1:3]) > 1.5, 0.0, 1.0))
+        self.actions_tensor[:, 1:3] = torch.where(
+            self.dof_pos[:, 1:3] > 1.2, 
+            torch.min(torch.zeros_like(self.actions_tensor[:, 1:3]), self.actions_tensor[:, 1:3]), 
+            self.actions_tensor[:, 1:3]
+        )
+        self.actions_tensor[:, 1:3] = torch.where(
+            self.dof_pos[:, 1:3] < -1.2, 
+            torch.max(torch.zeros_like(self.actions_tensor[:, 1:3]), self.actions_tensor[:, 1:3]), 
+            self.actions_tensor[:, 1:3]
+        )
+        # print(self.actions_tensor[0, ...])
 
         forces = gymtorch.unwrap_tensor(self.actions_tensor)
         self.gym.set_dof_actuation_force_tensor(self.sim, forces)

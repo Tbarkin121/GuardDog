@@ -34,15 +34,6 @@
           rgba="0.79216 0.81961 0.93333 1" />
       </material>
     </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="../meshes/Base.STL" />
-      </geometry>
-    </collision>
   </link>
   <link
     name="Carriage">
@@ -74,15 +65,6 @@
           rgba="0.79216 0.81961 0.93333 1" />
       </material>
     </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="../meshes/Carriage.STL" />
-      </geometry>
-    </collision>
   </link>
   <joint
     name="Prismatic1"
@@ -97,7 +79,7 @@
     <axis
       xyz="0 0 1" />
     <limit
-      lower="0.0"
+      lower="-0.3"
       upper="0.6"
       effort="0"
       velocity="0" />
@@ -132,15 +114,6 @@
           rgba="0.0078431 0.23922 0.82353 1" />
       </material>
     </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="../meshes/Hip.STL" />
-      </geometry>
-    </collision>
   </link>
   <joint
     name="Revolute1"
