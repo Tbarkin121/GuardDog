@@ -35,6 +35,7 @@ from .base.vec_task import VecTask
 from .keyboard import Keyboard
 
 from isaacgymenvs.utils.torch_jit_utils import to_torch, get_axis_params, torch_rand_float, quat_rotate, quat_rotate_inverse
+from .robot_components.motor import Motor
 
 class BipedWalker(VecTask):
 
@@ -64,6 +65,7 @@ class BipedWalker(VecTask):
         self.rew_scales["joint_acc"] = self.cfg["env"]["learn"]["jointAccRewardScale"]
         self.rew_scales["action_rate"] = self.cfg["env"]["learn"]["actionRateRewardScale"]
         self.rew_scales["collision"] = self.cfg["env"]["learn"]["kneeCollisionRewardScale"]
+        self.rew_scales["base_height"] = self.cfg["env"]["learn"]["baseHeightRewardScale"]
 
         self.reset_dist = self.cfg["env"]["resetDist"]
         
@@ -169,6 +171,8 @@ class BipedWalker(VecTask):
         self.keys = Keyboard(3)
 
         self.reset_idx(torch.arange(self.num_envs, device=self.device))
+        
+        self.reaction_wheel_motors = [Motor(), Motor()]
 
 
     def create_sim(self):
@@ -198,7 +202,7 @@ class BipedWalker(VecTask):
         upper = gymapi.Vec3(spacing, spacing, spacing)
 
         asset_root = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../../assets")
-        asset_file = "urdf/Biped_SphereFoot/urdf/Biped_SphereFoot.urdf"
+        asset_file = "urdf/Biped_10B/urdf/Biped_10B.urdf"
 
         if "asset" in self.cfg["env"]:
             asset_root = os.path.join(os.path.dirname(os.path.abspath(__file__)), self.cfg["env"]["asset"].get("assetRoot", asset_root))
@@ -269,7 +273,7 @@ class BipedWalker(VecTask):
             dof_props['effort'].fill(0.0)
             dof_props['friction'][:] = self.dof_friction
 
-            dof_props['velocity'][6:8] = 200.0
+            dof_props['velocity'][6:8] = 2000.0
             dof_props['friction'][6:8] = 0.001
 
             self.gym.set_actor_dof_properties(env_ptr, bipedwalker_handle, dof_props)
@@ -310,6 +314,7 @@ class BipedWalker(VecTask):
         self.rew_buf[:], self.reset_buf[:] = compute_bipedwalker_reward(self.root_states,
                                                                         self.commands,
                                                                         self.torques,
+                                                                        self.dof_pos,
                                                                         self.dof_vel,
                                                                         self.last_dof_vel,
                                                                         self.contact_forces,
@@ -324,6 +329,24 @@ class BipedWalker(VecTask):
                                                                         self.rew_scales,
                                                                         self.reset_dist,
                                                                         self.max_episode_length)
+        # print('----')
+        # print(f"dof_vel: {self.dof_vel[0,6]:.2f}, actions: {self.actions[0,6]:.2f}, torques: {self.torques[0,6]:.2f}")
+
+        # projected_gravity = self.obs_buf[:,26:29]
+        # rew_orient = torch.sum(torch.square(projected_gravity[:, [0,2]]), dim=1) * self.rew_scales['orient']
+        # print(projected_gravity[0, ...])
+        # print(rew_orient[0, ...])
+
+        # joint acc penalty
+        rew_joint_acc = torch.sum(torch.square(self.last_dof_vel - self.dof_vel), dim=1) * self.rew_scales["joint_acc"]
+
+        # collision penalty
+        knee_contact = torch.norm(self.contact_forces[:, self.thigh_indices, :], dim=2) > 1.
+        rew_collision = torch.sum(knee_contact, dim=1) * self.rew_scales["collision"] # sum vs any ?
+
+        # print(rew_joint_acc)
+        # print(self.rew_buf.shape)
+        
         self.last_actions[:] = self.actions[:]
         self.last_dof_vel[:] = self.dof_vel[:]
         # print(self.rew_buf[0])
@@ -334,14 +357,7 @@ class BipedWalker(VecTask):
         # print(toe_force)
         # print(rew_toe_force)
 
-         # joint acc penalty
-        rew_joint_acc = torch.sum(torch.square(self.last_dof_vel - self.dof_vel), dim=1) * self.rew_scales["joint_acc"]
         
-        # collision penalty
-        knee_contact = torch.norm(self.contact_forces[:, self.thigh_indices, :], dim=2) > 1.
-        rew_collision = torch.sum(knee_contact, dim=1) * self.rew_scales["collision"] # sum vs any ?
-
-        print(rew_collision)
     
         
     def compute_observations(self, env_ids=None):
@@ -360,7 +376,7 @@ class BipedWalker(VecTask):
                                                         self.default_dof_pos,
                                                         self.dof_vel,
                                                         self.gravity_vec,
-                                                        self.actions_tensor,
+                                                        self.actions,
                                                         # scales
                                                         self.lin_vel_scale,
                                                         self.ang_vel_scale,
@@ -393,7 +409,7 @@ class BipedWalker(VecTask):
         # velocities = torch_rand_float(-0.1, 0.1, (len(env_ids), self.num_dof), device=self.device)
         velocities = torch.zeros((len(env_ids), self.num_dof), device=self.device)
 
-        self.dof_pos[env_ids] = self.default_dof_pos[env_ids] * positions_offset[:]
+        self.dof_pos[env_ids, :] = self.default_dof_pos[env_ids] * positions_offset[:]
         self.dof_vel[env_ids, :] = velocities[:]
 
         env_ids_int32 = env_ids.to(dtype=torch.int32)        
@@ -413,6 +429,7 @@ class BipedWalker(VecTask):
         self.last_actions[env_ids] = 0.
         self.last_dof_vel[env_ids] = 0.
 
+
     def reset_commands(self, env_ids):
         self.commands_x[env_ids] = torch_rand_float(self.command_x_range[0], self.command_x_range[1], (len(env_ids), 1), device=self.device).squeeze()
         self.commands_y[env_ids] = torch_rand_float(self.command_y_range[0], self.command_y_range[1], (len(env_ids), 1), device=self.device).squeeze()
@@ -423,17 +440,26 @@ class BipedWalker(VecTask):
 
 
     def pre_physics_step(self, actions):
-        self.actions_tensor = torch.zeros( [self.num_envs, self.num_dof], device=self.device, dtype=torch.float)
-        self.actions_tensor[:, 0:self.num_dof] = actions.to(self.device) * self.max_dof_effort
+        self.actions = torch.zeros( [self.num_envs, self.num_dof], device=self.device, dtype=torch.float)
+        # actions[:, 6:8] *= 0
+        
+        self.actions[:, 0:self.num_dof] = actions.to(self.device) * self.max_dof_effort
 
         # a = self.keys.get_keys()
         # scale = torch.tensor([10, self.max_dof_effort, self.max_dof_effort])
-        # self.actions_tensor[0,0:3] = a*scale
-
-        forces = gymtorch.unwrap_tensor(self.actions_tensor)
+        # self.actions[0,0:3] = a*scale
+        
+        omega = self.dof_vel[:, 6:8] #Make sure this is in rad/s... right now it probably doesnt matter
+        self.actions[:, 6:8] = self.reaction_wheel_motors[0].get_torque(self.actions[:, 6:8], omega)
+        # print('----')
+        # print(f"dof_vel: {60/(2*np.pi)*self.dof_vel[0,7]:.2f}, actions: {self.actions[0,7]:.2f}, torques: {self.torques[0,7]:.2f}")
+        # print(self.actions)
+        
+        forces = gymtorch.unwrap_tensor(self.actions)
         self.gym.set_dof_actuation_force_tensor(self.sim, forces)
 
-        # print(actions_tensor[0])
+        # print(actions[0])
+        
 
     def post_physics_step(self):
         self.progress_buf += 1
@@ -449,7 +475,7 @@ class BipedWalker(VecTask):
 
         self.compute_observations()
         a = self.keys.get_keys()
-        scale = torch.tensor([1., 0.5, 0.25])
+        scale = torch.tensor([1., 0.5, 0.25])*1.0
         self.obs_buf[0, 29:32] = a*scale
         # print(self.obs_buf[0,29:32])
         self.compute_reward()
@@ -482,7 +508,8 @@ def compute_bipedwalker_reward(
                             # tensors
                             root_states, 
                             commands,
-                            torques,  
+                            torques,
+                            dof_pos,  
                             dof_vel,
                             last_dof_vel,
                             contact_forces, 
@@ -499,7 +526,7 @@ def compute_bipedwalker_reward(
                             # other
                             reset_dist,
                             max_episode_length):
-    # type: (Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, Dict[str, float], float, float) -> Tuple[Tensor, Tensor]
+    # type: (Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, Tensor, Dict[str, float], float, float) -> Tuple[Tensor, Tensor]
 
     # prepare quantities (TODO: return from obs ?)
     height = root_states[:,2]
@@ -518,14 +545,17 @@ def compute_bipedwalker_reward(
     rew_ang_vel_xy = torch.sum(torch.square(base_ang_vel[:, :2]), dim=1) * rew_scales["ang_vel_xy"]
     
     # orientation penalty
-    rew_orient = torch.sum(torch.square(projected_gravity[:, :2]), dim=1) * rew_scales["orient"]
+    rew_orient = torch.sum(torch.square(projected_gravity[:, [0,2]]), dim=1) * rew_scales["orient"]
 
+    # base height penalty
+    rew_base_height = torch.square(root_states[:, 2] - 0.3) * rew_scales["base_height"] # TODO add target base height to cfg
+    
     # torque penalty
     rew_torque = torch.sum(torch.square(torques), dim=1)  * rew_scales["torque"]
     # joint speed penalty
     rew_joint_speed = torch.sum(torch.square(dof_vel[:, 0:6]), dim=1)  * rew_scales["joints_speed"]
     # joint acc penalty
-    rew_joint_acc = torch.sum(torch.square(last_dof_vel - dof_vel), dim=1) * rew_scales["joint_acc"]
+    rew_joint_acc = torch.sum(torch.square(last_dof_vel[:, 0:6] - dof_vel[:, 0:6]), dim=1) * rew_scales["joint_acc"]
     
     # collision penalty
     knee_contact = torch.norm(contact_forces[:, thigh_idx, :], dim=2) > 1.
@@ -550,8 +580,11 @@ def compute_bipedwalker_reward(
     toe_force = torch.norm(torch.norm(contact_forces[:,[3,6]],dim=1),dim=1)
     rew_toe_force = torch.where(toe_force>10.0, toe_force * rew_scales["toe_force"], torch.zeros_like(toe_force))
                                 
+    # reward for foot going the same direction 
+    rew_toe_dir = torch.where((dof_pos[:, 2] * dof_pos[:, 5]) > 0, 0.0, 1.0) * 0.0001
 
-    total_reward = rew_lin_vel_xy + rew_ang_vel_z + rew_torque + rew_toe_force + rew_joint_speed + rew_joint_acc + rew_collision
+    # total_reward = rew_lin_vel_xy + rew_ang_vel_z + rew_torque + rew_joint_acc + rew_action_rate + rew_toe_dir + rew_orient
+    total_reward = rew_lin_vel_xy + rew_ang_vel_z + rew_toe_dir + rew_orient + rew_torque + rew_joint_acc
     total_reward = torch.clip(total_reward, 0., None)
 
     reset = torch.where(progress_buf >= max_episode_length - 1, torch.ones_like(reset_buf), reset_buf)
@@ -563,7 +596,7 @@ def compute_bipedwalker_reward(
     reset = reset | ((torch.norm(contact_forces[:, 0, :], dim=1) > 1.) & check_forces) # Body Collision 
     reset = reset | ((torch.any(torch.norm(contact_forces[:, hip_idx, :], dim=2) > 1., dim=1)) & check_forces)
     reset = reset | ((torch.any(torch.norm(contact_forces[:, thigh_idx, :], dim=2) > 1., dim=1)) & check_forces)
-    reset = reset | (height<0.25)
+    reset = reset | (height<0.28)
     # reset = reset | (torch.any(torch.norm(contact_forces[:, shin_idx, :], dim=2) > 1., dim=1))
     
     return total_reward.detach(), reset

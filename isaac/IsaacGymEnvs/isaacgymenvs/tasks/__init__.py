@@ -51,6 +51,8 @@ from .jumpy import Jumpy
 from .quadjumpy import QuadJumpy
 from .quadwalker import QuadWalker
 from .bipedwalker import BipedWalker
+from .bipedwalker_nowheel import BipedWalker_NoWheel
+from .jumprig import JumpRig
 
 from .allegro_kuka.allegro_kuka_reorientation import AllegroKukaReorientation
 from .allegro_kuka.allegro_kuka_regrasping import AllegroKukaRegrasping
@@ -123,4 +125,6 @@ isaacgym_task_map = {
     "QuadJumpy": QuadJumpy,
     "QuadWalker": QuadWalker,
     "BipedWalker": BipedWalker,
+    "BipedWalker_NoWheel": BipedWalker_NoWheel,
+    "JumpRig": JumpRig,
 }
