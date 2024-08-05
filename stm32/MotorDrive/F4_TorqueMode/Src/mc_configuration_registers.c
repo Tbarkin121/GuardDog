@@ -45,7 +45,7 @@ static const ApplicationConfig_reg_t M1_ApplicationConfig_reg =
 {
   .maxMechanicalSpeed = 6000,
   .maxReadableCurrent = M1_MAX_READABLE_CURRENT,
-  .nominalCurrent     = 11.5,
+  .nominalCurrent     = 15,
   .nominalVoltage     = 40,
   .driveType          = DRIVE_TYPE_M1,
 };
@@ -58,7 +58,7 @@ static const MotorConfig_reg_t M1_MotorConfig_reg =
   .rs         = 0.41,
   .ls         = 0.00003*1.000,
   .ld         = 0.00003,
-  .maxCurrent = 11.5,
+  .maxCurrent = 15,
   .name = "MN5008_PlanetGears"
 };
 

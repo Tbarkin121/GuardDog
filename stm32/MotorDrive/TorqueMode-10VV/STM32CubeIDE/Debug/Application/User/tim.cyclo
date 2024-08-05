@@ -1,0 +1,7 @@
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/TorqueMode-10VV/Src/tim.c:116:6:MX_TIM2_Init	3
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/TorqueMode-10VV/Src/tim.c:160:6:HAL_TIM_Base_MspInit	2
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/TorqueMode-10VV/Src/tim.c:176:6:HAL_TIM_Encoder_MspInit	2
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/TorqueMode-10VV/Src/tim.c:205:6:HAL_TIM_MspPostInit	2
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/TorqueMode-10VV/Src/tim.c:31:6:MX_TIM1_Init	10
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/TorqueMode-10VV/Src/tim.c:246:6:HAL_TIM_Base_MspDeInit	2
+C:/Users/Plutonium/MyProjects/GuardDog/stm32/MotorDrive/TorqueMode-10VV/Src/tim.c:266:6:HAL_TIM_Encoder_MspDeInit	2

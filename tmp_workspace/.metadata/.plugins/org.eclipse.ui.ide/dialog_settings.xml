@@ -9,6 +9,8 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\Plutonium\MyProjects\GuardDog\stm32\MotorDrive\TorqueMode-10VV\STM32CubeIDE"/>
+			<item value="C:\Users\Plutonium\MyProjects\GuardDog\stm32\MotorDrive\SpeedMode-10VV\STM32CubeIDE"/>
 			<item value="C:\Users\Plutonium\MyProjects\GuardDog\stm32\MotorDrive\F4_SpeedMode\STM32CubeIDE"/>
 			<item value="C:\Users\Plutonium\MyProjects\GuardDog\stm32\MotorDrive\F4_MotorID\STM32CubeIDE"/>
 			<item value="C:\Users\Plutonium\MyProjects\GuardDog\stm32\MotorDrive\F4_Smoketest"/>

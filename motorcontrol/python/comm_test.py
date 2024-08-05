@@ -75,7 +75,7 @@ class MotorController:
         self.integral = 0.0
         self.prev_error = 0.0
         self.prev_demand_current = 0.0
-        self.current_lpf = 0.9
+        self.current_lpf = 0.98
 
     def start_thread(self):
         self.thread = threading.Thread(target=read_from_port, args=(self.ser, self.lock, self.stop_event, self.shared_data))
@@ -178,7 +178,7 @@ class MotorController:
             
             demand_current = P_current + I_current + D_current
             # print(demand_current)
-            # demand_current = self.prev_demand_current*self.current_lpf + demand_current*(1-self.current_lpf)
+            demand_current = demand_current*self.current_lpf + self.prev_demand_current*(1-self.current_lpf)
             # print(demand_current)
             demand_current = np.clip(demand_current, -self.Current_Limit, self.Current_Limit)  # Saturate the control signal to the current limit
             # print(demand_current)
@@ -241,8 +241,8 @@ M1.P = 4.0
 M1.I = 1.0
 M1.D = 0.03
 
-M2.P = 4.0
-M2.I = 1.0
+M2.P = 2.0
+M2.I = 0.5
 M2.D = 0.03
 
 
@@ -252,11 +252,11 @@ M2_GR=5
 
 #%%
 
-M1.Current_Limit = 11.5
-M2.Current_Limit = 11.5
+M1.Current_Limit = 8.0
+M2.Current_Limit = 8.0
 
 DataLog = []
-for _ in range(10000):
+for _ in range(5000):
     # print(f"M1:{M1_targ_pos}. M2:{M2_targ_pos}")
     
     M1_targ_pos += M1_targ_step    
@@ -281,35 +281,61 @@ M2.Set_Current(0.0, 0)
 
 #%%    
 
-M1.Current_Limit = 11.5
-M2.Current_Limit = 11.5
+M1.Current_Limit = 15.0
+M2.Current_Limit = 15.0
 
-M1_targ_pos = -5.0
-M2_targ_pos = -10.0
-M1_targ_step = 0.015
+M1_start_pos =  M1.shared_data['motor_position']
+M2_start_pos =  M2.shared_data['motor_position']
+M1_targ_pos = M1_start_pos
+M2_targ_pos = M2_start_pos
+M1_targ_step = 0.05
 M2_targ_step = M1_targ_step*2
 
-M1.P = 8.0
+M1.P = 5.0
 M1.I = 2.5
-M1.D = 0.02
+M1.D = 0.03
 
-M2.P = 8.0
+M2.P = 5.0
 M2.I = 2.5
-M2.D = 0.02
+M2.D = 0.03
 
 DataLog = []
-for _ in range(2000):
-    # print(f"M1:{M1_targ_pos}. M2:{M2_targ_pos}")
+
+RISING = 1
+FALLING = 2
+state = RISING
+for _ in range(3000):
+    # print(f"M1:{M1_targ_pos}. M2:{M2_targ_pos}")|
     
     M1_targ_pos += M1_targ_step    
     M2_targ_pos += M2_targ_step
     
-    if(M1_targ_pos > -1 or M1_targ_pos < -5):
-        M1_targ_step = -M1_targ_step
+    # if(M1_targ_pos > -1 or M1_targ_pos < -5):
+    #     M1_targ_step = -M1_targ_step
     
-    if(M2_targ_pos > -2 or M2_targ_pos < -10):
-        M2_targ_step = -M2_targ_step
-        
+    # if(M2_targ_pos > -2 or M2_targ_pos < -10):
+    #     M2_targ_step = -M2_targ_step
+    
+    if(state == RISING):
+        if( (M1_targ_pos > -1) or (M2_targ_pos > -2) ):
+            M1_targ_step = -M1_targ_step/5
+            M2_targ_step = -M2_targ_step/5
+            M1_targ_pos = -1
+            M2_targ_pos = -2
+            state=FALLING
+            
+    if(state == FALLING):
+        if( (M1_targ_pos < M1_start_pos) or (M2_targ_pos < M2_start_pos) ):
+            M1_targ_step = -M1_targ_step*5
+            M2_targ_step = -M2_targ_step*5
+            M1_targ_pos = M1_start_pos
+            M2_targ_pos = M2_start_pos
+            state=RISING
+            # break
+    
+    
+    print(M1_targ_step)
+    
     M1.PID_Pos_CTRL(M1_targ_pos)
     M2.PID_Pos_CTRL(M2_targ_pos)
     DataLog.append([M1.prev_demand_current, 

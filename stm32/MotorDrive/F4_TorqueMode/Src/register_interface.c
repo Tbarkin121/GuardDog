@@ -1318,24 +1318,23 @@ __weak uint8_t RI_GetPtrReg(uint16_t dataID, void **dataPtr)
     switch (typeID)
     {
       case TYPE_DATA_32BIT:
-      {
-        switch (regID)
-        {
-          case MC_REG_CURRENT_POSITION:
-          {
-            *dataPtr = *dataPtr = &((&ENCODER_M1)->_Super.wMecAngle);
-             break;
-          }
-          default:
-          {
-            *dataPtr = &nullData16;
-            retVal = MCP_ERROR_UNKNOWN_REG;
-            break;
-          }
-        }
-        break;
-      }
-
+	  {
+		switch (regID)
+		{
+		  case MC_REG_CURRENT_POSITION:
+		  {
+			*dataPtr = *dataPtr = &((&ENCODER_M1)->_Super.wMecAngle);
+			 break;
+		  }
+		  default:
+		  {
+			*dataPtr = &nullData16;
+			retVal = MCP_ERROR_UNKNOWN_REG;
+			break;
+		  }
+		}
+		break;
+	  }
       case TYPE_DATA_16BIT:
       {
         switch (regID)

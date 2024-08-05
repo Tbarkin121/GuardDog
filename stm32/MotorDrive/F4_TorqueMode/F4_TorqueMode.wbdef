@@ -52,7 +52,7 @@
         <define key="M1_AMPLIFICATION_GAIN" value="20" />
         <define key="M1_ANGC" value="{0,0,0,0,0,0,0,0}" />
         <define key="M1_AUXILIARY_SPEED_SENSOR" value="STO_CORDIC" />
-        <define key="M1_BOARD_MAX_CURRENT" value="11.5" />
+        <define key="M1_BOARD_MAX_CURRENT" value="15" />
         <define key="M1_BUS_VOLTAGE_READING" value="ENABLE" />
         <define key="M1_CONSTANT1_D" value="9205" />
         <define key="M1_CONSTANT1_Q" value="9205" />
@@ -79,7 +79,7 @@
         <define key="M1_CURRENT_AMPLIFICATION_TOPO" value="EXTERNAL" />
         <define key="M1_CURRENT_SENSING_TOPO" value="THREE_SHUNT" />
         <define key="M1_DBG_OPEN_LOOP_ENABLE" value="FALSE" />
-        <define key="M1_DC_CURRENT_RS_MEAS" value="11.5" />
+        <define key="M1_DC_CURRENT_RS_MEAS" value="15" />
         <define key="M1_DEFAULT_CONTROL_MODE" value="STC_TORQUE_MODE" />
         <define key="M1_DEFAULT_FLUX_COMPONENT" value="0" />
         <define key="M1_DEFAULT_TARGET_SPEED_RPM" value="592" />
@@ -97,7 +97,7 @@
         <define key="M1_ENC_USE_CH3" value="FALSE" />
         <define key="M1_ENCODER_PPR" value="1024" />
         <define key="M1_FEED_FORWARD_CURRENT_REG_ENABLING" value="DISABLE" />
-        <define key="M1_FINAL_I_ALIGNMENT" value="11.5" />
+        <define key="M1_FINAL_I_ALIGNMENT" value="15" />
         <define key="M1_FLUX_WEAKENING_ENABLING" value="DISABLE" />
         <define key="M1_FW_KI_GAIN" value="5000" />
         <define key="M1_FW_KIDIV" value="32768" />
@@ -109,8 +109,8 @@
         <define key="M1_HIGH_SIDE_IDLE_STATE" value="TURN_OFF" />
         <define key="M1_HW_DEAD_TIME_NS" value="1000" />
         <define key="M1_ICL_ENABLED" value="FALSE" />
-        <define key="M1_ID_DEMAG" value="-11.5" />
-        <define key="M1_IQMAX" value="11.5" />
+        <define key="M1_ID_DEMAG" value="-15" />
+        <define key="M1_IQMAX" value="15" />
         <define key="M1_LDLQ_RATIO" value="1.000" />
         <define key="M1_LOW_SIDE_IDLE_STATE" value="TURN_OFF" />
         <define key="M1_LOW_SIDE_SIGNALS_ENABLING" value="LS_PWM_TIMER" />
@@ -124,7 +124,7 @@
         <define key="M1_MOTOR_VOLTAGE_CONSTANT" value="6.9" />
         <define key="M1_MTPA_ENABLING" value="DISABLE" />
         <define key="M1_NOMINAL_BUS_VOLTAGE_V" value="40" />
-        <define key="M1_NOMINAL_CURRENT" value="11.5" />
+        <define key="M1_NOMINAL_CURRENT" value="15" />
         <define key="M1_OCP_TOPOLOGY" value="NONE" />
         <define key="M1_OFST" value="{0,0,0,0,0,0,0,0}" />
         <define key="M1_ON_OVER_VOLTAGE" value="TURN_OFF_PWM" />
@@ -281,7 +281,7 @@
         <define key="WB_UI_FRICTION" value="11.84" />
         <define key="WB_UI_INERTIA" value="2.27" />
         <define key="WB_UI_MAGNETIC_STRUCTURE" value="SM-PMSM" />
-        <define key="WB_UI_MAX_CURRENT" value="11.5" />
+        <define key="WB_UI_MAX_CURRENT" value="15" />
         <define key="WB_UI_MAX_NOMINAL_DC_VOLTAGE" value="40" />
         <define key="WB_UI_MOTOR_DESCRIPTION" value="Motor profile within gearbox housing" />
         <define key="WB_UI_PW_BOARD_MAX_RATED_CURRENT" value="15" />

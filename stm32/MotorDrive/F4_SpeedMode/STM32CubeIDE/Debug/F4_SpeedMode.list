@@ -2190,26 +2190,26 @@ void Error_Handler(void)
  8000fb2:	2019      	movs	r0, #25
  8000fb4:	f003 fd26 	bl	8004a04 <HAL_NVIC_EnableIRQ>
   HAL_NVIC_SetPriority(TIM1_BRK_TIM9_IRQn, 4, 1);
- 8000fb8:	2104      	movs	r1, #4
- 8000fba:	2201      	movs	r2, #1
+ 8000fb8:	2201      	movs	r2, #1
+ 8000fba:	2104      	movs	r1, #4
  8000fbc:	2018      	movs	r0, #24
  8000fbe:	f003 fce5 	bl	800498c <HAL_NVIC_SetPriority>
   HAL_NVIC_EnableIRQ(TIM1_BRK_TIM9_IRQn);
  8000fc2:	2018      	movs	r0, #24
  8000fc4:	f003 fd1e 	bl	8004a04 <HAL_NVIC_EnableIRQ>
-  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6, GPIO_PIN_RESET);   //B
+  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6, GPIO_PIN_SET);   //B
  8000fc8:	480b      	ldr	r0, [pc, #44]	@ (8000ff8 <main+0x330>)
- 8000fca:	4622      	mov	r2, r4
- 8000fcc:	2140      	movs	r1, #64	@ 0x40
+ 8000fca:	2140      	movs	r1, #64	@ 0x40
+ 8000fcc:	2201      	movs	r2, #1
  8000fce:	f003 feed 	bl	8004dac <HAL_GPIO_WritePin>
   HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_RESET); //G
  8000fd2:	4809      	ldr	r0, [pc, #36]	@ (8000ff8 <main+0x330>)
  8000fd4:	4622      	mov	r2, r4
  8000fd6:	2180      	movs	r1, #128	@ 0x80
  8000fd8:	f003 fee8 	bl	8004dac <HAL_GPIO_WritePin>
-  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_8, GPIO_PIN_RESET);   //R
+  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_8, GPIO_PIN_SET);   //R
  8000fdc:	4806      	ldr	r0, [pc, #24]	@ (8000ff8 <main+0x330>)
- 8000fde:	4622      	mov	r2, r4
+ 8000fde:	2201      	movs	r2, #1
  8000fe0:	f44f 7180 	mov.w	r1, #256	@ 0x100
  8000fe4:	f003 fee2 	bl	8004dac <HAL_GPIO_WritePin>
   HAL_GPIO_WritePin(GPIOC, GPIO_PIN_14, GPIO_PIN_SET);   // DRV Enable
